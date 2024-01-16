@@ -44,7 +44,9 @@ namespace csv2kml
             };
             var styles=new List<string>();
             _rootFolder.AddFeature(folder);
-            BuildStyles("vspeed",20);
+            var min = _data.Min(d => d.VSpeed);
+            var max = _data.Max(d => d.VSpeed);
+            BuildStyles("vspeed",min,max,20);
             var coords = new CoordinateCollection();
             var oldNormalizedValue = 0;
             for (var i = 0; i < _data.Length - 1; i++)
@@ -103,9 +105,14 @@ namespace csv2kml
         {
             return (int)Math.Min(255, Math.Round(255*2-255 * normalizedValue*2));
         }
-        private void BuildStyles(string name, int subdivisions)
-        {
 
+        private string GetStyleID(string name,double value,double max, int subdivisions)
+        {
+            var k=value/max*subdivisions;
+            return $"{name}{Math.Round(k)}";
+        }
+        private void BuildStyles(string name,double min,double max, int subdivisions)
+        {
             _rootFolder.AddStyle(new Style
             {
                 Id = "hiddenChildren",
@@ -117,6 +124,7 @@ namespace csv2kml
             //min = red  =
             //0   = cyan = 
             //max = blue =
+            var step = max / subdivisions;
             for (var i = 1; i <= subdivisions ; i++)
             {
                 var styleId = $"{name}-{i}";

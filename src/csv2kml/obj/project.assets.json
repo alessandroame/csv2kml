@@ -1,0 +1,155 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Csv/2.0.93": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Csv.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Csv.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpKml.Core/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/SharpKml.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SharpKml.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Csv/2.0.93": {
+      "sha512": "3KD+VCDn1yKZFrGgi7KS8BxqfpFbX3Pfz+jqHq6a1A/V9HvSmn3VazlSLdOu6Whiopso3lcUhgL4qkalBgIz1Q==",
+      "type": "package",
+      "path": "csv/2.0.93",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "csv.2.0.93.nupkg.sha512",
+        "csv.nuspec",
+        "icon.png",
+        "lib/net40/Csv.dll",
+        "lib/net40/Csv.xml",
+        "lib/netcoreapp3.1/Csv.dll",
+        "lib/netcoreapp3.1/Csv.xml",
+        "lib/netstandard1.0/Csv.dll",
+        "lib/netstandard1.0/Csv.xml",
+        "lib/netstandard2.1/Csv.dll",
+        "lib/netstandard2.1/Csv.xml"
+      ]
+    },
+    "SharpKml.Core/6.0.0": {
+      "sha512": "m9up57OM1BwNhgeXuh8O/W3EoOH4FnvWEiWFnD++hyvW2NKgKeZ0G0tL5Bat3OmljbeUuJwoKN3NkvOsNsawmw==",
+      "type": "package",
+      "path": "sharpkml.core/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/SharpKml.Core.dll",
+        "lib/net462/SharpKml.Core.xml",
+        "lib/netstandard1.2/SharpKml.Core.dll",
+        "lib/netstandard1.2/SharpKml.Core.xml",
+        "lib/netstandard2.0/SharpKml.Core.dll",
+        "lib/netstandard2.0/SharpKml.Core.xml",
+        "sharpkml.core.6.0.0.nupkg.sha512",
+        "sharpkml.core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Csv >= 2.0.93",
+      "SharpKml.Core >= 6.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\aame\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\github\\csv2kml\\src\\csv2kml\\csv2kml.csproj",
+      "projectName": "csv2kml",
+      "projectPath": "C:\\github\\csv2kml\\src\\csv2kml\\csv2kml.csproj",
+      "packagesPath": "C:\\Users\\aame\\.nuget\\packages\\",
+      "outputPath": "C:\\github\\csv2kml\\src\\csv2kml\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\aame\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://regola.pkgs.visualstudio.com/_packaging/six/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Csv": {
+            "target": "Package",
+            "version": "[2.0.93, )"
+          },
+          "SharpKml.Core": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

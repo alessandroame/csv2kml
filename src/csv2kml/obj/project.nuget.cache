@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "L+qf65WSd/UrdqcUaboqdMmh1P9z49mX3E/HMk6bpP4XgESOVXf+t2+6FsMCDFPt1NUmAYRuLaqa0U1GGb6Wxw==",
+  "success": true,
+  "projectFilePath": "C:\\github\\csv2kml\\src\\csv2kml\\csv2kml.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aame\\.nuget\\packages\\csv\\2.0.93\\csv.2.0.93.nupkg.sha512",
+    "C:\\Users\\aame\\.nuget\\packages\\sharpkml.core\\6.0.0\\sharpkml.core.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
