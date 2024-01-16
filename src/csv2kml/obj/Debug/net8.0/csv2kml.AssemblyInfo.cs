@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csv2kml")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1125689bc11d9126d7287c392ce3ac37e4d33bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+920c2c2ad85c4fb8a0f74bc4909c134e4fe2f824")]
 [assembly: System.Reflection.AssemblyProductAttribute("csv2kml")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csv2kml")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

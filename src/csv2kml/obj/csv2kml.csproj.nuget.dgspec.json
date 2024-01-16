@@ -26,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://regola.pkgs.visualstudio.com/_packaging/six/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {

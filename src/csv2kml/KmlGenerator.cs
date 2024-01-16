@@ -6,6 +6,7 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -42,49 +43,58 @@ namespace csv2kml
                 Name = name,
                 StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
             };
-            var styles=new List<string>();
             _rootFolder.AddFeature(folder);
             var min = _data.Min(d => d.VSpeed);
             var max = _data.Max(d => d.VSpeed);
-            BuildStyles("vspeed",min,max,20);
-            var coords = new CoordinateCollection();
+            var subdivision = 60;
+            BuildStyles("vspeed",min,max, subdivision);
+            var coords = new List<Data>();
             var oldNormalizedValue = 0;
+
             for (var i = 0; i < _data.Length - 1; i++)
             {
                 var item = _data[i];
-
                 var v = new Vector(item.Latitude, item.Longitude, item.Altitude);
-
                 var nextItem = _data[i + 1];
                 //var delta = nextItem.Altitude - item.Altitude;
                 var delta = item.VSpeed;
-                coords.Add(v);
+                coords.Add(item);
                 var nv = NormalizeValue(delta, 3);
                 //Console.WriteLine($"{delta}->{nv}");
-                var normalizedValue = (int)Math.Round(nv*20);
+                var normalizedValue = (int)Math.Round(nv* subdivision/2);
                 
                 if (oldNormalizedValue != normalizedValue)
                 {
-                    styles.Add($"vspeed{oldNormalizedValue}");
                     var p = CreatePlacemark(coords, $"vspeed{oldNormalizedValue}");
                     folder.AddFeature(p);
-                    coords = new CoordinateCollection();
-                    coords.Add(v);
+                    coords = new List<Data>{item};
                     oldNormalizedValue = normalizedValue;
                 }
             }
-            var lastData = _data[_data.Length - 1];
-            var lastVector = new Vector(lastData.Latitude, lastData.Longitude, lastData.Altitude);
-
-            coords.Add(lastVector);
+            coords.Add(_data[_data.Length - 1]);
             var lastPlacemark = CreatePlacemark(coords, $"{name}{oldNormalizedValue}");
             folder.AddFeature(lastPlacemark);
-            Console.WriteLine(string.Join("\r\n", 
-                styles.GroupBy(s=>s).Select(g=>$"{g.Key}->{g.Count()}").ToArray()));
+            Console.WriteLine($"point count: {_data.Length}");
         }
 
-        Placemark CreatePlacemark(CoordinateCollection coords, string style)
+        Placemark CreatePlacemark(List<Data> data, string style)
         {
+            var track = new Track
+            {
+                AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround,
+            };
+            var placemark = new Placemark
+            {
+                Name = "",//style,
+                Geometry = track,
+                StyleUrl = new Uri($"#{style}", UriKind.Relative)
+            };
+            foreach (var d in data) {
+                track.AddWhen(d.Time);
+                track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude));
+            }
+            return placemark;
+            /*var coords = new CoordinateCollection(data.Select(d => new Vector(d.Latitude, d.Longitude, d.Altitude)));
             return new Placemark
             {
                 Name = "Track",
@@ -94,16 +104,52 @@ namespace csv2kml
                     Coordinates = coords
                 },
                 StyleUrl = new Uri($"#{style}", UriKind.Relative)
-            };
+            };*/
         }
 
-        int GetColor(double normalizedValue)
+        private Color ValueGetColor(float value)
         {
-            return (int)Math.Min(255, Math.Round(255 * normalizedValue*2));
-        }
-        int GetInvColor(double normalizedValue)
-        {
-            return (int)Math.Min(255, Math.Round(255*2-255 * normalizedValue*2));
+            float hue = (1-value) * 180;
+            float red, green, blue;
+
+            if (hue < 60)
+            {
+                red = 1;
+                green = hue / 60f;
+                blue = 0;
+            }
+            else if (hue < 120)
+            {
+                red = 1 - (hue - 60) / 60f;
+                green = 1;
+                blue = 0;
+            }
+            else if (hue < 180)
+            {
+                red = 0;
+                green = 1;
+                blue = (hue - 120) / 60f;
+            }
+            else if (hue < 240)
+            {
+                red = 0;
+                green = 1 - (hue - 180) / 60f;
+                blue = 1;
+            }
+            else if (hue < 300)
+            {
+                red = (hue - 240) / 60f;
+                green = 0;
+                blue = 1;
+            }
+            else
+            {
+                red = 1;
+                green = 0;
+                blue = 1 - (hue - 300) / 60f;
+            }
+
+            return Color.FromArgb(255, (int)(red * 255), (int)(green * 255), (int)(blue * 255));
         }
 
         private string GetStyleID(string name,double value,double max, int subdivisions)
@@ -121,46 +167,50 @@ namespace csv2kml
                     ItemType=ListItemType.CheckHideChildren
                 }
             });
-            //min = red  =
-            //0   = cyan = 
-            //max = blue =
             var step = max / subdivisions;
-            for (var i = 1; i <= subdivisions ; i++)
+            for (var i = 0; i <= subdivisions ; i++)
+            {
+                var styleId = $"{name}{i-subdivisions/2}";
+                var k = (float)i / subdivisions;
+                var color = ValueGetColor(k);
+                var c = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                Console.WriteLine($"{styleId} -> {c}");
+                _rootFolder.AddStyle(new Style
+                {
+                    Id = styleId,
+                    Line = new LineStyle
+                    {
+                        Color = Color32.Parse(c),
+                        Width= 4
+                    },
+                    Icon = new IconStyle
+                    {
+                        Scale = 0
+                    }
+                }) ;
+            }
+           /* for (var i = 1; i <= subdivisions; i++)
             {
                 var styleId = $"{name}-{i}";
                 var k = (double)i / subdivisions;
-                var c1 = (GetColor(k)).ToString("X2");
-                var c2 = (GetInvColor(k)).ToString("X2");
-
+                var c1 = (GetColor1(k)).ToString("X2");
+                var c2 = (GetColor2(k)).ToString("X2");
+                var c = $"FF00{c2}{c1}";
+                Console.WriteLine($"{styleId} -> {c}");
                 _rootFolder.AddStyle(new Style
                 {
                     Id = styleId,
                     Line = new LineStyle
                     {
-                        Color = Color32.Parse($"FF{c1}{c2}00"),
-                        Width = 4
-                    }
-                });
-                Console.WriteLine($"{name}-{i}->FF{c1}{c2}00");
-            }
-            for (var i = 0; i <= subdivisions; i++)
-            {
-                var styleId = $"{name}{i}";
-                var k = (double)i / subdivisions;
-                var c1 = (GetColor(k)).ToString("X2");
-                var c2 = (GetInvColor(k)).ToString("X2");
-
-                _rootFolder.AddStyle(new Style
-                {
-                    Id = styleId,
-                    Line = new LineStyle
+                        Color = Color32.Parse(c),
+                        Width=4
+                    },
+                    Icon = new IconStyle
                     {
-                        Color = Color32.Parse($"FF00{c2}{c1}"),
-                        Width = 4
+                        Scale = 0
                     }
                 });
-                Console.WriteLine($"{name}{i}->FF00{c2}{c1}");
-            }
+            }*/
         }
 
         public bool SaveTo(string fn,out string errors)
