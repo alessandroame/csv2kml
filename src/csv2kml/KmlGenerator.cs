@@ -41,7 +41,7 @@ namespace csv2kml
             var folder = new Folder
             {
                 Name = name,
-                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
+                //StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
             };
             _rootFolder.AddFeature(folder);
             var min = _data.Min(d => d.VSpeed);
@@ -79,13 +79,14 @@ namespace csv2kml
 
         Placemark CreatePlacemark(List<Data> data, string style)
         {
+            //if (data.Count() <= 2) Debugger.Break();
             var track = new Track
             {
                 AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround,
             };
             var placemark = new Placemark
             {
-                Name = "",//style,
+                Name = Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
                 Geometry = track,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative)
             };
