@@ -13,7 +13,7 @@ var data = LoadFromFRSKYTelemetry(csvPath);
 
 PrintStats(data);
 var generator=new KmlGenerator(data,Path.GetFileNameWithoutExtension(csvPath));
-generator.GenerateColoredTrack("By climb");
+generator.GenerateColoredTrack("By climb",50);
 if (!generator.SaveTo(Path.ChangeExtension(csvPath,"kml"),out var errors))
 {
     Console.WriteLine(errors);
@@ -31,6 +31,7 @@ Data[] LoadFromFRSKYTelemetry(string path)
     var vSpeedIndex = 8;
     var gpsClockIndex = 22;
 
+    var lastTime = DateTime.MinValue;
     foreach (var line in CsvReader.ReadFromStream(fs, new CsvOptions { HeaderMode = HeaderMode.HeaderPresent }))
     {
         try
@@ -42,8 +43,12 @@ Data[] LoadFromFRSKYTelemetry(string path)
             if (!line[vSpeedIndex].TryParseDouble(out var vSpeed)) continue;
             var time = DateTime.Parse(line[gpsClockIndex]);
 
-            var data = new Data(time, lat, lon, alt, gpsSpeed, vSpeed);
-            res.Add(data);
+            if (lastTime != time)
+            {
+                var data = new Data(time, lat, lon, alt, gpsSpeed, vSpeed);
+                res.Add(data);
+                lastTime = time;
+            }
         }
         catch (Exception ex)
         {

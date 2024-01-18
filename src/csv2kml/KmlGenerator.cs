@@ -36,17 +36,16 @@ namespace csv2kml
             return res;
         }
 
-        public void GenerateColoredTrack(string name)
+        public void GenerateColoredTrack(string name,int subdivision)
         {
             var folder = new Folder
             {
                 Name = name,
-                //StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
+                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
             };
             _rootFolder.AddFeature(folder);
             var min = _data.Min(d => d.VSpeed);
             var max = _data.Max(d => d.VSpeed);
-            var subdivision = 60;
             BuildStyles("vspeed",min,max, subdivision);
             var coords = new List<Data>();
             var oldNormalizedValue = 0;
@@ -76,7 +75,7 @@ namespace csv2kml
             folder.AddFeature(lastPlacemark);
             Console.WriteLine($"point count: {_data.Length}");
         }
-
+        int trackIndex = 0;
         Placemark CreatePlacemark(List<Data> data, string style)
         {
             //if (data.Count() <= 2) Debugger.Break();
@@ -86,9 +85,10 @@ namespace csv2kml
             };
             var placemark = new Placemark
             {
-                Name = Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
+                Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
                 Geometry = track,
-                StyleUrl = new Uri($"#{style}", UriKind.Relative)
+                StyleUrl = new Uri($"#{style}", UriKind.Relative),
+                Description = new Description { Text =$"#{trackIndex++} -> {style}" }
             };
             foreach (var d in data) {
                 track.AddWhen(d.Time);
@@ -168,8 +168,7 @@ namespace csv2kml
                     ItemType=ListItemType.CheckHideChildren
                 }
             });
-            var step = max / subdivisions;
-            for (var i = 0; i <= subdivisions ; i++)
+            for (var i = 0; i <= subdivisions; i++)
             {
                 var styleId = $"{name}{i-subdivisions/2}";
                 var k = (float)i / subdivisions;
