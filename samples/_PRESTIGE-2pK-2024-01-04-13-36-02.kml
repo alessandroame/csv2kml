@@ -13,7 +13,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffffff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-24">
@@ -22,7 +22,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffefff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-23">
@@ -31,7 +31,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffe0ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-22">
@@ -40,7 +40,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffd1ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-21">
@@ -49,7 +49,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffc1ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-20">
@@ -58,7 +58,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffb2ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-19">
@@ -67,7 +67,7 @@
       </IconStyle>
       <LineStyle>
         <color>ffa3ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-18">
@@ -76,7 +76,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff93ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-17">
@@ -85,7 +85,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff84ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-16">
@@ -94,7 +94,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff75ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-15">
@@ -103,7 +103,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff66ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-14">
@@ -112,7 +112,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff56ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-13">
@@ -121,7 +121,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff47ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-12">
@@ -130,7 +130,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff38ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-11">
@@ -139,7 +139,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff28ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-10">
@@ -148,7 +148,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff19ff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-9">
@@ -157,7 +157,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff0aff00</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-8">
@@ -166,7 +166,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff05</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-7">
@@ -175,7 +175,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff14</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-6">
@@ -184,7 +184,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff23</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-5">
@@ -193,7 +193,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff32</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-4">
@@ -202,7 +202,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff42</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-3">
@@ -211,7 +211,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff51</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-2">
@@ -220,7 +220,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff60</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed-1">
@@ -229,7 +229,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff70</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed0">
@@ -238,7 +238,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff7f</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed1">
@@ -247,7 +247,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff8e</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed2">
@@ -256,7 +256,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ff9e</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed3">
@@ -265,7 +265,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ffad</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed4">
@@ -274,7 +274,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ffbc</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed5">
@@ -283,7 +283,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ffcc</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed6">
@@ -292,7 +292,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ffdb</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed7">
@@ -301,7 +301,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00ffea</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed8">
@@ -310,7 +310,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00fff9</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed9">
@@ -319,7 +319,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00f4ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed10">
@@ -328,7 +328,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00e5ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed11">
@@ -337,7 +337,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00d6ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed12">
@@ -346,7 +346,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00c6ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed13">
@@ -355,7 +355,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00b7ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed14">
@@ -364,7 +364,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff00a8ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed15">
@@ -373,7 +373,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff0098ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed16">
@@ -382,7 +382,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff0089ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed17">
@@ -391,7 +391,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff007aff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed18">
@@ -400,7 +400,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff006bff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed19">
@@ -409,7 +409,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff005bff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed20">
@@ -418,7 +418,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff004cff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed21">
@@ -427,7 +427,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff003dff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed22">
@@ -436,7 +436,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff002dff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed23">
@@ -445,7 +445,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff001eff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed24">
@@ -454,7 +454,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff000fff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Style id="vspeed25">
@@ -463,7 +463,7 @@
       </IconStyle>
       <LineStyle>
         <color>ff0000ff</color>
-        <width>4</width>
+        <width>3</width>
       </LineStyle>
     </Style>
     <Folder>

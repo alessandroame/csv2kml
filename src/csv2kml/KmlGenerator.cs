@@ -11,6 +11,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace csv2kml
 {
@@ -36,6 +37,31 @@ namespace csv2kml
             return res;
         }
 
+        private Bitmap GenerateLegend(double k,int subdivisions)
+        {
+            var w = 200;
+            var h = 400;
+            var bitmap = new Bitmap(w,h);
+            Graphics graphics = Graphics.FromImage(bitmap);
+
+            for (var i = 0; i <= subdivisions; i++)
+            {
+                var color = ValueGetColor((float)i / subdivisions);
+                var value = i / subdivisions * k;
+#pragma warning disable CA1416 // Validate platform compatibility
+                graphics.DrawRectangle(
+                    new Pen(color),
+                    new Rectangle {
+                        X=0,
+                        Y=h/subdivisions*i,
+                        Width=w, 
+                        Height=h/subdivisions
+                    });
+                bitmap.Save("legend.bmp");
+#pragma warning restore CA1416 // Validate platform compatibility
+            }
+            return bitmap;
+        }
         public void GenerateColoredTrack(string name,int subdivision)
         {
             var folder = new Folder
@@ -111,6 +137,8 @@ namespace csv2kml
         private Color ValueGetColor(float value)
         {
             float hue = (1-value) * 180;
+            if (hue < 0) hue += 360;
+            if (hue > 360) hue -= 360;
             float red, green, blue;
 
             if (hue < 60)
@@ -181,7 +209,7 @@ namespace csv2kml
                     Line = new LineStyle
                     {
                         Color = Color32.Parse(c),
-                        Width= 4
+                        Width= 3
                     },
                     Icon = new IconStyle
                     {
