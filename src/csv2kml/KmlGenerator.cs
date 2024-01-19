@@ -18,11 +18,17 @@ namespace csv2kml
     public  class KmlGenerator
     {
         private Data[] _data;
+        private Document _kml;
         private Folder _rootFolder;
 
         public KmlGenerator(Data[] data,string rootName)
         {
             _data = data;
+            _kml = new Document();
+            Tour tour = new Tour();
+            tour.Name = "First Person View";
+            //AddNamespace(kml, "gx", "http://www.google.com/kml/ext/2.2");
+            Playlist tourplaylist = new Playlist();
             _rootFolder = new Folder
             {
                 Name = rootName
@@ -39,6 +45,7 @@ namespace csv2kml
 
         private Bitmap GenerateLegend(double k,int subdivisions)
         {
+#pragma warning disable CA1416 // Validate platform compatibility
             var w = 200;
             var h = 400;
             var bitmap = new Bitmap(w,h);
@@ -48,19 +55,26 @@ namespace csv2kml
             {
                 var color = ValueGetColor((float)i / subdivisions);
                 var value = i / subdivisions * k;
-#pragma warning disable CA1416 // Validate platform compatibility
-                graphics.DrawRectangle(
-                    new Pen(color),
+
+                var brush = new SolidBrush(color);
+                graphics.FillRectangle(
+                    brush,
                     new Rectangle {
                         X=0,
-                        Y=h/subdivisions*i,
-                        Width=w, 
+                        Y=h-h/subdivisions*i,
+                        Width=w/2, 
                         Height=h/subdivisions
                     });
                 bitmap.Save("legend.bmp");
 #pragma warning restore CA1416 // Validate platform compatibility
             }
             return bitmap;
+        }
+        internal void GenerateCameraPath(string cameraName, int frameBeforeStep = 10)
+        {
+            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
+            var flyTo =new FlyTo();
+            var lookAt = new LookAt();
         }
         public void GenerateColoredTrack(string name,int subdivision)
         {
@@ -72,10 +86,10 @@ namespace csv2kml
             _rootFolder.AddFeature(folder);
             var min = _data.Min(d => d.VSpeed);
             var max = _data.Max(d => d.VSpeed);
-            BuildStyles("vspeed",min,max, subdivision);
+            GenerateLegend(3, subdivision);
+            BuildStyles("vspeed",subdivision);
             var coords = new List<Data>();
             var oldNormalizedValue = 0;
-
             for (var i = 0; i < _data.Length - 1; i++)
             {
                 var item = _data[i];
@@ -181,12 +195,7 @@ namespace csv2kml
             return Color.FromArgb(255, (int)(red * 255), (int)(green * 255), (int)(blue * 255));
         }
 
-        private string GetStyleID(string name,double value,double max, int subdivisions)
-        {
-            var k=value/max*subdivisions;
-            return $"{name}{Math.Round(k)}";
-        }
-        private void BuildStyles(string name,double min,double max, int subdivisions)
+        private void BuildStyles(string name,int subdivisions)
         {
             _rootFolder.AddStyle(new Style
             {
@@ -217,42 +226,21 @@ namespace csv2kml
                     }
                 }) ;
             }
-           /* for (var i = 1; i <= subdivisions; i++)
-            {
-                var styleId = $"{name}-{i}";
-                var k = (double)i / subdivisions;
-                var c1 = (GetColor1(k)).ToString("X2");
-                var c2 = (GetColor2(k)).ToString("X2");
-                var c = $"FF00{c2}{c1}";
-                Console.WriteLine($"{styleId} -> {c}");
-                _rootFolder.AddStyle(new Style
-                {
-                    Id = styleId,
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(c),
-                        Width=4
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    }
-                });
-            }*/
         }
 
         public bool SaveTo(string fn,out string errors)
         {
-            var outStream = new FileStream(fn, FileMode.Create);
             var res = false;
             errors = string.Empty;
             try
             {
-                var kml = new Kml()
-                {
-                    Feature = _rootFolder
-                };
-                KmlFile.Create(kml, false).Save(outStream);
+                _kml.AddFeature(_rootFolder);
+                var serializer = new Serializer();
+                serializer.Serialize(_kml);
+                var outStream = new FileStream(fn, FileMode.Create);
+                var sw = new StreamWriter(outStream);
+                sw.Write(serializer.Xml);
+                sw.Close();
                 res = true;
             }
             catch (Exception ex)

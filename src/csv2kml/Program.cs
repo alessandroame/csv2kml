@@ -9,11 +9,14 @@ using Csv2KML;
 using csv2kml;
 
 var csvPath = @"../../../../../samples/_PRESTIGE-2pK-2024-01-04-13-36-02.csv";
+//var csvPath = @"D:\Github\csv2kml\samples\20240119\_PRESTIGE-2pK-2024-01-19-15-05-51.csv";
+
 var data = LoadFromFRSKYTelemetry(csvPath);
 
 PrintStats(data);
 var generator=new KmlGenerator(data,Path.GetFileNameWithoutExtension(csvPath));
-generator.GenerateColoredTrack("By climb",50);
+generator.GenerateColoredTrack("By climb",20);
+generator.GenerateCameraPath("Follow cam", 10);
 if (!generator.SaveTo(Path.ChangeExtension(csvPath,"kml"),out var errors))
 {
     Console.WriteLine(errors);
