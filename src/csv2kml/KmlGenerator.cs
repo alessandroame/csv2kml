@@ -31,10 +31,17 @@ namespace csv2kml
             };
             _rootFolder.GenerateColoredTrack(data,"Coloured by climb",20);
             //_rootFolder.GenerateCameraPath(data,"Follow cam", 1);
-            _rootFolder.GenerateLookAtPath(data, "Look at every 1 frame", 1);
-            _rootFolder.GenerateLookAtPath(data, "Look at every 10 frame", 10);
-            _rootFolder.GenerateLookAtPath(data, "Look at every 30 frame", 30);
-            _rootFolder.GenerateLookAtPath(data, "Look at every 50 frame", 50);
+            var name = "LookAt and Follow";
+            _rootFolder.GenerateLookPath(data, $"{name} every 1 frame", 1, true);
+            _rootFolder.GenerateLookPath(data, $"{name} every 10 frame", 10, true);
+            _rootFolder.GenerateLookPath(data, $"{name} every 30 frame", 30, true);
+            _rootFolder.GenerateLookPath(data, $"{name} every 50 frame", 50, true);
+
+            name = "LookAt";
+            _rootFolder.GenerateLookPath(data, $"{name} every 1 frame", 1);
+            _rootFolder.GenerateLookPath(data, $"{name} every 10 frame", 10);
+            _rootFolder.GenerateLookPath(data, $"{name} every 30 frame", 30);
+            _rootFolder.GenerateLookPath(data, $"{name} every 50 frame", 50);
         }
 
         private Bitmap GenerateLegend(double k,int subdivisions)

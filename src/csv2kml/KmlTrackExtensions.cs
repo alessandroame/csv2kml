@@ -130,13 +130,16 @@ namespace csv2kml
             tour.Playlist = tourplaylist;
             container.AddFeature(tour);
         }
-        public static void GenerateLookAtPath(this Container container, Data[] data,string cameraName, int frameBeforeStep = 10)
+        public static void GenerateLookPath(this Container container, 
+            Data[] data,string cameraName, 
+            int frameBeforeStep = 10, bool follow = false)
         {
 
             var tourplaylist = new Playlist();
+
             for (int i = 0; i < data.Length- frameBeforeStep; i += frameBeforeStep)
             {
-                var flyto = data[i].CreateLookAt(data[i+ frameBeforeStep]);
+                var flyto = data[i].CreateLookAt(data[i+ frameBeforeStep],follow);
                 tourplaylist.AddTourPrimitive(flyto);
             }
             var tour = new Tour { Name = cameraName };

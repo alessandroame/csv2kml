@@ -82,7 +82,7 @@ public static class DataExtensions
     }
 
     static double pan = 0;
-    public static FlyTo CreateLookAt(this Data from,Data to)
+    public static FlyTo CreateLookAt(this Data from,Data to,bool follow)
     {
         var res = new FlyTo();
         res.Mode = FlyToMode.Smooth;
@@ -94,12 +94,13 @@ public static class DataExtensions
         lookat.Altitude = from.Altitude;
         lookat.Range = 120;
         lookat.Tilt = 80;
-
-        double xDiff = to.Latitude - from.Latitude;
-        double yDiff = to.Longitude-from.Longitude;
-        var p= Math.Atan2(yDiff, xDiff).toDegree();
-
-        lookat.Heading = p;
+        if (follow)
+        {
+            double xDiff = to.Latitude - from.Latitude;
+            double yDiff = to.Longitude - from.Longitude;
+            var p = Math.Atan2(yDiff, xDiff).toDegree();
+            lookat.Heading = p;
+        }
 
         /*lookat.Heading = pan++*10;
         if (pan >= 36) pan = 0;*/
