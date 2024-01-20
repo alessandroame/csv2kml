@@ -25,22 +25,13 @@ namespace csv2kml
         {
             _data = data;
             _kml = new Document();
-            Tour tour = new Tour();
-            tour.Name = "First Person View";
-            //AddNamespace(kml, "gx", "http://www.google.com/kml/ext/2.2");
-            Playlist tourplaylist = new Playlist();
             _rootFolder = new Folder
             {
                 Name = rootName
             };
-        }
-
-        private double NormalizeValue(double value,double max)
-        {
-            var res = value/ max;
-            if (res > 1) res = 1;
-            else if (res<-1) res = -1;
-            return res;
+            _rootFolder.GenerateColoredTrack(data,"Coloured by climb",20);
+            _rootFolder.GenerateCameraPath(data,"Follow cam", 10);
+            _rootFolder.GenerateLookAtPath(data,"Look at", 10);
         }
 
         private Bitmap GenerateLegend(double k,int subdivisions)
@@ -53,7 +44,8 @@ namespace csv2kml
 
             for (var i = 0; i <= subdivisions; i++)
             {
-                var color = ValueGetColor((float)i / subdivisions);
+                var normalizedValue = (float)i / subdivisions;
+                var color = normalizedValue.ToColor();
                 var value = i / subdivisions * k;
 
                 var brush = new SolidBrush(color);
@@ -70,164 +62,7 @@ namespace csv2kml
             }
             return bitmap;
         }
-        internal void GenerateCameraPath(string cameraName, int frameBeforeStep = 10)
-        {
-            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
-            var flyTo =new FlyTo();
-            var lookAt = new LookAt();
-        }
-        public void GenerateColoredTrack(string name,int subdivision)
-        {
-            var folder = new Folder
-            {
-                Name = name,
-                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
-            };
-            _rootFolder.AddFeature(folder);
-            var min = _data.Min(d => d.VSpeed);
-            var max = _data.Max(d => d.VSpeed);
-            GenerateLegend(3, subdivision);
-            BuildStyles("vspeed",subdivision);
-            var coords = new List<Data>();
-            var oldNormalizedValue = 0;
-            for (var i = 0; i < _data.Length - 1; i++)
-            {
-                var item = _data[i];
-                var v = new Vector(item.Latitude, item.Longitude, item.Altitude);
-                var nextItem = _data[i + 1];
-                //var delta = nextItem.Altitude - item.Altitude;
-                var delta = item.VSpeed;
-                coords.Add(item);
-                var nv = NormalizeValue(delta, 3);
-                //Console.WriteLine($"{delta}->{nv}");
-                var normalizedValue = (int)Math.Round(nv* subdivision/2);
-                
-                if (oldNormalizedValue != normalizedValue)
-                {
-                    var p = CreatePlacemark(coords, $"vspeed{oldNormalizedValue}");
-                    folder.AddFeature(p);
-                    coords = new List<Data>{item};
-                    oldNormalizedValue = normalizedValue;
-                }
-            }
-            coords.Add(_data[_data.Length - 1]);
-            var lastPlacemark = CreatePlacemark(coords, $"{name}{oldNormalizedValue}");
-            folder.AddFeature(lastPlacemark);
-            Console.WriteLine($"point count: {_data.Length}");
-        }
-        int trackIndex = 0;
-        Placemark CreatePlacemark(List<Data> data, string style)
-        {
-            //if (data.Count() <= 2) Debugger.Break();
-            var track = new Track
-            {
-                AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround,
-            };
-            var placemark = new Placemark
-            {
-                Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
-                Geometry = track,
-                StyleUrl = new Uri($"#{style}", UriKind.Relative),
-                Description = new Description { Text =$"#{trackIndex++} -> {style}" }
-            };
-            foreach (var d in data) {
-                track.AddWhen(d.Time);
-                track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude));
-            }
-            return placemark;
-            /*var coords = new CoordinateCollection(data.Select(d => new Vector(d.Latitude, d.Longitude, d.Altitude)));
-            return new Placemark
-            {
-                Name = "Track",
-                Geometry = new LineString
-                {
-                    AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround,
-                    Coordinates = coords
-                },
-                StyleUrl = new Uri($"#{style}", UriKind.Relative)
-            };*/
-        }
-
-        private Color ValueGetColor(float value)
-        {
-            float hue = (1-value) * 180;
-            if (hue < 0) hue += 360;
-            if (hue > 360) hue -= 360;
-            float red, green, blue;
-
-            if (hue < 60)
-            {
-                red = 1;
-                green = hue / 60f;
-                blue = 0;
-            }
-            else if (hue < 120)
-            {
-                red = 1 - (hue - 60) / 60f;
-                green = 1;
-                blue = 0;
-            }
-            else if (hue < 180)
-            {
-                red = 0;
-                green = 1;
-                blue = (hue - 120) / 60f;
-            }
-            else if (hue < 240)
-            {
-                red = 0;
-                green = 1 - (hue - 180) / 60f;
-                blue = 1;
-            }
-            else if (hue < 300)
-            {
-                red = (hue - 240) / 60f;
-                green = 0;
-                blue = 1;
-            }
-            else
-            {
-                red = 1;
-                green = 0;
-                blue = 1 - (hue - 300) / 60f;
-            }
-
-            return Color.FromArgb(255, (int)(red * 255), (int)(green * 255), (int)(blue * 255));
-        }
-
-        private void BuildStyles(string name,int subdivisions)
-        {
-            _rootFolder.AddStyle(new Style
-            {
-                Id = "hiddenChildren",
-                List = new ListStyle
-                {
-                    ItemType=ListItemType.CheckHideChildren
-                }
-            });
-            for (var i = 0; i <= subdivisions; i++)
-            {
-                var styleId = $"{name}{i-subdivisions/2}";
-                var k = (float)i / subdivisions;
-                var color = ValueGetColor(k);
-                var c = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                Console.WriteLine($"{styleId} -> {c}");
-                _rootFolder.AddStyle(new Style
-                {
-                    Id = styleId,
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(c),
-                        Width= 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    }
-                }) ;
-            }
-        }
-
+       
         public bool SaveTo(string fn,out string errors)
         {
             var res = false;
