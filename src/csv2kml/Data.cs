@@ -25,91 +25,84 @@ public class Data
 
 public static class DataExtensions
 {
-    private static double toRadian(double num)
+    private static double toRadian(this double num)
     {
-        return num * (Math.PI / 180);
+        return num * Math.PI / 180;
     }
 
-    private static double toDegree(double num)
+    private static double toDegree(this double num)
     {
-        return num * (180 / Math.PI);
+        return num * 180 / Math.PI;
     }
 
-    public static double CalculateHeading(this Data from, Data to)
+    public static void CalculateTiltPan(this Data from, Data to,out double pan,out double tilt)
     {
-        var fromLat = toRadian(from.Latitude);
-        var fromLon = toRadian(from.Longitude);
-        var toLat = toRadian(to.Latitude);
-        var toLon = toRadian(to.Longitude);
+        const double EarthRadius = 6371; // Radius of the Earth in kilometers
+        const double CorrectionFactor = 0.0005; // Altitude correction factor (decreases tilt and increases pan with increasing altitude)
 
-        var dLon = toLon - fromLon;
-        var x = Math.Tan(toLat / 2 + Math.PI / 4);
-        var y = Math.Tan(fromLat / 2 + Math.PI / 4);
-        var dPhi = Math.Log(x / y);
-        if (Math.Abs(dLon) > Math.PI)
-        {
-            if (dLon > 0.0)
-            {
-                dLon = -(2 * Math.PI - dLon);
-            }
-            else
-            {
-                dLon = (2 * Math.PI + dLon);
-            }
-        }
+        // Convert coordinates to Cartesian
+        double x1 = EarthRadius * Math.Cos(from.Latitude) * Math.Cos(from.Longitude);
+        double y1 = EarthRadius * Math.Cos(from.Latitude) * Math.Sin(from.Longitude);
+        double z1 = EarthRadius * Math.Sin(from.Latitude);
 
-        return (toDegree(Math.Atan2(dLon, dPhi)) + 360) % 360;
-    }
+        double x2 = EarthRadius * Math.Cos(to.Latitude) * Math.Cos(to.Longitude);
+        double y2 = EarthRadius * Math.Cos(to.Latitude) * Math.Sin(to.Longitude);
+        double z2 = EarthRadius * Math.Sin(to.Latitude);
 
-    public static double CalculateTilt(this Data from, Data to)
-    {
-        // Calculate the slope between the two positions
-        double slope = to.Altitude - from.Altitude;
+        var dx = x2 - x1;
+        var dy = y2 - y1;
+        var dz = z2 - z1;
+        // Calculate great circle distance
+        double d = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy,2) + Math.Pow(dz, 2));
 
-        // Normalize the slope to be between -1 and 1
-        if (slope < -1)
-        {
-            slope = -1;
-        }
-        else if (slope > 1)
-        {
-            slope = 1;
-        }
+        // Calculate pan
+        pan = Math.Atan2(dy,dx);
 
-
-        return tilt;
+        // Calculate tilt
+        tilt = Math.Acos(dz/d);
     }
   
     public static FlyTo CreateCamera(this Data from, Data to)
     {
         //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
         var res = new FlyTo();
-        res.Mode = FlyToMode.Smooth;
-        res.Duration = 5;
-        Camera cam = new SharpKml.Dom.Camera();
+        res.Mode = FlyToMode.Bounce;
+        res.Duration = 2;
+        Camera cam = new Camera();
         cam.AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround;
         cam.Latitude = from.Latitude;
         cam.Longitude = from.Longitude;
         cam.Altitude = from.Altitude;
-        cam.Heading = from.CalculateHeading(to);
+        from.CalculateTiltPan(to, out var pan, out var tilt);
+        cam.Heading = pan.toDegree();
         cam.Roll = 0;
-        cam.Tilt = to.CalculateTilt(from);
+        cam.Tilt = tilt.toDegree();
         res.View = cam;
         return res;
     }
 
-    public static FlyTo CreateLookAt(this Data data)
+    static double pan = 0;
+    public static FlyTo CreateLookAt(this Data from,Data to)
     {
         var res = new FlyTo();
         res.Mode = FlyToMode.Smooth;
-        res.Duration = 2;
+        res.Duration = to.Time.Subtract(from.Time).TotalSeconds;
         var lookat = new LookAt();
         lookat.AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround;
-        lookat.Latitude = data.Latitude;
-        lookat.Longitude = data.Longitude;
-        lookat.Altitude = data.Altitude;
-        lookat.Range = 180;
+        lookat.Latitude = from.Latitude;
+        lookat.Longitude = from.Longitude;
+        lookat.Altitude = from.Altitude;
+        lookat.Range = 120;
         lookat.Tilt = 80;
+
+        double xDiff = to.Latitude - from.Latitude;
+        double yDiff = to.Longitude-from.Longitude;
+        var p= Math.Atan2(yDiff, xDiff).toDegree();
+
+        lookat.Heading = p;
+
+        /*lookat.Heading = pan++*10;
+        if (pan >= 36) pan = 0;*/
         res.View = lookat;
         return res;
     }

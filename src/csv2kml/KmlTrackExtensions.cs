@@ -82,7 +82,6 @@ namespace csv2kml
             for (var i = 0; i < data.Length - 1; i++)
             {
                 var item = data[i];
-                var v = new Vector(item.Latitude, item.Longitude, item.Altitude);
                 var nextItem = data[i + 1];
                 //var delta = nextItem.Altitude - item.Altitude;
                 var delta = item.VSpeed;
@@ -135,9 +134,9 @@ namespace csv2kml
         {
 
             var tourplaylist = new Playlist();
-            for (int i = 0; i < data.Length; i += frameBeforeStep)
+            for (int i = 0; i < data.Length- frameBeforeStep; i += frameBeforeStep)
             {
-                var flyto = data[i].CreateLookAt();
+                var flyto = data[i].CreateLookAt(data[i+ frameBeforeStep]);
                 tourplaylist.AddTourPrimitive(flyto);
             }
             var tour = new Tour { Name = cameraName };
