@@ -35,6 +35,27 @@ public static class DataExtensions
         return num * 180 / Math.PI;
     }
 
+    public static double Distance(this Data from, Data to)
+    {
+        const double EarthRadius = 6371; // Radius of the Earth in kilometers
+
+        // Convert coordinates to Cartesian
+        double x1 = EarthRadius * Math.Cos(from.Latitude) * Math.Cos(from.Longitude);
+        double y1 = EarthRadius * Math.Cos(from.Latitude) * Math.Sin(from.Longitude);
+        double z1 = EarthRadius * Math.Sin(from.Latitude);
+
+        double x2 = EarthRadius * Math.Cos(to.Latitude) * Math.Cos(to.Longitude);
+        double y2 = EarthRadius * Math.Cos(to.Latitude) * Math.Sin(to.Longitude);
+        double z2 = EarthRadius * Math.Sin(to.Latitude);
+
+        var dx = x2 - x1;
+        var dy = y2 - y1;
+        var dz = z2 - z1;
+        // Calculate great circle distance
+        double d = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2) + Math.Pow(dz, 2));
+        return d;
+    }
+
     public static void CalculateTiltPan(this Data from, Data to,out double pan,out double tilt)
     {
         const double EarthRadius = 6371; // Radius of the Earth in kilometers
@@ -93,13 +114,13 @@ public static class DataExtensions
         res.Latitude = (from.Latitude+to.Latitude)/2;
         res.Longitude = (from.Longitude+to.Longitude)/2;
         res.Altitude = to.Altitude+ altitudeOffset;
-        res.Range = 180;
-        res.Tilt = 85;
+        res.Range = Math.Max(120, from.Distance(to));
+        res.Tilt = 80;
         if (follow)
         {
             double xDiff = to.Latitude - from.Latitude;
             double yDiff = to.Longitude - from.Longitude;
-            var p = Math.Atan2(yDiff, xDiff).toDegree();
+            var p = Math.Atan2(yDiff, xDiff).toDegree() +20;
             res.Heading = p;
         }
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan

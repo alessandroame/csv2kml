@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Csv" Version="2.0.93" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <PackageReference Include="SharpKml.Core" Version="6.0.0" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.1" />
   </ItemGroup>

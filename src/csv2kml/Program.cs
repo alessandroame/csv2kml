@@ -7,6 +7,7 @@ using SharpKml.Engine;
 using System.ComponentModel.Design.Serialization;
 using Csv2KML;
 using csv2kml;
+using MathNet.Numerics.Interpolation;
 
 //var csvPath = @"../../../../../samples/_PRESTIGE-2pK-2024-01-04-13-36-02.csv";
 //var csvPath = @"D:\Github\csv2kml\samples\20240119\_PRESTIGE-2pK-2024-01-19-15-05-51.csv";
@@ -23,6 +24,7 @@ foreach (var f in files)
         Console.WriteLine(errors);
     }
 }
+
 Data[] LoadFromFRSKYTelemetry(string path)
 {
     var res = new List<Data>();

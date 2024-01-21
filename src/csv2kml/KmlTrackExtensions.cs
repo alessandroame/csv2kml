@@ -226,18 +226,6 @@ namespace csv2kml
             Console.WriteLine($"point count: {data.Length}");
         }
 
-        public static FlyTo CreateFlyTo(AbstractView view)
-        {
-            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
-            var res = new FlyTo();
-            res.Mode = FlyToMode.Bounce;
-            res.Duration = 2;
-            res.View = view;
-            return res;
-        }
-
-
-
         public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
         {
             var tourplaylist = new Playlist();
@@ -264,13 +252,23 @@ namespace csv2kml
 
             var tourplaylist = new Playlist();
 
+            var maxDeltaHeading = 30;
+            var oldHeading=0d;
             for (int i = 0; i < data.Length- frameBeforeStep; i += frameBeforeStep)
             {
                 var from= data[i];
                 var to = data[i + frameBeforeStep];
                 var lookAt = from.CreateLookAt(to,follow, altitudeMode, altitudeOffset);
+
+                if (oldHeading != 0)
+                {
+                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                }
                 var flyTo = from.CreateFlyTo(to, lookAt,FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);
+
+                oldHeading = lookAt.Heading.HasValue?lookAt.Heading.Value:0;
             }
             var tour = new Tour { Name = cameraName };
             tour.Playlist = tourplaylist;
