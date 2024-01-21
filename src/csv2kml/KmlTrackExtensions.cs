@@ -29,7 +29,7 @@ namespace csv2kml
                 var k = (float)i / subdivisions;
                 var color = k.ToColor();
                 var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                var extrudeColor = $"11{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                var extrudeColor = $"22{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 Console.WriteLine($"{styleId} -> {lineColor}");
                 container.AddStyle(new Style
                 {
@@ -48,7 +48,7 @@ namespace csv2kml
                         Color = Color32.Parse(extrudeColor)
                     }
                 });
-                lineColor = $"66{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                lineColor = $"44{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 container.AddStyle(new Style
                 {
                     Id = $"ground{styleId}",
@@ -242,8 +242,6 @@ namespace csv2kml
 
                 var camera = from.CreateCamera(to, altitudeMode, altitudeOffset);
                 var flyTo = from.CreateFlyTo(to, camera, FlyToMode.Smooth);
-                tourplaylist.AddTourPrimitive(flyTo);
-
                 tourplaylist.AddTourPrimitive(flyTo);
             }
             var tour = new Tour { Name = cameraName };

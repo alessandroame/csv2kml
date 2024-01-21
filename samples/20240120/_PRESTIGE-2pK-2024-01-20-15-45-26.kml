@@ -16,7 +16,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11ffff00</color>
+        <color>22ffff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-10">
@@ -24,11 +24,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>66ffff00</color>
+        <color>44ffff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11ffff00</color>
+        <color>22ffff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-10">
@@ -49,7 +49,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11d8ff00</color>
+        <color>22d8ff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-9">
@@ -57,11 +57,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>66d8ff00</color>
+        <color>44d8ff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11d8ff00</color>
+        <color>22d8ff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-9">
@@ -82,7 +82,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11b2ff00</color>
+        <color>22b2ff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-8">
@@ -90,11 +90,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>66b2ff00</color>
+        <color>44b2ff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11b2ff00</color>
+        <color>22b2ff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-8">
@@ -115,7 +115,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>118cff00</color>
+        <color>228cff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-7">
@@ -123,11 +123,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>668cff00</color>
+        <color>448cff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>118cff00</color>
+        <color>228cff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-7">
@@ -148,7 +148,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1166ff00</color>
+        <color>2266ff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-6">
@@ -156,11 +156,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6666ff00</color>
+        <color>4466ff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1166ff00</color>
+        <color>2266ff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-6">
@@ -181,7 +181,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>113fff00</color>
+        <color>223fff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-5">
@@ -189,11 +189,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>663fff00</color>
+        <color>443fff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>113fff00</color>
+        <color>223fff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-5">
@@ -214,7 +214,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1119ff00</color>
+        <color>2219ff00</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-4">
@@ -222,11 +222,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6619ff00</color>
+        <color>4419ff00</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1119ff00</color>
+        <color>2219ff00</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-4">
@@ -247,7 +247,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff0c</color>
+        <color>2200ff0c</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-3">
@@ -255,11 +255,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ff0c</color>
+        <color>4400ff0c</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff0c</color>
+        <color>2200ff0c</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-3">
@@ -280,7 +280,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff32</color>
+        <color>2200ff32</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-2">
@@ -288,11 +288,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ff32</color>
+        <color>4400ff32</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff32</color>
+        <color>2200ff32</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-2">
@@ -313,7 +313,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff59</color>
+        <color>2200ff59</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed-1">
@@ -321,11 +321,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ff59</color>
+        <color>4400ff59</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff59</color>
+        <color>2200ff59</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed-1">
@@ -346,7 +346,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff7f</color>
+        <color>2200ff7f</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed0">
@@ -354,11 +354,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ff7f</color>
+        <color>4400ff7f</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ff7f</color>
+        <color>2200ff7f</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed0">
@@ -379,7 +379,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ffa5</color>
+        <color>2200ffa5</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed1">
@@ -387,11 +387,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ffa5</color>
+        <color>4400ffa5</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ffa5</color>
+        <color>2200ffa5</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed1">
@@ -412,7 +412,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ffcc</color>
+        <color>2200ffcc</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed2">
@@ -420,11 +420,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600ffcc</color>
+        <color>4400ffcc</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100ffcc</color>
+        <color>2200ffcc</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed2">
@@ -445,7 +445,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100fff2</color>
+        <color>2200fff2</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed3">
@@ -453,11 +453,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600fff2</color>
+        <color>4400fff2</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100fff2</color>
+        <color>2200fff2</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed3">
@@ -478,7 +478,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100e5ff</color>
+        <color>2200e5ff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed4">
@@ -486,11 +486,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600e5ff</color>
+        <color>4400e5ff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100e5ff</color>
+        <color>2200e5ff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed4">
@@ -511,7 +511,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100bfff</color>
+        <color>2200bfff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed5">
@@ -519,11 +519,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>6600bfff</color>
+        <color>4400bfff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>1100bfff</color>
+        <color>2200bfff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed5">
@@ -544,7 +544,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110098ff</color>
+        <color>220098ff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed6">
@@ -552,11 +552,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>660098ff</color>
+        <color>440098ff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110098ff</color>
+        <color>220098ff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed6">
@@ -577,7 +577,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110072ff</color>
+        <color>220072ff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed7">
@@ -585,11 +585,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>660072ff</color>
+        <color>440072ff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110072ff</color>
+        <color>220072ff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed7">
@@ -610,7 +610,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11004cff</color>
+        <color>22004cff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed8">
@@ -618,11 +618,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>66004cff</color>
+        <color>44004cff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>11004cff</color>
+        <color>22004cff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed8">
@@ -643,7 +643,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110026ff</color>
+        <color>220026ff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed9">
@@ -651,11 +651,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>660026ff</color>
+        <color>440026ff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110026ff</color>
+        <color>220026ff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed9">
@@ -676,7 +676,7 @@
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110000ff</color>
+        <color>220000ff</color>
       </PolyStyle>
     </Style>
     <Style id="groundvspeed10">
@@ -684,11 +684,11 @@
         <scale>0</scale>
       </IconStyle>
       <LineStyle>
-        <color>660000ff</color>
+        <color>440000ff</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>110000ff</color>
+        <color>220000ff</color>
       </PolyStyle>
     </Style>
     <Style id="vspeed10">
