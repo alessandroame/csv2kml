@@ -2,4 +2,6 @@
 
 I want to convert frsky telemetry to a kml file that contains flight track coloured by vertical speed.
 
-Sample video https://www.youtube.com/watch?v=24ygvXTrJxs
+Sample videos:
+- multi views https://www.youtube.com/watch?v=24ygvXTrJxs
+- tour demo https://www.youtube.com/watch?v=eP0nbnM9clY
