@@ -17,7 +17,7 @@ foreach (var f in files)
     Console.WriteLine($"\r\n\r\nConverting {f}");
     var data = LoadFromFRSKYTelemetry(f);
     PrintStats(data);
-    var generator = new KmlGenerator(data, Path.GetFileNameWithoutExtension(f));
+    var generator = new KmlGenerator(data, Path.GetFileNameWithoutExtension(f), SharpKml.Dom.AltitudeMode.Absolute,355);
     if (!generator.SaveTo(Path.ChangeExtension(f, "kml"), out var errors))
     {
         Console.WriteLine(errors);

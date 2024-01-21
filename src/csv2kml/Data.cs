@@ -38,7 +38,6 @@ public static class DataExtensions
     public static void CalculateTiltPan(this Data from, Data to,out double pan,out double tilt)
     {
         const double EarthRadius = 6371; // Radius of the Earth in kilometers
-        const double CorrectionFactor = 0.0005; // Altitude correction factor (decreases tilt and increases pan with increasing altitude)
 
         // Convert coordinates to Cartesian
         double x1 = EarthRadius * Math.Cos(from.Latitude) * Math.Cos(from.Longitude);
@@ -61,50 +60,51 @@ public static class DataExtensions
         // Calculate tilt
         tilt = Math.Acos(dz/d);
     }
-  
-    public static FlyTo CreateCamera(this Data from, Data to)
+
+    public static FlyTo CreateFlyTo(this Data from, Data to, AbstractView view, FlyToMode flyMode=FlyToMode.Smooth)
     {
         //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
         var res = new FlyTo();
-        res.Mode = FlyToMode.Bounce;
-        res.Duration = 2;
-        Camera cam = new Camera();
-        cam.AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround;
-        cam.Latitude = from.Latitude;
-        cam.Longitude = from.Longitude;
-        cam.Altitude = from.Altitude;
-        from.CalculateTiltPan(to, out var pan, out var tilt);
-        cam.Heading = pan.toDegree();
-        cam.Roll = 0;
-        cam.Tilt = tilt.toDegree();
-        res.View = cam;
+        res.Mode = flyMode;
+        res.Duration = to.Time.Subtract(from.Time).TotalSeconds;
+        res.View = view;
         return res;
     }
 
-    static double pan = 0;
-    public static FlyTo CreateLookAt(this Data from,Data to,bool follow)
+    public static Camera CreateCamera(this Data from, Data to, SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset)
     {
-        var res = new FlyTo();
-        res.Mode = FlyToMode.Smooth;
-        res.Duration = to.Time.Subtract(from.Time).TotalSeconds;
-        var lookat = new LookAt();
-        lookat.AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround;
-        lookat.Latitude = from.Latitude;
-        lookat.Longitude = from.Longitude;
-        lookat.Altitude = from.Altitude;
-        lookat.Range = 120;
-        lookat.Tilt = 80;
+        //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
+        Camera res = new Camera();
+        res.AltitudeMode = altitudeMode;
+        res.Latitude = from.Latitude;
+        res.Longitude = from.Longitude;
+        res.Altitude = from.Altitude+ altitudeOffset;
+        from.CalculateTiltPan(to, out var pan, out var tilt);
+        res.Heading = pan.toDegree();
+        res.Roll = 0;
+        res.Tilt = tilt.toDegree();
+        return res;
+    }
+
+    public static LookAt CreateLookAt(this Data from,Data to,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+    {
+        var res = new LookAt();
+        res.AltitudeMode = altitudeMode;
+        res.Latitude = from.Latitude;
+        res.Longitude = from.Longitude;
+        res.Altitude = from.Altitude+ altitudeOffset;
+        res.Range = 120;
+        res.Tilt = 80;
         if (follow)
         {
             double xDiff = to.Latitude - from.Latitude;
             double yDiff = to.Longitude - from.Longitude;
             var p = Math.Atan2(yDiff, xDiff).toDegree();
-            lookat.Heading = p;
+            res.Heading = p;
         }
 
         /*lookat.Heading = pan++*10;
         if (pan >= 36) pan = 0;*/
-        res.View = lookat;
         return res;
     }
 

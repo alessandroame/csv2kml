@@ -5,6 +5,7 @@ using SharpKml.Engine;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -20,26 +21,49 @@ namespace csv2kml
         private Data[] _data;
         private Document _kml;
         private Folder _rootFolder;
+        private SharpKml.Dom.AltitudeMode _altitudeMode;
+        private int _altitudeOffset;
 
-        public KmlGenerator(Data[] data,string rootName)
+        public KmlGenerator(Data[] data,string rootName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
         {
+            _altitudeMode = altitudeMode;
+            _altitudeOffset = altitudeOffset;
             _data = data;
             _kml = new Document();
             _rootFolder = new Folder
             {
                 Name = rootName
             };
-            _rootFolder.GenerateColoredTrack(data,"Coloured by climb",20);
+            var min = data.Min(d => d.VSpeed);
+            var max = data.Max(d => d.VSpeed);
+            var colorsSubdivision = 20;
+            _rootFolder.BuildStyles("vspeed", colorsSubdivision);
+
+            var dataFolder=new Folder
+            {
+                Name = "Coloured by climb"
+            };
+            _rootFolder.AddFeature(dataFolder);
+            dataFolder.GenerateColoredTrack(data,"Track", colorsSubdivision,_altitudeMode,_altitudeOffset);
+            dataFolder.GenerateLineString(data, "extruded lineString", colorsSubdivision, _altitudeMode, _altitudeOffset);
+
+
+            var animationFolder = new Folder
+            {
+                Name = "Animations"
+            };
             //_rootFolder.GenerateCameraPath(data,"Follow cam", 1);
             //var pattern = new int { 1, 2, 5, 10, 25, 50, 100 };
             var pattern = new int[] { 1, 2, 5, 10, 25};
             var name = "LookAt and follow";
             foreach (var v in pattern)
-                _rootFolder.GenerateLookPath(data, $"{name} every {v} frame", v, true);
+                animationFolder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v, true);
             
             name = "LookAt from behind";
             foreach(var v in pattern)
-                _rootFolder.GenerateLookPath(data, $"{name} every {v} frame", v);
+                animationFolder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v);
+
+            _rootFolder.AddFeature(animationFolder);
         }
 
         private Bitmap GenerateLegend(double k,int subdivisions)

@@ -1,6 +1,7 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
+using SharpKml.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace csv2kml
 {
     public static class KmlTrackExtensions
     {
-        private static void BuildStyles(this Container container, string name, int subdivisions)
+        public static void BuildStyles(this Container container, string name, int subdivisions)
         {
+            //Used to hide children
             container.AddStyle(new Style
             {
                 Id = "hiddenChildren",
@@ -26,14 +28,51 @@ namespace csv2kml
                 var styleId = $"{name}{i - subdivisions / 2}";
                 var k = (float)i / subdivisions;
                 var color = k.ToColor();
-                var c = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                Console.WriteLine($"{styleId} -> {c}");
+                var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                var extrudeColor = $"11{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                Console.WriteLine($"{styleId} -> {lineColor}");
+                container.AddStyle(new Style
+                {
+                    Id = $"extruded{styleId}",
+                    Line = new LineStyle
+                    {
+                        Color = Color32.Parse(lineColor),
+                        Width = 3
+                    },
+                    Icon = new IconStyle
+                    {
+                        Scale = 0
+                    },
+                    Polygon = new PolygonStyle
+                    {
+                        Color = Color32.Parse(extrudeColor)
+                    }
+                });
+                lineColor = $"66{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                container.AddStyle(new Style
+                {
+                    Id = $"ground{styleId}",
+                    Line = new LineStyle
+                    {
+                        Color = Color32.Parse(lineColor),
+                        Width = 3
+                    },
+                    Icon = new IconStyle
+                    {
+                        Scale = 0
+                    },
+                    Polygon = new PolygonStyle
+                    {
+                        Color = Color32.Parse(extrudeColor)
+                    }
+                });
+                lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 container.AddStyle(new Style
                 {
                     Id = styleId,
                     Line = new LineStyle
                     {
-                        Color = Color32.Parse(c),
+                        Color = Color32.Parse(lineColor),
                         Width = 3
                     },
                     Icon = new IconStyle
@@ -45,28 +84,72 @@ namespace csv2kml
         }
 
         static int trackIndex = 0;
-        public static Placemark CreatePlacemark(this List<Data> data, string style)
+        public static Placemark CreatePlacemarkWithTrack(this List<Data> data, string style, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
         {
             var track = new Track
             {
-                AltitudeMode = SharpKml.Dom.AltitudeMode.RelativeToGround,
+                AltitudeMode = altitudeMode,
             };
+            var groundTrack = new Track
+            {
+                AltitudeMode = SharpKml.Dom.AltitudeMode.ClampToGround,
+            };
+            var multiTrack = new MultipleTrack();
+            multiTrack.AddTrack(track);
+            multiTrack.AddTrack(groundTrack);
             var placemark = new Placemark
             {
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
-                Geometry = track,
+                Geometry = multiTrack,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
                 Description = new Description { Text = $"#{trackIndex++} -> {style}" }
             };
             foreach (var d in data)
             {
                 track.AddWhen(d.Time);
-                track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude));
+                track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude+altitudeOffset));
+                groundTrack.AddWhen(d.Time);
+                groundTrack.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + altitudeOffset));
             }
             return placemark;
         }
 
-        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision)
+        public static Placemark CreatePlacemarkWithLineString(this List<Data> data, string style, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+        {
+            var lineString = new LineString
+            {
+                AltitudeMode = altitudeMode,
+                Extrude = true,
+                //Tessellate = true,
+                Coordinates = new CoordinateCollection(),
+            };
+            var groundLineString = new LineString
+            {
+                AltitudeMode = SharpKml.Dom.AltitudeMode.ClampToGround,
+                //Tessellate = true,
+                Coordinates = new CoordinateCollection(),
+            };
+            var multipleGeometry = new MultipleGeometry();
+            multipleGeometry.AddGeometry(lineString);
+            multipleGeometry.AddGeometry(groundLineString);
+            var placemark = new Placemark
+            {
+                Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
+                Geometry = multipleGeometry,
+                StyleUrl = new Uri($"#extruded{style}", UriKind.Relative),
+                Description = new Description { Text = $"#{trackIndex++} -> {style}" }
+            };
+            
+            placemark.Viewpoint=data.First().CreateLookAt(data.Last(),true,altitudeMode,altitudeOffset);
+            foreach (var d in data)
+            {
+                lineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude+ altitudeOffset));
+                groundLineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude + altitudeOffset));
+            }
+            return placemark;
+        }
+
+        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
         {
             var folder = new Folder
             {
@@ -74,9 +157,6 @@ namespace csv2kml
                 StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
             };
             container.AddFeature(folder);
-            var min = data.Min(d => d.VSpeed);
-            var max = data.Max(d => d.VSpeed);
-            container.BuildStyles("vspeed", subdivision);
             var coords = new List<Data>();
             var oldNormalizedValue = 0;
             for (var i = 0; i < data.Length - 1; i++)
@@ -92,46 +172,88 @@ namespace csv2kml
 
                 if (oldNormalizedValue != normalizedValue)
                 {
-                    var p = CreatePlacemark(coords, $"vspeed{oldNormalizedValue}");
+                    var p = CreatePlacemarkWithTrack(coords, $"vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
                 }
             }
             coords.Add(data[data.Length - 1]);
-            var lastPlacemark = CreatePlacemark(coords, $"{name}{oldNormalizedValue}");
+            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
             folder.AddFeature(lastPlacemark);
             Console.WriteLine($"point count: {data.Length}");
         }
 
-        public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, int frameBeforeStep = 10)
+        public static void GenerateLineString(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+        {
+            var folder = new Folder
+            {
+                Name = name,
+                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
+            };
+            container.AddFeature(folder);
+            var coords = new List<Data>();
+            var oldNormalizedValue = 0;
+            for (var i = 0; i < data.Length - 1; i++)
+            {
+                var item = data[i];
+                var nextItem = data[i + 1];
+                //var delta = nextItem.Altitude - item.Altitude;
+                var delta = item.VSpeed;
+                coords.Add(item);
+                var nv = delta.Normalize(3);
+                //Console.WriteLine($"{delta}->{nv}");
+                var normalizedValue = (int)Math.Round(nv * subdivision / 2);
+
+                if (oldNormalizedValue != normalizedValue)
+                {
+                    var p = CreatePlacemarkWithLineString(coords, $"vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
+                    folder.AddFeature(p);
+                    coords = new List<Data> { item };
+                    oldNormalizedValue = normalizedValue;
+                }
+            }
+            coords.Add(data[data.Length - 1]);
+            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            folder.AddFeature(lastPlacemark);
+            Console.WriteLine($"point count: {data.Length}");
+        }
+
+        public static FlyTo CreateFlyTo(AbstractView view)
+        {
+            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
+            var res = new FlyTo();
+            res.Mode = FlyToMode.Bounce;
+            res.Duration = 2;
+            res.View = view;
+            return res;
+        }
+
+
+
+        public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
         {
             var tourplaylist = new Playlist();
             for (int i = frameBeforeStep; i < data.Length - 1; i += frameBeforeStep)
             {
                 var from = data[i - frameBeforeStep];
                 var to = data[i - frameBeforeStep + 1];
-                var flyto = from.CreateCamera(to);
-                tourplaylist.AddTourPrimitive(flyto);
+                var flyto = from.CreateCamera(to, altitudeMode,altitudeOffset);
+
+                var camera = from.CreateCamera(to, altitudeMode, altitudeOffset);
+                var flyTo = from.CreateFlyTo(to, camera, FlyToMode.Smooth);
+                tourplaylist.AddTourPrimitive(flyTo);
+
+                tourplaylist.AddTourPrimitive(flyTo);
             }
             var tour = new Tour { Name = cameraName };
             tour.Playlist = tourplaylist;
             container.AddFeature(tour);
-
-            tourplaylist = new Playlist();
-            for (int i = frameBeforeStep; i < data.Length - 1; i += frameBeforeStep)
-            {
-                var from = data[i - frameBeforeStep];
-                var to = data[i - frameBeforeStep + 1];
-                var flyto = to.CreateCamera(from);
-                tourplaylist.AddTourPrimitive(flyto);
-            }
-            tour = new Tour { Name = cameraName + " -> inverse heading" };
-            tour.Playlist = tourplaylist;
-            container.AddFeature(tour);
         }
+
         public static void GenerateLookPath(this Container container, 
-            Data[] data,string cameraName, 
+            Data[] data,string cameraName,
+            SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
             int frameBeforeStep = 10, bool follow = false)
         {
 
@@ -139,8 +261,11 @@ namespace csv2kml
 
             for (int i = 0; i < data.Length- frameBeforeStep; i += frameBeforeStep)
             {
-                var flyto = data[i].CreateLookAt(data[i+ frameBeforeStep],follow);
-                tourplaylist.AddTourPrimitive(flyto);
+                var from= data[i];
+                var to = data[i + frameBeforeStep];
+                var lookAt = from.CreateLookAt(to,follow, altitudeMode, altitudeOffset);
+                var flyTo = from.CreateFlyTo(to, lookAt,FlyToMode.Smooth);
+                tourplaylist.AddTourPrimitive(flyTo);
             }
             var tour = new Tour { Name = cameraName };
             tour.Playlist = tourplaylist;
