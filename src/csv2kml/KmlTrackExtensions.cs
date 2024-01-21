@@ -98,6 +98,11 @@ namespace csv2kml
                 Geometry = multiTrack,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
                 Description = new Description { Text = $"#{trackIndex++} -> {style}" }
+            }; 
+            placemark.Time = new SharpKml.Dom.TimeSpan
+            {
+                Begin = data.First().Time,
+                End = data.Last().Time,
             };
             foreach (var d in data)
             {
@@ -132,8 +137,12 @@ namespace csv2kml
                 StyleUrl = new Uri($"#extruded{style}", UriKind.Relative),
                 Description = new Description { Text = $"#{trackIndex++} -> {style}" }
             };
-            
-            placemark.Viewpoint=data.First().CreateLookAt(data.Last(),true,altitudeMode,altitudeOffset);
+            placemark.Time = new SharpKml.Dom.TimeSpan
+            {
+                Begin = data.First().Time,
+                End = data.Last().Time,
+            };
+            //placemark.Viewpoint = data.First().CreateLookAt(data.Last(), true, altitudeMode, altitudeOffset);
             foreach (var d in data)
             {
                 lineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude+ altitudeOffset));
@@ -166,6 +175,9 @@ namespace csv2kml
                 if (oldNormalizedValue != normalizedValue)
                 {
                     var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
+
+                    p.Viewpoint = coords.First().CreateLookAt(coords.Last(), true, altitudeMode, altitudeOffset);
+
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
@@ -173,6 +185,8 @@ namespace csv2kml
             }
             coords.Add(data[data.Length - 1]);
             var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            lastPlacemark.Viewpoint = coords.First().CreateLookAt(coords.Last(), true, altitudeMode, altitudeOffset);
+
             folder.AddFeature(lastPlacemark);
             Console.WriteLine($"point count: {data.Length}");
         }

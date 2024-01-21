@@ -90,11 +90,11 @@ public static class DataExtensions
     {
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
-        res.Latitude = from.Latitude;
-        res.Longitude = from.Longitude;
-        res.Altitude = from.Altitude+ altitudeOffset;
-        res.Range = 120;
-        res.Tilt = 80;
+        res.Latitude = (from.Latitude+to.Latitude)/2;
+        res.Longitude = (from.Longitude+to.Longitude)/2;
+        res.Altitude = to.Altitude+ altitudeOffset;
+        res.Range = 180;
+        res.Tilt = 85;
         if (follow)
         {
             double xDiff = to.Latitude - from.Latitude;
@@ -102,7 +102,11 @@ public static class DataExtensions
             var p = Math.Atan2(yDiff, xDiff).toDegree();
             res.Heading = p;
         }
-
+        res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+        {
+            Begin = from.Time.AddSeconds(-30),
+            End = from.Time.AddSeconds(1),
+        };
         /*lookat.Heading = pan++*10;
         if (pan >= 36) pan = 0;*/
         return res;
