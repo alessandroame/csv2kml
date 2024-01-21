@@ -29,7 +29,7 @@ namespace csv2kml
                 var k = (float)i / subdivisions;
                 var color = k.ToColor();
                 var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                var extrudeColor = $"22{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                var extrudeColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 Console.WriteLine($"{styleId} -> {lineColor}");
                 container.AddStyle(new Style
                 {
@@ -90,13 +90,8 @@ namespace csv2kml
             {
                 AltitudeMode = altitudeMode,
             };
-            var groundTrack = new Track
-            {
-                AltitudeMode = SharpKml.Dom.AltitudeMode.ClampToGround,
-            };
             var multiTrack = new MultipleTrack();
             multiTrack.AddTrack(track);
-            multiTrack.AddTrack(groundTrack);
             var placemark = new Placemark
             {
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
@@ -108,8 +103,6 @@ namespace csv2kml
             {
                 track.AddWhen(d.Time);
                 track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude+altitudeOffset));
-                groundTrack.AddWhen(d.Time);
-                groundTrack.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + altitudeOffset));
             }
             return placemark;
         }
@@ -149,7 +142,7 @@ namespace csv2kml
             return placemark;
         }
 
-        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,string styleRadix="")
         {
             var folder = new Folder
             {
@@ -172,14 +165,14 @@ namespace csv2kml
 
                 if (oldNormalizedValue != normalizedValue)
                 {
-                    var p = CreatePlacemarkWithTrack(coords, $"vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
+                    var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
                 }
             }
             coords.Add(data[data.Length - 1]);
-            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
             folder.AddFeature(lastPlacemark);
             Console.WriteLine($"point count: {data.Length}");
         }

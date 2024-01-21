@@ -13,6 +13,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using AltitudeMode = SharpKml.Dom.AltitudeMode;
 
 namespace csv2kml
 {
@@ -44,7 +45,8 @@ namespace csv2kml
                 Name = "Coloured by climb"
             };
             _rootFolder.AddFeature(dataFolder);
-            dataFolder.GenerateColoredTrack(data,"Track", colorsSubdivision,_altitudeMode,_altitudeOffset);
+            dataFolder.GenerateColoredTrack(data, "Track", colorsSubdivision, _altitudeMode, _altitudeOffset);
+            dataFolder.GenerateColoredTrack(data, "Ground Track", colorsSubdivision, AltitudeMode.ClampToGround, _altitudeOffset,"ground");
             dataFolder.GenerateLineString(data, "extruded lineString", colorsSubdivision, _altitudeMode, _altitudeOffset);
 
 
