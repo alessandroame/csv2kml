@@ -1,18 +1,6 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
-using SharpKml.Dom.GX;
-using SharpKml.Engine;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using AltitudeMode = SharpKml.Dom.AltitudeMode;
 
 namespace csv2kml
@@ -20,7 +8,7 @@ namespace csv2kml
     public  class KmlGenerator
     {
         private Data[] _data;
-        private Document _kml;
+        private Kml _kml;
         private Folder _rootFolder;
         private SharpKml.Dom.AltitudeMode _altitudeMode;
         private int _altitudeOffset;
@@ -30,7 +18,7 @@ namespace csv2kml
             _altitudeMode = altitudeMode;
             _altitudeOffset = altitudeOffset;
             _data = data;
-            _kml = new Document();
+            _kml = new Kml();
             _rootFolder = new Folder
             {
                 Name = rootName
@@ -103,7 +91,13 @@ namespace csv2kml
             errors = string.Empty;
             try
             {
-                _kml.AddFeature(_rootFolder);
+                var document = new Document
+                {
+                    Name = $"imported from {fn}"
+                };
+                document.AddFeature(_rootFolder);
+                _kml.Feature = document;
+                //_kml.(document);
                 var serializer = new Serializer();
                 serializer.Serialize(_kml);
                 var outStream = new FileStream(fn, FileMode.Create);
