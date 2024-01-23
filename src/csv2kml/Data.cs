@@ -135,7 +135,7 @@ public static class DataExtensions
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
         {
             Begin = from.Time.AddSeconds(-lookbackCount),
-            End = from.Time.AddSeconds(1),
+            End = from.Time,
         };
         /*lookat.Heading = pan++*10;
         if (pan >= 36) pan = 0;*/

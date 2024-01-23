@@ -1,6 +1,8 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
+using System;
 using System.Drawing;
+using System.Xml.Linq;
 using AltitudeMode = SharpKml.Dom.AltitudeMode;
 
 namespace csv2kml
@@ -13,7 +15,7 @@ namespace csv2kml
         private SharpKml.Dom.AltitudeMode _altitudeMode;
         private int _altitudeOffset;
 
-        public KmlGenerator(Data[] data,string rootName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+        public KmlGenerator(Data[] data,string rootName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, TourSettings tourSettings)
         {
             _altitudeMode = altitudeMode;
             _altitudeOffset = altitudeOffset;
@@ -34,60 +36,21 @@ namespace csv2kml
                 Name = "Coloured by climb"
             };
             _rootFolder.AddFeature(dataFolder);
-            dataFolder.GenerateColoredTrack(data, "Track", colorsSubdivision, _altitudeMode, _altitudeOffset);
-            dataFolder.GenerateColoredTrack(data, "Ground Track", colorsSubdivision, AltitudeMode.ClampToGround, _altitudeOffset, "ground");
-            dataFolder.GenerateLineString(data, "extruded lineString", colorsSubdivision, _altitudeMode, _altitudeOffset);
+            dataFolder.GenerateColoredTrack(data, "3D track", colorsSubdivision, _altitudeMode, _altitudeOffset);
+            dataFolder.GenerateColoredTrack(data, "Ground track", colorsSubdivision, AltitudeMode.ClampToGround, _altitudeOffset, "ground");
+            dataFolder.GenerateLineString(data, "extruded track", colorsSubdivision, _altitudeMode, _altitudeOffset);
 
 
             var animationFolder = new Folder
             {
                 Name = "Animations", Open = true
             };
-            //_rootFolder.GenerateCameraPath(data,"Follow cam", 1);
-            //var pattern = new int { 1, 2, 5, 10, 25, 50, 100 };
-            //            var panPattern = new int[] { 0, 45, 60, 90, 120, 180 };
-            var tiltPattern = new int?[] {null };
-            var panPattern = new int[] { 0 };
-            var lookBackPattern = new int[] {1,30,60, data.Length};
-            var framePattern = new int[] {1,10,30};
-
-            var name = "LookAt and follow";
-            var minDistance = 200;
-            foreach (var tilt in tiltPattern)
-            {
-                var tiltValue = tilt.HasValue?tilt.ToString(): "Automatic";
-                var tiltForlder = new Folder
-                {
-                    Name = $"Tilt {tiltValue}°",
-                    Open = true
-                };
-                foreach (var pan in panPattern)
-                {
-                    var panForlder = new Folder
-                    {
-                        Name = $"Pan {pan}°",
-                        Open = true
-                    };
-                    foreach (var lookbackCount in lookBackPattern)
-                    {
-                        var lookbackForlder = new Folder
-                        {
-                            Name = $"lookback {lookbackCount}",
-                            Open = true
-                        };
-                        foreach (var frameCount in framePattern)
-                            lookbackForlder.GenerateLookBackPath(data, $"{name} every {frameCount} frame", _altitudeMode, _altitudeOffset, frameCount, lookbackCount, minDistance, tilt, pan, true);
-                        panForlder.AddFeature(lookbackForlder);
-                    }
-                    //name = "LookAt from behind";
-                    //foreach (var v in framePattern)
-                    //    panForlder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v, minDistance, tilt,pan);
-
-                    tiltForlder.AddFeature(panForlder);
-                }
-                animationFolder.AddFeature(tiltForlder);
-            }
-            _rootFolder.AddFeature(animationFolder);
+            _rootFolder.GenerateLookBackPath(data, "Animation", _altitudeMode, _altitudeOffset, 
+                    tourSettings.LookAtCameraSettings.UpdatePositionFrameInterval,
+                    tourSettings.LookAtCameraSettings.LookBackSeconds,
+                    tourSettings.LookAtCameraSettings.MetersFromTrackPoint,
+                    tourSettings.LookAtCameraSettings.Tilt,
+                    tourSettings.LookAtCameraSettings.PanOffset, true);
         }
 
         private Bitmap GenerateLegend(double k,int subdivisions)
@@ -127,7 +90,7 @@ namespace csv2kml
             {
                 var document = new Document
                 {
-                    Name = $"imported from {fn}",
+                    Name = $"imported from {Path.GetFileName(fn)}",
                     Open = true
                 };
                 document.AddFeature(_rootFolder);

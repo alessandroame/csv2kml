@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "csv2kml": {
+      "commandName": "Project",
+      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -f ..\\..\\..\\..\\..\\samples\\20240120 -a 356"
+    }
+  }
+}

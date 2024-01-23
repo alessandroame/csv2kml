@@ -1,14 +1,13 @@
 ﻿{
-  "tour": {
     //How many seconds of track are visible
     "visibleHistorySeconds": 30,
     "lookAtCamera": {
       //Distance of the camera in meters from the current point
-      "distanceFromTrackPoint": 200,
+      "metersFromTrackPoint": 200,
 
       //align camera to look current point and cameraLookBackSeconds point
       //null look always to the first track point
-      "lookBackSeconds": 30,
+      "lookBackSeconds": 20,
 
       //tilt in degree
       //
@@ -25,5 +24,4 @@
       //10  -> every 10 track point  -> smoother
       "updatePositionFrameInterval":10
     }
-  }
 }
