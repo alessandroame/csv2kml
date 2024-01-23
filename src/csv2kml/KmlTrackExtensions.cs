@@ -172,7 +172,7 @@ namespace csv2kml
                 //    var previousItem = data[i - 1];
                 //    delta = item.Altitude - previousItem.Altitude;
                 //}
-                var nv = data[i + 1].VSpeed.Normalize(10);
+                var nv = data[i + 1].VSpeed.Normalize(3);
                 //Console.WriteLine($"{delta}->{nv}");
                 var normalizedValue = (int)Math.Round(nv * subdivision / 2);
 
@@ -211,7 +211,7 @@ namespace csv2kml
                 //    var previousItem = data[i - 1];
                 //    delta = item.Altitude - previousItem.Altitude;
                 //}
-                var nv = data[i + 1].VSpeed.Normalize(10);
+                var nv = data[i + 1].VSpeed.Normalize(3);
                 //Console.WriteLine($"{delta}->{nv}");
                 var normalizedValue = (int)Math.Round(nv * subdivision / 2);
             
