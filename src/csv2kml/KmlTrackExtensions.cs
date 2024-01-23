@@ -298,19 +298,19 @@ namespace csv2kml
 
             var tourplaylist = new Playlist();
 
-            var maxDeltaHeading = 60;
+            var maxDeltaHeading = 360;
             var oldHeading = 0d;
             for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
             {
                 var from = data[i];
-                var lookTo = data[Math.Max(0,i-lookbackCount)];
+                var lookTo = data[Math.Max(0, i - lookbackCount)];
                 var lookAt = from.CreateLookAt(lookTo, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan);
 
-                if (oldHeading != 0)
-                {
-                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
-                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
-                }
+                //if (oldHeading != 0)
+                //{
+                //    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                //    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                //}
                 var duration = data[i+ frameBeforeStep].Time.Subtract(from.Time).TotalSeconds;
                 var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);

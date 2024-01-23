@@ -39,16 +39,16 @@ public static class DataExtensions
 
     public static double Distance(this Data from, Data to)
     {
-        const double EarthRadius = 6371; // Radius of the Earth in kilometers
+        const double EarthRadius = 6371 * 1000; // Radius of the Earth in kilometers
 
         // Convert coordinates to Cartesian
-        double x1 = EarthRadius * Math.Cos(from.Latitude) * Math.Cos(from.Longitude);
-        double y1 = EarthRadius * Math.Cos(from.Latitude) * Math.Sin(from.Longitude);
-        double z1 = EarthRadius * Math.Sin(from.Latitude);
+        double x1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Cos(from.Longitude.toRadian());
+        double y1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Sin(from.Longitude.toRadian());
+        double z1 = EarthRadius + from.Altitude;
 
-        double x2 = EarthRadius * Math.Cos(to.Latitude) * Math.Cos(to.Longitude);
-        double y2 = EarthRadius * Math.Cos(to.Latitude) * Math.Sin(to.Longitude);
-        double z2 = EarthRadius * Math.Sin(to.Latitude);
+        double x2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Cos(to.Longitude.toRadian());
+        double y2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Sin(to.Longitude.toRadian());
+        double z2 = EarthRadius + to.Altitude;
 
         var dx = x2 - x1;
         var dy = y2 - y1;
@@ -58,30 +58,31 @@ public static class DataExtensions
         return d;
     }
 
-    public static void CalculateTiltPan(this Data from, Data to,out double pan,out double tilt)
+    public static void CalculateTiltPan(this Data from, Data to,out double pan,out double tilt, out double distance, out double groundDistance)
     {
-        const double EarthRadius = 6371; // Radius of the Earth in kilometers
-
+        const double EarthRadius = 6371*1000; // Radius of the Earth in kilometers
+        
         // Convert coordinates to Cartesian
-        double x1 = EarthRadius * Math.Cos(from.Latitude) * Math.Cos(from.Longitude);
-        double y1 = EarthRadius * Math.Cos(from.Latitude) * Math.Sin(from.Longitude);
-        double z1 = EarthRadius * Math.Sin(from.Latitude);
+        double x1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Cos(from.Longitude.toRadian());
+        double y1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Sin(from.Longitude.toRadian());
+        double z1 = EarthRadius + from.Altitude;
 
-        double x2 = EarthRadius * Math.Cos(to.Latitude) * Math.Cos(to.Longitude);
-        double y2 = EarthRadius * Math.Cos(to.Latitude) * Math.Sin(to.Longitude);
-        double z2 = EarthRadius * Math.Sin(to.Latitude);
+        double x2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Cos(to.Longitude.toRadian());
+        double y2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Sin(to.Longitude.toRadian());
+        double z2 = EarthRadius + to.Altitude;
 
         var dx = x2 - x1;
         var dy = y2 - y1;
         var dz = z2 - z1;
-        // Calculate great circle distance
-        double d = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy,2) + Math.Pow(dz, 2));
 
         // Calculate pan
         pan = Math.Atan2(dy,dx).toDegree();
 
+        // Calculate great circle distance
+        distance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2) + Math.Pow(dz, 2));
         // Calculate tilt
-        tilt = Math.Acos(dz / d).toDegree();
+        tilt = Math.Acos(dz / distance).toDegree();
+        groundDistance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2));
     }
 
     //public static Camera CreateCamera(this Data from, Data to, SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset)
@@ -103,28 +104,31 @@ public static class DataExtensions
     {
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
-        //res.Latitude = (from.Latitude + to.Latitude) / 2;
-        //res.Longitude = (from.Longitude + to.Longitude) / 2;
         res.Latitude = from.Latitude;
         res.Longitude = from.Longitude;
-        //res.Altitude = to.Altitude / 3 * 2 + altitudeOffset;
         res.Altitude = from.Altitude + altitudeOffset;
-        res.Range = Math.Max(minDistance, from.Distance(to));
-        from.CalculateTiltPan(to,out var calculatedPan, out var calculatedTilt);
+        res.Range = minDistance;
+        from.CalculateTiltPan(to,out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
         if (tilt.HasValue)
         {
             res.Tilt = tilt;
         }
         else{
-            var value = Math.Abs(calculatedTilt);
+            var value = 180-calculatedTilt;
             res.Tilt = Math.Min(70, value);
-            Debug.WriteLine($"--------------------------------------------------");
-            Debug.WriteLine($"alt from {from.Altitude} to {to.Altitude}");
-            Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+            //Debug.WriteLine($"--------------------------------------------------");
+            //Debug.WriteLine($"alt from {from.Altitude} to {to.Altitude}");
+            //Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+            //Debug.WriteLine($"distance:{distance} groundDist:{groundDistance} alt:{from.Altitude - to.Altitude}");
+            //Debug.WriteLine($"tilt calculated:{calculatedTilt} value:{value} out{res.Tilt}");
         }
         if (follow)
         {
-            res.Heading = calculatedPan + pan;
+            var panValue = 180-calculatedPan + pan;
+            res.Heading = panValue;
+            //Debug.WriteLine($"--------------------------------------------------");
+            //Debug.WriteLine($"pan calculated {calculatedPan} offset {pan} -> output {res.Heading}");
+
         }
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
         {

@@ -46,13 +46,13 @@ namespace csv2kml
             //_rootFolder.GenerateCameraPath(data,"Follow cam", 1);
             //var pattern = new int { 1, 2, 5, 10, 25, 50, 100 };
             //            var panPattern = new int[] { 0, 45, 60, 90, 120, 180 };
-            var tiltPattern = new int?[] {null,45 };
-            var panPattern = new int[] { 0};
-            var framePattern = new int[] {1,30};
+            var tiltPattern = new int?[] {null };
+            var panPattern = new int[] { 0 };
+            var lookBackPattern = new int[] { data.Length,30,1 };
+            var framePattern = new int[] {1,10,30};
 
             var name = "LookAt and follow";
             var minDistance = 300;
-
             foreach (var tilt in tiltPattern)
             {
                 var tiltValue = tilt.HasValue?tilt.ToString(): "Automatic";
@@ -68,9 +68,17 @@ namespace csv2kml
                         Name = $"Pan {pan}°",
                         Open = true
                     };
-                    foreach (var frameCount in framePattern)
-                        panForlder.GenerateLookBackPath(data, $"{name} every {frameCount} frame", _altitudeMode, _altitudeOffset, frameCount, 30, minDistance, tilt,pan, true);
-
+                    foreach (var lookbackCount in lookBackPattern)
+                    {
+                        var lookbackForlder = new Folder
+                        {
+                            Name = $"lookback {lookbackCount}",
+                            Open = true
+                        };
+                        foreach (var frameCount in framePattern)
+                            lookbackForlder.GenerateLookBackPath(data, $"{name} every {frameCount} frame", _altitudeMode, _altitudeOffset, frameCount, lookbackCount, minDistance, tilt, pan, true);
+                        panForlder.AddFeature(lookbackForlder);
+                    }
                     //name = "LookAt from behind";
                     //foreach (var v in framePattern)
                     //    panForlder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v, minDistance, tilt,pan);
