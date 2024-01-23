@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
+using System.ComponentModel.Design.Serialization;
+using System.Diagnostics;
 
 public class Data
 {
@@ -76,56 +78,57 @@ public static class DataExtensions
         double d = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy,2) + Math.Pow(dz, 2));
 
         // Calculate pan
-        pan = Math.Atan2(dy,dx);
+        pan = Math.Atan2(dy,dx).toDegree();
 
         // Calculate tilt
-        tilt = Math.Acos(dz/d);
+        tilt = Math.Acos(dz / d).toDegree();
     }
 
-    public static FlyTo CreateFlyTo(this Data from, Data to, AbstractView view, FlyToMode flyMode=FlyToMode.Smooth)
-    {
-        //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
-        var res = new FlyTo();
-        res.Mode = flyMode;
-        res.Duration = to.Time.Subtract(from.Time).TotalSeconds;
-        res.View = view;
-        return res;
-    }
+    //public static Camera CreateCamera(this Data from, Data to, SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset)
+    //{
+    //    //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
+    //    Camera res = new Camera();
+    //    res.AltitudeMode = altitudeMode;
+    //    res.Latitude = from.Latitude;
+    //    res.Longitude = from.Longitude;
+    //    res.Altitude = from.Altitude+ altitudeOffset;
+    //    from.CalculateTiltPan(to, out var pan, out var tilt);
+    //    res.Heading = pan.toDegree();
+    //    res.Roll = 0;
+    //    res.Tilt = tilt.toDegree();
+    //    return res;
+    //}
 
-    public static Camera CreateCamera(this Data from, Data to, SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset)
-    {
-        //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
-        Camera res = new Camera();
-        res.AltitudeMode = altitudeMode;
-        res.Latitude = from.Latitude;
-        res.Longitude = from.Longitude;
-        res.Altitude = from.Altitude+ altitudeOffset;
-        from.CalculateTiltPan(to, out var pan, out var tilt);
-        res.Heading = pan.toDegree();
-        res.Roll = 0;
-        res.Tilt = tilt.toDegree();
-        return res;
-    }
-
-    public static LookAt CreateLookAt(this Data from,Data to,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
+    public static LookAt CreateLookAt(this Data from,Data to,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int minDistance,int? tilt,int pan)
     {
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
-        res.Latitude = (from.Latitude+to.Latitude)/2;
-        res.Longitude = (from.Longitude+to.Longitude)/2;
-        res.Altitude = to.Altitude+ altitudeOffset;
-        res.Range = Math.Max(120, from.Distance(to));
-        res.Tilt = 80;
+        //res.Latitude = (from.Latitude + to.Latitude) / 2;
+        //res.Longitude = (from.Longitude + to.Longitude) / 2;
+        res.Latitude = from.Latitude;
+        res.Longitude = from.Longitude;
+        //res.Altitude = to.Altitude / 3 * 2 + altitudeOffset;
+        res.Altitude = from.Altitude + altitudeOffset;
+        res.Range = Math.Max(minDistance, from.Distance(to));
+        from.CalculateTiltPan(to,out var calculatedPan, out var calculatedTilt);
+        if (tilt.HasValue)
+        {
+            res.Tilt = tilt;
+        }
+        else{
+            var value = Math.Abs(calculatedTilt);
+            res.Tilt = Math.Min(70, value);
+            Debug.WriteLine($"--------------------------------------------------");
+            Debug.WriteLine($"alt from {from.Altitude} to {to.Altitude}");
+            Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+        }
         if (follow)
         {
-            double xDiff = to.Latitude - from.Latitude;
-            double yDiff = to.Longitude - from.Longitude;
-            var p = Math.Atan2(yDiff, xDiff).toDegree() +20;
-            res.Heading = p;
+            res.Heading = calculatedPan + pan;
         }
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
         {
-            Begin = from.Time.AddSeconds(-30),
+            Begin = from.Time.AddSeconds(-60),
             End = from.Time.AddSeconds(1),
         };
         /*lookat.Heading = pan++*10;

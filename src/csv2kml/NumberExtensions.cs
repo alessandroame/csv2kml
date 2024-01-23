@@ -9,11 +9,16 @@ namespace csv2kml
 {
     public static class NumberExtensions
     {
+
         public static Color ToColor(this float normalizedValue)
         {
-            float hue = (1 - normalizedValue) * 225;
-            if (hue < 0) hue += 360;
-            if (hue > 360) hue -= 360;
+            var hue = (1-normalizedValue) * 240 ;
+            return HueToRGB(hue);
+        }
+        public static Color HueToRGB(float hue)
+        {
+            while (hue < 0) hue += 360;
+            while (hue > 360) hue -= 360;
             float red, green, blue;
 
             if (hue < 60)

@@ -21,7 +21,8 @@ namespace csv2kml
             _kml = new Kml();
             _rootFolder = new Folder
             {
-                Name = rootName
+                Name = rootName,
+                Open = true
             };
             var min = data.Min(d => d.VSpeed);
             var max = data.Max(d => d.VSpeed);
@@ -34,25 +35,50 @@ namespace csv2kml
             };
             _rootFolder.AddFeature(dataFolder);
             dataFolder.GenerateColoredTrack(data, "Track", colorsSubdivision, _altitudeMode, _altitudeOffset);
-            dataFolder.GenerateColoredTrack(data, "Ground Track", colorsSubdivision, AltitudeMode.ClampToGround, _altitudeOffset,"ground");
+            dataFolder.GenerateColoredTrack(data, "Ground Track", colorsSubdivision, AltitudeMode.ClampToGround, _altitudeOffset, "ground");
             dataFolder.GenerateLineString(data, "extruded lineString", colorsSubdivision, _altitudeMode, _altitudeOffset);
 
 
             var animationFolder = new Folder
             {
-                Name = "Animations"
+                Name = "Animations", Open = true
             };
             //_rootFolder.GenerateCameraPath(data,"Follow cam", 1);
             //var pattern = new int { 1, 2, 5, 10, 25, 50, 100 };
-            var pattern = new int[] { 1, 2, 5, 10, 25};
-            var name = "LookAt and follow";
-            foreach (var v in pattern)
-                animationFolder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v, true);
-            
-            name = "LookAt from behind";
-            foreach(var v in pattern)
-                animationFolder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v);
+            //            var panPattern = new int[] { 0, 45, 60, 90, 120, 180 };
+            var tiltPattern = new int?[] {null,45 };
+            var panPattern = new int[] { 0};
+            var framePattern = new int[] {1,30};
 
+            var name = "LookAt and follow";
+            var minDistance = 300;
+
+            foreach (var tilt in tiltPattern)
+            {
+                var tiltValue = tilt.HasValue?tilt.ToString(): "Automatic";
+                var tiltForlder = new Folder
+                {
+                    Name = $"Tilt {tiltValue}°",
+                    Open = true
+                };
+                foreach (var pan in panPattern)
+                {
+                    var panForlder = new Folder
+                    {
+                        Name = $"Pan {pan}°",
+                        Open = true
+                    };
+                    foreach (var frameCount in framePattern)
+                        panForlder.GenerateLookBackPath(data, $"{name} every {frameCount} frame", _altitudeMode, _altitudeOffset, frameCount, 30, minDistance, tilt,pan, true);
+
+                    //name = "LookAt from behind";
+                    //foreach (var v in framePattern)
+                    //    panForlder.GenerateLookPath(data, $"{name} every {v} frame", _altitudeMode, _altitudeOffset, v, minDistance, tilt,pan);
+
+                    tiltForlder.AddFeature(panForlder);
+                }
+                animationFolder.AddFeature(tiltForlder);
+            }
             _rootFolder.AddFeature(animationFolder);
         }
 
@@ -93,7 +119,8 @@ namespace csv2kml
             {
                 var document = new Document
                 {
-                    Name = $"imported from {fn}"
+                    Name = $"imported from {fn}",
+                    Open = true
                 };
                 document.AddFeature(_rootFolder);
                 _kml.Feature = document;

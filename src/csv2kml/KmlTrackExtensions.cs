@@ -30,7 +30,6 @@ namespace csv2kml
                 var color = k.ToColor();
                 var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 var extrudeColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                Console.WriteLine($"{styleId} -> {lineColor}");
                 container.AddStyle(new Style
                 {
                     Id = $"extruded{styleId}",
@@ -80,6 +79,7 @@ namespace csv2kml
                         Scale = 0
                     }
                 });
+                Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }
 
@@ -97,7 +97,8 @@ namespace csv2kml
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
                 Geometry = multiTrack,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
-                Description = new Description { Text = $"#{trackIndex++} -> {style}" }
+                Description = new Description { Text = $"#{trackIndex++} -> {style} " +
+                    $"H: {string.Join(" -> ", data.Select(d=>Math.Round(d.Altitude)))}" }
             }; 
             placemark.Time = new SharpKml.Dom.TimeSpan
             {
@@ -151,7 +152,7 @@ namespace csv2kml
             return placemark;
         }
 
-        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,string styleRadix="")
+        public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, string styleRadix = "")
         {
             var folder = new Folder
             {
@@ -164,20 +165,20 @@ namespace csv2kml
             for (var i = 0; i < data.Length - 1; i++)
             {
                 var item = data[i];
-                var nextItem = data[i + 1];
-                //var delta = nextItem.Altitude - item.Altitude;
-                var delta = item.VSpeed;
                 coords.Add(item);
-                var nv = delta.Normalize(3);
+                //var delta = 0d;
+                //if (i > 0)
+                //{
+                //    var previousItem = data[i - 1];
+                //    delta = item.Altitude - previousItem.Altitude;
+                //}
+                var nv = data[i + 1].VSpeed.Normalize(10);
                 //Console.WriteLine($"{delta}->{nv}");
                 var normalizedValue = (int)Math.Round(nv * subdivision / 2);
 
                 if (oldNormalizedValue != normalizedValue)
                 {
                     var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
-
-                    p.Viewpoint = coords.First().CreateLookAt(coords.Last(), true, altitudeMode, altitudeOffset);
-
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
@@ -185,7 +186,6 @@ namespace csv2kml
             }
             coords.Add(data[data.Length - 1]);
             var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
-            lastPlacemark.Viewpoint = coords.First().CreateLookAt(coords.Last(), true, altitudeMode, altitudeOffset);
 
             folder.AddFeature(lastPlacemark);
             Console.WriteLine($"point count: {data.Length}");
@@ -204,14 +204,17 @@ namespace csv2kml
             for (var i = 0; i < data.Length - 1; i++)
             {
                 var item = data[i];
-                var nextItem = data[i + 1];
-                //var delta = nextItem.Altitude - item.Altitude;
-                var delta = item.VSpeed;
                 coords.Add(item);
-                var nv = delta.Normalize(3);
+                //var delta = 0d;
+                //if (i > 0)
+                //{
+                //    var previousItem = data[i - 1];
+                //    delta = item.Altitude - previousItem.Altitude;
+                //}
+                var nv = data[i + 1].VSpeed.Normalize(10);
                 //Console.WriteLine($"{delta}->{nv}");
                 var normalizedValue = (int)Math.Round(nv * subdivision / 2);
-
+            
                 if (oldNormalizedValue != normalizedValue)
                 {
                     var p = CreatePlacemarkWithLineString(coords, $"vspeed{oldNormalizedValue}", altitudeMode, altitudeOffset);
@@ -226,49 +229,93 @@ namespace csv2kml
             Console.WriteLine($"point count: {data.Length}");
         }
 
-        public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
-        {
-            var tourplaylist = new Playlist();
-            for (int i = frameBeforeStep; i < data.Length - 1; i += frameBeforeStep)
-            {
-                var from = data[i - frameBeforeStep];
-                var to = data[i - frameBeforeStep + 1];
-                var flyto = from.CreateCamera(to, altitudeMode,altitudeOffset);
+        //public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
+        //{
+        //    var tourplaylist = new Playlist();
+        //    for (int i = frameBeforeStep; i < data.Length - 1; i += frameBeforeStep)
+        //    {
+        //        var from = data[i - frameBeforeStep];
+        //        var to = data[i - frameBeforeStep + 1];
+        //        var flyto = from.CreateCamera(to, altitudeMode,altitudeOffset);
 
-                var camera = from.CreateCamera(to, altitudeMode, altitudeOffset);
-                var flyTo = from.CreateFlyTo(to, camera, FlyToMode.Smooth);
-                tourplaylist.AddTourPrimitive(flyTo);
-            }
-            var tour = new Tour { Name = cameraName };
-            tour.Playlist = tourplaylist;
-            container.AddFeature(tour);
-        }
+        //        var camera = from.CreateCamera(to, altitudeMode, altitudeOffset);
+        //        var flyTo = from.CreateFlyTo(to, camera, FlyToMode.Smooth);
+        //        tourplaylist.AddTourPrimitive(flyTo);
+        //    }
+        //    var tour = new Tour { Name = cameraName };
+        //    tour.Playlist = tourplaylist;
+        //    container.AddFeature(tour);
+        //}
 
-        public static void GenerateLookPath(this Container container, 
-            Data[] data,string cameraName,
+        public static void GenerateLookPath(this Container container,
+            Data[] data, string cameraName,
             SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
-            int frameBeforeStep = 10, bool follow = false)
+            int frameBeforeStep,
+            int minDistance, int tilt, int pan, bool follow = false)
         {
 
             var tourplaylist = new Playlist();
 
             var maxDeltaHeading = 30;
-            var oldHeading=0d;
-            for (int i = 0; i < data.Length- frameBeforeStep; i += frameBeforeStep)
+            var oldHeading = 0d;
+            for (int i = 0; i < data.Length - frameBeforeStep-1; i += frameBeforeStep)
             {
-                var from= data[i];
+                var from = data[i];
                 var to = data[i + frameBeforeStep];
-                var lookAt = from.CreateLookAt(to,follow, altitudeMode, altitudeOffset);
+                var lookAt = from.CreateLookAt(to, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan);
 
                 if (oldHeading != 0)
                 {
                     if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
                     if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
                 }
-                var flyTo = from.CreateFlyTo(to, lookAt,FlyToMode.Smooth);
+                var duration =to.Time.Subtract(from.Time).TotalSeconds;
+                var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);
 
-                oldHeading = lookAt.Heading.HasValue?lookAt.Heading.Value:0;
+                oldHeading = lookAt.Heading.HasValue ? lookAt.Heading.Value : 0;
+            }
+            var tour = new Tour { Name = cameraName };
+            tour.Playlist = tourplaylist;
+            container.AddFeature(tour);
+        }
+        public static FlyTo CreateFlyTo(double duration, AbstractView view, FlyToMode flyMode = FlyToMode.Smooth)
+        {
+            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
+            var res = new FlyTo();
+            res.Mode = flyMode;
+            res.Duration = duration;
+            res.View = view;
+            return res;
+        }
+
+        public static void GenerateLookBackPath(this Container container,
+            Data[] data, string cameraName,
+            SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
+            int frameBeforeStep,int lookbackCount,
+            int minDistance, int? tilt, int pan, bool follow = false)
+        {
+
+            var tourplaylist = new Playlist();
+
+            var maxDeltaHeading = 60;
+            var oldHeading = 0d;
+            for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
+            {
+                var from = data[i];
+                var lookTo = data[Math.Max(0,i-lookbackCount)];
+                var lookAt = from.CreateLookAt(lookTo, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan);
+
+                if (oldHeading != 0)
+                {
+                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                }
+                var duration = data[i+ frameBeforeStep].Time.Subtract(from.Time).TotalSeconds;
+                var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
+                tourplaylist.AddTourPrimitive(flyTo);
+
+                oldHeading = lookAt.Heading.HasValue ? lookAt.Heading.Value : 0;
             }
             var tour = new Tour { Name = cameraName };
             tour.Playlist = tourplaylist;
