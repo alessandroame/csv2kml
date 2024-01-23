@@ -262,7 +262,7 @@ namespace csv2kml
             {
                 var from = data[i];
                 var to = data[i + frameBeforeStep];
-                var lookAt = from.CreateLookAt(to, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan);
+                var lookAt = from.CreateLookAt(to, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan,60);
 
                 if (oldHeading != 0)
                 {
@@ -298,19 +298,19 @@ namespace csv2kml
 
             var tourplaylist = new Playlist();
 
-            var maxDeltaHeading = 360;
+            var maxDeltaHeading = 30;
             var oldHeading = 0d;
             for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
             {
                 var from = data[i];
                 var lookTo = data[Math.Max(0, i - lookbackCount)];
-                var lookAt = from.CreateLookAt(lookTo, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan);
+                var lookAt = from.CreateLookAt(lookTo, follow, altitudeMode, altitudeOffset, minDistance, tilt, pan, lookbackCount);
 
-                //if (oldHeading != 0)
-                //{
-                //    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
-                //    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
-                //}
+                if (oldHeading != 0)
+                {
+                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                }
                 var duration = data[i+ frameBeforeStep].Time.Subtract(from.Time).TotalSeconds;
                 var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);

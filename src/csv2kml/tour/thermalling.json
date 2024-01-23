@@ -1,0 +1,29 @@
+﻿{
+  "tour": {
+    //How many seconds of track are visible
+    "visibleHistorySeconds": 30,
+    "lookAtCamera": {
+      //Distance of the camera in meters from the current point
+      "distanceFromTrackPoint": 200,
+
+      //align camera to look current point and cameraLookBackSeconds point
+      //null look always to the first track point
+      "lookBackSeconds": 30,
+
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+
+      //pan offset in degree
+      "panOffset": 0,
+
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "updatePositionFrameInterval":10
+    }
+  }
+}

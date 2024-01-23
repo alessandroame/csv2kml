@@ -48,11 +48,11 @@ namespace csv2kml
             //            var panPattern = new int[] { 0, 45, 60, 90, 120, 180 };
             var tiltPattern = new int?[] {null };
             var panPattern = new int[] { 0 };
-            var lookBackPattern = new int[] { data.Length,30,1 };
+            var lookBackPattern = new int[] {1,30,60, data.Length};
             var framePattern = new int[] {1,10,30};
 
             var name = "LookAt and follow";
-            var minDistance = 300;
+            var minDistance = 200;
             foreach (var tilt in tiltPattern)
             {
                 var tiltValue = tilt.HasValue?tilt.ToString(): "Automatic";

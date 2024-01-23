@@ -100,7 +100,9 @@ public static class DataExtensions
     //    return res;
     //}
 
-    public static LookAt CreateLookAt(this Data from,Data to,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int minDistance,int? tilt,int pan)
+    public static LookAt CreateLookAt(this Data from,Data to,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, 
+            int altitudeOffset, int minDistance,int? tilt,int pan, int lookbackCount
+        )
     {
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
@@ -132,7 +134,7 @@ public static class DataExtensions
         }
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
         {
-            Begin = from.Time.AddSeconds(-60),
+            Begin = from.Time.AddSeconds(-lookbackCount),
             End = from.Time.AddSeconds(1),
         };
         /*lookat.Heading = pan++*10;
