@@ -108,7 +108,7 @@ public static class DataExtensions
         res.AltitudeMode = altitudeMode;
         res.Latitude = from.Latitude;
         res.Longitude = from.Longitude;
-        res.Altitude = from.Altitude + altitudeOffset;
+        res.Altitude = Math.Max(altitudeOffset, from.Altitude + altitudeOffset);
         res.Range = minDistance;
         from.CalculateTiltPan(to,out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
         if (tilt.HasValue)
@@ -121,6 +121,7 @@ public static class DataExtensions
             //Debug.WriteLine($"--------------------------------------------------");
             //Debug.WriteLine($"alt from {from.Altitude} to {to.Altitude}");
             //Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+
             //Debug.WriteLine($"distance:{distance} groundDist:{groundDistance} alt:{from.Altitude - to.Altitude}");
             //Debug.WriteLine($"tilt calculated:{calculatedTilt} value:{value} out{res.Tilt}");
         }

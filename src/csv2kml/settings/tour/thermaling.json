@@ -3,11 +3,11 @@
     "visibleHistorySeconds": 30,
     "lookAtCamera": {
       //Distance of the camera in meters from the current point
-      "metersFromTrackPoint": 200,
+      "metersFromTrackPoint": 150,
 
       //align camera to look current point and cameraLookBackSeconds point
       //null look always to the first track point
-      "lookBackSeconds": 20,
+      "lookBackSeconds": 30,
 
       //tilt in degree
       //
@@ -22,6 +22,6 @@
 
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval":10
+      "updatePositionFrameInterval":5
     }
 }
