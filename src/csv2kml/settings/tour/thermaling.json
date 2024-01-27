@@ -1,10 +1,20 @@
-﻿{
-    //How many seconds of track are visible
-    "visibleHistorySeconds": 30,
-    "lookAtCamera": {
-      //Distance of the camera in meters from the current point
-      "metersFromTrackPoint": 150,
+{
+  //enum ClampToGround, RelativeToGround, Absolute
+  "AltitudeMode": "Absolute",
 
+  //int required if AltitudeMode is Absolute 
+  "AltitudeOffset": "360",
+  "lookAtCamera": [
+    {
+      "name": "animation",
+      "rangeOffsetInMeters": 150,
+
+
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 30,
+      //bool lookat bounding box center insted pf start of lookBackSeconds segment
+      "lookAtBoundingBoxCenter": true,
+      //requered if LookAtBoundingBoxCenter is false
       //align camera to look current point and cameraLookBackSeconds point
       //null look always to the first track point
       "lookBackSeconds": 30,
@@ -22,6 +32,7 @@
 
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval":5
-    }
+      "updatePositionFrameInterval": 1
+    }    
+  ]
 }
