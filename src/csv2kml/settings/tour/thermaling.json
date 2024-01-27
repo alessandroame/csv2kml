@@ -1,4 +1,4 @@
-﻿{
+{
   //enum ClampToGround, RelativeToGround, Absolute
   "AltitudeMode": "Absolute",
 
@@ -7,8 +7,7 @@
   "lookAtCamera": [
     {
       "name": "animation",
-      //int Distance of the camera in meters from the current point
-      "rangeInMeters": 100,
+    "rangeOffsetInMeters": 50,
 
 
       //int How many seconds of track are visible

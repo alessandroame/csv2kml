@@ -1,16 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Csv;
-using SharpKml.Base;
-using SharpKml.Dom;
-using SharpKml.Engine;
-using System.ComponentModel.Design.Serialization;
-using Csv2KML;
-using csv2kml;
-using MathNet.Numerics.Interpolation;
-using CommandLine.Text;
 using CommandLine;
-using Newtonsoft.Json;
-using System.Drawing.Printing;
+using csv2kml;
 
 internal class Program
 {

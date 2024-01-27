@@ -1,4 +1,4 @@
-﻿using SharpKml.Base;
+using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
 using SharpKml.Engine;
@@ -263,6 +263,7 @@ namespace csv2kml
 
         public static void GenerateLookBackPath(this Container container,
             Data[] data, string cameraName,
+            SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset,
             SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
             int frameBeforeStep, bool lookAtBoundingboxCenter, int visibleHistorySeconds,int lookbackSeconds,
             int minDistance, int? tilt, int pan, bool follow = false)
@@ -272,7 +273,7 @@ namespace csv2kml
 
             var maxDeltaHeading = 30;
             var oldHeading = 0d;
-            for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
+            for (int i = 0; i < data.Length - updateInterval; i += updateInterval)
             {
                 var dataToShow = new List<Data>();
                 for (var n = i; n >= 0; n--)

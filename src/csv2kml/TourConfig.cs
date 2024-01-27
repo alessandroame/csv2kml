@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using SharpKml.Dom;
 using System;
 using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace csv2kml
     public class LookAtCameraSettings
     {
         public string Name { get; set; }
-        public int RangeInMeters { get; set; }
+        public int RangeOffsetInMeters { get; set; }
         public int LookBackSeconds { get; set; }
         public bool LookAtBoundingBoxCenter { get; set; }
         public int VisibleHistorySeconds { get; set; }

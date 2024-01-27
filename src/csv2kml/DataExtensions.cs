@@ -1,19 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-using MathNet.Numerics;
+// See https://aka.ms/new-console-template for more information
 using SharpKml.Dom;
 using SharpKml.Engine;
 using System.Diagnostics;
-using System.Numerics;
-using System.Runtime.CompilerServices;
 
 public static class DataExtensions
 {
-    private static double toRadian(this double num)
+    private static double ToRadian(this double num)
     {
         return num * Math.PI / 180;
     }
 
-    private static double toDegree(this double num)
+    private static double ToDegree(this double num)
     {
         return num * 180 / Math.PI;
     }
@@ -23,12 +20,12 @@ public static class DataExtensions
         const double EarthRadius = 6371 * 1000; // Radius of the Earth in kilometers
 
         // Convert coordinates to Cartesian
-        double x1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Cos(from.Longitude.toRadian());
-        double y1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Sin(from.Longitude.toRadian());
+        double x1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
+        double y1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
         double z1 = EarthRadius + from.Altitude;
 
-        double x2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Cos(to.Longitude.toRadian());
-        double y2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Sin(to.Longitude.toRadian());
+        double x2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Cos(to.Longitude.ToRadian());
+        double y2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Sin(to.Longitude.ToRadian());
         double z2 = EarthRadius + to.Altitude;
 
         var dx = x2 - x1;
@@ -44,12 +41,12 @@ public static class DataExtensions
         const double EarthRadius = 6371*1000; // Radius of the Earth in kilometers
         
         // Convert coordinates to Cartesian
-        double x1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Cos(from.Longitude.toRadian());
-        double y1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Sin(from.Longitude.toRadian());
+        double x1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
+        double y1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
         double z1 = EarthRadius + from.Altitude.Value;
 
-        double x2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Cos(to.Longitude.toRadian());
-        double y2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Sin(to.Longitude.toRadian());
+        double x2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Cos(to.Longitude.ToRadian());
+        double y2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Sin(to.Longitude.ToRadian());
         double z2 = EarthRadius + to.Altitude.Value;
 
         var dx = x2 - x1;
@@ -57,12 +54,12 @@ public static class DataExtensions
         var dz = z2 - z1;
 
         // Calculate pan
-        pan = Math.Atan2(dy,dx).toDegree();
+        pan = Math.Atan2(dy,dx).ToDegree();
 
         // Calculate great circle distance
         distance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2) + Math.Pow(dz, 2));
         // Calculate tilt
-        tilt = Math.Acos(dz / distance).toDegree();
+        tilt = Math.Acos(dz / distance).ToDegree();
         groundDistance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2));
     }
 
@@ -86,12 +83,12 @@ public static class DataExtensions
         const double EarthRadius = 6371 * 1000; // Radius of the Earth in kilometers
 
         // Convert coordinates to Cartesian
-        double x1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Cos(from.Longitude.toRadian());
-        double y1 = EarthRadius * Math.Cos(from.Latitude.toRadian()) * Math.Sin(from.Longitude.toRadian());
+        double x1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
+        double y1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
         double z1 = EarthRadius + from.Altitude.Value;
 
-        double x2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Cos(to.Longitude.toRadian());
-        double y2 = EarthRadius * Math.Cos(to.Latitude.toRadian()) * Math.Sin(to.Longitude.toRadian());
+        double x2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Cos(to.Longitude.ToRadian());
+        double y2 = EarthRadius * Math.Cos(to.Latitude.ToRadian()) * Math.Sin(to.Longitude.ToRadian());
         double z2 = EarthRadius + to.Altitude.Value;
 
         var dx = x2 - x1;
@@ -108,7 +105,8 @@ public static class DataExtensions
     }
 
     public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, 
-            int altitudeOffset, bool lookAtBoundingboxCenter,int visibleHistorySeconds, int minDistance,int? tilt,int pan
+        int rangeOffset, SharpKml.Dom.AltitudeMode altitudeMode, 
+            int altitudeOffset, int visibleHistorySeconds, int? tilt,int pan
         )
     {
         var bb = new BoundingBox
@@ -127,10 +125,13 @@ public static class DataExtensions
         //{
         //    lookTo = data[Math.min]
         //}
+        var bbCenter=new SharpKml.Base.Vector(bb.Center.Latitude,bb.Center.Longitude,
+            (data.Min(d => d.Altitude) + data.Max(d=>d.Altitude)));!!!!!
+        
         var from = new SharpKml.Base.Vector(bb.North, bb.East, 0); 
         var to = new SharpKml.Base.Vector(bb.South, bb.West, data.Max(d=>d.Altitude));
         var d=from.Distance(to);
-        
+
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
         res.Latitude = bb.Center.Latitude;

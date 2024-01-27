@@ -1,4 +1,4 @@
-﻿using Csv;
+using Csv;
 using Csv2KML;
 using SharpKml.Base;
 using SharpKml.Dom;
