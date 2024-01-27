@@ -7,7 +7,7 @@
   "lookAtCamera": [
     {
       "name": "animation",
-    "rangeOffsetInMeters": 50,
+      "rangeOffsetInMeters": 150,
 
 
       //int How many seconds of track are visible

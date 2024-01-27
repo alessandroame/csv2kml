@@ -13,77 +13,6 @@ namespace csv2kml
 {
     public static class KmlExtensions
     {
-        public static void BuildStyles(this Container container, string name, int subdivisions)
-        {
-            //Used to hide children
-            container.AddStyle(new Style
-            {
-                Id = "hiddenChildren",
-                List = new ListStyle
-                {
-                    ItemType = ListItemType.CheckHideChildren
-                }
-            });
-            for (var i = 0; i <= subdivisions; i++)
-            {
-                var styleId = $"{name}{i - subdivisions / 2}";
-                var k = (float)i / subdivisions;
-                var color = k.ToColor();
-                var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                var extrudeColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = $"extruded{styleId}",
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    },
-                    Polygon = new PolygonStyle
-                    {
-                        Color = Color32.Parse(extrudeColor)
-                    }
-                });
-                lineColor = $"44{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = $"ground{styleId}",
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    },
-                    Polygon = new PolygonStyle
-                    {
-                        Color = Color32.Parse(extrudeColor)
-                    }
-                });
-                lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = styleId,
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    }
-                });
-                Console.WriteLine($"{styleId} -> {lineColor}");
-            }
-        }
-
         static int trackIndex = 0;
         public static Placemark CreatePlacemarkWithTrack(this List<Data> data, string style, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset)
         {
@@ -192,7 +121,7 @@ namespace csv2kml
             var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
 
             folder.AddFeature(lastPlacemark);
-            Console.WriteLine($"point count: {data.Length}");
+            //Console.WriteLine($"point count: {data.Length}");
         }
 
         public static void GenerateLineString(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,string styleRadix)
@@ -230,7 +159,7 @@ namespace csv2kml
             coords.Add(data[data.Length - 1]);
             var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
             folder.AddFeature(lastPlacemark);
-            Console.WriteLine($"point count: {data.Length}");
+            //Console.WriteLine($"point count: {data.Length}");
         }
 
         //public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
@@ -263,17 +192,17 @@ namespace csv2kml
 
         public static void GenerateLookBackPath(this Container container,
             Data[] data, string cameraName,
-            SharpKml.Dom.AltitudeMode altitudeMode,int altitudeOffset,
             SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
-            int frameBeforeStep, bool lookAtBoundingboxCenter, int visibleHistorySeconds,int lookbackSeconds,
-            int minDistance, int? tilt, int pan, bool follow = false)
+            int frameBeforeStep, bool lookAtBoundingboxCenter, 
+            int visibleHistorySeconds,int lookbackSeconds,
+            int rangeOffset, int? tilt, int pan, bool follow = false)
         {
 
             var tourplaylist = new Playlist();
 
             var maxDeltaHeading = 30;
             var oldHeading = 0d;
-            for (int i = 0; i < data.Length - updateInterval; i += updateInterval)
+            for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
             {
                 var dataToShow = new List<Data>();
                 for (var n = i; n >= 0; n--)
@@ -282,7 +211,9 @@ namespace csv2kml
                     if (diff > lookbackSeconds) break;
                     dataToShow.Insert(0, data[n]);
                 }
-                var lookAt = dataToShow.CreateLookAt(follow, altitudeMode, altitudeOffset, lookAtBoundingboxCenter,visibleHistorySeconds, minDistance, tilt, pan);
+                var lookAt = dataToShow.CreateLookAt(follow,rangeOffset,
+                    altitudeMode,altitudeOffset,lookAtBoundingboxCenter,visibleHistorySeconds,
+                    tilt, pan);
 
                 if (oldHeading != 0)
                 {

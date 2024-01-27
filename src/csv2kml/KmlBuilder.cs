@@ -55,7 +55,7 @@ namespace csv2kml
                         cameraSettings.LookAtBoundingBoxCenter,
                         cameraSettings.VisibleHistorySeconds,
                         cameraSettings.LookBackSeconds,
-                        cameraSettings.RangeInMeters,
+                        cameraSettings.RangeOffsetInMeters,
                         cameraSettings.Tilt,
                         cameraSettings.PanOffset, true);
             }
@@ -152,7 +152,7 @@ namespace csv2kml
                         Scale = 0
                     }
                 });
-                Console.WriteLine($"{styleId} -> {lineColor}");
+                //Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }
         private Data[] LoadFromCsv(string csvFilename)
@@ -172,7 +172,9 @@ namespace csv2kml
                     if (!line[_csvConfig.AltitudeIndex].TryParseDouble(out var alt)) continue;
                     if (!line[_csvConfig.ValueToColorizeIndex].TryParseDouble(out var valueToColorize)) continue;
                     var timestamp = DateTime.Parse(line[_csvConfig.TimestampIndex]);
-                    if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
+                    //if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
+                    if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
+
                     //import
                     var data = new Data(timestamp, lat, lon, alt, valueToColorize);
                     res.Add(data);

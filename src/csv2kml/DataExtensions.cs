@@ -104,9 +104,9 @@ public static class DataExtensions
         return new SharpKml.Base.Vector(d.Latitude,d.Longitude,d.Altitude);
     }
 
-    public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, 
+    public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,  
         int rangeOffset, SharpKml.Dom.AltitudeMode altitudeMode, 
-            int altitudeOffset, int visibleHistorySeconds, int? tilt,int pan
+            int altitudeOffset, bool lookAtBoundingboxCenter,int visibleHistorySeconds, int? tilt,int pan
         )
     {
         var bb = new BoundingBox
@@ -119,14 +119,15 @@ public static class DataExtensions
         SharpKml.Base.Vector lookTo;
         //if (lookAtBoundingboxCenter)
         //{
-            lookTo = new SharpKml.Base.Vector(bb.Center.Latitude, bb.Center.Longitude, (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
+        lookTo = new SharpKml.Base.Vector(
+            bb.Center.Latitude, 
+            bb.Center.Longitude,
+            (data.Min(d => d.Altitude) + data.Max(d => d.Altitude))/2);
         //}
         //else
         //{
         //    lookTo = data[Math.min]
         //}
-        var bbCenter=new SharpKml.Base.Vector(bb.Center.Latitude,bb.Center.Longitude,
-            (data.Min(d => d.Altitude) + data.Max(d=>d.Altitude)));!!!!!
         
         var from = new SharpKml.Base.Vector(bb.North, bb.East, 0); 
         var to = new SharpKml.Base.Vector(bb.South, bb.West, data.Max(d=>d.Altitude));
@@ -137,7 +138,7 @@ public static class DataExtensions
         res.Latitude = bb.Center.Latitude;
         res.Longitude = bb.Center.Longitude;
         res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
-        res.Range = Math.Max(minDistance, d*1.6);
+        res.Range = Math.Max(rangeOffset, d*1.6);
 
         data.Last().ToVector().CalculateTiltPan(lookTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
         if (tilt.HasValue)
