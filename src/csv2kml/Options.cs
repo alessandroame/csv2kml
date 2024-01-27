@@ -7,11 +7,11 @@ public class Options
     [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
     public bool Verbose { get; set; }
 
-    [Option('c', "csv", Required = true, HelpText = "csv settings file path")]
-    public string CsvSettingsFN { get; set; }
+    [Option('c', "csv", Required = true, HelpText = "csv config file path")]
+    public string CsvConfigFN { get; set; }
 
-    [Option('t', "tour", Required = true, HelpText = "tour settings file path")]
-    public string TourSettingsFN { get; set; }
+    [Option('t', "tour", Required = true, HelpText = "tour config file path")]
+    public string TourConfigFN { get; set; }
 
     [Option('i', "inputFile", Required = false, HelpText = "telemetry file path")]
     public string TelemetryFN { get; set; }

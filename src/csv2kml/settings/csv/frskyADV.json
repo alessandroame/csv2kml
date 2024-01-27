@@ -3,6 +3,7 @@
   "latitudeIndex": 18,
   "longitudeIndex": 19,
   "altitudeIndex": 20,
-  "verticalSpeedIndex": 8,
-  "speedIndex": 21
+  "ValueToColorizeIndex": 8,
+  "valueMin": -3,
+  "valueMax": 3
 }
