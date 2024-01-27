@@ -264,7 +264,7 @@ namespace csv2kml
         public static void GenerateLookBackPath(this Container container,
             Data[] data, string cameraName,
             SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
-            int frameBeforeStep, int visibleHistorySeconds,int lookbackSeconds,
+            int frameBeforeStep, bool lookAtBoundingboxCenter, int visibleHistorySeconds,int lookbackSeconds,
             int minDistance, int? tilt, int pan, bool follow = false)
         {
 
@@ -281,7 +281,7 @@ namespace csv2kml
                     if (diff > lookbackSeconds) break;
                     dataToShow.Insert(0, data[n]);
                 }
-                var lookAt = dataToShow.CreateLookAt(follow, altitudeMode, altitudeOffset, visibleHistorySeconds, minDistance, tilt, pan);
+                var lookAt = dataToShow.CreateLookAt(follow, altitudeMode, altitudeOffset, lookAtBoundingboxCenter,visibleHistorySeconds, minDistance, tilt, pan);
 
                 if (oldHeading != 0)
                 {

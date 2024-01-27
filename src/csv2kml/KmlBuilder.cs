@@ -52,6 +52,7 @@ namespace csv2kml
             {
                 trackFolder.GenerateLookBackPath(_data, cameraSettings.Name, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,
                         cameraSettings.UpdatePositionFrameInterval,
+                        cameraSettings.LookAtBoundingBoxCenter,
                         cameraSettings.VisibleHistorySeconds,
                         cameraSettings.LookBackSeconds,
                         cameraSettings.RangeInMeters,

@@ -29,6 +29,7 @@ namespace csv2kml
         public string Name { get; set; }
         public int RangeInMeters { get; set; }
         public int LookBackSeconds { get; set; }
+        public bool LookAtBoundingBoxCenter { get; set; }
         public int VisibleHistorySeconds { get; set; }
         public int? Tilt { get; set; }
         public int PanOffset { get; set; }

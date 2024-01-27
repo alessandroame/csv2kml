@@ -10,12 +10,15 @@
       //int Distance of the camera in meters from the current point
       "rangeInMeters": 100,
 
-      //align camera to look current point and cameraLookBackSeconds point
-      //null look always to the first track point
-      "lookBackSeconds": 30,
 
       //int How many seconds of track are visible
       "visibleHistorySeconds": 30,
+      //bool lookat bounding box center insted pf start of lookBackSeconds segment
+      "lookAtBoundingBoxCenter": true,
+      //requered if LookAtBoundingBoxCenter is false
+      //align camera to look current point and cameraLookBackSeconds point
+      //null look always to the first track point
+      "lookBackSeconds": 30,
 
       //tilt in degree
       //

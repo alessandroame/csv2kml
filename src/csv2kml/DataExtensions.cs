@@ -108,7 +108,7 @@ public static class DataExtensions
     }
 
     public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow, SharpKml.Dom.AltitudeMode altitudeMode, 
-            int altitudeOffset, int visibleHistorySeconds, int minDistance,int? tilt,int pan
+            int altitudeOffset, bool lookAtBoundingboxCenter,int visibleHistorySeconds, int minDistance,int? tilt,int pan
         )
     {
         var bb = new BoundingBox
@@ -118,8 +118,15 @@ public static class DataExtensions
             North = data.Min(d => d.Latitude),
             South = data.Max(d => d.Latitude),
         };
-        var bbCenter=new SharpKml.Base.Vector(bb.Center.Latitude,bb.Center.Longitude, (data.Min(d => d.Altitude) + data.Max(d=>d.Altitude))/2);
-        
+        SharpKml.Base.Vector lookTo;
+        //if (lookAtBoundingboxCenter)
+        //{
+            lookTo = new SharpKml.Base.Vector(bb.Center.Latitude, bb.Center.Longitude, (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
+        //}
+        //else
+        //{
+        //    lookTo = data[Math.min]
+        //}
         var from = new SharpKml.Base.Vector(bb.North, bb.East, 0); 
         var to = new SharpKml.Base.Vector(bb.South, bb.West, data.Max(d=>d.Altitude));
         var d=from.Distance(to);
@@ -128,10 +135,10 @@ public static class DataExtensions
         res.AltitudeMode = altitudeMode;
         res.Latitude = bb.Center.Latitude;
         res.Longitude = bb.Center.Longitude;
-        res.Altitude = Math.Max(altitudeOffset, bbCenter.Altitude.Value + altitudeOffset);
+        res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
         res.Range = Math.Max(minDistance, d*1.6);
 
-        data.Last().ToVector().CalculateTiltPan(bbCenter, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
+        data.Last().ToVector().CalculateTiltPan(lookTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
         if (tilt.HasValue)
         {
             res.Tilt = tilt;
