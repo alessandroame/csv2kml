@@ -283,12 +283,12 @@ namespace csv2kml
                 }
                 var lookAt = dataToShow.CreateLookAt(follow, altitudeMode, altitudeOffset, visibleHistorySeconds, minDistance, tilt, pan);
 
-                //if (oldHeading != 0)
-                //{
-                //    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
-                //    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
-                //}
-                var duration = 5;// dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalSeconds;
+                if (oldHeading != 0)
+                {
+                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                }
+                var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalSeconds;
                 var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);
 

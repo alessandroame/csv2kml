@@ -48,13 +48,16 @@ namespace csv2kml
             trackFolder.GenerateColoredTrack(_data, "3D track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,"Value");
             trackFolder.GenerateColoredTrack(_data, "Ground track", _subdivision, AltitudeMode.ClampToGround, _tourConfig.AltitudeOffset, "groundValue");
             trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,"extrudedValue");
-            trackFolder.GenerateLookBackPath(_data, "Animation", _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,
-                    _tourConfig.LookAtCameraSettings.UpdatePositionFrameInterval,
-                    _tourConfig.VisibleHistorySeconds,
-                    _tourConfig.LookAtCameraSettings.LookBackSeconds,
-                    _tourConfig.LookAtCameraSettings.RangeInMeters,
-                    _tourConfig.LookAtCameraSettings.Tilt,
-                    _tourConfig.LookAtCameraSettings.PanOffset, true);
+            foreach (var cameraSettings in _tourConfig.LookAtCameraSettings)
+            {
+                trackFolder.GenerateLookBackPath(_data, cameraSettings.Name, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,
+                        cameraSettings.UpdatePositionFrameInterval,
+                        cameraSettings.VisibleHistorySeconds,
+                        cameraSettings.LookBackSeconds,
+                        cameraSettings.RangeInMeters,
+                        cameraSettings.Tilt,
+                        cameraSettings.PanOffset, true);
+            }
             return trackFolder;
         }
 
@@ -168,7 +171,7 @@ namespace csv2kml
                     if (!line[_csvConfig.AltitudeIndex].TryParseDouble(out var alt)) continue;
                     if (!line[_csvConfig.ValueToColorizeIndex].TryParseDouble(out var valueToColorize)) continue;
                     var timestamp = DateTime.Parse(line[_csvConfig.TimestampIndex]);
-                    if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
+                    if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
                     //import
                     var data = new Data(timestamp, lat, lon, alt, valueToColorize);
                     res.Add(data);
@@ -182,8 +185,53 @@ namespace csv2kml
                     Console.WriteLine(ex);
                 }
             }
+            //Interpolate(res);
             return res.ToArray();
         }
-       
+
+        //private void Interpolate(List<Data> data)
+        //{
+        //    InterpolatField(data, (d) => d.Time.Ticks,
+        //        (data, delta) => { data.Time = data.Time.AddTicks((long)delta); });
+        //    InterpolatField(data, (d) => d.Altitude,
+        //        (data, delta) => { data.Altitude = data.Altitude + delta; });
+        //    InterpolatField(data, (d) => d.Latitude,
+        //        (data, delta) => { data.Latitude = data.Latitude + delta; });
+        //    InterpolatField(data, (d) => d.Longitude,
+        //           (data, delta) => { data.Longitude = data.Longitude + delta; });
+        //}
+
+        //private void InterpolatField(List<Data> data, Func<Data, double> valueGetter, Action<Data, double> valueSetter) 
+        //{
+        //    var segment = new List<Data>();
+        //    var lastData = data[0];
+        //    foreach (var d in data)
+        //    {
+        //        if (valueGetter(lastData)==(valueGetter(d)))
+        //        {
+        //            segment.Add(d);
+        //        }
+        //        else
+        //        {
+        //            if (segment.Count() > 1)
+        //            {
+        //                var v = segment.Count() + 1;
+        //                var delta = (valueGetter(d)-valueGetter(lastData)) / v;
+        //                var zz0 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
+        //                for (var i = 1; i < segment.Count(); i++)
+        //                {
+        //                    var s = segment[i];
+        //                    valueSetter(s,delta * i);
+        //                }
+        //                var zz1 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
+        //            }
+        //            lastData = d;
+        //            segment = new List<Data>() { d };
+        //        }
+        //    }
+        //}
+
+
+
     }
 }

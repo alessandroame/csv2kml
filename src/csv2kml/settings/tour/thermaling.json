@@ -3,30 +3,34 @@
   "AltitudeMode": "Absolute",
 
   //int required if AltitudeMode is Absolute 
-  "AltitudeOffset": "362",
-  //int How many seconds of track are visible
-  "visibleHistorySeconds": 30,
-  "lookAtCamera": {
-    //int Distance of the camera in meters from the current point
-    "rangeInMeters": 150,
+  "AltitudeOffset": "360",
+  "lookAtCamera": [
+    {
+      "name": "animation",
+      //int Distance of the camera in meters from the current point
+      "rangeInMeters": 100,
 
-    //align camera to look current point and cameraLookBackSeconds point
-    //null look always to the first track point
-    "lookBackSeconds": 30,
+      //align camera to look current point and cameraLookBackSeconds point
+      //null look always to the first track point
+      "lookBackSeconds": 30,
 
-    //tilt in degree
-    //
-    // null -> automatic
-    // 0    ->  vertical looking down,
-    // 90   -> horizontal,
-    // 180  -> vertical loocking up
-    "tilt": null,
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 30,
 
-    //pan offset in degree
-    "panOffset": 0,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
 
-    //1  -> every track point      -> more reactive
-    //10  -> every 10 track point  -> smoother
-    "updatePositionFrameInterval": 10
-  }
+      //pan offset in degree
+      "panOffset": 0,
+
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "updatePositionFrameInterval": 1
+    }    
+  ]
 }

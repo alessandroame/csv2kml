@@ -141,7 +141,7 @@ public static class DataExtensions
             res.Tilt = Math.Max(80, value);
             //Debug.WriteLine($"--------------------------------------------------");
             //Debug.WriteLine($"alt lookat {res.Altitude} last {data.Last().ToVector().Altitude.Value + altitudeOffset}");
-            Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+            //Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
 
             //Debug.WriteLine($"distance:{distance} groundDist:{groundDistance} alt:{from.Altitude - to.Altitude}");
             //Debug.WriteLine($"tilt calculated:{calculatedTilt} value:{value} out{res.Tilt}");
@@ -149,6 +149,7 @@ public static class DataExtensions
         if (follow)
         {
             var panValue = 180-calculatedPan + pan;
+            while (panValue > 360) panValue -= 360;
             res.Heading = panValue;
             //Debug.WriteLine($"--------------------------------------------------");
             //Debug.WriteLine($"pan calculated {calculatedPan} offset {pan} -> output {res.Heading}");
@@ -159,8 +160,6 @@ public static class DataExtensions
             Begin = data.Last().Time.AddSeconds(-visibleHistorySeconds),
             End = data.Last().Time,
         };
-        /*lookat.Heading = pan++*10;
-        if (pan >= 36) pan = 0;*/
         return res;
     }
 

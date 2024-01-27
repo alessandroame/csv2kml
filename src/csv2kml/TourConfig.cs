@@ -12,9 +12,8 @@ namespace csv2kml
 {
     public class TourConfig
     {
-        public int VisibleHistorySeconds { get; set; }
         [JsonProperty("lookAtCamera")] 
-        public LookAtCameraSettings LookAtCameraSettings { get;set;}
+        public LookAtCameraSettings[] LookAtCameraSettings { get;set;}
         public AltitudeMode AltitudeMode { get; set; }
         public int AltitudeOffset { get; set; }
 
@@ -27,8 +26,10 @@ namespace csv2kml
 
     public class LookAtCameraSettings
     {
+        public string Name { get; set; }
         public int RangeInMeters { get; set; }
         public int LookBackSeconds { get; set; }
+        public int VisibleHistorySeconds { get; set; }
         public int? Tilt { get; set; }
         public int PanOffset { get; set; }
         public int UpdatePositionFrameInterval { get; set; }
