@@ -191,46 +191,36 @@ namespace csv2kml
         }
 
         public static void GenerateLookBackPath(this Container container,
-            Data[] data, string cameraName,
-            SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
-            int frameBeforeStep,
-            int visibleHistorySeconds,
-            int minimumRange, int? tilt, int pan,
-            PointReference lookAtReference,
-            PointReference alignToReference, 
-            bool follow = false)
+            Data[] data, TourConfig tourConfig, LookAtCameraConfig cameraConfig, bool follow = false)
         {
 
             var tourplaylist = new Playlist();
 
-            var maxDeltaHeading = 30;
             var oldHeading = 0d;
-            for (int i = 0; i < data.Length - frameBeforeStep; i += frameBeforeStep)
+            for (int i = 0; i < data.Length - cameraConfig.UpdatePositionFrameInterval; i += cameraConfig.UpdatePositionFrameInterval)
             {
                 var dataToShow = new List<Data>();
                 for (var n = i; n >= 0; n--)
                 {
                     var diff = data[i].Time.Subtract(data[n].Time).TotalSeconds;
-                    if (diff > visibleHistorySeconds) break;
+                    if (diff > cameraConfig.VisibleHistorySeconds) break;
                     dataToShow.Insert(0, data[n]);
                 }
 
-                var lookAt = dataToShow.CreateLookAt(follow,minimumRange,
-                    altitudeMode,altitudeOffset,visibleHistorySeconds,
-                    tilt, pan, lookAtReference, alignToReference);
+                var lookAt = dataToShow.CreateLookAt(follow,tourConfig, cameraConfig);
 
-                //if (oldHeading != 0)
-                //{
-                //    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
-                //    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
-                //}
+                if (oldHeading != 0)
+                {
+                    if (oldHeading - lookAt.Heading > cameraConfig.MaxDeltaHeadingDegrees) lookAt.Heading = oldHeading - cameraConfig.MaxDeltaHeadingDegrees;
+                    if (lookAt.Heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees) lookAt.Heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
+                }
                 var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalSeconds;
                 var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);
 
                 oldHeading = lookAt.Heading.HasValue ? lookAt.Heading.Value : 0;
             }
-            var tour = new Tour { Name = cameraName };
+            var tour = new Tour { Name = cameraConfig.Name };
             tour.Playlist = tourplaylist;
             container.AddFeature(tour);
         }

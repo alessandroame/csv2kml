@@ -50,16 +50,7 @@ namespace csv2kml
             trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,"extrudedValue");
             foreach (var cameraSettings in _tourConfig.LookAtCameraSettings)
             {
-                trackFolder.GenerateLookBackPath(_data, cameraSettings.Name, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,
-                        cameraSettings.UpdatePositionFrameInterval,
-                        cameraSettings.VisibleHistorySeconds,
-                        cameraSettings.MinimumRangeInMeters,
-                        cameraSettings.Tilt,
-                        cameraSettings.PanOffset, 
-                        cameraSettings.LookAt,
-                        cameraSettings.AlignTo,
-                        true
-                        );
+                trackFolder.GenerateLookBackPath(_data, _tourConfig, cameraSettings,true);
             }
             return trackFolder;
         }

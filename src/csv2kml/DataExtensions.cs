@@ -106,9 +106,7 @@ public static class DataExtensions
     }
 
     public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,  
-            int minimumRange, SharpKml.Dom.AltitudeMode altitudeMode, 
-            int altitudeOffset, int visibleHistorySeconds, int? tilt,int pan,
-            PointReference lookAtReference,PointReference alignToReference)
+            TourConfig tourConfig, LookAtCameraConfig cameraConfig)
     {
         var bb = new BoundingBox
         {
@@ -140,31 +138,31 @@ public static class DataExtensions
                                     (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
                     break;
                 default:
-                    throw new Exception($"unhandled lookAtReference: {lookAtReference}");
+                    throw new Exception($"unhandled lookAtReference: {cameraConfig.LookAt}");
                     break;
             }
             return res;
         }
 
-        SharpKml.Base.Vector lookTo = GetReference(lookAtReference);
-        SharpKml.Base.Vector alignTo = GetReference(alignToReference);
+        SharpKml.Base.Vector lookTo = GetReference(cameraConfig.LookAt);
+        SharpKml.Base.Vector alignTo = GetReference(cameraConfig.AlignTo);
 
         var d = lookTo.Distance(alignTo);
 
 
         var res = new LookAt();
-        res.AltitudeMode = altitudeMode;
+        res.AltitudeMode = tourConfig.AltitudeMode;
         res.Latitude = lookTo.Latitude;
         res.Longitude = lookTo.Longitude;
-        res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
-        res.Range = Math.Max(minimumRange, d*1.6);
+        res.Altitude = Math.Max(tourConfig.AltitudeOffset, lookTo.Altitude.Value + tourConfig.AltitudeOffset);
+        res.Range = Math.Max(cameraConfig.MinimumRangeInMeters, d*1.6);
 
 
 
         lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
-        if (tilt.HasValue)
+        if (cameraConfig.Tilt.HasValue)
         {
-            res.Tilt = tilt;
+            res.Tilt = cameraConfig.Tilt;
         }
         else{
             var value =160-calculatedTilt;
@@ -178,7 +176,7 @@ public static class DataExtensions
         }
         if (follow)
         {
-            var panValue = 180-calculatedPan + pan;
+            var panValue = 180-calculatedPan + cameraConfig.PanOffset;
             while (panValue > 360) panValue -= 360;
             res.Heading = panValue;
             //Debug.WriteLine($"--------------------------------------------------");
@@ -187,7 +185,7 @@ public static class DataExtensions
         }
         res.GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
         {
-            Begin = data.Last().Time.AddSeconds(-visibleHistorySeconds),
+            Begin = data.Last().Time.AddSeconds(-cameraConfig.VisibleHistorySeconds),
             End = data.Last().Time,
         };
         return res;
