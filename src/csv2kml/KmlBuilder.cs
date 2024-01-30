@@ -52,12 +52,14 @@ namespace csv2kml
             {
                 trackFolder.GenerateLookBackPath(_data, cameraSettings.Name, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,
                         cameraSettings.UpdatePositionFrameInterval,
-                        cameraSettings.LookAtBoundingBoxCenter,
                         cameraSettings.VisibleHistorySeconds,
-                        cameraSettings.LookBackSeconds,
-                        cameraSettings.RangeOffsetInMeters,
+                        cameraSettings.MinimumRangeInMeters,
                         cameraSettings.Tilt,
-                        cameraSettings.PanOffset, true);
+                        cameraSettings.PanOffset, 
+                        cameraSettings.LookAt,
+                        cameraSettings.AlignTo,
+                        true
+                        );
             }
             return trackFolder;
         }

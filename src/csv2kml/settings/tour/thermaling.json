@@ -6,19 +6,9 @@
   "AltitudeOffset": "360",
   "lookAtCamera": [
     {
-      "name": "animation",
-      "rangeOffsetInMeters": 150,
-
-
+      "name": "CurrentPoint to BoundingBoxCenter",
       //int How many seconds of track are visible
       "visibleHistorySeconds": 30,
-      //bool lookat bounding box center insted pf start of lookBackSeconds segment
-      "lookAtBoundingBoxCenter": true,
-      //requered if LookAtBoundingBoxCenter is false
-      //align camera to look current point and cameraLookBackSeconds point
-      //null look always to the first track point
-      "lookBackSeconds": 30,
-
       //tilt in degree
       //
       // null -> automatic
@@ -26,13 +16,61 @@
       // 90   -> horizontal,
       // 180  -> vertical loocking up
       "tilt": null,
-
       //pan offset in degree
       "panOffset": 0,
-
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval": 1
+      "updatePositionFrameInterval": 1,
+      "minimumRangeInMeters": 100,
+
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "BoundingBoxCenter"
+    },
+    {
+      "name": "CurrentPoint to LastVisiblePoint",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 30,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "updatePositionFrameInterval": 1,
+      "minimumRangeInMeters": 100,
+
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "LastVisiblePoint"
+    },
+    {
+      "name": "CurrentPoint to PreviousPoint",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 30,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "updatePositionFrameInterval": 1,
+      "minimumRangeInMeters": 100,
+
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "PreviousPoint"
     }    
+
   ]
 }

@@ -1,4 +1,5 @@
 // See https://aka.ms/new-console-template for more information
+using csv2kml;
 using SharpKml.Dom;
 using SharpKml.Engine;
 using System.Diagnostics;
@@ -105,9 +106,9 @@ public static class DataExtensions
     }
 
     public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,  
-        int rangeOffset, SharpKml.Dom.AltitudeMode altitudeMode, 
-            int altitudeOffset, bool lookAtBoundingboxCenter,int visibleHistorySeconds, int? tilt,int pan
-        )
+            int minimumRange, SharpKml.Dom.AltitudeMode altitudeMode, 
+            int altitudeOffset, int visibleHistorySeconds, int? tilt,int pan,
+            PointReference lookAtReference,PointReference alignToReference)
     {
         var bb = new BoundingBox
         {
@@ -116,38 +117,58 @@ public static class DataExtensions
             North = data.Min(d => d.Latitude),
             South = data.Max(d => d.Latitude),
         };
-        SharpKml.Base.Vector lookTo;
-        //if (lookAtBoundingboxCenter)
-        //{
-        lookTo = new SharpKml.Base.Vector(
-            bb.Center.Latitude, 
-            bb.Center.Longitude,
-            (data.Min(d => d.Altitude) + data.Max(d => d.Altitude))/2);
-        //}
-        //else
-        //{
-        //    lookTo = data[Math.min]
-        //}
-        
-        var from = new SharpKml.Base.Vector(bb.North, bb.East, 0); 
-        var to = new SharpKml.Base.Vector(bb.South, bb.West, data.Max(d=>d.Altitude));
-        var d=from.Distance(to);
+
+        SharpKml.Base.Vector GetReference(PointReference reference)
+        {
+            SharpKml.Base.Vector res = null;
+            switch (reference)
+            {
+                case PointReference.CurrentPoint:
+                    res = data.Last().ToVector();
+                    break;
+                case PointReference.PreviousPoint:
+                    var index = Math.Max(0,data.Count() - 2);
+                    res = data.ElementAt(index).ToVector();
+                    break;
+                case PointReference.LastVisiblePoint:
+                    res = data.First().ToVector();
+                    break;
+                case PointReference.BoundingBoxCenter:
+                    res = new SharpKml.Base.Vector(
+                                    bb.Center.Latitude,
+                                    bb.Center.Longitude,
+                                    (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
+                    break;
+                default:
+                    throw new Exception($"unhandled lookAtReference: {lookAtReference}");
+                    break;
+            }
+            return res;
+        }
+
+        SharpKml.Base.Vector lookTo = GetReference(lookAtReference);
+        SharpKml.Base.Vector alignTo = GetReference(alignToReference);
+
+        var d = lookTo.Distance(alignTo);
+
 
         var res = new LookAt();
         res.AltitudeMode = altitudeMode;
-        res.Latitude = bb.Center.Latitude;
-        res.Longitude = bb.Center.Longitude;
+        res.Latitude = lookTo.Latitude;
+        res.Longitude = lookTo.Longitude;
         res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
-        res.Range = Math.Max(rangeOffset, d*1.6);
+        res.Range = Math.Max(minimumRange, d*1.6);
 
-        data.Last().ToVector().CalculateTiltPan(lookTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
+
+
+        lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
         if (tilt.HasValue)
         {
             res.Tilt = tilt;
         }
         else{
             var value =160-calculatedTilt;
-            res.Tilt = Math.Max(80, value);
+            res.Tilt = Math.Max(70, value);
             //Debug.WriteLine($"--------------------------------------------------");
             //Debug.WriteLine($"alt lookat {res.Altitude} last {data.Last().ToVector().Altitude.Value + altitudeOffset}");
             //Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
@@ -171,5 +192,6 @@ public static class DataExtensions
         };
         return res;
     }
+
 
 }

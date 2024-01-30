@@ -193,9 +193,12 @@ namespace csv2kml
         public static void GenerateLookBackPath(this Container container,
             Data[] data, string cameraName,
             SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,
-            int frameBeforeStep, bool lookAtBoundingboxCenter, 
-            int visibleHistorySeconds,int lookbackSeconds,
-            int rangeOffset, int? tilt, int pan, bool follow = false)
+            int frameBeforeStep,
+            int visibleHistorySeconds,
+            int minimumRange, int? tilt, int pan,
+            PointReference lookAtReference,
+            PointReference alignToReference, 
+            bool follow = false)
         {
 
             var tourplaylist = new Playlist();
@@ -208,18 +211,19 @@ namespace csv2kml
                 for (var n = i; n >= 0; n--)
                 {
                     var diff = data[i].Time.Subtract(data[n].Time).TotalSeconds;
-                    if (diff > lookbackSeconds) break;
+                    if (diff > visibleHistorySeconds) break;
                     dataToShow.Insert(0, data[n]);
                 }
-                var lookAt = dataToShow.CreateLookAt(follow,rangeOffset,
-                    altitudeMode,altitudeOffset,lookAtBoundingboxCenter,visibleHistorySeconds,
-                    tilt, pan);
 
-                if (oldHeading != 0)
-                {
-                    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
-                    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
-                }
+                var lookAt = dataToShow.CreateLookAt(follow,minimumRange,
+                    altitudeMode,altitudeOffset,visibleHistorySeconds,
+                    tilt, pan, lookAtReference, alignToReference);
+
+                //if (oldHeading != 0)
+                //{
+                //    if (oldHeading - lookAt.Heading > maxDeltaHeading) lookAt.Heading = oldHeading - maxDeltaHeading;
+                //    if (lookAt.Heading - oldHeading > maxDeltaHeading) lookAt.Heading = oldHeading + maxDeltaHeading;
+                //}
                 var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalSeconds;
                 var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
                 tourplaylist.AddTourPrimitive(flyTo);
