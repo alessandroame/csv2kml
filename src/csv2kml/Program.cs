@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CommandLine;
 using csv2kml;
+using System.Drawing;
 
 internal class Program
 {
@@ -32,6 +33,18 @@ internal class Program
                     {
                         outFn = Path.Combine(o.KMLFolder, Path.GetFileNameWithoutExtension(csv) + ".kml");
                     }
+
+                    //for (int i =-10;i<=10;i++)
+                    //{
+                    //    var n = ((double)i).Normalize(10);
+                    //    Console.WriteLine($"{i}\t{n}" +
+                    //        $"\t{n.ApplyExpo(1)}" +
+                    //        $"\t{n.ApplyExpo(.5)}" +
+                    //        $"\t{n.ApplyExpo(-1)}");
+                    //    //var v = n.ToNonLinearScale();
+                    //    //var color = v.ToColor();
+                    //    //Console.WriteLine($"{i}\t{n}\t{v}\t{color}");
+                    //}
 
                     new KmlBuilder()
                     .UseCsvConfig(o.CsvConfigFN)

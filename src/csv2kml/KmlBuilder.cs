@@ -89,11 +89,17 @@ namespace csv2kml
                     ItemType = ListItemType.CheckHideChildren
                 }
             });
+
+            var step = 1/ ((float)_subdivision - 1);
             for (var i = 0; i <= _subdivision; i++)
             {
-                var styleId = $"Value{i - _subdivision / 2}";
-                var k = (float)i / _subdivision;
-                var color = k.ToColor();
+                var value = i - _subdivision / 2;
+                var styleId = $"Value{value}";
+                var normalizedValue = (double)value / _subdivision * 2;
+                var logValue = normalizedValue.ApplyExpo(-.8);
+                var color = logValue.ToColor();
+                //Console.WriteLine($"{i}-> {value} -> {normalizedValue} -> {logValue} -> {color}");
+
                 var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 var extrudeColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 container.AddStyle(new Style

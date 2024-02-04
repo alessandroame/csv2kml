@@ -51,11 +51,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff3200</color>
+            <color>33ff0012</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3200</color>
+            <color>55ff0012</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-9">
@@ -63,11 +63,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff3200</color>
+            <color>44ff0012</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3200</color>
+            <color>55ff0012</color>
           </PolyStyle>
         </Style>
         <Style id="Value-9">
@@ -75,7 +75,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff3200</color>
+            <color>ffff0012</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -84,11 +84,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff6500</color>
+            <color>33ff000f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff6500</color>
+            <color>55ff000f</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-8">
@@ -96,11 +96,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff6500</color>
+            <color>44ff000f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff6500</color>
+            <color>55ff000f</color>
           </PolyStyle>
         </Style>
         <Style id="Value-8">
@@ -108,7 +108,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff6500</color>
+            <color>ffff000f</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -117,11 +117,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff9900</color>
+            <color>33ff0700</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff9900</color>
+            <color>55ff0700</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-7">
@@ -129,11 +129,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff9900</color>
+            <color>44ff0700</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff9900</color>
+            <color>55ff0700</color>
           </PolyStyle>
         </Style>
         <Style id="Value-7">
@@ -141,7 +141,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff9900</color>
+            <color>ffff0700</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -150,11 +150,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffcc00</color>
+            <color>33ff2f00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffcc00</color>
+            <color>55ff2f00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-6">
@@ -162,11 +162,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffcc00</color>
+            <color>44ff2f00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffcc00</color>
+            <color>55ff2f00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-6">
@@ -174,7 +174,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffcc00</color>
+            <color>ffff2f00</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -183,11 +183,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffff00</color>
+            <color>33ff6600</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffff00</color>
+            <color>55ff6600</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-5">
@@ -195,11 +195,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffff00</color>
+            <color>44ff6600</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffff00</color>
+            <color>55ff6600</color>
           </PolyStyle>
         </Style>
         <Style id="Value-5">
@@ -207,7 +207,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffff00</color>
+            <color>ffff6600</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -216,11 +216,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ccff00</color>
+            <color>33ffa800</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ccff00</color>
+            <color>55ffa800</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-4">
@@ -228,11 +228,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ccff00</color>
+            <color>44ffa800</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ccff00</color>
+            <color>55ffa800</color>
           </PolyStyle>
         </Style>
         <Style id="Value-4">
@@ -240,7 +240,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffccff00</color>
+            <color>ffffa800</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -249,11 +249,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3399ff00</color>
+            <color>33fff500</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5599ff00</color>
+            <color>55fff500</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-3">
@@ -261,11 +261,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4499ff00</color>
+            <color>44fff500</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5599ff00</color>
+            <color>55fff500</color>
           </PolyStyle>
         </Style>
         <Style id="Value-3">
@@ -273,7 +273,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff99ff00</color>
+            <color>fffff500</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -282,11 +282,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3366ff00</color>
+            <color>33b4ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5566ff00</color>
+            <color>55b4ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-2">
@@ -294,11 +294,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4466ff00</color>
+            <color>44b4ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5566ff00</color>
+            <color>55b4ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-2">
@@ -306,7 +306,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff66ff00</color>
+            <color>ffb4ff00</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -315,11 +315,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3333ff00</color>
+            <color>335bff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5533ff00</color>
+            <color>555bff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-1">
@@ -327,11 +327,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4433ff00</color>
+            <color>445bff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5533ff00</color>
+            <color>555bff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-1">
@@ -339,7 +339,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff33ff00</color>
+            <color>ff5bff00</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -381,11 +381,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ff32</color>
+            <color>3300ff5b</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff32</color>
+            <color>5500ff5b</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue1">
@@ -393,11 +393,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ff32</color>
+            <color>4400ff5b</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff32</color>
+            <color>5500ff5b</color>
           </PolyStyle>
         </Style>
         <Style id="Value1">
@@ -405,7 +405,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ff32</color>
+            <color>ff00ff5b</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -414,11 +414,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ff66</color>
+            <color>3300ffb4</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff66</color>
+            <color>5500ffb4</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue2">
@@ -426,11 +426,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ff66</color>
+            <color>4400ffb4</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff66</color>
+            <color>5500ffb4</color>
           </PolyStyle>
         </Style>
         <Style id="Value2">
@@ -438,7 +438,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ff66</color>
+            <color>ff00ffb4</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -447,11 +447,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ff98</color>
+            <color>3300f5ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff98</color>
+            <color>5500f5ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue3">
@@ -459,11 +459,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ff98</color>
+            <color>4400f5ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff98</color>
+            <color>5500f5ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value3">
@@ -471,7 +471,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ff98</color>
+            <color>ff00f5ff</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -480,11 +480,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ffcc</color>
+            <color>3300a8ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffcc</color>
+            <color>5500a8ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue4">
@@ -492,11 +492,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ffcc</color>
+            <color>4400a8ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffcc</color>
+            <color>5500a8ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value4">
@@ -504,110 +504,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ffcc</color>
+            <color>ff00a8ff</color>
             <width>3</width>
           </LineStyle>
         </Style>
         <Style id="extrudedValue5">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>3300ffff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>5500ffff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="groundValue5">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>4400ffff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>5500ffff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="Value5">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>ff00ffff</color>
-            <width>3</width>
-          </LineStyle>
-        </Style>
-        <Style id="extrudedValue6">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>3300cbff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>5500cbff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="groundValue6">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>4400cbff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>5500cbff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="Value6">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>ff00cbff</color>
-            <width>3</width>
-          </LineStyle>
-        </Style>
-        <Style id="extrudedValue7">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>330098ff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>550098ff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="groundValue7">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>440098ff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>550098ff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="Value7">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>ff0098ff</color>
-            <width>3</width>
-          </LineStyle>
-        </Style>
-        <Style id="extrudedValue8">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -619,7 +520,7 @@
             <color>550066ff</color>
           </PolyStyle>
         </Style>
-        <Style id="groundValue8">
+        <Style id="groundValue5">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -631,7 +532,7 @@
             <color>550066ff</color>
           </PolyStyle>
         </Style>
-        <Style id="Value8">
+        <Style id="Value5">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -640,16 +541,115 @@
             <width>3</width>
           </LineStyle>
         </Style>
+        <Style id="extrudedValue6">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>33002fff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>55002fff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="groundValue6">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>44002fff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>55002fff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="Value6">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>ff002fff</color>
+            <width>3</width>
+          </LineStyle>
+        </Style>
+        <Style id="extrudedValue7">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>330007ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550007ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="groundValue7">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>440007ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550007ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="Value7">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>ff0007ff</color>
+            <width>3</width>
+          </LineStyle>
+        </Style>
+        <Style id="extrudedValue8">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>330f00ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550f00ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="groundValue8">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>440f00ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550f00ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="Value8">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>ff0f00ff</color>
+            <width>3</width>
+          </LineStyle>
+        </Style>
         <Style id="extrudedValue9">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330033ff</color>
+            <color>331200ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550033ff</color>
+            <color>551200ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue9">
@@ -657,11 +657,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440033ff</color>
+            <color>441200ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550033ff</color>
+            <color>551200ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value9">
@@ -669,7 +669,7 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0033ff</color>
+            <color>ff1200ff</color>
             <width>3</width>
           </LineStyle>
         </Style>
@@ -24352,3382 +24352,6 @@
                 <altitude>360</altitude>
                 <heading>68.830462972363904</heading>
                 <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-          </Playlist>
-        </Tour>
-        <Tour xmlns="http://www.google.com/kml/ext/2.2">
-          <name xmlns="http://www.opengis.net/kml/2.2">CurrentPoint to LastVisiblePoint</name>
-          <Playlist>
-            <FlyTo>
-              <duration>77</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:50:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062999999999999</longitude>
-                <latitude>45.043300000000002</latitude>
-                <altitude>356</altitude>
-                <heading>180</heading>
-                <tilt>NaN</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:28+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:28+01:00</end>
-                </TimeSpan>
-                <longitude>7.406256</longitude>
-                <latitude>45.043213000000002</latitude>
-                <altitude>359.5</altitude>
-                <heading>210</heading>
-                <tilt>70.834925591440054</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>6</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:34+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:34+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067069999999999</longitude>
-                <latitude>45.043038000000003</latitude>
-                <altitude>371.69999999999999</altitude>
-                <heading>240</heading>
-                <tilt>53.708989031611566</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:40+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:40+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070660000000004</longitude>
-                <latitude>45.043137999999999</latitude>
-                <altitude>368.5</altitude>
-                <heading>270</heading>
-                <tilt>62.246482347520583</tilt>
-                <range>105.55046938800712</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:45+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:45+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067930000000004</longitude>
-                <latitude>45.043388999999998</latitude>
-                <altitude>366.60000000000002</altitude>
-                <heading>253.27137595122701</heading>
-                <tilt>60.80285286526086</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:50+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:50+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060870000000003</longitude>
-                <latitude>45.043497000000002</latitude>
-                <altitude>383.5</altitude>
-                <heading>223.27137595122701</heading>
-                <tilt>20.073809481499836</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:55+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:55+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054060000000002</longitude>
-                <latitude>45.043455999999999</latitude>
-                <altitude>394.30000000000001</altitude>
-                <heading>193.27137595122701</heading>
-                <tilt>42.77180032131578</tilt>
-                <range>121.34574295317353</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054190000000002</longitude>
-                <latitude>45.043672000000001</latitude>
-                <altitude>393.19999999999999</altitude>
-                <heading>163.27137595122701</heading>
-                <tilt>44.8453498906009</tilt>
-                <range>126.47537452917712</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058510000000002</longitude>
-                <latitude>45.043843000000003</latitude>
-                <altitude>395.10000000000002</altitude>
-                <heading>136.32682922635908</heading>
-                <tilt>36.181996563831319</tilt>
-                <range>102.05608892563147</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:10+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:10+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063020000000002</longitude>
-                <latitude>45.043948</latitude>
-                <altitude>393.10000000000002</altitude>
-                <heading>166.32682922635908</heading>
-                <tilt>36.778920742936066</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:15+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:15+01:00</end>
-                </TimeSpan>
-                <longitude>7.406453</longitude>
-                <latitude>45.044210999999997</latitude>
-                <altitude>390.30000000000001</altitude>
-                <heading>185.13718339049268</heading>
-                <tilt>47.312698919848444</tilt>
-                <range>127.35234871553131</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058010000000003</longitude>
-                <latitude>45.044038</latitude>
-                <altitude>390.5</altitude>
-                <heading>155.13718339049268</heading>
-                <tilt>45.545191086089815</tilt>
-                <range>119.42738712194617</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054840000000004</longitude>
-                <latitude>45.043784000000002</latitude>
-                <altitude>390.80000000000001</altitude>
-                <heading>125.13718339049268</heading>
-                <tilt>46.512425929323413</tilt>
-                <range>125.25399134911885</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:31+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:31+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055650000000002</longitude>
-                <latitude>45.043605999999997</latitude>
-                <altitude>388.10000000000002</altitude>
-                <heading>107.8457060891008</heading>
-                <tilt>57.21655710160141</tilt>
-                <range>137.39076358587079</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:36+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:36+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057829999999996</longitude>
-                <latitude>45.043866000000001</latitude>
-                <altitude>387.39999999999998</altitude>
-                <heading>121.35467354800258</heading>
-                <tilt>61.706846578814108</tilt>
-                <range>174.15665511261292</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:41+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:41+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061149999999998</longitude>
-                <latitude>45.044046000000002</latitude>
-                <altitude>387</altitude>
-                <heading>123.14505498757462</heading>
-                <tilt>59.30705333271689</tilt>
-                <range>162.97875974930415</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:46+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:46+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061690000000002</longitude>
-                <latitude>45.043934</latitude>
-                <altitude>386.60000000000002</altitude>
-                <heading>125.55355515844873</heading>
-                <tilt>49.725328339818759</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:51+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:51+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060490000000003</longitude>
-                <latitude>45.044071000000002</latitude>
-                <altitude>384.89999999999998</altitude>
-                <heading>155.55355515844872</heading>
-                <tilt>76.716508762971529</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:56+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:56+01:00</end>
-                </TimeSpan>
-                <longitude>7.40578</longitude>
-                <latitude>45.044077000000001</latitude>
-                <altitude>382.69999999999999</altitude>
-                <heading>185.55355515844872</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:01+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:01+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057680000000001</longitude>
-                <latitude>45.044024</latitude>
-                <altitude>381.69999999999999</altitude>
-                <heading>210.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:06+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:06+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055179999999998</longitude>
-                <latitude>45.043765999999998</latitude>
-                <altitude>377.19999999999999</altitude>
-                <heading>180.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:11+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:11+01:00</end>
-                </TimeSpan>
-                <longitude>7.405735</longitude>
-                <latitude>45.043680000000002</latitude>
-                <altitude>376</altitude>
-                <heading>150.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:16+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:16+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059819999999998</longitude>
-                <latitude>45.043698999999997</latitude>
-                <altitude>376.69999999999999</altitude>
-                <heading>120.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055989999999996</longitude>
-                <latitude>45.043553000000003</latitude>
-                <altitude>373.89999999999998</altitude>
-                <heading>90.013966300421657</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>7</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054909999999996</longitude>
-                <latitude>45.043332999999997</latitude>
-                <altitude>372</altitude>
-                <heading>120.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:33+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:33+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057360000000001</longitude>
-                <latitude>45.043016999999999</latitude>
-                <altitude>370.10000000000002</altitude>
-                <heading>150.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:38+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:38+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059670000000004</longitude>
-                <latitude>45.042907</latitude>
-                <altitude>369.39999999999998</altitude>
-                <heading>180.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>136.06872752828417</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:43+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:43+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061399999999997</longitude>
-                <latitude>45.042738</latitude>
-                <altitude>369.19999999999999</altitude>
-                <heading>210.01396630042166</heading>
-                <tilt>79.794484941796114</tilt>
-                <range>171.17867572684327</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:48+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:48+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059609999999996</longitude>
-                <latitude>45.042864000000002</latitude>
-                <altitude>368.5</altitude>
-                <heading>240.01396630042166</heading>
-                <tilt>80</tilt>
-                <range>143.71904228084156</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:53+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:53+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060459999999999</longitude>
-                <latitude>45.042729999999999</latitude>
-                <altitude>369.30000000000001</altitude>
-                <heading>270.01396630042166</heading>
-                <tilt>78.418751059795767</tilt>
-                <range>163.92683717163879</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:58+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:58+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058859999999997</longitude>
-                <latitude>45.042788999999999</latitude>
-                <altitude>367.30000000000001</altitude>
-                <heading>300.01396630042166</heading>
-                <tilt>78.502604621637786</tilt>
-                <range>165.56832142110426</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:03+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:03+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061339999999998</longitude>
-                <latitude>45.042799000000002</latitude>
-                <altitude>366.5</altitude>
-                <heading>329.13463950455071</heading>
-                <tilt>78.031048497949968</tilt>
-                <range>156.89675927413941</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:08+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:08+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063670000000004</longitude>
-                <latitude>45.042943999999999</latitude>
-                <altitude>365.5</altitude>
-                <heading>304.17110645620903</heading>
-                <tilt>77.978685623653959</tilt>
-                <range>133.71304607495094</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:13+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:13+01:00</end>
-                </TimeSpan>
-                <longitude>7.406568</longitude>
-                <latitude>45.043086000000002</latitude>
-                <altitude>363.19999999999999</altitude>
-                <heading>303.29782222325298</heading>
-                <tilt>80</tilt>
-                <range>119.47782188965095</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:18+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:18+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065989999999999</longitude>
-                <latitude>45.042864999999999</latitude>
-                <altitude>365</altitude>
-                <heading>309.86803848658701</heading>
-                <tilt>77.003225270684737</tilt>
-                <range>131.22798242912481</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:23+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:23+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068589999999999</longitude>
-                <latitude>45.042617999999997</latitude>
-                <altitude>390.5</altitude>
-                <heading>294.98426422498699</heading>
-                <tilt>62.019895273364014</tilt>
-                <range>200.53413268266971</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:28+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:28+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066299999999998</longitude>
-                <latitude>45.042665999999997</latitude>
-                <altitude>384.60000000000002</altitude>
-                <heading>290.28510969019601</heading>
-                <tilt>62.171436169422407</tilt>
-                <range>155.05529152108113</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:33+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:33+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068350000000001</longitude>
-                <latitude>45.042602000000002</latitude>
-                <altitude>387.60000000000002</altitude>
-                <heading>283.30936610575384</heading>
-                <tilt>59.265850624500359</tilt>
-                <range>150.33376379407818</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:38+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:38+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070669999999996</longitude>
-                <latitude>45.042693999999997</latitude>
-                <altitude>387</altitude>
-                <heading>273.56839174872027</heading>
-                <tilt>58.694425976580646</tilt>
-                <range>143.64302404625553</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:43+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:43+01:00</end>
-                </TimeSpan>
-                <longitude>7.4072680000000002</longitude>
-                <latitude>45.042825000000001</latitude>
-                <altitude>384.60000000000002</altitude>
-                <heading>258.17637296256123</heading>
-                <tilt>60.17104549946157</tilt>
-                <range>144.3405037645804</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:49+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:49+01:00</end>
-                </TimeSpan>
-                <longitude>7.4071740000000004</longitude>
-                <latitude>45.043163999999997</latitude>
-                <altitude>383.5</altitude>
-                <heading>248.72585065550084</heading>
-                <tilt>60.917432024139814</tilt>
-                <range>150.00857447278102</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:54+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:54+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068740000000002</longitude>
-                <latitude>45.043061000000002</latitude>
-                <altitude>381.89999999999998</altitude>
-                <heading>241.55717817646905</heading>
-                <tilt>60.494125053229808</tilt>
-                <range>123.04060268384031</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:59+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:59+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070679999999998</longitude>
-                <latitude>45.042977</latitude>
-                <altitude>383.80000000000001</altitude>
-                <heading>253.39039684195762</heading>
-                <tilt>59.435377552937382</tilt>
-                <range>145.73665937489898</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:04+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:04+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068899999999998</longitude>
-                <latitude>45.043106000000002</latitude>
-                <altitude>378</altitude>
-                <heading>239.62276461744906</heading>
-                <tilt>59.262093442851381</tilt>
-                <range>100.47410377306988</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:09+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:09+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070619999999998</longitude>
-                <latitude>45.043002999999999</latitude>
-                <altitude>381.5</altitude>
-                <heading>259.97531242429761</heading>
-                <tilt>52.928394269374749</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:14+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:14+01:00</end>
-                </TimeSpan>
-                <longitude>7.406936</longitude>
-                <latitude>45.042952999999997</latitude>
-                <altitude>379.80000000000001</altitude>
-                <heading>276.95611804440887</heading>
-                <tilt>39.524030444325646</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:19+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:19+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069890000000003</longitude>
-                <latitude>45.043042</latitude>
-                <altitude>376.19999999999999</altitude>
-                <heading>246.95611804440887</heading>
-                <tilt>64.728596459638723</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:24+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:24+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066900000000002</longitude>
-                <latitude>45.042858000000003</latitude>
-                <altitude>374.30000000000001</altitude>
-                <heading>216.95611804440887</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:29+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:29+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067400000000001</longitude>
-                <latitude>45.042852000000003</latitude>
-                <altitude>368.5</altitude>
-                <heading>191.47168619951975</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:34+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:34+01:00</end>
-                </TimeSpan>
-                <longitude>7.406873</longitude>
-                <latitude>45.043030000000002</latitude>
-                <altitude>369.80000000000001</altitude>
-                <heading>173.25988509285907</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:39+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:39+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067590000000001</longitude>
-                <latitude>45.043087999999997</latitude>
-                <altitude>367.19999999999999</altitude>
-                <heading>143.25988509285907</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:44+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:44+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068459999999998</longitude>
-                <latitude>45.042962000000003</latitude>
-                <altitude>370.60000000000002</altitude>
-                <heading>113.25988509285907</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:50+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:50+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068399999999999</longitude>
-                <latitude>45.043021000000003</latitude>
-                <altitude>367.89999999999998</altitude>
-                <heading>83.259885092859065</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:55+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:55+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065450000000004</longitude>
-                <latitude>45.043044000000002</latitude>
-                <altitude>364.5</altitude>
-                <heading>84.773415296926373</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065009999999996</longitude>
-                <latitude>45.043104999999997</latitude>
-                <altitude>360.10000000000002</altitude>
-                <heading>93.08060888928749</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067220000000002</longitude>
-                <latitude>45.042822000000001</latitude>
-                <altitude>384.89999999999998</altitude>
-                <heading>63.08060888928749</heading>
-                <tilt>55.428330974257477</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:10+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:10+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068909999999999</longitude>
-                <latitude>45.042704000000001</latitude>
-                <altitude>388.89999999999998</altitude>
-                <heading>33.08060888928749</heading>
-                <tilt>53.024551715293697</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:15+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:15+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069929999999999</longitude>
-                <latitude>45.042838000000003</latitude>
-                <altitude>384.80000000000001</altitude>
-                <heading>63.08060888928749</heading>
-                <tilt>46.896614375365971</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:20+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:20+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069250000000002</longitude>
-                <latitude>45.043204000000003</latitude>
-                <altitude>382.5</altitude>
-                <heading>93.08060888928749</heading>
-                <tilt>41.991934665445854</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:25+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:25+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069760000000002</longitude>
-                <latitude>45.043481</latitude>
-                <altitude>379.5</altitude>
-                <heading>123.08060888928749</heading>
-                <tilt>63.847709059894967</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:30+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:30+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070210000000003</longitude>
-                <latitude>45.043331000000002</latitude>
-                <altitude>378.80000000000001</altitude>
-                <heading>153.08060888928748</heading>
-                <tilt>56.649827998494672</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:35+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:35+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067629999999998</longitude>
-                <latitude>45.043463000000003</latitude>
-                <altitude>374.89999999999998</altitude>
-                <heading>163.22774997120416</heading>
-                <tilt>61.718981261438188</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:40+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:40+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067489999999996</longitude>
-                <latitude>45.043424000000002</latitude>
-                <altitude>375.10000000000002</altitude>
-                <heading>158.98601270084538</heading>
-                <tilt>54.917202589540295</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:46+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:46+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061269999999997</longitude>
-                <latitude>45.043399999999998</latitude>
-                <altitude>370.60000000000002</altitude>
-                <heading>128.98601270084538</heading>
-                <tilt>66.77248941358333</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:51+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:51+01:00</end>
-                </TimeSpan>
-                <longitude>7.405716</longitude>
-                <latitude>45.043230999999999</latitude>
-                <altitude>364.80000000000001</altitude>
-                <heading>98.986012700845379</heading>
-                <tilt>72.072001319330681</tilt>
-                <range>141.61107845789644</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:56+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:56+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059350000000004</longitude>
-                <latitude>45.043275999999999</latitude>
-                <altitude>368.80000000000001</altitude>
-                <heading>101.78442550399386</heading>
-                <tilt>63.921706626777095</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:01+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:01+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063040000000004</longitude>
-                <latitude>45.043483999999999</latitude>
-                <altitude>416.19999999999999</altitude>
-                <heading>131.78442550399387</heading>
-                <tilt>14.808410315286494</tilt>
-                <range>109.71111081506727</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:06+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:06+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066749999999999</longitude>
-                <latitude>45.043517999999999</latitude>
-                <altitude>414.19999999999999</altitude>
-                <heading>161.78442550399387</heading>
-                <tilt>47.118405790195837</tilt>
-                <range>104.10772700391277</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:11+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:11+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069339999999997</longitude>
-                <latitude>45.043500999999999</latitude>
-                <altitude>412</altitude>
-                <heading>175.31190152382689</heading>
-                <tilt>48.889572446987856</tilt>
-                <range>107.95004456882157</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:16+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:16+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070850000000004</longitude>
-                <latitude>45.043669000000001</latitude>
-                <altitude>407</altitude>
-                <heading>178.86085904096981</heading>
-                <tilt>50.199409125445484</tilt>
-                <range>107.69079248210835</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065339999999997</longitude>
-                <latitude>45.043889999999998</latitude>
-                <altitude>404.10000000000002</altitude>
-                <heading>148.86085904096981</heading>
-                <tilt>48.913248370792388</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060009999999998</longitude>
-                <latitude>45.043717999999998</latitude>
-                <altitude>400.39999999999998</altitude>
-                <heading>118.86085904096981</heading>
-                <tilt>55.481315244159802</tilt>
-                <range>137.85636566905274</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:31+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:31+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054060000000002</longitude>
-                <latitude>45.043466000000002</latitude>
-                <altitude>392.80000000000001</altitude>
-                <heading>88.860859040969814</heading>
-                <tilt>63.233606119884797</tilt>
-                <range>191.47602946623468</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:36+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:36+01:00</end>
-                </TimeSpan>
-                <longitude>7.4049750000000003</longitude>
-                <latitude>45.043086000000002</latitude>
-                <altitude>389.10000000000002</altitude>
-                <heading>70.215172603185195</heading>
-                <tilt>64.654564948964207</tilt>
-                <range>233.57624297219101</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:41+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:41+01:00</end>
-                </TimeSpan>
-                <longitude>7.4044340000000002</longitude>
-                <latitude>45.042867999999999</latitude>
-                <altitude>390.30000000000001</altitude>
-                <heading>68.92422691374631</heading>
-                <tilt>65.140080909368834</tilt>
-                <range>290.84070698871773</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:47+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:47+01:00</end>
-                </TimeSpan>
-                <longitude>7.4043720000000004</longitude>
-                <latitude>45.043095000000001</latitude>
-                <altitude>385.10000000000002</altitude>
-                <heading>71.733360548306052</heading>
-                <tilt>63.149816213961685</tilt>
-                <range>205.24234257094005</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:52+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:52+01:00</end>
-                </TimeSpan>
-                <longitude>7.4046339999999997</longitude>
-                <latitude>45.043100000000003</latitude>
-                <altitude>385.69999999999999</altitude>
-                <heading>76.693755698379817</heading>
-                <tilt>57.30460284499442</tilt>
-                <range>145.60820561461844</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:57+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:57+01:00</end>
-                </TimeSpan>
-                <longitude>7.4048350000000003</longitude>
-                <latitude>45.043149999999997</latitude>
-                <altitude>379.80000000000001</altitude>
-                <heading>73.151122865136927</heading>
-                <tilt>64.614257274662691</tilt>
-                <range>144.89576174173064</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:02+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:02+01:00</end>
-                </TimeSpan>
-                <longitude>7.4051169999999997</longitude>
-                <latitude>45.043197999999997</latitude>
-                <altitude>374.89999999999998</altitude>
-                <heading>69.688272198455621</heading>
-                <tilt>80</tilt>
-                <range>178.114530110944</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054289999999998</longitude>
-                <latitude>45.043199999999999</latitude>
-                <altitude>370</altitude>
-                <heading>69.292528044610222</heading>
-                <tilt>80</tilt>
-                <range>183.15735623969942</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:12+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:12+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060629999999996</longitude>
-                <latitude>45.043300000000002</latitude>
-                <altitude>402.10000000000002</altitude>
-                <heading>70.100055252768115</heading>
-                <tilt>77.285169074488294</tilt>
-                <range>117.34288953311498</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:17+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:17+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060100000000002</longitude>
-                <latitude>45.043750000000003</latitude>
-                <altitude>464.19999999999999</altitude>
-                <heading>83.482205011161</heading>
-                <tilt>34.639358505312146</tilt>
-                <range>159.2476941306509</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:22+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:22+01:00</end>
-                </TimeSpan>
-                <longitude>7.406307</longitude>
-                <latitude>45.043970000000002</latitude>
-                <altitude>457.69999999999999</altitude>
-                <heading>113.482205011161</heading>
-                <tilt>-9.1304074031709206</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:27+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:27+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067030000000003</longitude>
-                <latitude>45.043998999999999</latitude>
-                <altitude>452.80000000000001</altitude>
-                <heading>143.482205011161</heading>
-                <tilt>31.939096677212774</tilt>
-                <range>139.10814813350697</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:32+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:32+01:00</end>
-                </TimeSpan>
-                <longitude>7.4071129999999998</longitude>
-                <latitude>45.043999999999997</latitude>
-                <altitude>450.10000000000002</altitude>
-                <heading>173.482205011161</heading>
-                <tilt>49.126821502675497</tilt>
-                <range>257.31079442660223</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:37+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:37+01:00</end>
-                </TimeSpan>
-                <longitude>7.4073380000000002</longitude>
-                <latitude>45.044212000000002</latitude>
-                <altitude>443.60000000000002</altitude>
-                <heading>203.482205011161</heading>
-                <tilt>55.198783844471777</tilt>
-                <range>350.10491459699637</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:42+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:42+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068009999999997</longitude>
-                <latitude>45.044232000000001</latitude>
-                <altitude>439.30000000000001</altitude>
-                <heading>233.482205011161</heading>
-                <tilt>57.082365954139661</tilt>
-                <range>363.58738573413137</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:47+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:47+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063939999999997</longitude>
-                <latitude>45.044032999999999</latitude>
-                <altitude>435.60000000000002</altitude>
-                <heading>237.674889805189</heading>
-                <tilt>53.918255542061033</tilt>
-                <range>291.68778288828031</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:52+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:52+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059749999999998</longitude>
-                <latitude>45.043692</latitude>
-                <altitude>426.80000000000001</altitude>
-                <heading>238.7429961623462</heading>
-                <tilt>50.36458904868725</tilt>
-                <range>195.69463898393371</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:57+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:57+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055929999999996</longitude>
-                <latitude>45.043411999999996</latitude>
-                <altitude>425</altitude>
-                <heading>243.50051698308741</heading>
-                <tilt>34.351243425502787</tilt>
-                <range>124.08747198499869</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:02+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:02+01:00</end>
-                </TimeSpan>
-                <longitude>7.405672</longitude>
-                <latitude>45.043585</latitude>
-                <altitude>409.30000000000001</altitude>
-                <heading>227.66591882792216</heading>
-                <tilt>37.105383542633163</tilt>
-                <range>101.34496471040488</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058710000000003</longitude>
-                <latitude>45.043737</latitude>
-                <altitude>396.69999999999999</altitude>
-                <heading>212.00919589725342</heading>
-                <tilt>43.979549602069071</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:12+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:12+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062299999999999</longitude>
-                <latitude>45.043892</latitude>
-                <altitude>381.89999999999998</altitude>
-                <heading>188.32455730522435</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:17+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:17+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059540000000004</longitude>
-                <latitude>45.043560999999997</latitude>
-                <altitude>374.19999999999999</altitude>
-                <heading>158.32455730522435</heading>
-                <tilt>80</tilt>
-                <range>146.12237725463646</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:22+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:22+01:00</end>
-                </TimeSpan>
-                <longitude>7.405977</longitude>
-                <latitude>45.043407999999999</latitude>
-                <altitude>362.69999999999999</altitude>
-                <heading>128.32455730522435</heading>
-                <tilt>80</tilt>
-                <range>172.71690352606677</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:27+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:27+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061839999999997</longitude>
-                <latitude>45.043227999999999</latitude>
-                <altitude>360.60000000000002</altitude>
-                <heading>98.324557305224346</heading>
-                <tilt>80</tilt>
-                <range>188.25724118481224</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>28</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:32+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:32+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062929999999998</longitude>
-                <latitude>45.043201000000003</latitude>
-                <altitude>358.89999999999998</altitude>
-                <heading>68.324557305224346</heading>
-                <tilt>80</tilt>
-                <range>205.02922287162292</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:01:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062999999999999</longitude>
-                <latitude>45.04325</latitude>
-                <altitude>360.5</altitude>
-                <heading>98.324557305224346</heading>
-                <tilt>80</tilt>
-                <range>129.59395309929189</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:01:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.406256</longitude>
-                <latitude>45.043297000000003</latitude>
-                <altitude>360</altitude>
-                <heading>128.32455730522435</heading>
-                <tilt>80</tilt>
-                <range>101.574787151156</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-          </Playlist>
-        </Tour>
-        <Tour xmlns="http://www.google.com/kml/ext/2.2">
-          <name xmlns="http://www.opengis.net/kml/2.2">CurrentPoint to PreviousPoint</name>
-          <Playlist>
-            <FlyTo>
-              <duration>77</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:50:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062999999999999</longitude>
-                <latitude>45.043300000000002</latitude>
-                <altitude>356</altitude>
-                <heading>180</heading>
-                <tilt>NaN</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:28+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:28+01:00</end>
-                </TimeSpan>
-                <longitude>7.406256</longitude>
-                <latitude>45.043213000000002</latitude>
-                <altitude>359.5</altitude>
-                <heading>210</heading>
-                <tilt>68.367091543665808</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>6</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:34+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:34+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067069999999999</longitude>
-                <latitude>45.043038000000003</latitude>
-                <altitude>371.69999999999999</altitude>
-                <heading>240</heading>
-                <tilt>62.781132922160324</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:40+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:40+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070660000000004</longitude>
-                <latitude>45.043137999999999</latitude>
-                <altitude>368.5</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>74.876480335335714</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:45+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:45+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067930000000004</longitude>
-                <latitude>45.043388999999998</latitude>
-                <altitude>366.60000000000002</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>73.923827505603697</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:50+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:50+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060870000000003</longitude>
-                <latitude>45.043497000000002</latitude>
-                <altitude>383.5</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>33.081630455916724</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:51:55+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:55+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054060000000002</longitude>
-                <latitude>45.043455999999999</latitude>
-                <altitude>394.30000000000001</altitude>
-                <heading>132.69033390820698</heading>
-                <tilt>78.202039098043414</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054190000000002</longitude>
-                <latitude>45.043672000000001</latitude>
-                <altitude>393.19999999999999</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>77.640317044476134</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058510000000002</longitude>
-                <latitude>45.043843000000003</latitude>
-                <altitude>395.10000000000002</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>64.253481090320577</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:10+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:10+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063020000000002</longitude>
-                <latitude>45.043948</latitude>
-                <altitude>393.10000000000002</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>70</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:15+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:15+01:00</end>
-                </TimeSpan>
-                <longitude>7.406453</longitude>
-                <latitude>45.044210999999997</latitude>
-                <altitude>390.30000000000001</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>70</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058010000000003</longitude>
-                <latitude>45.044038</latitude>
-                <altitude>390.5</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>71.355470307077454</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054840000000004</longitude>
-                <latitude>45.043784000000002</latitude>
-                <altitude>390.80000000000001</altitude>
-                <heading>132.69033390820698</heading>
-                <tilt>66.935982529344841</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:31+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:31+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055650000000002</longitude>
-                <latitude>45.043605999999997</latitude>
-                <altitude>388.10000000000002</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>67.938289394939801</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:36+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:36+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057829999999996</longitude>
-                <latitude>45.043866000000001</latitude>
-                <altitude>387.39999999999998</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:41+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:41+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061149999999998</longitude>
-                <latitude>45.044046000000002</latitude>
-                <altitude>387</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>64.228724708404229</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:46+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:46+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061690000000002</longitude>
-                <latitude>45.043934</latitude>
-                <altitude>386.60000000000002</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>72.840992359952736</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:51+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:51+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060490000000003</longitude>
-                <latitude>45.044071000000002</latitude>
-                <altitude>384.89999999999998</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>60.090449110347507</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:52:56+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:56+01:00</end>
-                </TimeSpan>
-                <longitude>7.40578</longitude>
-                <latitude>45.044077000000001</latitude>
-                <altitude>382.69999999999999</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>77.925027578247665</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:01+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:01+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057680000000001</longitude>
-                <latitude>45.044024</latitude>
-                <altitude>381.69999999999999</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>77.074102847259198</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:06+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:06+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055179999999998</longitude>
-                <latitude>45.043765999999998</latitude>
-                <altitude>377.19999999999999</altitude>
-                <heading>132.69033390820698</heading>
-                <tilt>78.338088820040781</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:11+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:11+01:00</end>
-                </TimeSpan>
-                <longitude>7.405735</longitude>
-                <latitude>45.043680000000002</latitude>
-                <altitude>376</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>79.559971553289515</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:16+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:16+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059819999999998</longitude>
-                <latitude>45.043698999999997</latitude>
-                <altitude>376.69999999999999</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>45.809195797341886</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055989999999996</longitude>
-                <latitude>45.043553000000003</latitude>
-                <altitude>373.89999999999998</altitude>
-                <heading>162.69033390820698</heading>
-                <tilt>75.777601175833894</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>7</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054909999999996</longitude>
-                <latitude>45.043332999999997</latitude>
-                <altitude>372</altitude>
-                <heading>192.69033390820698</heading>
-                <tilt>65.783679177394163</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:33+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:33+01:00</end>
-                </TimeSpan>
-                <longitude>7.4057360000000001</longitude>
-                <latitude>45.043016999999999</latitude>
-                <altitude>370.10000000000002</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>68.842229481985058</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:38+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:38+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059670000000004</longitude>
-                <latitude>45.042907</latitude>
-                <altitude>369.39999999999998</altitude>
-                <heading>252.69033390820698</heading>
-                <tilt>49.979826871297874</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:43+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:43+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061399999999997</longitude>
-                <latitude>45.042738</latitude>
-                <altitude>369.19999999999999</altitude>
-                <heading>222.69033390820698</heading>
-                <tilt>59.282253728819342</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:48+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:48+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059609999999996</longitude>
-                <latitude>45.042864000000002</latitude>
-                <altitude>368.5</altitude>
-                <heading>219.7825155080069</heading>
-                <tilt>62.027247689869995</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:53+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:53+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060459999999999</longitude>
-                <latitude>45.042729999999999</latitude>
-                <altitude>369.30000000000001</altitude>
-                <heading>189.7825155080069</heading>
-                <tilt>65.963394977903846</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:53:58+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:58+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058859999999997</longitude>
-                <latitude>45.042788999999999</latitude>
-                <altitude>367.30000000000001</altitude>
-                <heading>219.7825155080069</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:03+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:03+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061339999999998</longitude>
-                <latitude>45.042799000000002</latitude>
-                <altitude>366.5</altitude>
-                <heading>249.7825155080069</heading>
-                <tilt>73.311088538387125</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:08+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:08+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063670000000004</longitude>
-                <latitude>45.042943999999999</latitude>
-                <altitude>365.5</altitude>
-                <heading>219.7825155080069</heading>
-                <tilt>71.097418004852358</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:13+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:13+01:00</end>
-                </TimeSpan>
-                <longitude>7.406568</longitude>
-                <latitude>45.043086000000002</latitude>
-                <altitude>363.19999999999999</altitude>
-                <heading>238.11702124591935</heading>
-                <tilt>79.954939084259763</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:18+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:18+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065989999999999</longitude>
-                <latitude>45.042864999999999</latitude>
-                <altitude>365</altitude>
-                <heading>268.11702124591932</heading>
-                <tilt>36.388393429700443</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:23+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:23+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068589999999999</longitude>
-                <latitude>45.042617999999997</latitude>
-                <altitude>390.5</altitude>
-                <heading>285.64935814248565</heading>
-                <tilt>43.539434226985364</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:28+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:28+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066299999999998</longitude>
-                <latitude>45.042665999999997</latitude>
-                <altitude>384.60000000000002</altitude>
-                <heading>255.64935814248565</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:33+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:33+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068350000000001</longitude>
-                <latitude>45.042602000000002</latitude>
-                <altitude>387.60000000000002</altitude>
-                <heading>264.38576967009612</heading>
-                <tilt>73.412640376021429</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:38+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:38+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070669999999996</longitude>
-                <latitude>45.042693999999997</latitude>
-                <altitude>387</altitude>
-                <heading>252.57034760375706</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:43+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:43+01:00</end>
-                </TimeSpan>
-                <longitude>7.4072680000000002</longitude>
-                <latitude>45.042825000000001</latitude>
-                <altitude>384.60000000000002</altitude>
-                <heading>222.57034760375706</heading>
-                <tilt>74.435516521855007</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:49+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:49+01:00</end>
-                </TimeSpan>
-                <longitude>7.4071740000000004</longitude>
-                <latitude>45.043163999999997</latitude>
-                <altitude>383.5</altitude>
-                <heading>192.57034760375706</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:54+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:54+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068740000000002</longitude>
-                <latitude>45.043061000000002</latitude>
-                <altitude>381.89999999999998</altitude>
-                <heading>222.57034760375706</heading>
-                <tilt>72.16559751180111</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:54:59+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:59+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070679999999998</longitude>
-                <latitude>45.042977</latitude>
-                <altitude>383.80000000000001</altitude>
-                <heading>226.84552234135421</heading>
-                <tilt>52.109357466993671</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:04+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:04+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068899999999998</longitude>
-                <latitude>45.043106000000002</latitude>
-                <altitude>378</altitude>
-                <heading>196.84552234135421</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:09+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:09+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070619999999998</longitude>
-                <latitude>45.043002999999999</latitude>
-                <altitude>381.5</altitude>
-                <heading>226.84552234135421</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:14+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:14+01:00</end>
-                </TimeSpan>
-                <longitude>7.406936</longitude>
-                <latitude>45.042952999999997</latitude>
-                <altitude>379.80000000000001</altitude>
-                <heading>196.84552234135421</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:19+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:19+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069890000000003</longitude>
-                <latitude>45.043042</latitude>
-                <altitude>376.19999999999999</altitude>
-                <heading>226.84552234135421</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:24+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:24+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066900000000002</longitude>
-                <latitude>45.042858000000003</latitude>
-                <altitude>374.30000000000001</altitude>
-                <heading>196.84552234135421</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:29+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:29+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067400000000001</longitude>
-                <latitude>45.042852000000003</latitude>
-                <altitude>368.5</altitude>
-                <heading>223.420951356573</heading>
-                <tilt>78.559759867960096</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:34+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:34+01:00</end>
-                </TimeSpan>
-                <longitude>7.406873</longitude>
-                <latitude>45.043030000000002</latitude>
-                <altitude>369.80000000000001</altitude>
-                <heading>253.420951356573</heading>
-                <tilt>71.838359704721142</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:39+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:39+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067590000000001</longitude>
-                <latitude>45.043087999999997</latitude>
-                <altitude>367.19999999999999</altitude>
-                <heading>247.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:44+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:44+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068459999999998</longitude>
-                <latitude>45.042962000000003</latitude>
-                <altitude>370.60000000000002</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:50+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:50+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068399999999999</longitude>
-                <latitude>45.043021000000003</latitude>
-                <altitude>367.89999999999998</altitude>
-                <heading>247.89573658376821</heading>
-                <tilt>77.935375650235045</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:55:55+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:55+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065450000000004</longitude>
-                <latitude>45.043044000000002</latitude>
-                <altitude>364.5</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>63.8717970913344</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065009999999996</longitude>
-                <latitude>45.043104999999997</latitude>
-                <altitude>360.10000000000002</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>70</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067220000000002</longitude>
-                <latitude>45.042822000000001</latitude>
-                <altitude>384.89999999999998</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>26.231812904355593</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:10+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:10+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068909999999999</longitude>
-                <latitude>45.042704000000001</latitude>
-                <altitude>388.89999999999998</altitude>
-                <heading>247.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:15+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:15+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069929999999999</longitude>
-                <latitude>45.042838000000003</latitude>
-                <altitude>384.80000000000001</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>79.12699128659871</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:20+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:20+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069250000000002</longitude>
-                <latitude>45.043204000000003</latitude>
-                <altitude>382.5</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>71.482304844497193</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:25+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:25+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069760000000002</longitude>
-                <latitude>45.043481</latitude>
-                <altitude>379.5</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:30+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:30+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070210000000003</longitude>
-                <latitude>45.043331000000002</latitude>
-                <altitude>378.80000000000001</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:35+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:35+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067629999999998</longitude>
-                <latitude>45.043463000000003</latitude>
-                <altitude>374.89999999999998</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>68.588680876557348</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:40+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:40+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067489999999996</longitude>
-                <latitude>45.043424000000002</latitude>
-                <altitude>375.10000000000002</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>59.432049707725653</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:46+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:46+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061269999999997</longitude>
-                <latitude>45.043399999999998</latitude>
-                <altitude>370.60000000000002</altitude>
-                <heading>157.89573658376821</heading>
-                <tilt>77.925096437926797</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:51+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:51+01:00</end>
-                </TimeSpan>
-                <longitude>7.405716</longitude>
-                <latitude>45.043230999999999</latitude>
-                <altitude>364.80000000000001</altitude>
-                <heading>127.89573658376821</heading>
-                <tilt>54.321879901661973</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:56:56+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:56+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059350000000004</longitude>
-                <latitude>45.043275999999999</latitude>
-                <altitude>368.80000000000001</altitude>
-                <heading>157.89573658376821</heading>
-                <tilt>63.711620649005312</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:01+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:01+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063040000000004</longitude>
-                <latitude>45.043483999999999</latitude>
-                <altitude>416.19999999999999</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>34.818131161300698</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:06+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:06+01:00</end>
-                </TimeSpan>
-                <longitude>7.4066749999999999</longitude>
-                <latitude>45.043517999999999</latitude>
-                <altitude>414.19999999999999</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:11+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:11+01:00</end>
-                </TimeSpan>
-                <longitude>7.4069339999999997</longitude>
-                <latitude>45.043500999999999</latitude>
-                <altitude>412</altitude>
-                <heading>247.89573658376821</heading>
-                <tilt>78.641462095318573</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:16+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:16+01:00</end>
-                </TimeSpan>
-                <longitude>7.4070850000000004</longitude>
-                <latitude>45.043669000000001</latitude>
-                <altitude>407</altitude>
-                <heading>217.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:21+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:21+01:00</end>
-                </TimeSpan>
-                <longitude>7.4065339999999997</longitude>
-                <latitude>45.043889999999998</latitude>
-                <altitude>404.10000000000002</altitude>
-                <heading>187.89573658376821</heading>
-                <tilt>71.626756116629764</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:26+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:26+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060009999999998</longitude>
-                <latitude>45.043717999999998</latitude>
-                <altitude>400.39999999999998</altitude>
-                <heading>157.89573658376821</heading>
-                <tilt>72.127698765641554</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:31+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:31+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054060000000002</longitude>
-                <latitude>45.043466000000002</latitude>
-                <altitude>392.80000000000001</altitude>
-                <heading>127.89573658376821</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:36+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:36+01:00</end>
-                </TimeSpan>
-                <longitude>7.4049750000000003</longitude>
-                <latitude>45.043086000000002</latitude>
-                <altitude>389.10000000000002</altitude>
-                <heading>97.895736583768212</heading>
-                <tilt>78.190067120164073</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:41+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:41+01:00</end>
-                </TimeSpan>
-                <longitude>7.4044340000000002</longitude>
-                <latitude>45.042867999999999</latitude>
-                <altitude>390.30000000000001</altitude>
-                <heading>95.734862377033878</heading>
-                <tilt>66.267602502019983</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:47+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:47+01:00</end>
-                </TimeSpan>
-                <longitude>7.4043720000000004</longitude>
-                <latitude>45.043095000000001</latitude>
-                <altitude>385.10000000000002</altitude>
-                <heading>125.73486237703388</heading>
-                <tilt>70</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:52+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:52+01:00</end>
-                </TimeSpan>
-                <longitude>7.4046339999999997</longitude>
-                <latitude>45.043100000000003</latitude>
-                <altitude>385.69999999999999</altitude>
-                <heading>155.73486237703389</heading>
-                <tilt>76.502581482260709</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:57:57+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:57+01:00</end>
-                </TimeSpan>
-                <longitude>7.4048350000000003</longitude>
-                <latitude>45.043149999999997</latitude>
-                <altitude>379.80000000000001</altitude>
-                <heading>185.73486237703389</heading>
-                <tilt>73.584958832521863</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:02+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:02+01:00</end>
-                </TimeSpan>
-                <longitude>7.4051169999999997</longitude>
-                <latitude>45.043197999999997</latitude>
-                <altitude>374.89999999999998</altitude>
-                <heading>215.73486237703389</heading>
-                <tilt>76.054074102062557</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4054289999999998</longitude>
-                <latitude>45.043199999999999</latitude>
-                <altitude>370</altitude>
-                <heading>245.73486237703389</heading>
-                <tilt>77.054134844465239</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:12+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:12+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060629999999996</longitude>
-                <latitude>45.043300000000002</latitude>
-                <altitude>402.10000000000002</altitude>
-                <heading>226.22588676666419</heading>
-                <tilt>20.025567529258865</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:17+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:17+01:00</end>
-                </TimeSpan>
-                <longitude>7.4060100000000002</longitude>
-                <latitude>45.043750000000003</latitude>
-                <altitude>464.19999999999999</altitude>
-                <heading>196.22588676666419</heading>
-                <tilt>43.053705290077701</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:22+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:22+01:00</end>
-                </TimeSpan>
-                <longitude>7.406307</longitude>
-                <latitude>45.043970000000002</latitude>
-                <altitude>457.69999999999999</altitude>
-                <heading>226.22588676666419</heading>
-                <tilt>70.74119673717</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:27+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:27+01:00</end>
-                </TimeSpan>
-                <longitude>7.4067030000000003</longitude>
-                <latitude>45.043998999999999</latitude>
-                <altitude>452.80000000000001</altitude>
-                <heading>256.22588676666419</heading>
-                <tilt>73.035602619492096</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:32+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:32+01:00</end>
-                </TimeSpan>
-                <longitude>7.4071129999999998</longitude>
-                <latitude>45.043999999999997</latitude>
-                <altitude>450.10000000000002</altitude>
-                <heading>262.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:37+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:37+01:00</end>
-                </TimeSpan>
-                <longitude>7.4073380000000002</longitude>
-                <latitude>45.044212000000002</latitude>
-                <altitude>443.60000000000002</altitude>
-                <heading>232.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:42+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:42+01:00</end>
-                </TimeSpan>
-                <longitude>7.4068009999999997</longitude>
-                <latitude>45.044232000000001</latitude>
-                <altitude>439.30000000000001</altitude>
-                <heading>202.59293099737522</heading>
-                <tilt>72.758568060037504</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:47+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:47+01:00</end>
-                </TimeSpan>
-                <longitude>7.4063939999999997</longitude>
-                <latitude>45.044032999999999</latitude>
-                <altitude>435.60000000000002</altitude>
-                <heading>172.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:52+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:52+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059749999999998</longitude>
-                <latitude>45.043692</latitude>
-                <altitude>426.80000000000001</altitude>
-                <heading>142.59293099737522</heading>
-                <tilt>79.78933621506539</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:58:57+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:57+01:00</end>
-                </TimeSpan>
-                <longitude>7.4055929999999996</longitude>
-                <latitude>45.043411999999996</latitude>
-                <altitude>425</altitude>
-                <heading>112.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:02+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:02+01:00</end>
-                </TimeSpan>
-                <longitude>7.405672</longitude>
-                <latitude>45.043585</latitude>
-                <altitude>409.30000000000001</altitude>
-                <heading>142.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:07+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:07+01:00</end>
-                </TimeSpan>
-                <longitude>7.4058710000000003</longitude>
-                <latitude>45.043737</latitude>
-                <altitude>396.69999999999999</altitude>
-                <heading>172.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:12+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:12+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062299999999999</longitude>
-                <latitude>45.043892</latitude>
-                <altitude>381.89999999999998</altitude>
-                <heading>202.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:17+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:17+01:00</end>
-                </TimeSpan>
-                <longitude>7.4059540000000004</longitude>
-                <latitude>45.043560999999997</latitude>
-                <altitude>374.19999999999999</altitude>
-                <heading>172.59293099737522</heading>
-                <tilt>78.792372416289965</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:22+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:22+01:00</end>
-                </TimeSpan>
-                <longitude>7.405977</longitude>
-                <latitude>45.043407999999999</latitude>
-                <altitude>362.69999999999999</altitude>
-                <heading>202.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:27+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:27+01:00</end>
-                </TimeSpan>
-                <longitude>7.4061839999999997</longitude>
-                <latitude>45.043227999999999</latitude>
-                <altitude>360.60000000000002</altitude>
-                <heading>232.59293099737522</heading>
-                <tilt>80</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>28</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T13:59:32+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:32+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062929999999998</longitude>
-                <latitude>45.043201000000003</latitude>
-                <altitude>358.89999999999998</altitude>
-                <heading>262.59293099737522</heading>
-                <tilt>70</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:00+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:01:00+01:00</end>
-                </TimeSpan>
-                <longitude>7.4062999999999999</longitude>
-                <latitude>45.04325</latitude>
-                <altitude>360.5</altitude>
-                <heading>232.59293099737522</heading>
-                <tilt>49.130035865434749</tilt>
-                <range>100</range>
-                <altitudeMode>absolute</altitudeMode>
-              </LookAt>
-            </FlyTo>
-            <FlyTo>
-              <duration>5</duration>
-              <flyToMode>smooth</flyToMode>
-              <LookAt xmlns="http://www.opengis.net/kml/2.2">
-                <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
-                  <begin xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:00:05+01:00</begin>
-                  <end xmlns="http://www.opengis.net/kml/2.2">2024-02-02T14:01:05+01:00</end>
-                </TimeSpan>
-                <longitude>7.406256</longitude>
-                <latitude>45.043297000000003</latitude>
-                <altitude>360</altitude>
-                <heading>262.59293099737522</heading>
-                <tilt>74.959786513156189</tilt>
                 <range>100</range>
                 <altitudeMode>absolute</altitudeMode>
               </LookAt>

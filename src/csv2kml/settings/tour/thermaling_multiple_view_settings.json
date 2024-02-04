@@ -1,0 +1,76 @@
+{
+  //enum ClampToGround, RelativeToGround, Absolute
+  "AltitudeMode": "Absolute",
+
+  //int required if AltitudeMode is Absolute 
+  "AltitudeOffset": "356",
+  "lookAtCamera": [
+    {
+      "name": "CurrentPoint to BoundingBoxCenter",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 60,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "UpdatePositionIntervalInSeconds": 5,
+      "minimumRangeInMeters": 100,
+      "MaxDeltaHeadingDegrees": 30,
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "BoundingBoxCenter"
+    },
+    {
+      "name": "CurrentPoint to LastVisiblePoint",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 60,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "UpdatePositionIntervalInSeconds": 5,
+      "minimumRangeInMeters": 100,
+      "MaxDeltaHeadingDegrees": 30,
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "LastVisiblePoint"
+    },
+    {
+      "name": "CurrentPoint to PreviousPoint",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 60,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "UpdatePositionIntervalInSeconds": 5,
+      "minimumRangeInMeters": 100,
+      "MaxDeltaHeadingDegrees": 30,
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "PreviousPoint"
+    }    
+
+  ]
+}
