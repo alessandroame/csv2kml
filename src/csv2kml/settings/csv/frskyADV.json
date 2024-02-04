@@ -5,5 +5,10 @@
   "altitudeIndex": 20,
   "ValueToColorizeIndex": 8,
   "valueMin": -3,
-  "valueMax": 3
+  "valueMax": 3,
+  //percentage of expo
+  // 0 = linear
+  // >0 flat near 0 value
+  // <0 vertical near 0
+  "colorScaleExpo": -0.7
 }

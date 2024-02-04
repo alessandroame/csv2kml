@@ -18,6 +18,7 @@ namespace csv2kml
         public int ValueToColorizeIndex { get; set; }
         public double ValueMin { get; set; }
         public double ValueMax { get; set; }
+        public double ColorScaleExpo { get; set;}
 
         public static CsvConfig? FromFile(string filename)
         {

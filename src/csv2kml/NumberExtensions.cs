@@ -77,8 +77,6 @@ namespace csv2kml
         }
         public static double ApplyExpo(this double v,double k)
         {
-//            var res = (k / 10) * Math.Exp(-0.5) * Math.Pow(v, 3) + (1 - k / 100) * v;
-            //var res = (k*10) * Math.Exp(-0.5) * Math.Pow(v, 3) + (1 - k) * v;
             var res = k * Math.Pow(v, 3) + (1 - k)*v;
             return res;
         }

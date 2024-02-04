@@ -96,7 +96,7 @@ namespace csv2kml
                 var value = i - _subdivision / 2;
                 var styleId = $"Value{value}";
                 var normalizedValue = (double)value / _subdivision * 2;
-                var logValue = normalizedValue.ApplyExpo(-.8);
+                var logValue = normalizedValue.ApplyExpo(_csvConfig.ColorScaleExpo);
                 var color = logValue.ToColor();
                 //Console.WriteLine($"{i}-> {value} -> {normalizedValue} -> {logValue} -> {color}");
 
