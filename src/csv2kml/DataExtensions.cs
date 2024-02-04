@@ -165,11 +165,12 @@ public static class DataExtensions
             res.Tilt = cameraConfig.Tilt;
         }
         else{
-            var value =160-calculatedTilt;
-            res.Tilt = Math.Max(70, value);
+            var tiltValue =160-calculatedTilt;
+            while (tiltValue > 360) tiltValue -= 360;
+            res.Tilt = Math.Min(80, tiltValue);
             //Debug.WriteLine($"--------------------------------------------------");
             //Debug.WriteLine($"alt lookat {res.Altitude} last {data.Last().ToVector().Altitude.Value + altitudeOffset}");
-            //Debug.WriteLine($"tilt {calculatedTilt} -> {value} -> {res.Tilt}");
+            //Debug.WriteLine($"tilt {calculatedTilt} -> {tiltValue} -> {res.Tilt}");
 
             //Debug.WriteLine($"distance:{distance} groundDist:{groundDistance} alt:{from.Altitude - to.Altitude}");
             //Debug.WriteLine($"tilt calculated:{calculatedTilt} value:{value} out{res.Tilt}");

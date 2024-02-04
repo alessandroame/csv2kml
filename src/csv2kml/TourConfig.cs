@@ -37,7 +37,7 @@ namespace csv2kml
         public int VisibleHistorySeconds { get; set; }
         public int? Tilt { get; set; }
         public int PanOffset { get; set; }
-        public int UpdatePositionFrameInterval { get; set; }
+        public int UpdatePositionIntervalInSeconds { get; set; }
         public int MinimumRangeInMeters { get; set; }
         public int MaxDeltaHeadingDegrees { get; set; }
         public PointReference LookAt { get; set; }

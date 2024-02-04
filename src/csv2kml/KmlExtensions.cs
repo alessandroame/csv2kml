@@ -180,15 +180,6 @@ namespace csv2kml
         //    container.AddFeature(tour);
         //}
 
-        public static FlyTo CreateFlyTo(double duration, AbstractView view, FlyToMode flyMode = FlyToMode.Smooth)
-        {
-            //https://csharp.hotexamples.com/examples/SharpKml.Dom/Description/-/php-description-class-examples.html?utm_content=cmp-true
-            var res = new FlyTo();
-            res.Mode = flyMode;
-            res.Duration = duration;
-            res.View = view;
-            return res;
-        }
 
         public static void GenerateLookBackPath(this Container container,
             Data[] data, TourConfig tourConfig, LookAtCameraConfig cameraConfig, bool follow = false)
@@ -197,7 +188,7 @@ namespace csv2kml
             var tourplaylist = new Playlist();
 
             var oldHeading = 0d;
-            for (int i = 0; i < data.Length - cameraConfig.UpdatePositionFrameInterval; i += cameraConfig.UpdatePositionFrameInterval)
+            for (int i = 0; i < data.Length - cameraConfig.UpdatePositionIntervalInSeconds; i += cameraConfig.UpdatePositionIntervalInSeconds)
             {
                 var dataToShow = new List<Data>();
                 for (var n = i; n >= 0; n--)
@@ -207,17 +198,28 @@ namespace csv2kml
                     dataToShow.Insert(0, data[n]);
                 }
 
+                var m = 1;
+                while (m < data.Length 
+                    && data[m].Time.Subtract(data[i].Time).TotalSeconds< cameraConfig.UpdatePositionIntervalInSeconds) 
+                {
+                   m++;
+                }
+                var duration = data[m].Time.Subtract(data[i].Time).TotalSeconds;
                 var lookAt = dataToShow.CreateLookAt(follow,tourConfig, cameraConfig);
-
                 if (oldHeading != 0)
                 {
-                    if (oldHeading - lookAt.Heading > cameraConfig.MaxDeltaHeadingDegrees) lookAt.Heading = oldHeading - cameraConfig.MaxDeltaHeadingDegrees;
-                    if (lookAt.Heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees) lookAt.Heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
+                    if (oldHeading - lookAt.Heading > cameraConfig.MaxDeltaHeadingDegrees) 
+                            lookAt.Heading = oldHeading - cameraConfig.MaxDeltaHeadingDegrees;
+                    if (lookAt.Heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees) 
+                            lookAt.Heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
                 }
-                var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalSeconds;
-                var flyTo = CreateFlyTo(duration, lookAt, FlyToMode.Smooth);
+                var flyTo = new FlyTo
+                {
+                    Mode = FlyToMode.Smooth,
+                    Duration = duration,
+                    View = lookAt
+                };
                 tourplaylist.AddTourPrimitive(flyTo);
-
                 oldHeading = lookAt.Heading.HasValue ? lookAt.Heading.Value : 0;
             }
             var tour = new Tour { Name = cameraConfig.Name };

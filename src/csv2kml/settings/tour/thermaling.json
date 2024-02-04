@@ -3,7 +3,7 @@
   "AltitudeMode": "Absolute",
 
   //int required if AltitudeMode is Absolute 
-  "AltitudeOffset": "360",
+  "AltitudeOffset": "356",
   "lookAtCamera": [
     {
       "name": "CurrentPoint to BoundingBoxCenter",
@@ -20,7 +20,7 @@
       "panOffset": 0,
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval": 5,
+      "UpdatePositionIntervalInSeconds": 5,
       "minimumRangeInMeters": 100,
       "MaxDeltaHeadingDegrees": 30,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
@@ -42,7 +42,7 @@
       "panOffset": 0,
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval": 5,
+      "UpdatePositionIntervalInSeconds": 5,
       "minimumRangeInMeters": 100,
       "MaxDeltaHeadingDegrees": 30,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
@@ -64,7 +64,7 @@
       "panOffset": 0,
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "updatePositionFrameInterval": 5,
+      "UpdatePositionIntervalInSeconds": 5,
       "minimumRangeInMeters": 100,
       "MaxDeltaHeadingDegrees": 30,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
