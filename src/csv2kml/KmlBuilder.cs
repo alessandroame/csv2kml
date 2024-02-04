@@ -2,6 +2,7 @@ using Csv;
 using Csv2KML;
 using SharpKml.Base;
 using SharpKml.Dom;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
@@ -45,12 +46,12 @@ namespace csv2kml
                 Open = true
             };
             AddStyles(trackFolder);
-            trackFolder.GenerateColoredTrack(_data, "3D track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,"Value");
+            trackFolder.GenerateColoredTrack(_data, "3D track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "Value");
             trackFolder.GenerateColoredTrack(_data, "Ground track", _subdivision, AltitudeMode.ClampToGround, _tourConfig.AltitudeOffset, "groundValue");
-            trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset,"extrudedValue");
+            trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "extrudedValue");
             foreach (var cameraSettings in _tourConfig.LookAtCameraSettings)
             {
-                trackFolder.GenerateLookBackPath(_data, _tourConfig, cameraSettings,true);
+                trackFolder.GenerateLookBackPath(_data, _tourConfig, cameraSettings, true);
             }
             return trackFolder;
         }
@@ -79,6 +80,28 @@ namespace csv2kml
                 Console.WriteLine(ex);
             }
         }
+
+        private void AddTrackStyle(Folder container,string name,string lineColor,string polygonColor)
+        {
+            container.AddStyle(new Style
+            {
+                Id = name,
+                Line = new LineStyle
+                {
+                    Color = Color32.Parse(lineColor),
+                    Width = 3
+                },
+                Icon = new IconStyle
+                {
+                    Scale = 0
+                },
+                Polygon = new PolygonStyle
+                {
+                    Color = Color32.Parse(polygonColor),
+
+                }
+            });
+        }
         private void AddStyles(Folder container)
         {
             container.AddStyle(new Style
@@ -89,8 +112,10 @@ namespace csv2kml
                     ItemType = ListItemType.CheckHideChildren
                 }
             });
+            AddTrackStyle(container, $"extrudedValueMotor", $"33000000", $"55000000");
+            AddTrackStyle(container, $"groundValueMotor", $"44000000", $"55000000");
+            AddTrackStyle(container, $"ValueMotor", $"FF000000", $"55000000");
 
-            var step = 1/ ((float)_subdivision - 1);
             for (var i = 0; i <= _subdivision; i++)
             {
                 var value = i - _subdivision / 2;
@@ -100,57 +125,15 @@ namespace csv2kml
                 var color = logValue.ToColor();
                 //Console.WriteLine($"{i}-> {value} -> {normalizedValue} -> {logValue} -> {color}");
 
+                var polygonColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                var extrudeColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = $"extruded{styleId}",
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    },
-                    Polygon = new PolygonStyle
-                    {
-                        Color = Color32.Parse(extrudeColor)
-                    }
-                });
+                AddTrackStyle(container, $"extruded{styleId}", lineColor, polygonColor);
+                
                 lineColor = $"44{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = $"ground{styleId}",
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    },
-                    Polygon = new PolygonStyle
-                    {
-                        Color = Color32.Parse(extrudeColor)
-                    }
-                });
+                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor);
+                
                 lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                container.AddStyle(new Style
-                {
-                    Id = styleId,
-                    Line = new LineStyle
-                    {
-                        Color = Color32.Parse(lineColor),
-                        Width = 3
-                    },
-                    Icon = new IconStyle
-                    {
-                        Scale = 0
-                    }
-                });
+                AddTrackStyle(container, styleId, lineColor, polygonColor);
                 //Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }
@@ -162,20 +145,45 @@ namespace csv2kml
             var lastTime = DateTime.MinValue;
             double lastLat = 0;
             double lastLon = 0;
+
+
+            Dictionary<string, int> fieldByName =null;
+            string getLineValue(ICsvLine line,string fieldTitle)
+            {
+                return line[fieldByName[fieldTitle.Trim()]];
+            }
             foreach (var line in CsvReader.ReadFromStream(fs, new CsvOptions { HeaderMode = HeaderMode.HeaderPresent }))
             {
+                if (fieldByName== null)
+                {
+                    fieldByName = new Dictionary<string, int>();
+                    var headers = line.Headers;
+                    for (var i = 0; i < headers.Length; i++)
+                    {
+                        try
+                        {
+                            fieldByName.Add(headers[i].Trim(), i);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
+                    }
+
+                }
                 try
                 {
-                    if (!line[_csvConfig.LatitudeIndex].TryParseDouble(out var lat)) continue;
-                    if (!line[_csvConfig.LongitudeIndex].TryParseDouble(out var lon)) continue;
-                    if (!line[_csvConfig.AltitudeIndex].TryParseDouble(out var alt)) continue;
-                    if (!line[_csvConfig.ValueToColorizeIndex].TryParseDouble(out var valueToColorize)) continue;
-                    var timestamp = DateTime.Parse(line[_csvConfig.TimestampIndex]);
+                    if (!getLineValue(line,_csvConfig.FieldsByTitle.Latitude).TryParseDouble(out var lat)) continue;
+                    if (!getLineValue(line,_csvConfig.FieldsByTitle.Longitude).TryParseDouble(out var lon)) continue;
+                    if (!getLineValue(line,_csvConfig.FieldsByTitle.Altitude).TryParseDouble(out var alt)) continue;
+                    if (!getLineValue(line, _csvConfig.FieldsByTitle.ValueToColorize).TryParseDouble(out var valueToColorize)) continue;
+                    if (!getLineValue(line, _csvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
+                    var timestamp = DateTime.Parse(getLineValue(line,_csvConfig.FieldsByTitle.Timestamp));
                     //if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
-
+                    Console.WriteLine($"{timestamp} {motor}");
                     //import
-                    var data = new Data(timestamp, lat, lon, alt, valueToColorize);
+                    var data = new Data(timestamp, lat, lon, alt, valueToColorize,motor);
                     res.Add(data);
                     lastTime = timestamp;
                     lastLat = lat;

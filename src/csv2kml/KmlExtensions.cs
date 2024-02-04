@@ -95,6 +95,7 @@ namespace csv2kml
             container.AddFeature(folder);
             var coords = new List<Data>();
             var oldNormalizedValue = 0;
+            var styleId = "";
             for (var i = 0; i < data.Length - 1; i++)
             {
                 var item = data[i];
@@ -111,14 +112,15 @@ namespace csv2kml
 
                 if (oldNormalizedValue != normalizedValue)
                 {
-                    var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+                    styleId = coords.Any(c=>c.Motor == 1) ? "Motor" : oldNormalizedValue.ToString();
+                    var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
                 }
             }
             coords.Add(data[data.Length - 1]);
-            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{name}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
 
             folder.AddFeature(lastPlacemark);
             //Console.WriteLine($"point count: {data.Length}");
