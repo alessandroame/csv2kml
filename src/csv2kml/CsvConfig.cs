@@ -11,11 +11,11 @@ namespace csv2kml
 {
     public class CsvConfig
     {
-        public int TimestampIndex { get; set; }
-        public int LatitudeIndex {get;set;}
-        public int LongitudeIndex {get;set;}
-        public int AltitudeIndex {get;set;}
-        public int ValueToColorizeIndex { get; set; }
+
+        [JsonProperty("indexes")]
+        public CSVFieldsByIndex FieldsByIndex {  get; set; }
+        [JsonProperty("titles")]
+        public CSVFieldsByTitle FieldsByTitle {  get; set; }
         public double ValueMin { get; set; }
         public double ValueMax { get; set; }
         public double ColorScaleExpo { get; set;}
@@ -30,5 +30,24 @@ namespace csv2kml
         {
             return JsonConvert.SerializeObject(this,Formatting.Indented);
         }
+    }
+
+    public class CSVFieldsByIndex
+    {
+        public int Timestamp { get; set; }
+        public int Latitude { get; set; }
+        public int Longitude { get; set; }
+        public int Altitude { get; set; }
+        public int ValueToColorize { get; set; }
+        public int Motor { get; set; }
+    }
+    public class CSVFieldsByTitle
+    {
+        public string Timestamp { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string Altitude { get; set; }
+        public string ValueToColorize { get; set; }
+        public string Motor { get; set; }
     }
 }

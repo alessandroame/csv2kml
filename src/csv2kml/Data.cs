@@ -5,13 +5,14 @@ using System.Diagnostics;
 
 public class Data
 {
-    public Data(DateTime time, double lat, double lon, double alt, double valueToColorize)
+    public Data(DateTime time, double lat, double lon, double alt, double valueToColorize, double motor)
     {
         Time = time;
         Latitude = lat;
         Longitude = lon;
         Altitude = alt;
         ValueToColorize = valueToColorize;
+        Motor = motor;
     }
 
     public DateTime Time { get; set; }
@@ -19,4 +20,5 @@ public class Data
     public double Longitude { get; set; }
     public double Altitude { get; set; }
     public double ValueToColorize { get; set; }
+    public double Motor { get; set; }
 }
