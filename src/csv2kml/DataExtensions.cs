@@ -137,6 +137,13 @@ public static class DataExtensions
                                     bb.Center.Longitude,
                                     (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
                     break;
+                case PointReference.PilotPosition:
+                    var pilotPosition = data.First();
+                    res = new SharpKml.Base.Vector(
+                                    pilotPosition.Latitude,
+                                    pilotPosition.Longitude,
+                                    (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
+                    break;
                 default:
                     throw new Exception($"unhandled lookAtReference: {cameraConfig.LookAt}");
                     break;
@@ -160,6 +167,7 @@ public static class DataExtensions
 
 
         lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
+        if (cameraConfig.AlignTo == PointReference.PilotPosition) calculatedPan += 180;
         if (cameraConfig.Tilt.HasValue)
         {
             res.Tilt = cameraConfig.Tilt;

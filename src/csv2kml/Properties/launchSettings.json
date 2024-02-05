@@ -2,7 +2,7 @@
   "profiles": {
     "csv2kml": {
       "commandName": "Project",
-      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -f ..\\..\\..\\..\\..\\samples\\20240202 -a 356"
+      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling_los.json -f ..\\..\\..\\..\\..\\samples\\20240202 -a 356"
     }
   }
 }

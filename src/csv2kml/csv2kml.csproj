@@ -10,11 +10,15 @@
   <ItemGroup>
     <None Remove="settings\csv\frskyADV.json" />
     <None Remove="settings\tour\thermaling.json" />
+    <None Remove="settings\tour\thermaling_los.json" />
     <None Remove="settings\tour\thermaling_multiple_view_settings.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="settings\csv\frskyADV.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="settings\tour\thermaling_los.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="settings\tour\thermaling_multiple_view_settings.json">

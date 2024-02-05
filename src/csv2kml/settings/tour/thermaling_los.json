@@ -1,0 +1,31 @@
+{
+  //enum ClampToGround, RelativeToGround, Absolute
+  "AltitudeMode": "Absolute",
+
+  //int required if AltitudeMode is Absolute 
+  "AltitudeOffset": "356",
+  "lookAtCamera": [
+    {
+      "name": "CurrentPoint to BoundingBoxCenter",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 20,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": 80,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "UpdatePositionIntervalInSeconds": 1,
+      "minimumRangeInMeters": 50,
+      "MaxDeltaHeadingDegrees": 30,
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "PilotPosition"
+    }
+  ]
+}

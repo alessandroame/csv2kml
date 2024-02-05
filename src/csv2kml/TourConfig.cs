@@ -28,7 +28,8 @@ namespace csv2kml
         CurrentPoint,
         PreviousPoint,
         LastVisiblePoint,
-        BoundingBoxCenter
+        BoundingBoxCenter,
+        PilotPosition
     }
 
     public class LookAtCameraConfig
