@@ -181,7 +181,7 @@ namespace csv2kml
                     var timestamp = DateTime.Parse(getLineValue(line,_csvConfig.FieldsByTitle.Timestamp));
                     //if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
-                    Console.WriteLine($"{timestamp} {motor}");
+                    //Console.WriteLine($"{timestamp} {motor}");
                     //import
                     var data = new Data(timestamp, lat, lon, alt, valueToColorize,motor);
                     res.Add(data);

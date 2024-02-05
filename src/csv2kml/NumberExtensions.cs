@@ -77,7 +77,15 @@ namespace csv2kml
         }
         public static double ApplyExpo(this double v,double k)
         {
-            var res = k * Math.Pow(v, 3) + (1 - k)*v;
+            double res = v;
+            if (k >= 0)
+            {
+                res = k * Math.Pow(v, 3) + (1 - k) * v;
+            }
+            else
+            {
+                res = (-k) * (Math.Pow(Math.Abs(v), 1d / 3) * Math.Sign(v)) + (1 + k) * v;
+            }
             return res;
         }
     }
