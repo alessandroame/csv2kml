@@ -6,9 +6,9 @@
   "AltitudeOffset": "356",
   "lookAtCamera": [
     {
-      "name": "CurrentPoint to BoundingBoxCenter",
+      "name": "CurrentPoint to LastVisiblePoint",
       //int How many seconds of track are visible
-      "visibleHistorySeconds": 60,
+      "visibleHistorySeconds": 120,
       //tilt in degree
       //
       // null -> automatic
@@ -21,11 +21,11 @@
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
       "UpdatePositionIntervalInSeconds": 5,
-      "minimumRangeInMeters": 100,
+      "minimumRangeInMeters": 180,
       "MaxDeltaHeadingDegrees": 30,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
       "LookAt": "CurrentPoint",
-      "AlignTo": "BoundingBoxCenter"
+      "AlignTo": "LastVisiblePoint"
     }
   ]
 }

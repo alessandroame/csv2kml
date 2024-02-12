@@ -13,7 +13,7 @@ namespace csv2kml
         private TourConfig _tourConfig;
         private Data[] _data;
         private CsvConfig _csvConfig;
-        int _subdivision = 20;
+        int _subdivision = 40;
         Folder _rootFolder;
         public KmlBuilder UseCsvConfig(string configFilename)
         {

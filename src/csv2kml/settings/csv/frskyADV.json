@@ -15,11 +15,11 @@
     "Motor": "SE"
   },
 
-  "valueMin": -3,
-  "valueMax": 3,
+  "valueMin": -10,
+  "valueMax": 10,
   //percentage of expo
   // 0 = linear
   // >0 flat near 0 value
   // <0 vertical near 0
-  "colorScaleExpo": -0.6
+  "colorScaleExpo": -0.8
 }
