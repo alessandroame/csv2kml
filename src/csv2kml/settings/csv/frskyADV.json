@@ -15,8 +15,8 @@
     "Motor": "SE"
   },
 
-  "valueMin": -10,
-  "valueMax": 10,
+  "valueMin": -5,
+  "valueMax": 5,
   //percentage of expo
   // 0 = linear
   // >0 flat near 0 value

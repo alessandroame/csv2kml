@@ -30,7 +30,8 @@ namespace csv2kml
                 Description = new Description
                 {
                     Text = $"#{trackIndex++} -> {style} " +
-                    $"H: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude)))}"
+                    $"H: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude)))}"+
+                    $"V: {string.Join(" -> ", data.Select(d => Math.Round(d.ValueToColorize)))}"
                 }
             };
             placemark.Time = new SharpKml.Dom.TimeSpan
