@@ -57092,6 +57092,1146 @@
           </Playlist>
         </Tour>
       </Folder>
+      <Folder>
+        <name>Segments</name>
+        <open>true</open>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:27:49+01:00</begin>
+            <end>2024-02-11T14:29:30+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:27:49+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:30+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067999999999996 45.043700000000001 356</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067499999999997 45.043599999999998 358</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:29:31+01:00</begin>
+            <end>2024-02-11T14:29:41+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:31+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:41+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068250000000004 45.043599999999998 358</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077479999999998 45.043380999999997 384</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:29:42+01:00</begin>
+            <end>2024-02-11T14:29:55+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:42+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:55+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077739999999999 45.043291000000004 386</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4078710000000001 45.043230000000001 383</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:29:56+01:00</begin>
+            <end>2024-02-11T14:30:01+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:56+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:01+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4079350000000002 45.043264999999998 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.408042 45.043233000000001 379</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:02+01:00</begin>
+            <end>2024-02-11T14:30:04+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:02+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:04+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407921 45.043216999999999 381</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077549999999999 45.043253999999997 383</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:05+01:00</begin>
+            <end>2024-02-11T14:30:06+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:05+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:06+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077279999999996 45.043277000000003 381</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077640000000002 45.043289000000001 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:07+01:00</begin>
+            <end>2024-02-11T14:30:08+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:07+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:08+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407832 45.043294000000003 381</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4078160000000004 45.043247000000001 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:09+01:00</begin>
+            <end>2024-02-11T14:30:11+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:09+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:11+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077580000000003 45.043224000000002 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076389999999996 45.043256 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:12+01:00</begin>
+            <end>2024-02-11T14:30:13+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:12+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:13+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076199999999996 45.043278000000001 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076599999999999 45.043289000000001 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:14+01:00</begin>
+            <end>2024-02-11T14:30:30+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:14+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:30+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40768 45.043294000000003 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4075150000000001 45.043253 384</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:31+01:00</begin>
+            <end>2024-02-11T14:30:32+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:31+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:32+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074580000000001 45.043253 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073789999999997 45.043277000000003 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:33+01:00</begin>
+            <end>2024-02-11T14:30:36+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:33+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:36+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073390000000003 45.043337999999999 383</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074419999999996 45.043391999999997 384</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:37+01:00</begin>
+            <end>2024-02-11T14:30:43+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:37+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:43+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074710000000001 45.043346 385</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073460000000004 45.043422999999997 383</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:44+01:00</begin>
+            <end>2024-02-11T14:30:50+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:50+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074229999999996 45.043461000000001 383</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073359999999999 45.043354000000001 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:51+01:00</begin>
+            <end>2024-02-11T14:30:54+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:51+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:54+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407368 45.043377 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074340000000003 45.043346999999997 384</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:55+01:00</begin>
+            <end>2024-02-11T14:30:57+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:55+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:57+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073669999999998 45.043323999999998 383</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072420000000001 45.043356000000003 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:30:58+01:00</begin>
+            <end>2024-02-11T14:31:11+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:58+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:11+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072709999999997 45.043377999999997 381</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073039999999999 45.043230999999999 386</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:31:12+01:00</begin>
+            <end>2024-02-11T14:31:14+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:12+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:14+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072519999999997 45.043264999999998 385</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072630000000004 45.043365999999999 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:31:15+01:00</begin>
+            <end>2024-02-11T14:31:16+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:15+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:16+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073320000000002 45.043382999999999 383</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074159999999996 45.043391999999997 384</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:31:17+01:00</begin>
+            <end>2024-02-11T14:31:46+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:17+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:46+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074580000000001 45.043346 385</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407324 45.043216000000001 378</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:31:47+01:00</begin>
+            <end>2024-02-11T14:31:58+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:47+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:58+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407362 45.043258000000002 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070390000000002 45.043303999999999 365</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:31:59+01:00</begin>
+            <end>2024-02-11T14:32:06+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:59+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:06+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40707 45.043301999999997 364</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407451 45.043247000000001 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:32:07+01:00</begin>
+            <end>2024-02-11T14:32:34+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:07+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:34+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407375 45.043173000000003 385</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070720000000003 45.043579000000001 367</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:32:35+01:00</begin>
+            <end>2024-02-11T14:32:50+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:35+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:50+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070859999999996 45.043539000000003 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070650000000002 45.043447 360</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:32:51+01:00</begin>
+            <end>2024-02-11T14:32:53+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:51+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:53+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071319999999998 45.043424000000002 359</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072579999999997 45.043356000000003 367</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:32:54+01:00</begin>
+            <end>2024-02-11T14:33:03+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:54+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:03+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072789999999999 45.043328000000002 376</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070669999999996 45.042772999999997 370</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:33:04+01:00</begin>
+            <end>2024-02-11T14:33:18+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:04+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:18+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070840000000002 45.042735999999998 370</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072690000000003 45.043283000000002 364</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:33:19+01:00</begin>
+            <end>2024-02-11T14:33:23+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:19+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:23+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073339999999996 45.043292000000001 363</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407483 45.043512 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:33:24+01:00</begin>
+            <end>2024-02-11T14:34:19+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:24+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:19+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074920000000004 45.043605999999997 387</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4059920000000004 45.042859 366</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:34:20+01:00</begin>
+            <end>2024-02-11T14:34:33+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:33+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405996 45.042879999999997 364</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406682 45.042963999999998 364</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:34:34+01:00</begin>
+            <end>2024-02-11T14:34:36+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:34+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:36+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066409999999996 45.042932 364</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064350000000001 45.042907999999997 360</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:34:37+01:00</begin>
+            <end>2024-02-11T14:34:38+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:37+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:38+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062679999999999 45.042904 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061339999999998 45.042901999999998 372</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:34:39+01:00</begin>
+            <end>2024-02-11T14:34:50+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:39+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:50+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060170000000003 45.042901000000001 374</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4059150000000002 45.042796000000003 368</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:34:51+01:00</begin>
+            <end>2024-02-11T14:35:04+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:51+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:04+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405958 45.042847999999999 367</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066789999999996 45.043149 359</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:35:05+01:00</begin>
+            <end>2024-02-11T14:35:12+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:05+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:12+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067400000000001 45.043123999999999 358</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067819999999998 45.042673000000001 395</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:35:13+01:00</begin>
+            <end>2024-02-11T14:35:43+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:43+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066910000000004 45.042636000000002 396</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057769999999996 45.043664 376</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:35:44+01:00</begin>
+            <end>2024-02-11T14:35:53+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:53+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4058390000000003 45.043681999999997 375</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062429999999999 45.043368999999998 363</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:35:54+01:00</begin>
+            <end>2024-02-11T14:36:12+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:54+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:36:12+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062710000000003 45.043334999999999 363</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4059020000000002 45.043298 395</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:36:13+01:00</begin>
+            <end>2024-02-11T14:37:27+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:36:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:27+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4058010000000003 45.043199000000001 396</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061349999999999 45.043455999999999 374</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:37:28+01:00</begin>
+            <end>2024-02-11T14:37:38+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:28+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:38+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061669999999999 45.043427999999999 373</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067150000000002 45.043104 362</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:37:39+01:00</begin>
+            <end>2024-02-11T14:37:56+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:39+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:56+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067569999999998 45.043101999999998 361</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073380000000002 45.042296999999998 410</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:37:57+01:00</begin>
+            <end>2024-02-11T14:38:12+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:57+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:12+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073690000000001 45.042347999999997 412</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407349 45.042665999999997 406</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:38:13+01:00</begin>
+            <end>2024-02-11T14:38:44+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:44+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407375 45.042682999999997 405</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069000000000003 45.042817999999997 377</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:38:45+01:00</begin>
+            <end>2024-02-11T14:38:56+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:45+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:56+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.042808999999998 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060220000000001 45.043291000000004 366</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:38:57+01:00</begin>
+            <end>2024-02-11T14:39:12+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:57+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:12+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060610000000002 45.043246000000003 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4054149999999996 45.043007000000003 402</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:39:13+01:00</begin>
+            <end>2024-02-11T14:39:44+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:44+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4054570000000002 45.043053 404</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063629999999998 45.043615000000003 374</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:39:45+01:00</begin>
+            <end>2024-02-11T14:39:56+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:45+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:56+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064319999999997 45.043607000000002 373</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062390000000002 45.043505000000003 365</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:39:57+01:00</begin>
+            <end>2024-02-11T14:40:07+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:57+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:07+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063189999999999 45.043501999999997 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060370000000004 45.043480000000002 383</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:40:08+01:00</begin>
+            <end>2024-02-11T14:40:37+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:08+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:37+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060689999999996 45.043390000000002 385</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067299999999996 45.043008999999998 369</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:40:38+01:00</begin>
+            <end>2024-02-11T14:40:52+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:38+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:52+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068149999999999 45.043053999999998 368</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069279999999997 45.042924999999997 362</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:40:53+01:00</begin>
+            <end>2024-02-11T14:40:58+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:58+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069640000000003 45.042912999999999 361</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067610000000004 45.042760000000001 375</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:40:59+01:00</begin>
+            <end>2024-02-11T14:41:16+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:59+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:16+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067309999999997 45.04278 375</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071300000000004 45.043187000000003 371</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:41:17+01:00</begin>
+            <end>2024-02-11T14:41:30+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:17+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:30+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072149999999999 45.043143000000001 370</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071699999999998 45.043278999999998 363</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:41:31+01:00</begin>
+            <end>2024-02-11T14:41:38+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:31+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:38+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071850000000001 45.043339000000003 362</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406809 45.043857000000003 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:41:39+01:00</begin>
+            <end>2024-02-11T14:42:08+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:39+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:08+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066549999999998 45.043877999999999 382</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065940000000001 45.043928999999999 365</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:42:09+01:00</begin>
+            <end>2024-02-11T14:42:15+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:09+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:15+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065969999999997 45.043964000000003 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068670000000001 45.044002999999996 362</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:42:16+01:00</begin>
+            <end>2024-02-11T14:42:40+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:16+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:40+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068839999999998 45.043951 361</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072630000000004 45.043182999999999 378</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:42:41+01:00</begin>
+            <end>2024-02-11T14:42:52+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:41+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:52+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072310000000003 45.043140999999999 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070989999999997 45.043129999999998 366</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:42:53+01:00</begin>
+            <end>2024-02-11T14:43:08+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:08+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070989999999997 45.043214999999996 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072800000000001 45.043447999999998 361</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:09+01:00</begin>
+            <end>2024-02-11T14:43:12+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:09+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:12+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072899999999997 45.043424000000002 361</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073739999999999 45.043315999999997 390</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:13+01:00</begin>
+            <end>2024-02-11T14:43:14+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:14+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073869999999999 45.043258000000002 396</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073929999999999 45.043179000000002 398</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Sinking</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:15+01:00</begin>
+            <end>2024-02-11T14:43:21+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:15+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:21+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073969999999996 45.043138999999996 401</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407044 45.043118 382</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:22+01:00</begin>
+            <end>2024-02-11T14:43:43+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:22+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:43+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068719999999999 45.043159000000003 374</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406256 45.043342000000003 367</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:44+01:00</begin>
+            <end>2024-02-11T14:43:59+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:59+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062279999999996 45.043270999999997 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069839999999996 45.043399999999998 359</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:44:00+01:00</begin>
+            <end>2024-02-11T14:44:04+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:00+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:04+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070419999999997 45.043349999999997 359</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073029999999997 45.043165999999999 381</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:44:05+01:00</begin>
+            <end>2024-02-11T14:44:28+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:05+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:28+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072509999999996 45.043132999999997 381</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063650000000001 45.043824000000001 369</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Thermaling</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:44:29+01:00</begin>
+            <end>2024-02-11T14:44:43+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentThermaling</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:29+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:43+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063829999999999 45.043812000000003 369</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070410000000004 45.043553000000003 361</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#MotorClimb</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:44:44+01:00</begin>
+            <end>2024-02-11T14:44:49+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentMotorClimb</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:49+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070710000000002 45.043526999999997 361</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073869999999999 45.043456999999997 397</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:44:50+01:00</begin>
+            <end>2024-02-11T14:45:24+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:50+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:24+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073929999999999 45.043528999999999 406</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061750000000002 45.04365 391</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Sinking</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:45:25+01:00</begin>
+            <end>2024-02-11T14:45:27+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:25+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:27+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061870000000001 45.043725000000002 390</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063220000000003 45.043781000000003 387</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name />
+          <description>#Cruising</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:45:28+01:00</begin>
+            <end>2024-02-11T14:46:18+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:28+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:46:18+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063610000000004 45.043790999999999 386</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 355</gx:coord>
+          </Track>
+        </Placemark>
+      </Folder>
     </Folder>
   </Document>
 </kml>

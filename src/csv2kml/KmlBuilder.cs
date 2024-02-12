@@ -2,6 +2,7 @@ using Csv;
 using Csv2KML;
 using SharpKml.Base;
 using SharpKml.Dom;
+using SharpKml.Dom.GX;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
@@ -36,7 +37,103 @@ namespace csv2kml
                 Open = true
             };
             _rootFolder.AddFeature(BuildTrack());
+            _rootFolder.AddFeature(BuildSegments());
             return this;
+        }
+
+        enum SegmentType
+        {
+            MotorClimb,
+            Cruising,
+            Thermaling,
+            Sinking
+        }
+        class Segment
+        {
+            public SegmentType Type { get; set; }
+            public Data From { get; set; }
+            public Data To { get; set; }
+        }
+        public Folder BuildSegments()
+        {
+            var res = new Folder
+            {
+                Name = "Segments",
+                Open = true
+            };
+            var segments = new List<Segment>();
+            var from = 0;
+            while (from < _data.Length)
+            {
+                var segment = GetNextSegment(from, out var pos);
+                Console.WriteLine($"{from}->{pos} {segment.Type}");
+                segments.Add(segment);
+                from = pos + 1;
+            }
+            foreach (var segment in segments)
+            {
+                var track = new Track
+                {
+                    AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute,
+                };
+                var placemark = new Placemark
+                {
+                    Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
+                    Geometry = track,
+                    StyleUrl = new Uri($"#segment{segment.Type}", UriKind.Relative),
+                    Description = new Description
+                    {
+                        Text = $"#{segment.Type}"
+                    }
+                };
+                placemark.Time = new SharpKml.Dom.TimeSpan
+                {
+                    Begin = segment.From.Time,
+                    End = segment.To.Time,
+                };
+                foreach (var d in new List<Data> { segment.From, segment.To })
+                {
+                    track.AddWhen(d.Time);
+                    track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + _tourConfig.AltitudeOffset));
+                }
+                res.AddFeature(placemark);
+            }
+            return res;
+        }
+
+        private Segment GetNextSegment(int fromIndex, out int pos)
+        {
+            var lookAheadCount = 20;
+            var res = new Segment
+            {
+                From = _data[fromIndex],
+                Type= GetSegmentType(fromIndex,lookAheadCount)
+            };
+            pos = fromIndex;
+            while (pos < _data.Length)
+            {
+                var nextType = GetSegmentType(pos, lookAheadCount);
+               // Console.WriteLine($"\t{pos} {nextType}");
+                if (nextType != res.Type) break;
+                pos++;
+                
+            }
+            if (pos >= _data.Length) pos = _data.Length - 1;
+            res.To = _data[pos];
+            return res;
+        }
+        private SegmentType GetSegmentType(int from, int lookAheadCount)
+        {
+            if (_data[from].Motor == 1)
+            {
+                return SegmentType.MotorClimb;
+            }
+            var avgVspeed =  _data.Skip(from).Take(lookAheadCount).Average(d => d.ValueToColorize);
+            if (avgVspeed > 0)
+                return SegmentType.Thermaling;
+            if (avgVspeed >-1)
+                return SegmentType.Cruising;
+            return SegmentType.Sinking;
         }
         public Folder BuildTrack()
         {
@@ -47,7 +144,7 @@ namespace csv2kml
             };
             AddStyles(trackFolder);
             trackFolder.GenerateColoredTrack(_data, "3D track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "Value");
-            trackFolder.GenerateColoredTrack(_data, "Ground track", _subdivision, AltitudeMode.ClampToGround, _tourConfig.AltitudeOffset, "groundValue");
+            trackFolder.GenerateColoredTrack(_data, "Ground track", _subdivision, SharpKml.Dom.AltitudeMode.ClampToGround, _tourConfig.AltitudeOffset, "groundValue");
             trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "extrudedValue");
             foreach (var cameraSettings in _tourConfig.LookAtCameraSettings)
             {
