@@ -13,10 +13,14 @@ namespace csv2kml
 
         public static Color ToColor(this double normalizedValue)
         {
-            //0 must be green
-            //-1 must be blue
-            //1 must be red
-            var hue = normalizedValue*-1 *120 + 120;
+            //var hue = normalizedValue * -1 * 120 + 120;
+
+            //MAX  GREEN
+            //ZERO YELLOW
+            //-MAX RED
+            var center = 90;
+            var aperture = 90;
+            var hue = -normalizedValue * aperture + center;
             return hue.HueToRGB();
         }
         public static Color HueToRGB(this double hue)
@@ -87,6 +91,16 @@ namespace csv2kml
                 res = (-k) * (Math.Pow(Math.Abs(v), 1d / 3) * Math.Sign(v)) + (1 + k) * v;
             }
             return res;
+        }
+
+        public static double ToRadian(this double num)
+        {
+            return num * Math.PI / 180;
+        }
+
+        public static double ToDegree(this double num)
+        {
+            return num * 180 / Math.PI;
         }
     }
 }

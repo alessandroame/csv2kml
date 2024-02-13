@@ -38,7 +38,8 @@ namespace csv2kml
         public int Latitude { get; set; }
         public int Longitude { get; set; }
         public int Altitude { get; set; }
-        public int ValueToColorize { get; set; }
+        public int VerticalSpeed { get; set; }
+        public string Speed { get; set; }
         public int Motor { get; set; }
     }
     public class CSVFieldsByTitle
@@ -47,7 +48,8 @@ namespace csv2kml
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public string Altitude { get; set; }
-        public string ValueToColorize { get; set; }
+        public string VerticalSpeed { get; set; }
+        public string Speed { get; set; }
         public string Motor { get; set; }
     }
 }

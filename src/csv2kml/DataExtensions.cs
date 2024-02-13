@@ -6,14 +6,38 @@ using System.Diagnostics;
 
 public static class DataExtensions
 {
-    private static double ToRadian(this double num)
+    public static void CalculateFlightPhase(this Data[] data)
     {
-        return num * Math.PI / 180;
+        var lookAroundInSeconds = 10;
+        for (var i = 0; i < data.Count(); i++)
+        {
+            if (data[i].MotorActive||data[i - 1].MotorActive)
+            { 
+                data[i].FlightPhase = FlightPhase.MotorClimb;
+                //Console.WriteLine($"#{i} motor speed={data[i].Speed}");
+            }
+            else
+            {
+                var dataSet = data.GetDataAroundTime(data[i].Time,lookAroundInSeconds);
+                var elapsedSeconds = dataSet.Max(d => d.Time).Subtract(dataSet.Min(d => d.Time)).TotalSeconds;
+                //var weight = elapsedSeconds / lookAroundInSeconds / 2;
+                var deltaSpeed = dataSet.Max(d => d.Speed) - dataSet.Min(d => d.Speed);
+                var avgVSpeed = dataSet.Average(d => d.VerticalSpeed);//*weight;
+                //if (i > 90) Debugger.Break();
+                if (avgVSpeed>0)
+                    data[i].FlightPhase = FlightPhase.Climbing;
+                else if (avgVSpeed > -0.8)
+                    data[i].FlightPhase = FlightPhase.Gliding;
+                else 
+                    data[i].FlightPhase = FlightPhase.Sinking;
+//                Console.WriteLine($"#{i} phase:{data[i].FlightPhase} speed={data[i].Speed} alt={data[i].Altitude} ds={deltaSpeed} avs={avgVSpeed}");
+            }
+        }
     }
 
-    private static double ToDegree(this double num)
+    public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data,DateTime when,int aroundInSecond)
     {
-        return num * 180 / Math.PI;
+        return data.Where(d => d.MotorActive==false && Math.Abs(d.Time.Subtract(when).TotalSeconds) <= aroundInSecond);
     }
 
     public static double Distance(this Data from, Data to)
@@ -37,7 +61,7 @@ public static class DataExtensions
         return d;
     }
 
-    public static void CalculateTiltPan(this SharpKml.Base.Vector from, SharpKml.Base.Vector to,out double pan,out double tilt, out double distance, out double groundDistance)
+    private static void CalculateTiltPan(this SharpKml.Base.Vector from, SharpKml.Base.Vector to,out double pan,out double tilt, out double distance, out double groundDistance)
     {
         const double EarthRadius = 6371*1000; // Radius of the Earth in kilometers
         

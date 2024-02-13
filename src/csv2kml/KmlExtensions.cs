@@ -1,3 +1,4 @@
+using MathNet.Numerics.Distributions;
 using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
@@ -31,7 +32,7 @@ namespace csv2kml
                 {
                     Text = $"#{trackIndex++} -> {style} " +
                     $"H: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude)))}"+
-                    $"V: {string.Join(" -> ", data.Select(d => Math.Round(d.ValueToColorize)))}"
+                    $"V: {string.Join(" -> ", data.Select(d => Math.Round(d.VerticalSpeed)))}"
                 }
             };
             placemark.Time = new SharpKml.Dom.TimeSpan
@@ -70,7 +71,7 @@ namespace csv2kml
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
                 Geometry = multipleGeometry,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
-                Description = new Description { Text = $"#{trackIndex++} -> {style}" }
+                Description = new Description { Text = $"#{trackIndex++} -> {style} motor:{data.Any(d=>d.MotorActive)}" }
             };
             placemark.Time = new SharpKml.Dom.TimeSpan
             {
@@ -85,49 +86,18 @@ namespace csv2kml
             }
             return placemark;
         }
-
         public static void GenerateColoredTrack(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, string styleRadix)
         {
-            var folder = new Folder
-            {
-                Name = name,
-                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
-            };
-            container.AddFeature(folder);
-            var coords = new List<Data>();
-            var oldNormalizedValue = 0;
-            var styleId = "";
-            for (var i = 0; i < data.Length - 1; i++)
-            {
-                var item = data[i];
-                coords.Add(item);
-                //var delta = 0d;
-                //if (i > 0)
-                //{
-                //    var previousItem = data[i - 1];
-                //    delta = item.Altitude - previousItem.Altitude;
-                //}
-                var nv = data[i + 1].ValueToColorize.Normalize(3);
-                //Console.WriteLine($"{delta}->{nv}");
-                var normalizedValue = (int)Math.Round(nv * subdivision / 2);
-
-                if (oldNormalizedValue != normalizedValue)
-                {
-                    styleId = coords.Any(c=>c.Motor == 1) ? "Motor" : oldNormalizedValue.ToString();
-                    var p = CreatePlacemarkWithTrack(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
-                    folder.AddFeature(p);
-                    coords = new List<Data> { item };
-                    oldNormalizedValue = normalizedValue;
-                }
-            }
-            coords.Add(data[data.Length - 1]);
-            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
-
-            folder.AddFeature(lastPlacemark);
-            //Console.WriteLine($"point count: {data.Length}");
+            container.GenerateTrack(data, name, subdivision, altitudeMode, altitudeOffset, styleRadix, CreatePlacemarkWithTrack);
         }
+        public static void GenerateLineString(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, string styleRadix)
+        { 
+            container.GenerateTrack(data, name, subdivision, altitudeMode, altitudeOffset, styleRadix, CreatePlacemarkWithLineString);
 
-        public static void GenerateLineString(this Container container, Data[] data, string name, int subdivision, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset,string styleRadix)
+        }
+        public static void GenerateTrack(this Container container, Data[] data, string name, int subdivision, 
+            SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, string styleRadix,
+            Func<List<Data>,string, SharpKml.Dom.AltitudeMode, int,Placemark> placemarkGenerator)
         {
             var folder = new Folder
             {
@@ -137,34 +107,43 @@ namespace csv2kml
             container.AddFeature(folder);
             var coords = new List<Data>();
             var oldNormalizedValue = 0;
-            for (var i = 0; i < data.Length - 1; i++)
+            var oldMotorActive = data[0].MotorActive;
+            var styleId = "";
+            for (var i = 0; i < data.Length; i++)
             {
                 var item = data[i];
                 coords.Add(item);
-                //var delta = 0d;
-                //if (i > 0)
-                //{
-                //    var previousItem = data[i - 1];
-                //    delta = item.Altitude - previousItem.Altitude;
-                //}
-                var nv = data[i + 1].ValueToColorize.Normalize(3);
-                //Console.WriteLine($"{delta}->{nv}");
+
+                //TODO Normalize ( by config value )
+                var nv = item.VerticalSpeed.Normalize(5);
                 var normalizedValue = (int)Math.Round(nv * subdivision / 2);
 
-                if (oldNormalizedValue != normalizedValue)
+                if (oldMotorActive && !item.MotorActive)
                 {
-                    var p = CreatePlacemarkWithLineString(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+                    styleId = "Motor";
+                    var p = placemarkGenerator(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
                     coords = new List<Data> { item };
                     oldNormalizedValue = normalizedValue;
+                    oldMotorActive = data[i].MotorActive;
+                }
+                else if (!oldMotorActive && oldNormalizedValue != normalizedValue)
+                {
+                    styleId = oldNormalizedValue.ToString();
+                    var p = placemarkGenerator(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
+                    folder.AddFeature(p);
+                    coords = new List<Data> { item };
+                    oldNormalizedValue = normalizedValue;
+                    oldMotorActive = data[i].MotorActive;
                 }
             }
-            coords.Add(data[data.Length - 1]);
-            var lastPlacemark = CreatePlacemarkWithTrack(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            var lastPlacemark = placemarkGenerator(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+
             folder.AddFeature(lastPlacemark);
             //Console.WriteLine($"point count: {data.Length}");
         }
 
+  
         //public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
         //{
         //    var tourplaylist = new Playlist();

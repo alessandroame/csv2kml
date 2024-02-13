@@ -18,12 +18,13 @@ internal class Program
                 if (string.IsNullOrEmpty(o.TelemetryFN) && string.IsNullOrEmpty(o.TelemetryFolder))
                     throw new Exception("inputFile or inputFolder required");
 
-           
-            var files = new List<string>();
+
+                var files = new List<string>();
                 if (!string.IsNullOrEmpty(o.TelemetryFN)) files.Add(o.TelemetryFN);
-                foreach (var csv in Directory.GetFiles(o.TelemetryFolder, "*.csv"))
+                if (!string.IsNullOrEmpty(o.TelemetryFolder)) files.AddRange(Directory.GetFiles(o.TelemetryFolder, "*.csv"));
+                foreach (var csv in files)
                 {
-                   Console.WriteLine($"Importing {csv}...");
+                    Console.WriteLine($"Importing {csv}...");
                     string outFn;
                     if (string.IsNullOrEmpty(o.KMLFolder))
                     {

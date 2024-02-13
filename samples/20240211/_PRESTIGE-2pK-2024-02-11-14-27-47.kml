@@ -54,11 +54,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff0000</color>
+            <color>33ffff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0000</color>
+            <color>55ffff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-20">
@@ -66,11 +66,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff0000</color>
+            <color>44ffff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0000</color>
+            <color>55ffff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-20">
@@ -78,11 +78,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff0000</color>
+            <color>ffffff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0000</color>
+            <color>55ffff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-19">
@@ -90,11 +90,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff0c00</color>
+            <color>33ebff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0c00</color>
+            <color>55ebff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-19">
@@ -102,11 +102,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff0c00</color>
+            <color>44ebff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0c00</color>
+            <color>55ebff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-19">
@@ -114,11 +114,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff0c00</color>
+            <color>ffebff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff0c00</color>
+            <color>55ebff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-18">
@@ -126,11 +126,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff1800</color>
+            <color>33d8ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff1800</color>
+            <color>55d8ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-18">
@@ -138,11 +138,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff1800</color>
+            <color>44d8ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff1800</color>
+            <color>55d8ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-18">
@@ -150,11 +150,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff1800</color>
+            <color>ffd8ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff1800</color>
+            <color>55d8ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-17">
@@ -162,11 +162,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff2400</color>
+            <color>33c5ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff2400</color>
+            <color>55c5ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-17">
@@ -174,11 +174,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff2400</color>
+            <color>44c5ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff2400</color>
+            <color>55c5ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-17">
@@ -186,11 +186,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff2400</color>
+            <color>ffc5ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff2400</color>
+            <color>55c5ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-16">
@@ -198,11 +198,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff3100</color>
+            <color>33b2ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3100</color>
+            <color>55b2ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-16">
@@ -210,11 +210,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff3100</color>
+            <color>44b2ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3100</color>
+            <color>55b2ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-16">
@@ -222,11 +222,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff3100</color>
+            <color>ffb2ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3100</color>
+            <color>55b2ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-15">
@@ -234,11 +234,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff3e00</color>
+            <color>339fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3e00</color>
+            <color>559fff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-15">
@@ -246,11 +246,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff3e00</color>
+            <color>449fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3e00</color>
+            <color>559fff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-15">
@@ -258,11 +258,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff3e00</color>
+            <color>ff9fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff3e00</color>
+            <color>559fff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-14">
@@ -270,11 +270,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff4c00</color>
+            <color>338cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff4c00</color>
+            <color>558cff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-14">
@@ -282,11 +282,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff4c00</color>
+            <color>448cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff4c00</color>
+            <color>558cff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-14">
@@ -294,11 +294,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff4c00</color>
+            <color>ff8cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff4c00</color>
+            <color>558cff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-13">
@@ -306,11 +306,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff5a00</color>
+            <color>3379ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff5a00</color>
+            <color>5579ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-13">
@@ -318,11 +318,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff5a00</color>
+            <color>4479ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff5a00</color>
+            <color>5579ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-13">
@@ -330,11 +330,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff5a00</color>
+            <color>ff79ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff5a00</color>
+            <color>5579ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-12">
@@ -342,11 +342,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff6800</color>
+            <color>3366ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff6800</color>
+            <color>5566ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-12">
@@ -354,11 +354,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff6800</color>
+            <color>4466ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff6800</color>
+            <color>5566ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-12">
@@ -366,11 +366,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff6800</color>
+            <color>ff66ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff6800</color>
+            <color>5566ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-11">
@@ -378,11 +378,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff7700</color>
+            <color>3352ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff7700</color>
+            <color>5552ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-11">
@@ -390,11 +390,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff7700</color>
+            <color>4452ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff7700</color>
+            <color>5552ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-11">
@@ -402,11 +402,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff7700</color>
+            <color>ff52ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff7700</color>
+            <color>5552ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-10">
@@ -414,11 +414,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff8700</color>
+            <color>333fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff8700</color>
+            <color>553fff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-10">
@@ -426,11 +426,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff8700</color>
+            <color>443fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff8700</color>
+            <color>553fff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-10">
@@ -438,11 +438,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff8700</color>
+            <color>ff3fff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff8700</color>
+            <color>553fff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-9">
@@ -450,11 +450,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ff9700</color>
+            <color>332cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff9700</color>
+            <color>552cff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-9">
@@ -462,11 +462,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ff9700</color>
+            <color>442cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff9700</color>
+            <color>552cff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-9">
@@ -474,11 +474,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffff9700</color>
+            <color>ff2cff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ff9700</color>
+            <color>552cff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-8">
@@ -486,11 +486,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffa800</color>
+            <color>3319ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffa800</color>
+            <color>5519ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-8">
@@ -498,11 +498,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffa800</color>
+            <color>4419ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffa800</color>
+            <color>5519ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-8">
@@ -510,11 +510,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffa800</color>
+            <color>ff19ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffa800</color>
+            <color>5519ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-7">
@@ -522,11 +522,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffba00</color>
+            <color>3306ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffba00</color>
+            <color>5506ff00</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-7">
@@ -534,11 +534,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffba00</color>
+            <color>4406ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffba00</color>
+            <color>5506ff00</color>
           </PolyStyle>
         </Style>
         <Style id="Value-7">
@@ -546,11 +546,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffba00</color>
+            <color>ff06ff00</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffba00</color>
+            <color>5506ff00</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-6">
@@ -558,11 +558,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffce00</color>
+            <color>3300ff0c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffce00</color>
+            <color>5500ff0c</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-6">
@@ -570,11 +570,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffce00</color>
+            <color>4400ff0c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffce00</color>
+            <color>5500ff0c</color>
           </PolyStyle>
         </Style>
         <Style id="Value-6">
@@ -582,11 +582,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffce00</color>
+            <color>ff00ff0c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffce00</color>
+            <color>5500ff0c</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-5">
@@ -594,11 +594,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33ffe300</color>
+            <color>3300ff1f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffe300</color>
+            <color>5500ff1f</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-5">
@@ -606,11 +606,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44ffe300</color>
+            <color>4400ff1f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffe300</color>
+            <color>5500ff1f</color>
           </PolyStyle>
         </Style>
         <Style id="Value-5">
@@ -618,11 +618,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffffe300</color>
+            <color>ff00ff1f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55ffe300</color>
+            <color>5500ff1f</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-4">
@@ -630,11 +630,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33fffb00</color>
+            <color>3300ff32</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55fffb00</color>
+            <color>5500ff32</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-4">
@@ -642,11 +642,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44fffb00</color>
+            <color>4400ff32</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55fffb00</color>
+            <color>5500ff32</color>
           </PolyStyle>
         </Style>
         <Style id="Value-4">
@@ -654,11 +654,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>fffffb00</color>
+            <color>ff00ff32</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55fffb00</color>
+            <color>5500ff32</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-3">
@@ -666,11 +666,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33e8ff00</color>
+            <color>3300ff46</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55e8ff00</color>
+            <color>5500ff46</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-3">
@@ -678,11 +678,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44e8ff00</color>
+            <color>4400ff46</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55e8ff00</color>
+            <color>5500ff46</color>
           </PolyStyle>
         </Style>
         <Style id="Value-3">
@@ -690,11 +690,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffe8ff00</color>
+            <color>ff00ff46</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55e8ff00</color>
+            <color>5500ff46</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-2">
@@ -702,11 +702,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33c7ff00</color>
+            <color>3300ff59</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55c7ff00</color>
+            <color>5500ff59</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-2">
@@ -714,11 +714,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44c7ff00</color>
+            <color>4400ff59</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55c7ff00</color>
+            <color>5500ff59</color>
           </PolyStyle>
         </Style>
         <Style id="Value-2">
@@ -726,11 +726,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ffc7ff00</color>
+            <color>ff00ff59</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55c7ff00</color>
+            <color>5500ff59</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue-1">
@@ -738,11 +738,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>339bff00</color>
+            <color>3300ff6c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>559bff00</color>
+            <color>5500ff6c</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue-1">
@@ -750,11 +750,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>449bff00</color>
+            <color>4400ff6c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>559bff00</color>
+            <color>5500ff6c</color>
           </PolyStyle>
         </Style>
         <Style id="Value-1">
@@ -762,11 +762,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff9bff00</color>
+            <color>ff00ff6c</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>559bff00</color>
+            <color>5500ff6c</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue0">
@@ -774,11 +774,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ff00</color>
+            <color>3300ff7f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff00</color>
+            <color>5500ff7f</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue0">
@@ -786,11 +786,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ff00</color>
+            <color>4400ff7f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff00</color>
+            <color>5500ff7f</color>
           </PolyStyle>
         </Style>
         <Style id="Value0">
@@ -798,11 +798,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ff00</color>
+            <color>ff00ff7f</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff00</color>
+            <color>5500ff7f</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue1">
@@ -810,11 +810,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ff9b</color>
+            <color>3300ff92</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff9b</color>
+            <color>5500ff92</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue1">
@@ -822,11 +822,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ff9b</color>
+            <color>4400ff92</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff9b</color>
+            <color>5500ff92</color>
           </PolyStyle>
         </Style>
         <Style id="Value1">
@@ -834,11 +834,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ff9b</color>
+            <color>ff00ff92</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ff9b</color>
+            <color>5500ff92</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue2">
@@ -846,11 +846,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ffc7</color>
+            <color>3300ffa5</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffc7</color>
+            <color>5500ffa5</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue2">
@@ -858,11 +858,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ffc7</color>
+            <color>4400ffa5</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffc7</color>
+            <color>5500ffa5</color>
           </PolyStyle>
         </Style>
         <Style id="Value2">
@@ -870,11 +870,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ffc7</color>
+            <color>ff00ffa5</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffc7</color>
+            <color>5500ffa5</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue3">
@@ -882,11 +882,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ffe8</color>
+            <color>3300ffb8</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffe8</color>
+            <color>5500ffb8</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue3">
@@ -894,11 +894,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ffe8</color>
+            <color>4400ffb8</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffe8</color>
+            <color>5500ffb8</color>
           </PolyStyle>
         </Style>
         <Style id="Value3">
@@ -906,11 +906,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ffe8</color>
+            <color>ff00ffb8</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ffe8</color>
+            <color>5500ffb8</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue4">
@@ -918,11 +918,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300fbff</color>
+            <color>3300ffcc</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500fbff</color>
+            <color>5500ffcc</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue4">
@@ -930,11 +930,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400fbff</color>
+            <color>4400ffcc</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500fbff</color>
+            <color>5500ffcc</color>
           </PolyStyle>
         </Style>
         <Style id="Value4">
@@ -942,11 +942,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00fbff</color>
+            <color>ff00ffcc</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500fbff</color>
+            <color>5500ffcc</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue5">
@@ -954,11 +954,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300e3ff</color>
+            <color>3300ffdf</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500e3ff</color>
+            <color>5500ffdf</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue5">
@@ -966,11 +966,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400e3ff</color>
+            <color>4400ffdf</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500e3ff</color>
+            <color>5500ffdf</color>
           </PolyStyle>
         </Style>
         <Style id="Value5">
@@ -978,11 +978,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00e3ff</color>
+            <color>ff00ffdf</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500e3ff</color>
+            <color>5500ffdf</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue6">
@@ -990,11 +990,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300ceff</color>
+            <color>3300fff2</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ceff</color>
+            <color>5500fff2</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue6">
@@ -1002,11 +1002,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400ceff</color>
+            <color>4400fff2</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ceff</color>
+            <color>5500fff2</color>
           </PolyStyle>
         </Style>
         <Style id="Value6">
@@ -1014,11 +1014,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00ceff</color>
+            <color>ff00fff2</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500ceff</color>
+            <color>5500fff2</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue7">
@@ -1026,11 +1026,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300baff</color>
+            <color>3300f8ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500baff</color>
+            <color>5500f8ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue7">
@@ -1038,11 +1038,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400baff</color>
+            <color>4400f8ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500baff</color>
+            <color>5500f8ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value7">
@@ -1050,11 +1050,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00baff</color>
+            <color>ff00f8ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500baff</color>
+            <color>5500f8ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue8">
@@ -1062,11 +1062,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>3300a8ff</color>
+            <color>3300e5ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500a8ff</color>
+            <color>5500e5ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue8">
@@ -1074,11 +1074,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>4400a8ff</color>
+            <color>4400e5ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500a8ff</color>
+            <color>5500e5ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value8">
@@ -1086,11 +1086,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff00a8ff</color>
+            <color>ff00e5ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>5500a8ff</color>
+            <color>5500e5ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue9">
@@ -1098,11 +1098,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330097ff</color>
+            <color>3300d2ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550097ff</color>
+            <color>5500d2ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue9">
@@ -1110,11 +1110,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440097ff</color>
+            <color>4400d2ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550097ff</color>
+            <color>5500d2ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value9">
@@ -1122,11 +1122,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0097ff</color>
+            <color>ff00d2ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550097ff</color>
+            <color>5500d2ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue10">
@@ -1134,11 +1134,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330087ff</color>
+            <color>3300bfff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550087ff</color>
+            <color>5500bfff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue10">
@@ -1146,11 +1146,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440087ff</color>
+            <color>4400bfff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550087ff</color>
+            <color>5500bfff</color>
           </PolyStyle>
         </Style>
         <Style id="Value10">
@@ -1158,11 +1158,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0087ff</color>
+            <color>ff00bfff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550087ff</color>
+            <color>5500bfff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue11">
@@ -1170,11 +1170,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330077ff</color>
+            <color>3300acff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550077ff</color>
+            <color>5500acff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue11">
@@ -1182,11 +1182,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440077ff</color>
+            <color>4400acff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550077ff</color>
+            <color>5500acff</color>
           </PolyStyle>
         </Style>
         <Style id="Value11">
@@ -1194,11 +1194,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0077ff</color>
+            <color>ff00acff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550077ff</color>
+            <color>5500acff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue12">
@@ -1206,11 +1206,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330068ff</color>
+            <color>330099ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550068ff</color>
+            <color>550099ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue12">
@@ -1218,11 +1218,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440068ff</color>
+            <color>440099ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550068ff</color>
+            <color>550099ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value12">
@@ -1230,11 +1230,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0068ff</color>
+            <color>ff0099ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550068ff</color>
+            <color>550099ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue13">
@@ -1242,11 +1242,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33005aff</color>
+            <color>330085ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55005aff</color>
+            <color>550085ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue13">
@@ -1254,11 +1254,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44005aff</color>
+            <color>440085ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55005aff</color>
+            <color>550085ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value13">
@@ -1266,14 +1266,86 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff005aff</color>
+            <color>ff0085ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55005aff</color>
+            <color>550085ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue14">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>330072ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550072ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="groundValue14">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>440072ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550072ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="Value14">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>ff0072ff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>550072ff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="extrudedValue15">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>33005fff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>55005fff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="groundValue15">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>44005fff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>55005fff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="Value15">
+          <IconStyle>
+            <scale>0</scale>
+          </IconStyle>
+          <LineStyle>
+            <color>ff005fff</color>
+            <width>3</width>
+          </LineStyle>
+          <PolyStyle>
+            <color>55005fff</color>
+          </PolyStyle>
+        </Style>
+        <Style id="extrudedValue16">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -1285,7 +1357,7 @@
             <color>55004cff</color>
           </PolyStyle>
         </Style>
-        <Style id="groundValue14">
+        <Style id="groundValue16">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -1297,7 +1369,7 @@
             <color>55004cff</color>
           </PolyStyle>
         </Style>
-        <Style id="Value14">
+        <Style id="Value16">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
@@ -1309,88 +1381,16 @@
             <color>55004cff</color>
           </PolyStyle>
         </Style>
-        <Style id="extrudedValue15">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>33003eff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>55003eff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="groundValue15">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>44003eff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>55003eff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="Value15">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>ff003eff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>55003eff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="extrudedValue16">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>330031ff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>550031ff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="groundValue16">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>440031ff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>550031ff</color>
-          </PolyStyle>
-        </Style>
-        <Style id="Value16">
-          <IconStyle>
-            <scale>0</scale>
-          </IconStyle>
-          <LineStyle>
-            <color>ff0031ff</color>
-            <width>3</width>
-          </LineStyle>
-          <PolyStyle>
-            <color>550031ff</color>
-          </PolyStyle>
-        </Style>
         <Style id="extrudedValue17">
           <IconStyle>
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330024ff</color>
+            <color>330039ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550024ff</color>
+            <color>550039ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue17">
@@ -1398,11 +1398,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440024ff</color>
+            <color>440039ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550024ff</color>
+            <color>550039ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value17">
@@ -1410,11 +1410,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0024ff</color>
+            <color>ff0039ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550024ff</color>
+            <color>550039ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue18">
@@ -1422,11 +1422,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>330018ff</color>
+            <color>330026ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550018ff</color>
+            <color>550026ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue18">
@@ -1434,11 +1434,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>440018ff</color>
+            <color>440026ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550018ff</color>
+            <color>550026ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value18">
@@ -1446,11 +1446,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff0018ff</color>
+            <color>ff0026ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>550018ff</color>
+            <color>550026ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue19">
@@ -1458,11 +1458,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>33000cff</color>
+            <color>330013ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55000cff</color>
+            <color>550013ff</color>
           </PolyStyle>
         </Style>
         <Style id="groundValue19">
@@ -1470,11 +1470,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>44000cff</color>
+            <color>440013ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55000cff</color>
+            <color>550013ff</color>
           </PolyStyle>
         </Style>
         <Style id="Value19">
@@ -1482,11 +1482,11 @@
             <scale>0</scale>
           </IconStyle>
           <LineStyle>
-            <color>ff000cff</color>
+            <color>ff0013ff</color>
             <width>3</width>
           </LineStyle>
           <PolyStyle>
-            <color>55000cff</color>
+            <color>550013ff</color>
           </PolyStyle>
         </Style>
         <Style id="extrudedValue20">
@@ -57096,13 +57096,13 @@
         <name>Segments</name>
         <open>true</open>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Cruising 2mt</name>
+          <description>#Cruising from 0mt to 2mt in 00:01:41</description>
           <TimeSpan>
             <begin>2024-02-11T14:27:49+01:00</begin>
             <end>2024-02-11T14:29:30+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
+          <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:27:49+01:00</when>
@@ -57112,8 +57112,8 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 26mt</name>
+          <description>#MotorClimb from 2mt to 28mt in 00:00:10</description>
           <TimeSpan>
             <begin>2024-02-11T14:29:31+01:00</begin>
             <end>2024-02-11T14:29:41+01:00</end>
@@ -57128,312 +57128,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -21mt</name>
+          <description>#Cruising from 30mt to 9mt in 00:02:16</description>
           <TimeSpan>
             <begin>2024-02-11T14:29:42+01:00</begin>
-            <end>2024-02-11T14:29:55+01:00</end>
+            <end>2024-02-11T14:31:58+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:42+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:55+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077739999999999 45.043291000000004 386</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4078710000000001 45.043230000000001 383</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:29:56+01:00</begin>
-            <end>2024-02-11T14:30:01+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:29:56+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:01+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4079350000000002 45.043264999999998 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.408042 45.043233000000001 379</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:02+01:00</begin>
-            <end>2024-02-11T14:30:04+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:02+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:04+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407921 45.043216999999999 381</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077549999999999 45.043253999999997 383</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:05+01:00</begin>
-            <end>2024-02-11T14:30:06+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:05+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:06+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077279999999996 45.043277000000003 381</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077640000000002 45.043289000000001 381</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:07+01:00</begin>
-            <end>2024-02-11T14:30:08+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:07+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:08+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407832 45.043294000000003 381</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4078160000000004 45.043247000000001 382</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:09+01:00</begin>
-            <end>2024-02-11T14:30:11+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:09+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:11+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077580000000003 45.043224000000002 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076389999999996 45.043256 382</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:12+01:00</begin>
-            <end>2024-02-11T14:30:13+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:12+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:13+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076199999999996 45.043278000000001 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076599999999999 45.043289000000001 382</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:14+01:00</begin>
-            <end>2024-02-11T14:30:30+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:14+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:30+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40768 45.043294000000003 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4075150000000001 45.043253 384</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:31+01:00</begin>
-            <end>2024-02-11T14:30:32+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:31+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:32+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074580000000001 45.043253 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073789999999997 45.043277000000003 381</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:33+01:00</begin>
-            <end>2024-02-11T14:30:36+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:33+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:36+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073390000000003 45.043337999999999 383</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074419999999996 45.043391999999997 384</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:37+01:00</begin>
-            <end>2024-02-11T14:30:43+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:37+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:43+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074710000000001 45.043346 385</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073460000000004 45.043422999999997 383</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:44+01:00</begin>
-            <end>2024-02-11T14:30:50+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:44+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:50+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074229999999996 45.043461000000001 383</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073359999999999 45.043354000000001 381</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:51+01:00</begin>
-            <end>2024-02-11T14:30:54+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:51+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:54+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407368 45.043377 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074340000000003 45.043346999999997 384</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:55+01:00</begin>
-            <end>2024-02-11T14:30:57+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:55+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:57+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073669999999998 45.043323999999998 383</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072420000000001 45.043356000000003 381</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:30:58+01:00</begin>
-            <end>2024-02-11T14:31:11+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:30:58+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:11+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072709999999997 45.043377999999997 381</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073039999999999 45.043230999999999 386</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:31:12+01:00</begin>
-            <end>2024-02-11T14:31:14+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:12+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:14+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072519999999997 45.043264999999998 385</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072630000000004 45.043365999999999 382</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:31:15+01:00</begin>
-            <end>2024-02-11T14:31:16+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:15+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:16+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073320000000002 45.043382999999999 383</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074159999999996 45.043391999999997 384</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:31:17+01:00</begin>
-            <end>2024-02-11T14:31:46+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:17+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:46+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074580000000001 45.043346 385</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407324 45.043216000000001 378</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:31:47+01:00</begin>
-            <end>2024-02-11T14:31:58+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:47+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:31:58+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407362 45.043258000000002 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4077739999999999 45.043291000000004 386</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070390000000002 45.043303999999999 365</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 18mt</name>
+          <description>#MotorClimb from 8mt to 26mt in 00:00:07</description>
           <TimeSpan>
             <begin>2024-02-11T14:31:59+01:00</begin>
             <end>2024-02-11T14:32:06+01:00</end>
@@ -57448,40 +57160,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -25mt</name>
+          <description>#Cruising from 29mt to 4mt in 00:00:43</description>
           <TimeSpan>
             <begin>2024-02-11T14:32:07+01:00</begin>
-            <end>2024-02-11T14:32:34+01:00</end>
+            <end>2024-02-11T14:32:50+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:07+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:34+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407375 45.043173000000003 385</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070720000000003 45.043579000000001 367</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:32:35+01:00</begin>
-            <end>2024-02-11T14:32:50+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:35+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:50+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070859999999996 45.043539000000003 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407375 45.043173000000003 385</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070650000000002 45.043447 360</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 8mt</name>
+          <description>#MotorClimb from 3mt to 11mt in 00:00:02</description>
           <TimeSpan>
             <begin>2024-02-11T14:32:51+01:00</begin>
             <end>2024-02-11T14:32:53+01:00</end>
@@ -57496,40 +57192,56 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -11mt</name>
+          <description>#Cruising from 20mt to 9mt in 00:00:17</description>
           <TimeSpan>
             <begin>2024-02-11T14:32:54+01:00</begin>
-            <end>2024-02-11T14:33:03+01:00</end>
+            <end>2024-02-11T14:33:11+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:32:54+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:03+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:11+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072789999999999 45.043328000000002 376</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070669999999996 45.042772999999997 370</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071230000000003 45.042935 365</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -2mt</name>
+          <description>#Thermaling from 9mt to 7mt in 00:00:03</description>
           <TimeSpan>
-            <begin>2024-02-11T14:33:04+01:00</begin>
-            <end>2024-02-11T14:33:18+01:00</end>
+            <begin>2024-02-11T14:33:12+01:00</begin>
+            <end>2024-02-11T14:33:15+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:04+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:12+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:15+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071119999999997 45.043016999999999 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071509999999998 45.043165000000002 363</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Cruising 2mt</name>
+          <description>#Cruising from 6mt to 8mt in 00:00:02</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:33:16+01:00</begin>
+            <end>2024-02-11T14:33:18+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:16+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:18+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070840000000002 45.042735999999998 370</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071759999999998 45.043232000000003 362</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072690000000003 45.043283000000002 364</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 18mt</name>
+          <description>#MotorClimb from 7mt to 25mt in 00:00:04</description>
           <TimeSpan>
             <begin>2024-02-11T14:33:19+01:00</begin>
             <end>2024-02-11T14:33:23+01:00</end>
@@ -57544,104 +57256,72 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -23mt</name>
+          <description>#Cruising from 31mt to 8mt in 00:01:10</description>
           <TimeSpan>
             <begin>2024-02-11T14:33:24+01:00</begin>
-            <end>2024-02-11T14:34:19+01:00</end>
+            <end>2024-02-11T14:34:34+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:33:24+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:19+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:34+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074920000000004 45.043605999999997 387</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4059920000000004 45.042859 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066409999999996 45.042932 364</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>MotorClimb -2mt</name>
+          <description>#MotorClimb from 6mt to 4mt in 00:00:01</description>
           <TimeSpan>
-            <begin>2024-02-11T14:34:20+01:00</begin>
-            <end>2024-02-11T14:34:33+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:20+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:33+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405996 45.042879999999997 364</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406682 45.042963999999998 364</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#MotorClimb</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:34:34+01:00</begin>
+            <begin>2024-02-11T14:34:35+01:00</begin>
             <end>2024-02-11T14:34:36+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:34+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:35+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:36+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066409999999996 45.042932 364</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065709999999996 45.042915999999998 362</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064350000000001 45.042907999999997 360</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Cruising -1mt</name>
+          <description>#Cruising from 10mt to 9mt in 00:00:15</description>
           <TimeSpan>
             <begin>2024-02-11T14:34:37+01:00</begin>
-            <end>2024-02-11T14:34:38+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:37+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:38+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062679999999999 45.042904 366</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061339999999998 45.042901999999998 372</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:34:39+01:00</begin>
-            <end>2024-02-11T14:34:50+01:00</end>
+            <end>2024-02-11T14:34:52+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:39+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:50+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060170000000003 45.042901000000001 374</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4059150000000002 45.042796000000003 368</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:37+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:52+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062679999999999 45.042904 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060290000000002 45.042873999999998 365</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -5mt</name>
+          <description>#Thermaling from 8mt to 3mt in 00:00:11</description>
           <TimeSpan>
-            <begin>2024-02-11T14:34:51+01:00</begin>
+            <begin>2024-02-11T14:34:53+01:00</begin>
             <end>2024-02-11T14:35:04+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:51+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:34:53+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:04+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405958 45.042847999999999 367</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060639999999998 45.042887 364</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066789999999996 45.043149 359</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 37mt</name>
+          <description>#MotorClimb from 2mt to 39mt in 00:00:07</description>
           <TimeSpan>
             <begin>2024-02-11T14:35:05+01:00</begin>
             <end>2024-02-11T14:35:12+01:00</end>
@@ -57656,40 +57336,40 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -27mt</name>
+          <description>#Cruising from 40mt to 13mt in 00:00:35</description>
           <TimeSpan>
             <begin>2024-02-11T14:35:13+01:00</begin>
-            <end>2024-02-11T14:35:43+01:00</end>
+            <end>2024-02-11T14:35:48+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:13+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:43+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:48+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066910000000004 45.042636000000002 396</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057769999999996 45.043664 376</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060649999999999 45.043624000000001 369</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -5mt</name>
+          <description>#Thermaling from 12mt to 7mt in 00:00:04</description>
           <TimeSpan>
-            <begin>2024-02-11T14:35:44+01:00</begin>
+            <begin>2024-02-11T14:35:49+01:00</begin>
             <end>2024-02-11T14:35:53+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:49+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:35:53+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4058390000000003 45.043681999999997 375</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060819999999996 45.043612000000003 368</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062429999999999 45.043368999999998 363</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 32mt</name>
+          <description>#MotorClimb from 7mt to 39mt in 00:00:18</description>
           <TimeSpan>
             <begin>2024-02-11T14:35:54+01:00</begin>
             <end>2024-02-11T14:36:12+01:00</end>
@@ -57704,40 +57384,40 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -26mt</name>
+          <description>#Cruising from 40mt to 14mt in 00:01:17</description>
           <TimeSpan>
             <begin>2024-02-11T14:36:13+01:00</begin>
-            <end>2024-02-11T14:37:27+01:00</end>
+            <end>2024-02-11T14:37:30+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:36:13+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:27+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:30+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4058010000000003 45.043199000000001 396</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061349999999999 45.043455999999999 374</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062669999999997 45.043357 370</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -7mt</name>
+          <description>#Thermaling from 13mt to 6mt in 00:00:07</description>
           <TimeSpan>
-            <begin>2024-02-11T14:37:28+01:00</begin>
+            <begin>2024-02-11T14:37:31+01:00</begin>
             <end>2024-02-11T14:37:38+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:28+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:31+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:38+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061669999999999 45.043427999999999 373</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062830000000002 45.043328000000002 369</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067150000000002 45.043104 362</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 49mt</name>
+          <description>#MotorClimb from 5mt to 54mt in 00:00:17</description>
           <TimeSpan>
             <begin>2024-02-11T14:37:39+01:00</begin>
             <end>2024-02-11T14:37:56+01:00</end>
@@ -57752,56 +57432,40 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -39mt</name>
+          <description>#Cruising from 56mt to 17mt in 00:00:52</description>
           <TimeSpan>
             <begin>2024-02-11T14:37:57+01:00</begin>
-            <end>2024-02-11T14:38:12+01:00</end>
+            <end>2024-02-11T14:38:49+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:37:57+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:12+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:49+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073690000000001 45.042347999999997 412</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407349 45.042665999999997 406</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061560000000002 45.042968999999999 373</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Thermaling -6mt</name>
+          <description>#Thermaling from 16mt to 10mt in 00:00:06</description>
           <TimeSpan>
-            <begin>2024-02-11T14:38:13+01:00</begin>
-            <end>2024-02-11T14:38:44+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:13+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:44+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407375 45.042682999999997 405</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069000000000003 45.042817999999997 377</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:38:45+01:00</begin>
+            <begin>2024-02-11T14:38:50+01:00</begin>
             <end>2024-02-11T14:38:56+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:45+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:50+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:38:56+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.042808999999998 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060280000000001 45.043035000000003 372</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060220000000001 45.043291000000004 366</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 37mt</name>
+          <description>#MotorClimb from 9mt to 46mt in 00:00:15</description>
           <TimeSpan>
             <begin>2024-02-11T14:38:57+01:00</begin>
             <end>2024-02-11T14:39:12+01:00</end>
@@ -57816,40 +57480,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -39mt</name>
+          <description>#Cruising from 48mt to 9mt in 00:00:43</description>
           <TimeSpan>
             <begin>2024-02-11T14:39:13+01:00</begin>
-            <end>2024-02-11T14:39:44+01:00</end>
+            <end>2024-02-11T14:39:56+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:13+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:44+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4054570000000002 45.043053 404</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063629999999998 45.043615000000003 374</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:39:45+01:00</begin>
-            <end>2024-02-11T14:39:56+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:45+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:39:56+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064319999999997 45.043607000000002 373</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4054570000000002 45.043053 404</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062390000000002 45.043505000000003 365</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 18mt</name>
+          <description>#MotorClimb from 9mt to 27mt in 00:00:10</description>
           <TimeSpan>
             <begin>2024-02-11T14:39:57+01:00</begin>
             <end>2024-02-11T14:40:07+01:00</end>
@@ -57864,40 +57512,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -23mt</name>
+          <description>#Cruising from 29mt to 6mt in 00:00:44</description>
           <TimeSpan>
             <begin>2024-02-11T14:40:08+01:00</begin>
-            <end>2024-02-11T14:40:37+01:00</end>
+            <end>2024-02-11T14:40:52+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:08+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:37+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060689999999996 45.043390000000002 385</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067299999999996 45.043008999999998 369</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:40:38+01:00</begin>
-            <end>2024-02-11T14:40:52+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:38+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:52+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068149999999999 45.043053999999998 368</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060689999999996 45.043390000000002 385</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069279999999997 45.042924999999997 362</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 14mt</name>
+          <description>#MotorClimb from 5mt to 19mt in 00:00:05</description>
           <TimeSpan>
             <begin>2024-02-11T14:40:53+01:00</begin>
             <end>2024-02-11T14:40:58+01:00</end>
@@ -57912,40 +57544,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -12mt</name>
+          <description>#Cruising from 19mt to 7mt in 00:00:31</description>
           <TimeSpan>
             <begin>2024-02-11T14:40:59+01:00</begin>
-            <end>2024-02-11T14:41:16+01:00</end>
+            <end>2024-02-11T14:41:30+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:40:59+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:16+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067309999999997 45.04278 375</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071300000000004 45.043187000000003 371</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:41:17+01:00</begin>
-            <end>2024-02-11T14:41:30+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:17+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:30+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072149999999999 45.043143000000001 370</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4067309999999997 45.04278 375</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071699999999998 45.043278999999998 363</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 19mt</name>
+          <description>#MotorClimb from 6mt to 25mt in 00:00:07</description>
           <TimeSpan>
             <begin>2024-02-11T14:41:31+01:00</begin>
             <end>2024-02-11T14:41:38+01:00</end>
@@ -57960,40 +57576,24 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -20mt</name>
+          <description>#Cruising from 26mt to 6mt in 00:00:36</description>
           <TimeSpan>
             <begin>2024-02-11T14:41:39+01:00</begin>
-            <end>2024-02-11T14:42:08+01:00</end>
+            <end>2024-02-11T14:42:15+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:41:39+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:08+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066549999999998 45.043877999999999 382</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065940000000001 45.043928999999999 365</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:42:09+01:00</begin>
-            <end>2024-02-11T14:42:15+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:09+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:15+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065969999999997 45.043964000000003 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066549999999998 45.043877999999999 382</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068670000000001 45.044002999999996 362</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 17mt</name>
+          <description>#MotorClimb from 5mt to 22mt in 00:00:24</description>
           <TimeSpan>
             <begin>2024-02-11T14:42:16+01:00</begin>
             <end>2024-02-11T14:42:40+01:00</end>
@@ -58008,40 +57608,56 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -12mt</name>
+          <description>#Cruising from 21mt to 9mt in 00:00:12</description>
           <TimeSpan>
             <begin>2024-02-11T14:42:41+01:00</begin>
-            <end>2024-02-11T14:42:52+01:00</end>
+            <end>2024-02-11T14:42:53+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:41+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:52+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:53+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072310000000003 45.043140999999999 377</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070989999999997 45.043129999999998 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070989999999997 45.043214999999996 365</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -5mt</name>
+          <description>#Thermaling from 10mt to 5mt in 00:00:09</description>
           <TimeSpan>
-            <begin>2024-02-11T14:42:53+01:00</begin>
-            <end>2024-02-11T14:43:08+01:00</end>
+            <begin>2024-02-11T14:42:54+01:00</begin>
+            <end>2024-02-11T14:43:03+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:42:54+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:03+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4071499999999997 45.043308000000003 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070710000000002 45.043438000000002 361</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Cruising 1mt</name>
+          <description>#Cruising from 4mt to 5mt in 00:00:04</description>
+          <TimeSpan>
+            <begin>2024-02-11T14:43:04+01:00</begin>
+            <end>2024-02-11T14:43:08+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentCruising</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:04+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:08+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070989999999997 45.043214999999996 365</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070850000000004 45.043469000000002 360</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072800000000001 45.043447999999998 361</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 29mt</name>
+          <description>#MotorClimb from 5mt to 34mt in 00:00:03</description>
           <TimeSpan>
             <begin>2024-02-11T14:43:09+01:00</begin>
             <end>2024-02-11T14:43:12+01:00</end>
@@ -58056,72 +57672,40 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising 5mt</name>
+          <description>#Cruising from 40mt to 45mt in 00:00:02</description>
           <TimeSpan>
             <begin>2024-02-11T14:43:13+01:00</begin>
-            <end>2024-02-11T14:43:14+01:00</end>
+            <end>2024-02-11T14:43:15+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:13+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:14+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073869999999999 45.043258000000002 396</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073929999999999 45.043179000000002 398</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Sinking</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:43:15+01:00</begin>
-            <end>2024-02-11T14:43:21+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:15+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:21+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073869999999999 45.043258000000002 396</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073969999999996 45.043138999999996 401</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407044 45.043118 382</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -41mt</name>
+          <description>#Cruising from 44mt to 3mt in 00:00:43</description>
           <TimeSpan>
-            <begin>2024-02-11T14:43:22+01:00</begin>
-            <end>2024-02-11T14:43:43+01:00</end>
+            <begin>2024-02-11T14:43:16+01:00</begin>
+            <end>2024-02-11T14:43:59+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:22+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:43+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068719999999999 45.043159000000003 374</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406256 45.043342000000003 367</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Thermaling</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:43:44+01:00</begin>
-            <end>2024-02-11T14:43:59+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentThermaling</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:16+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:43:59+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062279999999996 45.043270999999997 366</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072979999999999 45.04307 400</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069839999999996 45.043399999999998 359</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 22mt</name>
+          <description>#MotorClimb from 3mt to 25mt in 00:00:04</description>
           <TimeSpan>
             <begin>2024-02-11T14:44:00+01:00</begin>
             <end>2024-02-11T14:44:04+01:00</end>
@@ -58136,40 +57720,40 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -12mt</name>
+          <description>#Cruising from 25mt to 13mt in 00:00:25</description>
           <TimeSpan>
             <begin>2024-02-11T14:44:05+01:00</begin>
-            <end>2024-02-11T14:44:28+01:00</end>
+            <end>2024-02-11T14:44:30+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:05+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:28+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:30+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072509999999996 45.043132999999997 381</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063650000000001 45.043824000000001 369</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063910000000002 45.043805999999996 369</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Thermaling</description>
+          <name>Thermaling -6mt</name>
+          <description>#Thermaling from 11mt to 5mt in 00:00:12</description>
           <TimeSpan>
-            <begin>2024-02-11T14:44:29+01:00</begin>
+            <begin>2024-02-11T14:44:31+01:00</begin>
             <end>2024-02-11T14:44:43+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentThermaling</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:29+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:31+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:43+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063829999999999 45.043812000000003 369</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064459999999999 45.043753000000002 367</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4070410000000004 45.043553000000003 361</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#MotorClimb</description>
+          <name>MotorClimb 36mt</name>
+          <description>#MotorClimb from 5mt to 41mt in 00:00:05</description>
           <TimeSpan>
             <begin>2024-02-11T14:44:44+01:00</begin>
             <end>2024-02-11T14:44:49+01:00</end>
@@ -58184,50 +57768,18 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name />
-          <description>#Cruising</description>
+          <name>Cruising -51mt</name>
+          <description>#Cruising from 50mt to -1mt in 00:01:28</description>
           <TimeSpan>
             <begin>2024-02-11T14:44:50+01:00</begin>
-            <end>2024-02-11T14:45:24+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentCruising</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:50+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:24+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073929999999999 45.043528999999999 406</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061750000000002 45.04365 391</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Sinking</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:45:25+01:00</begin>
-            <end>2024-02-11T14:45:27+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:25+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:27+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061870000000001 45.043725000000002 390</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063220000000003 45.043781000000003 387</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name />
-          <description>#Cruising</description>
-          <TimeSpan>
-            <begin>2024-02-11T14:45:28+01:00</begin>
             <end>2024-02-11T14:46:18+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentCruising</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:45:28+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:44:50+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T14:46:18+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063610000000004 45.043790999999999 386</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073929999999999 45.043528999999999 406</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 355</gx:coord>
           </Track>
         </Placemark>

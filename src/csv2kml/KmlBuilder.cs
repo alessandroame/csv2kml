@@ -5,11 +5,12 @@ using SharpKml.Dom;
 using SharpKml.Dom.GX;
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using System.Security.Claims;
 using System.Xml.Linq;
 
 namespace csv2kml
 {
-    public class KmlBuilder
+    public partial class KmlBuilder
     {
         private TourConfig _tourConfig;
         private Data[] _data;
@@ -30,7 +31,7 @@ namespace csv2kml
         public KmlBuilder Build(string csvFilename)
         {
             _data = LoadFromCsv(csvFilename);
-
+            _data.CalculateFlightPhase();
             _rootFolder = new Folder
             {
                 Name = $"{Path.GetFileNameWithoutExtension(csvFilename)}",
@@ -40,19 +41,11 @@ namespace csv2kml
             _rootFolder.AddFeature(BuildSegments());
             return this;
         }
-
-        enum SegmentType
-        {
-            MotorClimb,
-            Cruising,
-            Thermaling,
-            Sinking
-        }
         class Segment
         {
-            public SegmentType Type { get; set; }
-            public Data From { get; set; }
-            public Data To { get; set; }
+            public FlightPhase Type { get; set; }
+            public int From { get; set; }
+            public int To { get; set; }
         }
         public Folder BuildSegments()
         {
@@ -62,13 +55,47 @@ namespace csv2kml
                 Open = true
             };
             var segments = new List<Segment>();
-            var from = 0;
-            while (from < _data.Length)
+            var index =1;
+            var lastPhase = _data[0].FlightPhase;
+            while (index < _data.Length)
             {
-                var segment = GetNextSegment(from, out var pos);
-                Console.WriteLine($"{from}->{pos} {segment.Type}");
-                segments.Add(segment);
-                from = pos + 1;
+                var segment = new Segment
+                {
+                    From = index-1,
+                    Type = _data[index].FlightPhase
+                };
+
+                while (index < _data.Length)
+                {
+                    if (_data[index].FlightPhase != lastPhase)
+                    {
+                        if (segment.Type != FlightPhase.MotorClimb && index - segment.From < 5)
+                        {
+                            segment.Type = _data[Math.Min(_data.Length - 1, index)].FlightPhase;
+                            lastPhase = segment.Type;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    index++;
+                } 
+
+                segment.To = Math.Min(_data.Length - 1, index - 1);
+                if (segments.Count()>1 && segments.Last().Type == segment.Type)
+                {
+                    segments.Last().To=segment.To;
+                    Console.WriteLine($"Joint to last segment {segment.To}");
+                }
+                else
+                {
+                    segments.Add(segment);
+                    Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
+                }
+                //Console.WriteLine($"{_data[segment.From].Altitude}->{_data[segment.To].Altitude} {segment.Type}");
+                if (index >= _data.Length) break;
+                lastPhase = _data[index].FlightPhase;
             }
             foreach (var segment in segments)
             {
@@ -76,22 +103,24 @@ namespace csv2kml
                 {
                     AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute,
                 };
+                var from = _data[segment.From];
+                var to = _data[segment.To];
                 var placemark = new Placemark
                 {
-                    Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
+                    Name = $"{segment.Type} {to.Altitude-from.Altitude}mt",
                     Geometry = track,
                     StyleUrl = new Uri($"#segment{segment.Type}", UriKind.Relative),
                     Description = new Description
                     {
-                        Text = $"#{segment.Type}"
+                        Text = $"#{segment.Type} from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
                 {
-                    Begin = segment.From.Time,
-                    End = segment.To.Time,
+                    Begin = from.Time,
+                    End = to.Time,
                 };
-                foreach (var d in new List<Data> { segment.From, segment.To })
+                foreach (var d in new List<Data> { from, to })
                 {
                     track.AddWhen(d.Time);
                     track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + _tourConfig.AltitudeOffset));
@@ -101,40 +130,6 @@ namespace csv2kml
             return res;
         }
 
-        private Segment GetNextSegment(int fromIndex, out int pos)
-        {
-            var lookAheadCount = 20;
-            var res = new Segment
-            {
-                From = _data[fromIndex],
-                Type= GetSegmentType(fromIndex,lookAheadCount)
-            };
-            pos = fromIndex;
-            while (pos < _data.Length)
-            {
-                var nextType = GetSegmentType(pos, lookAheadCount);
-               // Console.WriteLine($"\t{pos} {nextType}");
-                if (nextType != res.Type) break;
-                pos++;
-                
-            }
-            if (pos >= _data.Length) pos = _data.Length - 1;
-            res.To = _data[pos];
-            return res;
-        }
-        private SegmentType GetSegmentType(int from, int lookAheadCount)
-        {
-            if (_data[from].Motor == 1)
-            {
-                return SegmentType.MotorClimb;
-            }
-            var avgVspeed =  _data.Skip(from).Take(lookAheadCount).Average(d => d.ValueToColorize);
-            if (avgVspeed > 0)
-                return SegmentType.Thermaling;
-            if (avgVspeed >-1)
-                return SegmentType.Cruising;
-            return SegmentType.Sinking;
-        }
         public Folder BuildTrack()
         {
             var trackFolder = new Folder
@@ -242,6 +237,7 @@ namespace csv2kml
             var lastTime = DateTime.MinValue;
             double lastLat = 0;
             double lastLon = 0;
+            double? lastAlt=null;
 
 
             Dictionary<string, int> fieldByName =null;
@@ -266,25 +262,27 @@ namespace csv2kml
                             Console.WriteLine(ex);
                         }
                     }
-
                 }
                 try
                 {
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Latitude).TryParseDouble(out var lat)) continue;
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Longitude).TryParseDouble(out var lon)) continue;
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Altitude).TryParseDouble(out var alt)) continue;
-                    if (!getLineValue(line, _csvConfig.FieldsByTitle.ValueToColorize).TryParseDouble(out var valueToColorize)) continue;
+                    //if (!getLineValue(line, _csvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _csvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
+                    if (!getLineValue(line, _csvConfig.FieldsByTitle.Speed).TryParseDouble(out var speed)) continue;
                     var timestamp = DateTime.Parse(getLineValue(line,_csvConfig.FieldsByTitle.Timestamp));
                     //if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
                     //Console.WriteLine($"{timestamp} {motor}");
                     //import
-                    var data = new Data(timestamp, lat, lon, alt, valueToColorize,motor);
+                    var data = new Data(timestamp, lat, lon, alt, lastAlt,speed, motor==1);
+
                     res.Add(data);
                     lastTime = timestamp;
                     lastLat = lat;
                     lastLon = lon;
+                    lastAlt = alt;
                     //if (res.Count > 100) break;
                 }
                 catch (Exception ex)
