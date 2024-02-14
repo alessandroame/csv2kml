@@ -1,0 +1,13 @@
+Camera movement per FlighPhase:
+- climb or motor
+	pos: fixed 
+	lookAt: current point
+	angle: segment track heading -90
+- glide
+	pos: follow 
+	lookAt: current point
+	angle:bearing-45
+- sink
+	pos: follow 
+	lookAt: current point
+	angle:bearing-120
