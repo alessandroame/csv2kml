@@ -15,7 +15,7 @@ namespace csv2kml
         private TourConfig _tourConfig;
         private Data[] _data;
         private CsvConfig _csvConfig;
-        int _subdivision = 40;
+        int _subdivision = 120;
         Folder _rootFolder;
         public KmlBuilder UseCsvConfig(string configFilename)
         {
@@ -41,21 +41,47 @@ namespace csv2kml
             _rootFolder.AddFeature(BuildSegments());
             return this;
         }
-        class Segment
+        private void AddSegmentStyles(Folder container)
         {
-            public FlightPhase Type { get; set; }
-            public int From { get; set; }
-            public int To { get; set; }
+            var colors = new Dictionary<FlightPhase, string>() {
+                { FlightPhase.MotorClimb,"FFFFFFFF" },
+                { FlightPhase.Climb,"FF0000FF" },
+                { FlightPhase.Glide,"FF00FF00" },
+                { FlightPhase.Sink,"FFFFFF00" },
+                };
+            foreach(var kv in colors)
+            container.AddStyle(new Style
+            {
+                Id = $"segment{kv.Key}",
+                Icon = new IconStyle
+                {
+                    Scale = 0
+                },
+                Line = new LineStyle
+                {
+                    Color = Color32.Parse(kv.Value),
+                    Width = 2
+                },
+            });
+            
         }
         public Folder BuildSegments()
         {
             var res = new Folder
             {
-                Name = "Segments",
+                Name = "Analysis",
                 Open = true
             };
+            var segmentsFolder= new Folder
+            {
+                Name = "Segments",
+                Open = false
+            };
+            res.AddFeature(segmentsFolder);
+            AddSegmentStyles(segmentsFolder);
             var segments = new List<Segment>();
             var index =1;
+            var minimumSegmentLengthInSeconds = 20;
             var lastPhase = _data[0].FlightPhase;
             while (index < _data.Length)
             {
@@ -69,8 +95,10 @@ namespace csv2kml
                 {
                     if (_data[index].FlightPhase != lastPhase)
                     {
-                        if (segment.Type != FlightPhase.MotorClimb && index - segment.From < 5)
+                        if (segment.Type != FlightPhase.MotorClimb 
+                            && _data[index].Time.Subtract(_data[segment.From].Time).TotalSeconds < minimumSegmentLengthInSeconds)
                         {
+                            //handling segment too short
                             segment.Type = _data[Math.Min(_data.Length - 1, index)].FlightPhase;
                             lastPhase = segment.Type;
                         }
@@ -97,6 +125,7 @@ namespace csv2kml
                 if (index >= _data.Length) break;
                 lastPhase = _data[index].FlightPhase;
             }
+            index = 0;
             foreach (var segment in segments)
             {
                 var track = new Track
@@ -107,7 +136,7 @@ namespace csv2kml
                 var to = _data[segment.To];
                 var placemark = new Placemark
                 {
-                    Name = $"{segment.Type} {to.Altitude-from.Altitude}mt",
+                    Name = $"#{index} {segment.Type} {to.Altitude-from.Altitude}mt",
                     Geometry = track,
                     StyleUrl = new Uri($"#segment{segment.Type}", UriKind.Relative),
                     Description = new Description
@@ -125,10 +154,13 @@ namespace csv2kml
                     track.AddWhen(d.Time);
                     track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + _tourConfig.AltitudeOffset));
                 }
-                res.AddFeature(placemark);
+                segmentsFolder.AddFeature(placemark);
+                index++;
             }
+            res.GenerateSegmentsTour(_data,segments);
             return res;
         }
+
 
         public Folder BuildTrack()
         {
@@ -137,7 +169,7 @@ namespace csv2kml
                 Name = "Track",
                 Open = true
             };
-            AddStyles(trackFolder);
+            AddTrackStyles(trackFolder);
             trackFolder.GenerateColoredTrack(_data, "3D track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "Value");
             trackFolder.GenerateColoredTrack(_data, "Ground track", _subdivision, SharpKml.Dom.AltitudeMode.ClampToGround, _tourConfig.AltitudeOffset, "groundValue");
             trackFolder.GenerateLineString(_data, "extruded track", _subdivision, _tourConfig.AltitudeMode, _tourConfig.AltitudeOffset, "extrudedValue");
@@ -194,7 +226,7 @@ namespace csv2kml
                 }
             });
         }
-        private void AddStyles(Folder container)
+        private void AddTrackStyles(Folder container)
         {
             container.AddStyle(new Style
             {
@@ -268,7 +300,7 @@ namespace csv2kml
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Latitude).TryParseDouble(out var lat)) continue;
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Longitude).TryParseDouble(out var lon)) continue;
                     if (!getLineValue(line,_csvConfig.FieldsByTitle.Altitude).TryParseDouble(out var alt)) continue;
-                    //if (!getLineValue(line, _csvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
+                    if (!getLineValue(line, _csvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _csvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
                     if (!getLineValue(line, _csvConfig.FieldsByTitle.Speed).TryParseDouble(out var speed)) continue;
                     var timestamp = DateTime.Parse(getLineValue(line,_csvConfig.FieldsByTitle.Timestamp));
@@ -276,7 +308,8 @@ namespace csv2kml
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
                     //Console.WriteLine($"{timestamp} {motor}");
                     //import
-                    var data = new Data(timestamp, lat, lon, alt, lastAlt,speed, motor==1);
+                    //var data = new Data(timestamp, lat, lon, alt, lastAlt, speed, motor == 1);
+                    var data = new Data(timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
 
                     res.Add(data);
                     lastTime = timestamp;

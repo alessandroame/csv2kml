@@ -1,42 +1,59 @@
-// See https://aka.ms/new-console-template for more information
+﻿// See https://aka.ms/new-console-template for more information
 using csv2kml;
+using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Engine;
 using System.Diagnostics;
+using System.Drawing;
 
 public static class DataExtensions
 {
 
+    public class AltGain
+    {
+        public DateTime Time { get; set; }
+        public double Gain { get; set; }
+
+        public AltGain(DateTime time, double gain)
+        {
+            Time = time;
+            Gain = gain;
+        }
+    }
     public static void CalculateFlightPhase(this Data[] data)
     {
-        var amount = 10;
-        var buffer = new List<double>();
-        var lastAltitude = data.FirstOrDefault()?.Altitude ?? 0;
-        var i = 0;
+        var amountInSeconds = 10;
+        var buffer = new List<AltGain>();
+        var index = 0;
+        var lastAltitude = data.First().Altitude;
         foreach (var d in data)
         {
             if (d.MotorActive)
             {
                 buffer.Clear();
                 d.FlightPhase = FlightPhase.MotorClimb;
-                Console.WriteLine($"#{i} phase:{d.FlightPhase}");
+                //Console.WriteLine($"#{i} phase:{d.FlightPhase}");
             }
             else
             {
-                while (buffer.Count() > amount) buffer.RemoveAt(0);
-                buffer.Add(d.Altitude - lastAltitude);
-                var weigth = (double)buffer.Count() / amount;
-                var acc = buffer.Count()<=1?0:(buffer.Average() * weigth);
+                while (buffer.Count()>1 && d.Time.Subtract(buffer.First().Time).TotalSeconds > amountInSeconds) buffer.RemoveAt(0);
+                buffer.Add(new AltGain(d.Time,d.Altitude-lastAltitude));
+                var weigth = buffer.Last().Time.Subtract(buffer.First().Time).TotalSeconds / amountInSeconds;
+                var acc = 0D;
+                if (buffer.Count() > 1) {
+                    acc = buffer.Average(b => b.Gain) * weigth;
+                }
+
                 if (acc > 0.1)
-                    d.FlightPhase = FlightPhase.Climbing;
-                else if (acc > 0.6)
-                    d.FlightPhase = FlightPhase.Gliding;
+                    d.FlightPhase = FlightPhase.Climb;
+                else if (acc > -0.6)
+                    d.FlightPhase = FlightPhase.Glide;
                 else
-                    d.FlightPhase = FlightPhase.Sinking;
-                Console.WriteLine($"#{i} phase:{d.FlightPhase} acc:{acc} ");
+                    d.FlightPhase = FlightPhase.Sink;
+                //Console.WriteLine($"#{i} phase:{d.FlightPhase} acc:{acc} ");
             }
             lastAltitude = d.Altitude;
-            i++;
+            index++;
         }
     }
     public static void CalculateFlightPhase1(this Data[] data)
@@ -58,11 +75,11 @@ public static class DataExtensions
                 var avgVSpeed = dataSet.Average(d => d.VerticalSpeed);//*weight;
                 //if (i > 90) Debugger.Break();
                 if (avgVSpeed>0)
-                    data[i].FlightPhase = FlightPhase.Climbing;
+                    data[i].FlightPhase = FlightPhase.Climb;
                 else if (avgVSpeed > -0.8)
-                    data[i].FlightPhase = FlightPhase.Gliding;
+                    data[i].FlightPhase = FlightPhase.Glide;
                 else 
-                    data[i].FlightPhase = FlightPhase.Sinking;
+                    data[i].FlightPhase = FlightPhase.Sink;
 //                Console.WriteLine($"#{i} phase:{data[i].FlightPhase} speed={data[i].Speed} alt={data[i].Altitude} ds={deltaSpeed} avs={avgVSpeed}");
             }
         }
@@ -93,8 +110,46 @@ public static class DataExtensions
         double d = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2) + Math.Pow(dz, 2));
         return d;
     }
+    public static System.Drawing.Point Position(this Vector vector)
+    {
+        var res = new System.Drawing.Point();
+        const double EarthRadius = 6371 * 1000; // Radius of the Earth in kilometers
 
-    private static void CalculateTiltPan(this SharpKml.Base.Vector from, SharpKml.Base.Vector to,out double pan,out double tilt, out double distance, out double groundDistance)
+        // Convert coordinates to Cartesian
+        res.X = (int)(EarthRadius * Math.Cos(vector.Latitude.ToRadian()) * Math.Cos(vector.Longitude.ToRadian()));
+        double y1 = (int)(EarthRadius * Math.Cos(vector.Latitude.ToRadian()) * Math.Sin(vector.Longitude.ToRadian()));
+        return res;
+    }
+
+
+    public static Vector MoveTo(this Vector vector,double distance,double angle)
+    {
+        const double earthRadius = 6371000; // Radius of the Earth in meters
+
+        var rad = angle.ToRadian();
+
+        /** http://www.movable-type.co.uk/scripts/latlong.html
+    φ is latitude, λ is longitude, 
+    θ is the bearing (clockwise from north), 
+    δ is the angular distance d/R; 
+    d being the distance travelled, R the earth’s radius*
+    **/
+
+        var d = distance / earthRadius;
+        var lat1 = vector.Latitude.ToRadian();
+        var lon1 = vector.Longitude.ToRadian();
+
+        var lat2 = Math.Asin(Math.Sin(lat1) * Math.Cos(d) + Math.Cos(lat1) * Math.Sin(d) * Math.Cos(rad));
+
+        var lon2 = lon1 + Math.Atan2(Math.Sin(rad) * Math.Sin(d) * Math.Cos(lat1), Math.Cos(d) - Math.Sin(lat1) * Math.Sin(lat2));
+
+        lon2 = (lon2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180°
+
+        var res=new Vector( lat2.ToDegree(), lon2.ToDegree(), vector.Altitude.Value);
+        return res;
+    }
+
+    public static void CalculateTiltPan(this SharpKml.Base.Vector from, SharpKml.Base.Vector to,out double pan,out double tilt, out double distance, out double groundDistance)
     {
         const double EarthRadius = 6371*1000; // Radius of the Earth in kilometers
         

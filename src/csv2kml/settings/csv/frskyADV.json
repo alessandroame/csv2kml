@@ -4,7 +4,7 @@
   //  "latitude": 18,
   //  "longitude": 19,
   //  "altitude": 20,
-  //  "ValueToColorize": 8
+  //  "verticalSpeed": 8
   //},
   "titles": {
     "timestamp": "GPS Clock()",

@@ -18,6 +18,41 @@ namespace csv2kml
             //MAX  GREEN
             //ZERO YELLOW
             //-MAX RED
+            var center = 50;
+            var aperture = 60;
+            if (normalizedValue < 0) { center = 160; }
+            var hue = -normalizedValue * aperture + center;
+            return hue.HueToRGB();
+        }
+
+        public static Color ToColor2(this double normalizedValue)
+        {
+            var r = 255;
+            var g = 255;
+            var b = 255;
+
+            var v = (int)(normalizedValue * 255);
+            if (normalizedValue > 0) {
+                g -= v;
+                b -= v;
+            }
+            else //if (normalizedValue<0.6)
+            {
+                v = v / 2;
+                r += v;
+                g += v;
+            }
+            return Color.FromArgb(r, g, b);
+        }
+
+
+        public static Color ToColor1(this double normalizedValue)
+        {
+            //var hue = normalizedValue * -1 * 120 + 120;
+
+            //MAX  GREEN
+            //ZERO YELLOW
+            //-MAX RED
             var center = 90;
             var aperture = 90;
             var hue = -normalizedValue * aperture + center;

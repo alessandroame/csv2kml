@@ -7,16 +7,26 @@ using System.Diagnostics;
 
 public class Data
 {
-    public Data(DateTime time, double lat, double lon, double alt, double? lastAlt,double speed, bool motorActive)
+    public Data(DateTime time, double lat, double lon, double alt, double vspeed, double speed, bool motorActive)
     {
         Time = time;
         Latitude = lat;
         Longitude = lon;
         Altitude = alt;
-        VerticalSpeed = lastAlt.HasValue ?alt-lastAlt.Value : 0;
+        VerticalSpeed = vspeed;
         Speed = speed;
         MotorActive = motorActive;
     }
+    //public Data(DateTime time, double lat, double lon, double alt, double? lastAlt, double speed, bool motorActive)
+    //{
+    //    Time = time;
+    //    Latitude = lat;
+    //    Longitude = lon;
+    //    Altitude = alt;
+    //    VerticalSpeed = lastAlt.HasValue ? alt - lastAlt.Value : 0;
+    //    Speed = speed;
+    //    MotorActive = motorActive;
+    //}
 
     public DateTime Time { get; set; }
     public double Latitude { get; set; }

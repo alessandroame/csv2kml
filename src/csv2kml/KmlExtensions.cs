@@ -5,10 +5,12 @@ using SharpKml.Dom.GX;
 using SharpKml.Engine;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using static csv2kml.KmlBuilder;
 
 namespace csv2kml
 {
@@ -31,8 +33,10 @@ namespace csv2kml
                 Description = new Description
                 {
                     Text = $"#{trackIndex++} -> {style} " +
-                    $"H: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude)))}"+
-                    $"V: {string.Join(" -> ", data.Select(d => Math.Round(d.VerticalSpeed)))}"
+                    //$"\r\nMotor: {string.Join(" -> ", data.Select(d => d.MotorActive))}" +
+                    $"\r\nPhase: {string.Join(" -> ", data.Select(d => d.FlightPhase))}" +
+                    $"\r\nAlt: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude,2)))}" +
+                    $"\r\nVSpeed: {string.Join(" -> ", data.Select(d => Math.Round(d.VerticalSpeed,2)))}"
                 }
             };
             placemark.Time = new SharpKml.Dom.TimeSpan
@@ -71,7 +75,7 @@ namespace csv2kml
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
                 Geometry = multipleGeometry,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
-                Description = new Description { Text = $"#{trackIndex++} -> {style} motor:{data.Any(d=>d.MotorActive)}" }
+                //Description = new Description { Text = $"#{trackIndex++} -> {style} motor:{data.Any(d=>d.MotorActive)}" }
             };
             placemark.Time = new SharpKml.Dom.TimeSpan
             {
@@ -106,38 +110,39 @@ namespace csv2kml
             };
             container.AddFeature(folder);
             var coords = new List<Data>();
-            var oldNormalizedValue = 0;
+            var oldStyleIndex = 0;
             var oldMotorActive = data[0].MotorActive;
             var styleId = "";
             for (var i = 0; i < data.Length; i++)
             {
                 var item = data[i];
-                coords.Add(item);
 
                 //TODO Normalize ( by config value )
                 var nv = item.VerticalSpeed.Normalize(5);
-                var normalizedValue = (int)Math.Round(nv * subdivision / 2);
+                var styleIndex = (int)Math.Round(nv * subdivision / 2);
 
                 if (oldMotorActive && !item.MotorActive)
                 {
                     styleId = "Motor";
                     var p = placemarkGenerator(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
-                    coords = new List<Data> { item };
-                    oldNormalizedValue = normalizedValue;
+                    coords = new List<Data> { coords.Last() };
+                    oldStyleIndex = styleIndex;
                     oldMotorActive = data[i].MotorActive;
                 }
-                else if (!oldMotorActive && oldNormalizedValue != normalizedValue)
+                else if (!oldMotorActive && oldStyleIndex != styleIndex)
                 {
-                    styleId = oldNormalizedValue.ToString();
+                    styleId = oldStyleIndex.ToString();
                     var p = placemarkGenerator(coords, $"{styleRadix}{styleId}", altitudeMode, altitudeOffset);
                     folder.AddFeature(p);
-                    coords = new List<Data> { item };
-                    oldNormalizedValue = normalizedValue;
+                    //if (coords.Count() > 3) Debugger.Break();
+                    coords = new List<Data> { coords.Last() };
+                    oldStyleIndex = styleIndex;
                     oldMotorActive = data[i].MotorActive;
                 }
+                coords.Add(item);
             }
-            var lastPlacemark = placemarkGenerator(coords, $"{styleRadix}{oldNormalizedValue}", altitudeMode, altitudeOffset);
+            var lastPlacemark = placemarkGenerator(coords, $"{styleRadix}{oldStyleIndex}", altitudeMode, altitudeOffset);
 
             folder.AddFeature(lastPlacemark);
             //Console.WriteLine($"point count: {data.Length}");
@@ -162,7 +167,95 @@ namespace csv2kml
         //    container.AddFeature(tour);
         //}
 
+        public static void GenerateSegmentsTour(this Container container, Data[] data, List<Segment> segments)
+        {
+            var tourplaylist = new Playlist();
+            foreach (var segment in segments)
+            {
+                var dataToShow = data.Skip(segment.From).Take(segment.To - segment.From);
+                var bb = new BoundingBox
+                {
+                    West = dataToShow.Min(d => d.Longitude),
+                    East = dataToShow.Max(d => d.Longitude),
+                    North = dataToShow.Min(d => d.Latitude),
+                    South = dataToShow.Max(d => d.Latitude),
+                };
+                var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalMilliseconds/1000;
+                var dataCenter= new Vector(
+                                    bb.Center.Latitude,
+                                    bb.Center.Longitude,
+                                    (dataToShow.Min(d => d.Altitude) + dataToShow.Max(d => d.Altitude)) / 2);
+                
+                dataToShow.First().ToVector().CalculateTiltPan(dataToShow.Last().ToVector(), out var pan, out var tilt, out var distance, out var groundDistance);
 
+                if (segment.Type == FlightPhase.Climb)
+                {
+                    pan = pan ;
+                    distance += 60;
+                }
+                else
+                {
+                    pan = 90;
+                    distance = 50;
+                }
+
+                var cameraPosition = dataCenter.MoveTo(distance + 100,pan);//pan+90);
+                cameraPosition.CalculateTiltPan(dataCenter, out pan, out tilt, out distance, out groundDistance);
+                Console.WriteLine($"pan{pan}");
+
+                if (segment.Type == FlightPhase.Climb)
+                {
+                    tilt = Math.Max(70, tilt);
+                }
+                else
+                {
+                    tilt = 45;
+                    dataCenter.Altitude += 150;
+                }
+
+                var view = new Camera
+                {
+                    Latitude = cameraPosition.Latitude,
+                    Longitude = cameraPosition.Longitude,
+                    Altitude = dataCenter.Altitude + 356,
+                    AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
+                    Heading = 180-pan,
+                    Tilt = tilt,
+                    GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+                    {
+                        Begin = dataToShow.First().Time.AddSeconds(-120),
+                        End = dataToShow.Last().Time,
+                    }
+                };
+                //var view = new LookAt
+                //{
+                //    Latitude = dataCenter.Latitude,
+                //    Longitude = dataCenter.Longitude,
+                //    Altitude = dataCenter.Altitude+ 356,
+                //    AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
+                //    Heading = 180,
+                //    Tilt = 80,
+                //    Range=300,
+                //    GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+                //    {
+                //        Begin = dataToShow.First().Time.AddSeconds(-60),
+                //        End = dataToShow.Last().Time,
+                //    }
+                //};
+                FlyToMode fm = FlyToMode.Smooth;
+                if (segment.Type == FlightPhase.Climb) fm = FlyToMode.Bounce;
+                var flyTo = new FlyTo
+                {
+                    Mode = fm,
+                    Duration = duration,
+                    View = view
+                };
+                tourplaylist.AddTourPrimitive(flyTo);
+            }
+            var tour = new Tour { Name = "Tour analysis" };
+            tour.Playlist = tourplaylist;
+            container.AddFeature(tour);
+        }
         public static void GenerateLookBackPath(this Container container,
             Data[] data, TourConfig tourConfig, LookAtCameraConfig cameraConfig, bool follow = false)
         {
@@ -186,7 +279,7 @@ namespace csv2kml
                 {
                    m++;
                 }
-                var duration = data[m].Time.Subtract(data[i].Time).TotalSeconds;
+                var duration = data[m].Time.Subtract(data[i].Time).TotalMilliseconds/1000;
                 var lookAt = dataToShow.CreateLookAt(follow,tourConfig, cameraConfig);
                 if (oldHeading != 0)
                 {
