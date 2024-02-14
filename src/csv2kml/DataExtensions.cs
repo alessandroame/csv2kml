@@ -6,7 +6,40 @@ using System.Diagnostics;
 
 public static class DataExtensions
 {
+
     public static void CalculateFlightPhase(this Data[] data)
+    {
+        var amount = 10;
+        var buffer = new List<double>();
+        var lastAltitude = data.FirstOrDefault()?.Altitude ?? 0;
+        var i = 0;
+        foreach (var d in data)
+        {
+            if (d.MotorActive)
+            {
+                buffer.Clear();
+                d.FlightPhase = FlightPhase.MotorClimb;
+                Console.WriteLine($"#{i} phase:{d.FlightPhase}");
+            }
+            else
+            {
+                while (buffer.Count() > amount) buffer.RemoveAt(0);
+                buffer.Add(d.Altitude - lastAltitude);
+                var weigth = (double)buffer.Count() / amount;
+                var acc = buffer.Count()<=1?0:(buffer.Average() * weigth);
+                if (acc > 0.1)
+                    d.FlightPhase = FlightPhase.Climbing;
+                else if (acc > 0.6)
+                    d.FlightPhase = FlightPhase.Gliding;
+                else
+                    d.FlightPhase = FlightPhase.Sinking;
+                Console.WriteLine($"#{i} phase:{d.FlightPhase} acc:{acc} ");
+            }
+            lastAltitude = d.Altitude;
+            i++;
+        }
+    }
+    public static void CalculateFlightPhase1(this Data[] data)
     {
         var lookAroundInSeconds = 10;
         for (var i = 0; i < data.Count(); i++)

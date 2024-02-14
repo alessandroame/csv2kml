@@ -77501,77 +77501,77 @@
         <name>Segments</name>
         <open>true</open>
         <Placemark>
-          <name>MotorClimb 19mt</name>
-          <description>#MotorClimb from 2mt to 21mt in 00:00:21</description>
+          <name>MotorClimb 20mt</name>
+          <description>#MotorClimb from 2mt to 22mt in 00:00:20</description>
           <TimeSpan>
             <begin>2024-02-11T13:00:12+01:00</begin>
-            <end>2024-02-11T13:00:33+01:00</end>
+            <end>2024-02-11T13:00:32+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:00:12+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:00:33+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:00:32+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 358</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076529999999998 45.043531999999999 377</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076060000000004 45.043564000000003 378</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -13mt</name>
-          <description>#Gliding from 21mt to 8mt in 00:00:45</description>
+          <name>Sinking -15mt</name>
+          <description>#Sinking from 22mt to 7mt in 00:00:48</description>
           <TimeSpan>
-            <begin>2024-02-11T13:00:33+01:00</begin>
-            <end>2024-02-11T13:01:18+01:00</end>
+            <begin>2024-02-11T13:00:32+01:00</begin>
+            <end>2024-02-11T13:01:20+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:00:33+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:18+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076529999999998 45.043531999999999 377</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072129999999996 45.043557999999997 364</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:00:32+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:20+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076060000000004 45.043564000000003 378</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073279999999997 45.043514000000002 363</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>MotorClimb 66mt</name>
-          <description>#MotorClimb from 8mt to 74mt in 00:00:11</description>
+          <name>MotorClimb 45mt</name>
+          <description>#MotorClimb from 7mt to 52mt in 00:00:08</description>
           <TimeSpan>
-            <begin>2024-02-11T13:01:18+01:00</begin>
-            <end>2024-02-11T13:01:29+01:00</end>
+            <begin>2024-02-11T13:01:20+01:00</begin>
+            <end>2024-02-11T13:01:28+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:18+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:29+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072129999999996 45.043557999999997 364</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072149999999999 45.043939000000002 430</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:28+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073279999999997 45.043514000000002 363</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072310000000003 45.043878999999997 408</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Climbing 9mt</name>
-          <description>#Climbing from 74mt to 83mt in 00:00:11</description>
+          <name>Climbing 31mt</name>
+          <description>#Climbing from 52mt to 83mt in 00:00:12</description>
           <TimeSpan>
-            <begin>2024-02-11T13:01:29+01:00</begin>
+            <begin>2024-02-11T13:01:28+01:00</begin>
             <end>2024-02-11T13:01:40+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:29+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:28+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:40+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072149999999999 45.043939000000002 430</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072310000000003 45.043878999999997 408</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074780000000002 45.044531999999997 439</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -15mt</name>
-          <description>#Gliding from 83mt to 68mt in 00:00:39</description>
+          <name>Sinking -15mt</name>
+          <description>#Sinking from 83mt to 68mt in 00:00:39</description>
           <TimeSpan>
             <begin>2024-02-11T13:01:40+01:00</begin>
             <end>2024-02-11T13:02:19+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:01:40+01:00</when>
@@ -77581,706 +77581,610 @@
           </Track>
         </Placemark>
         <Placemark>
-          <name>MotorClimb -6mt</name>
-          <description>#MotorClimb from 68mt to 62mt in 00:00:03</description>
+          <name>MotorClimb -5mt</name>
+          <description>#MotorClimb from 68mt to 63mt in 00:00:02</description>
           <TimeSpan>
             <begin>2024-02-11T13:02:19+01:00</begin>
-            <end>2024-02-11T13:02:22+01:00</end>
+            <end>2024-02-11T13:02:21+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:19+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:22+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:21+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407699 45.044308000000001 424</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072750000000003 45.044350999999999 418</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074499999999999 45.044302000000002 419</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -3mt</name>
-          <description>#Gliding from 62mt to 59mt in 00:00:06</description>
+          <name>Sinking -2mt</name>
+          <description>#Sinking from 63mt to 61mt in 00:00:12</description>
           <TimeSpan>
-            <begin>2024-02-11T13:02:22+01:00</begin>
-            <end>2024-02-11T13:02:28+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:22+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:28+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4072750000000003 45.044350999999999 418</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063359999999996 45.044398999999999 415</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Climbing 34mt</name>
-          <description>#Climbing from 59mt to 93mt in 00:01:02</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:02:28+01:00</begin>
-            <end>2024-02-11T13:03:30+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentClimbing</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:28+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:03:30+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063359999999996 45.044398999999999 415</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049990000000001 45.045256999999999 449</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -21mt</name>
-          <description>#Gliding from 93mt to 72mt in 00:00:45</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:03:30+01:00</begin>
-            <end>2024-02-11T13:04:15+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:03:30+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:04:15+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049990000000001 45.045256999999999 449</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047890000000001 45.044929000000003 428</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -22mt</name>
-          <description>#Sinking from 72mt to 50mt in 00:00:23</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:04:15+01:00</begin>
-            <end>2024-02-11T13:04:38+01:00</end>
+            <begin>2024-02-11T13:02:21+01:00</begin>
+            <end>2024-02-11T13:02:33+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:04:15+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:04:38+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047890000000001 45.044929000000003 428</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.404318 45.043267999999998 406</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:21+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:33+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074499999999999 45.044302000000002 419</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4056829999999998 45.044525 417</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -28mt</name>
-          <description>#Gliding from 50mt to 22mt in 00:00:40</description>
+          <name>Climbing 31mt</name>
+          <description>#Climbing from 61mt to 92mt in 00:00:55</description>
           <TimeSpan>
-            <begin>2024-02-11T13:04:38+01:00</begin>
-            <end>2024-02-11T13:05:18+01:00</end>
+            <begin>2024-02-11T13:02:33+01:00</begin>
+            <end>2024-02-11T13:03:28+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:04:38+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:18+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.404318 45.043267999999998 406</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057740000000001 45.043042 378</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:02:33+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:03:28+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4056829999999998 45.044525 417</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405195 45.045228999999999 448</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Sinking -14mt</name>
-          <description>#Sinking from 22mt to 8mt in 00:00:13</description>
+          <name>Sinking -84mt</name>
+          <description>#Sinking from 92mt to 8mt in 00:02:03</description>
           <TimeSpan>
-            <begin>2024-02-11T13:05:18+01:00</begin>
+            <begin>2024-02-11T13:03:28+01:00</begin>
             <end>2024-02-11T13:05:31+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:18+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:03:28+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:31+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057740000000001 45.043042 378</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405195 45.045228999999999 448</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066210000000003 45.043821999999999 364</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>MotorClimb 109mt</name>
-          <description>#MotorClimb from 8mt to 117mt in 00:00:12</description>
+          <name>MotorClimb 84mt</name>
+          <description>#MotorClimb from 8mt to 92mt in 00:00:09</description>
           <TimeSpan>
             <begin>2024-02-11T13:05:31+01:00</begin>
-            <end>2024-02-11T13:05:43+01:00</end>
+            <end>2024-02-11T13:05:40+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:31+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:43+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:40+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066210000000003 45.043821999999999 364</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4079050000000004 45.043565999999998 473</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076219999999999 45.043731000000001 448</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Climbing -14mt</name>
-          <description>#Climbing from 117mt to 103mt in 00:00:10</description>
+          <name>Climbing 10mt</name>
+          <description>#Climbing from 92mt to 102mt in 00:00:14</description>
           <TimeSpan>
-            <begin>2024-02-11T13:05:43+01:00</begin>
-            <end>2024-02-11T13:05:53+01:00</end>
+            <begin>2024-02-11T13:05:40+01:00</begin>
+            <end>2024-02-11T13:05:54+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:43+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:53+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4079050000000004 45.043565999999998 473</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4088070000000004 45.043016000000001 459</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:40+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:54+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4076219999999999 45.043731000000001 448</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4089029999999996 45.043008 458</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Sinking -51mt</name>
-          <description>#Sinking from 103mt to 52mt in 00:00:45</description>
+          <name>Sinking -50mt</name>
+          <description>#Sinking from 102mt to 52mt in 00:00:44</description>
           <TimeSpan>
-            <begin>2024-02-11T13:05:53+01:00</begin>
+            <begin>2024-02-11T13:05:54+01:00</begin>
             <end>2024-02-11T13:06:38+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:05:54+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:38+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4088070000000004 45.043016000000001 459</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4089029999999996 45.043008 458</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074419999999996 45.044049999999999 408</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>MotorClimb 154mt</name>
-          <description>#MotorClimb from 52mt to 206mt in 00:00:17</description>
+          <name>MotorClimb 127mt</name>
+          <description>#MotorClimb from 52mt to 179mt in 00:00:15</description>
           <TimeSpan>
             <begin>2024-02-11T13:06:38+01:00</begin>
-            <end>2024-02-11T13:06:55+01:00</end>
+            <end>2024-02-11T13:06:53+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:38+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:55+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:53+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074419999999996 45.044049999999999 408</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4082610000000004 45.043711999999999 562</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080219999999999 45.043947000000003 535</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Climbing 5mt</name>
-          <description>#Climbing from 206mt to 211mt in 00:00:10</description>
+          <name>Climbing 31mt</name>
+          <description>#Climbing from 179mt to 210mt in 00:00:13</description>
           <TimeSpan>
-            <begin>2024-02-11T13:06:55+01:00</begin>
-            <end>2024-02-11T13:07:05+01:00</end>
+            <begin>2024-02-11T13:06:53+01:00</begin>
+            <end>2024-02-11T13:07:06+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:55+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:05+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4082610000000004 45.043711999999999 562</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4093980000000004 45.043227999999999 567</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:06:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:06+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080219999999999 45.043947000000003 535</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094490000000004 45.043213999999999 566</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -8mt</name>
-          <description>#Gliding from 211mt to 203mt in 00:00:14</description>
+          <name>Sinking -86mt</name>
+          <description>#Sinking from 210mt to 124mt in 00:01:55</description>
           <TimeSpan>
-            <begin>2024-02-11T13:07:05+01:00</begin>
-            <end>2024-02-11T13:07:19+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:05+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:19+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4093980000000004 45.043227999999999 567</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094819999999997 45.043066000000003 559</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -4mt</name>
-          <description>#Sinking from 203mt to 199mt in 00:00:05</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:07:19+01:00</begin>
-            <end>2024-02-11T13:07:24+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:19+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:24+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094819999999997 45.043066000000003 559</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4097090000000003 45.042811 555</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -5mt</name>
-          <description>#Gliding from 199mt to 194mt in 00:00:04</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:07:24+01:00</begin>
-            <end>2024-02-11T13:07:28+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:24+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:28+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4097090000000003 45.042811 555</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4095820000000003 45.042982000000002 550</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -13mt</name>
-          <description>#Sinking from 194mt to 181mt in 00:00:18</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:07:28+01:00</begin>
-            <end>2024-02-11T13:07:46+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:28+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:46+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4095820000000003 45.042982000000002 550</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.409923 45.043900000000001 537</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -13mt</name>
-          <description>#Gliding from 181mt to 168mt in 00:00:20</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:07:46+01:00</begin>
-            <end>2024-02-11T13:08:06+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:46+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:08:06+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.409923 45.043900000000001 537</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4096849999999996 45.044041999999997 524</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -31mt</name>
-          <description>#Sinking from 168mt to 137mt in 00:00:31</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:08:06+01:00</begin>
-            <end>2024-02-11T13:08:37+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:08:06+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:08:37+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4096849999999996 45.044041999999997 524</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4083880000000004 45.044504000000003 493</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -13mt</name>
-          <description>#Gliding from 137mt to 124mt in 00:00:24</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:08:37+01:00</begin>
+            <begin>2024-02-11T13:07:06+01:00</begin>
             <end>2024-02-11T13:09:01+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:08:37+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:07:06+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:01+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4083880000000004 45.044504000000003 493</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094490000000004 45.043213999999999 566</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074450000000001 45.045512000000002 480</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>MotorClimb 116mt</name>
-          <description>#MotorClimb from 124mt to 240mt in 00:00:19</description>
+          <name>MotorClimb 111mt</name>
+          <description>#MotorClimb from 124mt to 235mt in 00:00:18</description>
           <TimeSpan>
             <begin>2024-02-11T13:09:01+01:00</begin>
-            <end>2024-02-11T13:09:20+01:00</end>
+            <end>2024-02-11T13:09:19+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:01+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:19+01:00</when>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4074450000000001 45.045512000000002 480</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080969999999997 45.044187000000001 596</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -24mt</name>
-          <description>#Gliding from 240mt to 216mt in 00:01:05</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:09:20+01:00</begin>
-            <end>2024-02-11T13:10:25+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:20+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:10:25+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080969999999997 45.044187000000001 596</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4095789999999999 45.045229999999997 572</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -60mt</name>
-          <description>#Sinking from 216mt to 156mt in 00:00:46</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:10:25+01:00</begin>
-            <end>2024-02-11T13:11:11+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:10:25+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:11+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4095789999999999 45.045229999999997 572</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063280000000002 45.045673000000001 512</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -3mt</name>
-          <description>#Gliding from 156mt to 153mt in 00:00:09</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:11:11+01:00</begin>
-            <end>2024-02-11T13:11:20+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:11+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:20+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063280000000002 45.045673000000001 512</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4053560000000003 45.044899000000001 509</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Climbing 176mt</name>
-          <description>#Climbing from 153mt to 329mt in 00:04:14</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:11:20+01:00</begin>
-            <end>2024-02-11T13:15:34+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentClimbing</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:20+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:34+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4053560000000003 45.044899000000001 509</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4032489999999997 45.045167999999997 685</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -7mt</name>
-          <description>#Gliding from 329mt to 322mt in 00:00:16</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:15:34+01:00</begin>
-            <end>2024-02-11T13:15:50+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:34+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:50+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4032489999999997 45.045167999999997 685</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4022649999999999 45.044094000000001 678</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -13mt</name>
-          <description>#Sinking from 322mt to 309mt in 00:00:12</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:15:50+01:00</begin>
-            <end>2024-02-11T13:16:02+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentSinking</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:50+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:02+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4022649999999999 45.044094000000001 678</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4019069999999996 45.042988000000001 665</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -6mt</name>
-          <description>#Gliding from 309mt to 303mt in 00:00:16</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:16:02+01:00</begin>
-            <end>2024-02-11T13:16:18+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:02+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:18+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4019069999999996 45.042988000000001 665</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4027000000000003 45.043725000000002 659</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080940000000002 45.044373999999998 591</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
           <name>Climbing 5mt</name>
-          <description>#Climbing from 303mt to 308mt in 00:00:11</description>
+          <description>#Climbing from 235mt to 240mt in 00:00:11</description>
           <TimeSpan>
-            <begin>2024-02-11T13:16:18+01:00</begin>
-            <end>2024-02-11T13:16:29+01:00</end>
+            <begin>2024-02-11T13:09:19+01:00</begin>
+            <end>2024-02-11T13:09:30+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:18+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:29+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4027000000000003 45.043725000000002 659</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.402431 45.043854000000003 664</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:19+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:30+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4080940000000002 45.044373999999998 591</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094660000000001 45.043835999999999 596</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding 0mt</name>
-          <description>#Gliding from 308mt to 308mt in 00:00:05</description>
+          <name>Sinking -84mt</name>
+          <description>#Sinking from 240mt to 156mt in 00:01:54</description>
           <TimeSpan>
-            <begin>2024-02-11T13:16:29+01:00</begin>
-            <end>2024-02-11T13:16:34+01:00</end>
+            <begin>2024-02-11T13:09:30+01:00</begin>
+            <end>2024-02-11T13:11:24+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:29+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:34+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.402431 45.043854000000003 664</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4026820000000004 45.043761000000003 664</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:09:30+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:24+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4094660000000001 45.043835999999999 596</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049719999999999 45.044769000000002 512</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Climbing 21mt</name>
-          <description>#Climbing from 308mt to 329mt in 00:00:33</description>
+          <name>Climbing 35mt</name>
+          <description>#Climbing from 156mt to 191mt in 00:01:16</description>
           <TimeSpan>
-            <begin>2024-02-11T13:16:34+01:00</begin>
-            <end>2024-02-11T13:17:07+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentClimbing</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:34+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:07+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4026820000000004 45.043761000000003 664</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40306 45.043644999999998 685</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Gliding -14mt</name>
-          <description>#Gliding from 329mt to 315mt in 00:00:45</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:17:07+01:00</begin>
-            <end>2024-02-11T13:17:52+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:07+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:52+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40306 45.043644999999998 685</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4033170000000004 45.042059999999999 671</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Climbing 11mt</name>
-          <description>#Climbing from 315mt to 326mt in 00:00:43</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:17:52+01:00</begin>
-            <end>2024-02-11T13:18:35+01:00</end>
+            <begin>2024-02-11T13:11:24+01:00</begin>
+            <end>2024-02-11T13:12:40+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:52+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:35+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4033170000000004 45.042059999999999 671</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035580000000003 45.042546000000002 682</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:11:24+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:12:40+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049719999999999 45.044769000000002 512</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050950000000002 45.045034999999999 547</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -3mt</name>
-          <description>#Gliding from 326mt to 323mt in 00:00:13</description>
+          <name>Sinking 1mt</name>
+          <description>#Sinking from 191mt to 192mt in 00:00:10</description>
           <TimeSpan>
-            <begin>2024-02-11T13:18:35+01:00</begin>
-            <end>2024-02-11T13:18:48+01:00</end>
+            <begin>2024-02-11T13:12:40+01:00</begin>
+            <end>2024-02-11T13:12:50+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:35+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:48+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035580000000003 45.042546000000002 682</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035270000000004 45.042434999999998 679</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:12:40+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:12:50+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050950000000002 45.045034999999999 547</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405049 45.045158000000001 548</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 138mt</name>
+          <description>#Climbing from 192mt to 330mt in 00:02:51</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:12:50+01:00</begin>
+            <end>2024-02-11T13:15:41+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:12:50+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:41+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.405049 45.045158000000001 548</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.402698 45.044780000000003 686</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -24mt</name>
+          <description>#Sinking from 330mt to 306mt in 00:00:39</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:15:41+01:00</begin>
+            <end>2024-02-11T13:16:20+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:15:41+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:20+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.402698 45.044780000000003 686</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4027750000000001 45.043655999999999 662</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 3mt</name>
+          <description>#Climbing from 306mt to 309mt in 00:00:13</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:16:20+01:00</begin>
+            <end>2024-02-11T13:16:33+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:33+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4027750000000001 45.043655999999999 662</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4026639999999997 45.043821999999999 665</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -1mt</name>
+          <description>#Sinking from 309mt to 308mt in 00:00:11</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:16:33+01:00</begin>
+            <end>2024-02-11T13:16:44+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:33+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:44+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4026639999999997 45.043821999999999 665</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4032479999999996 45.043635999999999 664</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 23mt</name>
+          <description>#Climbing from 308mt to 331mt in 00:00:25</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:16:44+01:00</begin>
+            <end>2024-02-11T13:17:09+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:16:44+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:09+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4032479999999996 45.043635999999999 664</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4030399999999998 45.043536000000003 687</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -15mt</name>
+          <description>#Sinking from 331mt to 316mt in 00:00:57</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:17:09+01:00</begin>
+            <end>2024-02-11T13:18:06+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:17:09+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:06+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4030399999999998 45.043536000000003 687</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4033369999999996 45.042456999999999 672</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 10mt</name>
+          <description>#Climbing from 316mt to 326mt in 00:00:30</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:18:06+01:00</begin>
+            <end>2024-02-11T13:18:36+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:06+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:36+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4033369999999996 45.042456999999999 672</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035789999999997 45.042523000000003 682</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -3mt</name>
+          <description>#Sinking from 326mt to 323mt in 00:00:22</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:18:36+01:00</begin>
+            <end>2024-02-11T13:18:58+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:36+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:58+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035789999999997 45.042523000000003 682</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4036780000000002 45.043287999999997 679</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
           <name>Climbing 135mt</name>
-          <description>#Climbing from 323mt to 458mt in 00:01:18</description>
+          <description>#Climbing from 323mt to 458mt in 00:01:08</description>
           <TimeSpan>
-            <begin>2024-02-11T13:18:48+01:00</begin>
+            <begin>2024-02-11T13:18:58+01:00</begin>
             <end>2024-02-11T13:20:06+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:48+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:18:58+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:06+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035270000000004 45.042434999999998 679</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4036780000000002 45.043287999999997 679</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4031909999999996 45.044701000000003 814</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding 2mt</name>
-          <description>#Gliding from 458mt to 460mt in 00:00:06</description>
+          <name>Sinking 5mt</name>
+          <description>#Sinking from 458mt to 463mt in 00:00:07</description>
           <TimeSpan>
             <begin>2024-02-11T13:20:06+01:00</begin>
-            <end>2024-02-11T13:20:12+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:06+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:12+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4031909999999996 45.044701000000003 814</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4034399999999998 45.045388000000003 816</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Climbing 0mt</name>
-          <description>#Climbing from 460mt to 460mt in 00:00:05</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:20:12+01:00</begin>
-            <end>2024-02-11T13:20:17+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentClimbing</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:12+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:17+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4034399999999998 45.045388000000003 816</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035200000000003 45.045943000000001 816</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -385mt</name>
-          <description>#Sinking from 460mt to 75mt in 00:02:47</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:20:17+01:00</begin>
-            <end>2024-02-11T13:23:04+01:00</end>
+            <end>2024-02-11T13:20:13+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:17+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:04+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4035200000000003 45.045943000000001 816</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062080000000003 45.043692 431</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:06+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:13+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4031909999999996 45.044701000000003 814</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4034199999999997 45.045544 819</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -4mt</name>
-          <description>#Gliding from 75mt to 71mt in 00:00:10</description>
+          <name>Climbing 2mt</name>
+          <description>#Climbing from 463mt to 465mt in 00:00:12</description>
           <TimeSpan>
-            <begin>2024-02-11T13:23:04+01:00</begin>
-            <end>2024-02-11T13:23:14+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:04+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:14+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062080000000003 45.043692 431</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050640000000003 45.043230999999999 427</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Climbing 3mt</name>
-          <description>#Climbing from 71mt to 74mt in 00:00:07</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:23:14+01:00</begin>
-            <end>2024-02-11T13:23:21+01:00</end>
+            <begin>2024-02-11T13:20:13+01:00</begin>
+            <end>2024-02-11T13:20:25+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:14+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:21+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050640000000003 45.043230999999999 427</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046139999999996 45.043284999999997 430</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:13+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:25+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4034199999999997 45.045544 819</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4042599999999998 45.046413000000001 821</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -392mt</name>
+          <description>#Sinking from 465mt to 73mt in 00:02:55</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:20:25+01:00</begin>
+            <end>2024-02-11T13:23:20+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:20:25+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:20+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4042599999999998 45.046413000000001 821</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046279999999998 45.043368999999998 429</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
           <name>MotorClimb 2mt</name>
-          <description>#MotorClimb from 74mt to 76mt in 00:00:02</description>
+          <description>#MotorClimb from 73mt to 75mt in 00:00:02</description>
           <TimeSpan>
-            <begin>2024-02-11T13:23:21+01:00</begin>
-            <end>2024-02-11T13:23:23+01:00</end>
+            <begin>2024-02-11T13:23:20+01:00</begin>
+            <end>2024-02-11T13:23:22+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentMotorClimb</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:21+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:23+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046139999999996 45.043284999999997 430</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047280000000004 45.043221000000003 432</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:22+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046279999999998 45.043368999999998 429</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046570000000003 45.043241999999999 431</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Climbing 156mt</name>
-          <description>#Climbing from 76mt to 232mt in 00:05:19</description>
+          <name>Climbing 2mt</name>
+          <description>#Climbing from 75mt to 77mt in 00:00:11</description>
           <TimeSpan>
-            <begin>2024-02-11T13:23:23+01:00</begin>
-            <end>2024-02-11T13:28:42+01:00</end>
+            <begin>2024-02-11T13:23:22+01:00</begin>
+            <end>2024-02-11T13:23:33+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:23+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:28:42+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047280000000004 45.043221000000003 432</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4042849999999998 45.045282999999998 588</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:22+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:33+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046570000000003 45.043241999999999 431</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049060000000004 45.043235000000003 433</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -20mt</name>
-          <description>#Gliding from 232mt to 212mt in 00:00:40</description>
+          <name>Sinking 2mt</name>
+          <description>#Sinking from 77mt to 79mt in 00:00:08</description>
           <TimeSpan>
-            <begin>2024-02-11T13:28:42+01:00</begin>
-            <end>2024-02-11T13:29:22+01:00</end>
-          </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
-          <Track xmlns="http://www.google.com/kml/ext/2.2">
-            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:28:42+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:29:22+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4042849999999998 45.045282999999998 588</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060709999999998 45.045326000000003 568</gx:coord>
-          </Track>
-        </Placemark>
-        <Placemark>
-          <name>Sinking -211mt</name>
-          <description>#Sinking from 212mt to 1mt in 00:01:58</description>
-          <TimeSpan>
-            <begin>2024-02-11T13:29:22+01:00</begin>
-            <end>2024-02-11T13:31:20+01:00</end>
+            <begin>2024-02-11T13:23:33+01:00</begin>
+            <end>2024-02-11T13:23:41+01:00</end>
           </TimeSpan>
           <styleUrl>#segmentSinking</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:29:22+01:00</when>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:31:20+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4060709999999998 45.045326000000003 568</gx:coord>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406733 45.043607000000002 357</gx:coord>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:33+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:41+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4049060000000004 45.043235000000003 433</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.404909 45.04316 435</gx:coord>
           </Track>
         </Placemark>
         <Placemark>
-          <name>Gliding -1mt</name>
-          <description>#Gliding from 1mt to 0mt in 00:00:23</description>
+          <name>Climbing -1mt</name>
+          <description>#Climbing from 79mt to 78mt in 00:00:05</description>
           <TimeSpan>
-            <begin>2024-02-11T13:31:20+01:00</begin>
-            <end>2024-02-11T13:31:43+01:00</end>
+            <begin>2024-02-11T13:23:41+01:00</begin>
+            <end>2024-02-11T13:23:46+01:00</end>
           </TimeSpan>
-          <styleUrl>#segmentGliding</styleUrl>
+          <styleUrl>#segmentClimbing</styleUrl>
           <Track xmlns="http://www.google.com/kml/ext/2.2">
             <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
-            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:31:20+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:41+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:46+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.404909 45.04316 435</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4045940000000003 45.043246000000003 434</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking 2mt</name>
+          <description>#Sinking from 78mt to 80mt in 00:00:09</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:23:46+01:00</begin>
+            <end>2024-02-11T13:23:55+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:46+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:55+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4045940000000003 45.043246000000003 434</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047190000000001 45.043258000000002 436</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 12mt</name>
+          <description>#Climbing from 80mt to 92mt in 00:00:52</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:23:55+01:00</begin>
+            <end>2024-02-11T13:24:47+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:23:55+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:24:47+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4047190000000001 45.043258000000002 436</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050029999999998 45.043469999999999 448</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking 0mt</name>
+          <description>#Sinking from 92mt to 92mt in 00:00:12</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:24:47+01:00</begin>
+            <end>2024-02-11T13:24:59+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:24:47+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:24:59+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4050029999999998 45.043469999999999 448</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4048480000000003 45.043221000000003 448</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 109mt</name>
+          <description>#Climbing from 92mt to 201mt in 00:02:43</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:24:59+01:00</begin>
+            <end>2024-02-11T13:27:42+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:24:59+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:27:42+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4048480000000003 45.043221000000003 448</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4041259999999998 45.044632999999997 557</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking 0mt</name>
+          <description>#Sinking from 201mt to 201mt in 00:00:11</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:27:42+01:00</begin>
+            <end>2024-02-11T13:27:53+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:27:42+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:27:53+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4041259999999998 45.044632999999997 557</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4044160000000003 45.044730999999999 557</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Climbing 31mt</name>
+          <description>#Climbing from 201mt to 232mt in 00:00:57</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:27:53+01:00</begin>
+            <end>2024-02-11T13:28:50+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentClimbing</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:27:53+01:00</when>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:28:50+01:00</when>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4044160000000003 45.044730999999999 557</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046019999999997 45.045189000000001 588</gx:coord>
+          </Track>
+        </Placemark>
+        <Placemark>
+          <name>Sinking -232mt</name>
+          <description>#Sinking from 232mt to 0mt in 00:02:53</description>
+          <TimeSpan>
+            <begin>2024-02-11T13:28:50+01:00</begin>
+            <end>2024-02-11T13:31:43+01:00</end>
+          </TimeSpan>
+          <styleUrl>#segmentSinking</styleUrl>
+          <Track xmlns="http://www.google.com/kml/ext/2.2">
+            <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+            <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:28:50+01:00</when>
             <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T13:31:43+01:00</when>
-            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406733 45.043607000000002 357</gx:coord>
+            <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4046019999999997 45.045189000000001 588</gx:coord>
             <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 356</gx:coord>
           </Track>
         </Placemark>
