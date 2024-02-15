@@ -8,7 +8,7 @@
     {
       "name": "CurrentPoint to LastVisiblePoint",
       //int How many seconds of track are visible
-      "visibleHistorySeconds": 120,
+      "visibleHistorySeconds": 40,
       //tilt in degree
       //
       // null -> automatic
@@ -20,9 +20,9 @@
       "panOffset": 0,
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "UpdatePositionIntervalInSeconds": 10,
+      "UpdatePositionIntervalInSeconds": 4, 
       "minimumRangeInMeters": 180,
-      "MaxDeltaHeadingDegrees": 30,
+      "MaxDeltaHeadingDegrees": 20,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
       "LookAt": "CurrentPoint",
       "AlignTo": "LastVisiblePoint"

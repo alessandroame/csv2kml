@@ -22,5 +22,5 @@
   // 0 = linear
   // >0 flat near 0 value
   // <0 vertical near 0
-  "colorScaleExpo": 0
+  "colorScaleExpo": -.2
 }

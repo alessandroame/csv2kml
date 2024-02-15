@@ -207,7 +207,7 @@ namespace csv2kml
             }
         }
 
-        private void AddTrackStyle(Folder container,string name,string lineColor,string polygonColor)
+        private void AddTrackStyle(Folder container,string name,string lineColor,string polygonColor,int width)
         {
             container.AddStyle(new Style
             {
@@ -215,7 +215,7 @@ namespace csv2kml
                 Line = new LineStyle
                 {
                     Color = Color32.Parse(lineColor),
-                    Width = 3
+                    Width = width
                 },
                 Icon = new IconStyle
                 {
@@ -238,9 +238,10 @@ namespace csv2kml
                     ItemType = ListItemType.CheckHideChildren
                 }
             });
-            AddTrackStyle(container, $"extrudedValueMotor", $"33000000", $"55000000");
-            AddTrackStyle(container, $"groundValueMotor", $"44000000", $"55000000");
-            AddTrackStyle(container, $"ValueMotor", $"FF000000", $"55000000");
+            var trackWidth = 4;
+            AddTrackStyle(container, $"extrudedValueMotor", $"33000000", $"00000000", trackWidth);
+            AddTrackStyle(container, $"groundValueMotor", $"88000000", $"55000000",trackWidth);
+            AddTrackStyle(container, $"ValueMotor", $"FF000000", $"55000000", trackWidth);
 
             for (var i = 0; i <= _subdivision; i++)
             {
@@ -251,15 +252,15 @@ namespace csv2kml
                 var color = logValue.ToColor();
                 //Console.WriteLine($"{i}-> {value} -> {normalizedValue} -> {logValue} -> {color}");
 
-                var polygonColor = $"55{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                var lineColor = $"33{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, $"extruded{styleId}", lineColor, polygonColor);
+                var polygonColor = $"00{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                var lineColor = $"22{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                AddTrackStyle(container, $"extruded{styleId}", lineColor, polygonColor, trackWidth/2);
                 
-                lineColor = $"44{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor);
+                lineColor = $"88{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor, trackWidth);
                 
                 lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, styleId, lineColor, polygonColor);
+                AddTrackStyle(container, styleId, lineColor, polygonColor, trackWidth);
                 //Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }

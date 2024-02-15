@@ -20,7 +20,7 @@ namespace csv2kml
             //-MAX RED
             var center = 50;
             var aperture = 60;
-            if (normalizedValue < 0) { center = 160; }
+            if (normalizedValue < 0) { center = 180; }
             var hue = -normalizedValue * aperture + center;
             return hue.HueToRGB();
         }
