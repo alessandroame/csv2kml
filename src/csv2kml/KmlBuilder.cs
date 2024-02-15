@@ -44,7 +44,7 @@ namespace csv2kml
         private void AddSegmentStyles(Folder container)
         {
             var colors = new Dictionary<FlightPhase, string>() {
-                { FlightPhase.MotorClimb,"FFFFFFFF" },
+                { FlightPhase.MotorClimb,"FF000000" },
                 { FlightPhase.Climb,"FF0000FF" },
                 { FlightPhase.Glide,"FF00FF00" },
                 { FlightPhase.Sink,"FFFFFF00" },
