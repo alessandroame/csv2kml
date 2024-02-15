@@ -177,16 +177,14 @@ namespace csv2kml
             var tourplaylist = new Playlist();
             var currentTime = data.First().Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
             var oldHeading = 0D;
+            
             while (true)
             {
                 var visibleData = data.GetDataByTime(currentTime.AddSeconds(-cameraConfig.VisibleHistorySeconds), currentTime);
                 if (visibleData.Count() == 0) break;
 
-
                 var currentData = visibleData.Last();
                 var duration = data.GetDurationInSeconds(currentData.Time, currentData.Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds));
-
-
 
                 var i = data.ToList().FindIndex(d=>d.Time==currentData.Time);
 
@@ -199,8 +197,13 @@ namespace csv2kml
 
                 if (segment.Type == FlightPhase.Climb || segment.Type == FlightPhase.MotorClimb)
                 {
-                    var cameraPos = segmentBB.Center.MoveTo(Math.Max(80,segmentGroungDistance*2), segmentHeading+120);
-                    //cameraPos.Altitude = currentData.Altitude+75;
+                    //var maxDegreePerSeconds = (double)180/ cameraConfig.UpdatePositionIntervalInSeconds;
+                    var segmentPercentage=(double)(i-segment.From)/ (segment.To- segment.From);
+                    var segmentDurationInSeconds = data[segment.To].Time.Subtract(data[segment.From].Time).TotalSeconds;
+                    var heading = 0d;
+                    heading = 720 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
+                    var cameraPos = segmentBB.Center.MoveTo(Math.Max(180,segmentGroungDistance*2), segmentHeading+ heading);
+                    cameraPos.Altitude += 50;
                     var lookAt = currentData.ToVector();
                     var visibleTimeFrom = visibleData.First().Time;
                     if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
@@ -208,7 +211,7 @@ namespace csv2kml
                     {
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
-                        View = CreateCamera(cameraPos, lookAt, visibleTimeFrom, currentData.Time, tourConfig,out var heading)
+                        View = CreateCamera(cameraPos, lookAt, visibleTimeFrom, currentData.Time, tourConfig,out  heading)
                     };
                     tourplaylist.AddTourPrimitive(flyTo);
                     oldHeading = heading;
@@ -229,13 +232,12 @@ namespace csv2kml
                             heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
                     }
 
-
                     var lookAt = currentData.ToVector();
                     var flyTo = new FlyTo
                     {
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
-                        View = CreateLookAt(lookAt, Math.Max(80, visibleDataBB.DiagonalSize*1.5), heading, 60, visibleData.First().Time, currentData.Time, tourConfig)
+                        View = CreateLookAt(lookAt, Math.Max(140, visibleDataBB.DiagonalSize*1.5), heading, 60, visibleData.First().Time, currentData.Time, tourConfig)
                     };
                     tourplaylist.AddTourPrimitive(flyTo);
                     oldHeading = heading;
