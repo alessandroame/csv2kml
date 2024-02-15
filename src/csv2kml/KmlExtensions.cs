@@ -1,3 +1,4 @@
+using MathNet.Numerics;
 using MathNet.Numerics.Distributions;
 using SharpKml.Base;
 using SharpKml.Dom;
@@ -6,11 +7,13 @@ using SharpKml.Engine;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using static csv2kml.KmlBuilder;
+using static DataExtensions;
 
 namespace csv2kml
 {
@@ -23,12 +26,12 @@ namespace csv2kml
             {
                 AltitudeMode = altitudeMode,
             };
-            var multiTrack = new MultipleTrack();
-            multiTrack.AddTrack(track);
+            //var multiTrack = new MultipleTrack();
+            //multiTrack.AddTrack(track);
             var placemark = new Placemark
             {
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
-                Geometry = multiTrack,
+                Geometry = track,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
                 Description = new Description
                 {
@@ -148,7 +151,7 @@ namespace csv2kml
             //Console.WriteLine($"point count: {data.Length}");
         }
 
-  
+
         //public static void GenerateCameraPath(this Container container, Data[] data,string cameraName, SharpKml.Dom.AltitudeMode altitudeMode, int altitudeOffset, int frameBeforeStep = 10)
         //{
         //    var tourplaylist = new Playlist();
@@ -167,99 +170,209 @@ namespace csv2kml
         //    container.AddFeature(tour);
         //}
 
-        public static void GenerateSegmentsTour(this Container container, Data[] data, List<Segment> segments)
+
+        public static void GenerateTrackTour(this Container container,
+            List<Data> data, IEnumerable<Segment> segments, TourConfig tourConfig, LookAtCameraConfig cameraConfig)
         {
             var tourplaylist = new Playlist();
-            foreach (var segment in segments)
+            var currentTime = data.First().Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
+            var oldHeading = 0D;
+            while (true)
             {
-                var dataToShow = data.Skip(segment.From).Take(segment.To - segment.From);
-                var bb = new BoundingBox
-                {
-                    West = dataToShow.Min(d => d.Longitude),
-                    East = dataToShow.Max(d => d.Longitude),
-                    North = dataToShow.Min(d => d.Latitude),
-                    South = dataToShow.Max(d => d.Latitude),
-                };
-                var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalMilliseconds/1000;
-                var dataCenter= new Vector(
-                                    bb.Center.Latitude,
-                                    bb.Center.Longitude,
-                                    (dataToShow.Min(d => d.Altitude) + dataToShow.Max(d => d.Altitude)) / 2);
-                
-                dataToShow.First().ToVector().CalculateTiltPan(dataToShow.Last().ToVector(), out var pan, out var tilt, out var distance, out var groundDistance);
+                var visibleData = data.GetDataByTime(currentTime.AddSeconds(-cameraConfig.VisibleHistorySeconds), currentTime);
+                if (visibleData.Count() == 0) break;
 
-                if (segment.Type == FlightPhase.Climb)
-                {
-                    pan = pan ;
-                    distance += 60;
-                }
-                else
-                {
-                    pan = 90;
-                    distance = 50;
-                }
 
-                var cameraPosition = dataCenter.MoveTo(distance + 100,pan);//pan+90);
-                cameraPosition.CalculateTiltPan(dataCenter, out pan, out tilt, out distance, out groundDistance);
-                Console.WriteLine($"pan{pan}");
+                var currentData = visibleData.Last();
+                var duration = data.GetDurationInSeconds(currentData.Time, currentData.Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds));
 
-                if (segment.Type == FlightPhase.Climb)
-                {
-                    tilt = Math.Max(70, tilt);
-                }
-                else
-                {
-                    tilt = 45;
-                    dataCenter.Altitude += 150;
-                }
+                visibleData.First().ToVector().CalculateTiltPan(currentData.ToVector(),
+                    out var visibleDataHeading, out var visibleDataTilt, out var visibleDataDistance, out var visibleDataGroungDistance);
 
-                var view = new Camera
+
+                var i = data.ToList().FindIndex(d=>d.Time==currentData.Time);
+
+                var segment = segments.FirstOrDefault(s => s.From <= i && s.To > i);
+                if (segment == null) { break; }
+                var segmentData = data.Skip(segment.From).Take(segment.To - segment.From);
+                var segmentBB = new BoundingBoxEx(segmentData);
+                segmentData.First().ToVector().CalculateTiltPan(segmentData.Last().ToVector(),
+                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroungDistance);
+
+                if (segment.Type == FlightPhase.Climb || segment.Type == FlightPhase.MotorClimb)
                 {
-                    Latitude = cameraPosition.Latitude,
-                    Longitude = cameraPosition.Longitude,
-                    Altitude = dataCenter.Altitude + 356,
-                    AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
-                    Heading = 180-pan,
-                    Tilt = tilt,
-                    GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+                    var cameraPos = segmentBB.Center.MoveTo(segmentBB.DiagonalSize, segmentHeading-90);
+                    var lookAt = currentData.ToVector();
+
+                    var flyTo = new FlyTo
                     {
-                        Begin = dataToShow.First().Time.AddSeconds(-120),
-                        End = dataToShow.Last().Time,
-                    }
-                };
-                //var view = new LookAt
-                //{
-                //    Latitude = dataCenter.Latitude,
-                //    Longitude = dataCenter.Longitude,
-                //    Altitude = dataCenter.Altitude+ 356,
-                //    AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
-                //    Heading = 180,
-                //    Tilt = 80,
-                //    Range=300,
-                //    GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
-                //    {
-                //        Begin = dataToShow.First().Time.AddSeconds(-60),
-                //        End = dataToShow.Last().Time,
-                //    }
-                //};
-                FlyToMode fm = FlyToMode.Smooth;
-                if (segment.Type == FlightPhase.Climb) fm = FlyToMode.Bounce;
-                var flyTo = new FlyTo
+                        Mode = FlyToMode.Smooth,
+                        Duration = duration,
+                        View = CreateCamera(cameraPos, lookAt, visibleData.First().Time, currentData.Time, tourConfig)
+                    };
+                    tourplaylist.AddTourPrimitive(flyTo);
+                }
+                else
                 {
-                    Mode = fm,
-                    Duration = duration,
-                    View = view
-                };
-                tourplaylist.AddTourPrimitive(flyTo);
+                    var heading = 180 - visibleDataHeading;
+
+                    if (oldHeading != 0)
+                    {
+                        if (oldHeading - heading > cameraConfig.MaxDeltaHeadingDegrees)
+                            heading = oldHeading - cameraConfig.MaxDeltaHeadingDegrees;
+                        if (heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees)
+                            heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
+                    }
+
+
+                    var lookAt = currentData.ToVector();
+                    var flyTo = new FlyTo
+                    {
+                        Mode = FlyToMode.Smooth,
+                        Duration = duration,
+                        View = CreateLookAt(lookAt, 150, heading, 50, visibleData.First().Time, currentData.Time, tourConfig)
+                    };
+                    tourplaylist.AddTourPrimitive(flyTo);
+                    oldHeading = heading;
+                }
+                currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
             }
-            var tour = new Tour { Name = "Tour analysis" };
+            var tour = new Tour { Name = "GenerateTrackTour -> "+cameraConfig.Name };
             tour.Playlist = tourplaylist;
             container.AddFeature(tour);
         }
+
+        private static Camera CreateCamera(Vector cameraPosition, Vector lookAtPosition,DateTime fromTime, DateTime toTime,TourConfig tourConfig)
+        {
+            cameraPosition.CalculateTiltPan(lookAtPosition, out var heading, out var tilt, out var distance, out var groundDistance);
+            var res= new Camera
+            {
+                Latitude = cameraPosition.Latitude,
+                Longitude = cameraPosition.Longitude,
+                Altitude = Math.Max(20, cameraPosition.Altitude.Value) +tourConfig.AltitudeOffset,
+                AltitudeMode = tourConfig.AltitudeMode,
+                Heading = heading,
+                Tilt = tilt,
+                GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+                {
+                    Begin = fromTime,
+                    End = toTime
+                }
+            };
+            return res;
+        }
+        public static LookAt CreateLookAt(Vector lookAtPosition, double range,double heading, double tilt, DateTime fromTime, DateTime toTime, TourConfig tourConfig)
+        {
+            var res = new LookAt
+            {
+                Latitude = lookAtPosition.Latitude,
+                Longitude = lookAtPosition.Longitude,
+                Altitude = Math.Max(20,lookAtPosition.Altitude.Value) + tourConfig.AltitudeOffset,
+                AltitudeMode = tourConfig.AltitudeMode,
+                Heading = heading,
+                Tilt = tilt,
+                Range = range,
+                GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+                {
+                    Begin = fromTime,
+                    End = toTime
+                }
+            };
+            return res;
+        }
+
+        //public static void GenerateSegmentsTour__(this Container container, Data[] data, List<Segment> segments)
+        //{
+        //    var tourplaylist = new Playlist();
+        //    foreach (var segment in segments)
+        //    {
+        //        var dataToShow = data.Skip(segment.From).Take(segment.To - segment.From);
+        //        var bb = new BoundingBox
+        //        {
+        //            West = dataToShow.Min(d => d.Longitude),
+        //            East = dataToShow.Max(d => d.Longitude),
+        //            North = dataToShow.Min(d => d.Latitude),
+        //            South = dataToShow.Max(d => d.Latitude),
+        //        };
+        //        var duration = dataToShow.Last().Time.Subtract(dataToShow.First().Time).TotalMilliseconds/1000;
+        //        var dataCenter= new Vector(
+        //                            bb.Center.Latitude,
+        //                            bb.Center.Longitude,
+        //                            (dataToShow.Min(d => d.Altitude) + dataToShow.Max(d => d.Altitude)) / 2);
+                
+        //        dataToShow.First().ToVector().CalculateTiltPan(dataToShow.Last().ToVector(), out var pan, out var tilt, out var distance, out var groundDistance);
+
+        //        if (segment.Type == FlightPhase.Climb)
+        //        {
+        //            pan = pan ;
+        //            distance += 60;
+        //        }
+        //        else
+        //        {
+        //            pan = 90;
+        //            distance = 50;
+        //        }
+
+        //        var cameraPosition = dataCenter.MoveTo(distance + 100,pan);//pan+90);
+        //        cameraPosition.CalculateTiltPan(dataCenter, out pan, out tilt, out distance, out groundDistance);
+        //        Console.WriteLine($"pan{pan}");
+
+        //        if (segment.Type == FlightPhase.Climb)
+        //        {
+        //            tilt = Math.Max(70, tilt);
+        //        }
+        //        else
+        //        {
+        //            tilt = 45;
+        //            dataCenter.Altitude += 150;
+        //        }
+
+        //        var view = new Camera
+        //        {
+        //            Latitude = cameraPosition.Latitude,
+        //            Longitude = cameraPosition.Longitude,
+        //            Altitude = dataCenter.Altitude + 356,
+        //            AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
+        //            Heading = 180-pan,
+        //            Tilt = tilt,
+        //            GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+        //            {
+        //                Begin = dataToShow.First().Time.AddSeconds(-120),
+        //                End = dataToShow.Last().Time,
+        //            }
+        //        };
+        //        //var view = new LookAt
+        //        //{
+        //        //    Latitude = dataCenter.Latitude,
+        //        //    Longitude = dataCenter.Longitude,
+        //        //    Altitude = dataCenter.Altitude+ 356,
+        //        //    AltitudeMode=SharpKml.Dom.AltitudeMode.Absolute,
+        //        //    Heading = 180,
+        //        //    Tilt = 80,
+        //        //    Range=300,
+        //        //    GXTimePrimitive = new SharpKml.Dom.GX.TimeSpan
+        //        //    {
+        //        //        Begin = dataToShow.First().Time.AddSeconds(-60),
+        //        //        End = dataToShow.Last().Time,
+        //        //    }
+        //        //};
+        //        FlyToMode fm = FlyToMode.Smooth;
+        //        if (segment.Type == FlightPhase.Climb) fm = FlyToMode.Bounce;
+        //        var flyTo = new FlyTo
+        //        {
+        //            Mode = fm,
+        //            Duration = duration,
+        //            View = view
+        //        };
+        //        tourplaylist.AddTourPrimitive(flyTo);
+        //    }
+        //    var tour = new Tour { Name = "Tour analysis" };
+        //    tour.Playlist = tourplaylist;
+        //    container.AddFeature(tour);
+        //}
         public static void GenerateLookBackPath(this Container container,
             Data[] data, TourConfig tourConfig, LookAtCameraConfig cameraConfig, bool follow = false)
         {
-
             var tourplaylist = new Playlist();
 
             var oldHeading = 0d;

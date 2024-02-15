@@ -20,7 +20,7 @@
       "panOffset": 0,
       //1  -> every track point      -> more reactive
       //10  -> every 10 track point  -> smoother
-      "UpdatePositionIntervalInSeconds": 5,
+      "UpdatePositionIntervalInSeconds": 10,
       "minimumRangeInMeters": 180,
       "MaxDeltaHeadingDegrees": 30,
       // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 

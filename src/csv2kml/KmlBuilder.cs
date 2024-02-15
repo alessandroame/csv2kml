@@ -157,10 +157,12 @@ namespace csv2kml
                 segmentsFolder.AddFeature(placemark);
                 index++;
             }
-            res.GenerateSegmentsTour(_data,segments);
+            foreach (var cameraSettings in _tourConfig.LookAtCameraSettings)
+            {
+                res.GenerateTrackTour(_data.ToList(), segments, _tourConfig, cameraSettings);
+            }
             return res;
         }
-
 
         public Folder BuildTrack()
         {
