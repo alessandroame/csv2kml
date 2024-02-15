@@ -235,7 +235,7 @@ namespace csv2kml
                     {
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
-                        View = CreateLookAt(lookAt, visibleDataBB.DiagonalSize*1.5, heading, 60, visibleData.First().Time, currentData.Time, tourConfig)
+                        View = CreateLookAt(lookAt, Math.Max(80, visibleDataBB.DiagonalSize*1.5), heading, 60, visibleData.First().Time, currentData.Time, tourConfig)
                     };
                     tourplaylist.AddTourPrimitive(flyTo);
                     oldHeading = heading;
