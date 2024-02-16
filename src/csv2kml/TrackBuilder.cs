@@ -191,24 +191,27 @@ namespace csv2kml
                 var nv = item.VerticalSpeed.Normalize(5);
                 var styleIndex = (int)Math.Round(nv * _ctx.Subdivision / 2);
 
-                if (oldMotorActive && !item.MotorActive)
+                if (coords.Count() > 2)
                 {
-                    styleId = "Motor";
-                    var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
-                    res.AddFeature(p);
-                    coords = new List<Data> { coords.Last() };
-                    oldStyleIndex = styleIndex;
-                    oldMotorActive = _ctx.Data[i].MotorActive;
-                }
-                else if (!oldMotorActive && oldStyleIndex != styleIndex)
-                {
-                    styleId = oldStyleIndex.ToString();
-                    var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
-                    res.AddFeature(p);
-                    //if (coords.Count() > 3) Debugger.Break();
-                    coords = new List<Data> { coords.Last() };
-                    oldStyleIndex = styleIndex;
-                    oldMotorActive = _ctx.Data[i].MotorActive;
+                    if (oldMotorActive && !item.MotorActive)
+                    {
+                        styleId = "Motor";
+                        var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
+                        res.AddFeature(p);
+                        coords = new List<Data> { coords.Last() };
+                        oldStyleIndex = styleIndex;
+                        oldMotorActive = _ctx.Data[i].MotorActive;
+                    }
+                    else if (!oldMotorActive && oldStyleIndex != styleIndex)
+                    {
+                        styleId = oldStyleIndex.ToString();
+                        var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
+                        res.AddFeature(p);
+                        //if (coords.Count() > 3) Debugger.Break();
+                        coords = new List<Data> { coords.Last() };
+                        oldStyleIndex = styleIndex;
+                        oldMotorActive = _ctx.Data[i].MotorActive;
+                    }
                 }
                 coords.Add(item);
             }
