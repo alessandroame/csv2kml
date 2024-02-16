@@ -19,12 +19,22 @@ namespace csv2kml
             var lon2 = lon1 + Math.Atan2(Math.Sin(rad) * Math.Sin(d) * Math.Cos(lat1), Math.Cos(d) - Math.Sin(lat1) * Math.Sin(lat2));
             lon2 = (lon2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180°
 
-            var res = new Vector(lat2.ToDegree(), lon2.ToDegree(), vector.Altitude.Value);
+            Vector res;
+            if (vector.Altitude.HasValue) {
+                res = new Vector(lat2.ToDegree(), lon2.ToDegree(), vector.Altitude.Value);
+            }
+            else
+            {
+                res = new Vector(lat2.ToDegree(), lon2.ToDegree());
+            }
             return res;
         }
 
         public static void CalculateTiltPan(this SharpKml.Base.Vector from, SharpKml.Base.Vector to, out double pan, out double tilt, out double distance, out double groundDistance)
         {
+            if (!from.Altitude.HasValue) throw new ArgumentNullException(nameof(from.Altitude));
+            if (!to.Altitude.HasValue) throw new ArgumentNullException(nameof(to.Altitude));
+
             double x1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
             double y1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
             double z1 = EarthRadiusInMeters + from.Altitude.Value;
@@ -46,6 +56,9 @@ namespace csv2kml
 
         public static double Distance(this SharpKml.Base.Vector from, SharpKml.Base.Vector to)
         {
+            if (!from.Altitude.HasValue) throw new ArgumentNullException(nameof(from.Altitude));
+            if (!to.Altitude.HasValue) throw new ArgumentNullException(nameof(to.Altitude));
+            
             double x1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
             double y1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
             double z1 = EarthRadiusInMeters + from.Altitude.Value;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace csv2kml
 {
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public class CsvConfig
     {
 
@@ -20,10 +21,13 @@ namespace csv2kml
         public double ValueMax { get; set; }
         public double ColorScaleExpo { get; set;}
 
-        public static CsvConfig? FromFile(string filename)
+        public static CsvConfig FromFile(string filename)
         {
             var json = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<CsvConfig>(json);
+            var res=JsonConvert.DeserializeObject<CsvConfig>(json);
+            if (res == null) throw new Exception($"Failed to read TourConfig from {filename}");
+            return res;
+
         }
 
         public override string ToString()
@@ -51,5 +55,8 @@ namespace csv2kml
         public string VerticalSpeed { get; set; }
         public string Speed { get; set; }
         public string Motor { get; set; }
+        
     }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
 }

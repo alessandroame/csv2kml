@@ -1,9 +1,4 @@
 {
-  //enum ClampToGround, RelativeToGround, Absolute
-  "AltitudeMode": "Absolute",
-
-  //int required if AltitudeMode is Absolute 
-  "AltitudeOffset": "356",
   "lookAtCamera": [
     {
       "name": "CurrentPoint to LastVisiblePoint",

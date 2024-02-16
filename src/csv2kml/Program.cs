@@ -23,6 +23,9 @@ internal class Program
                 var files = new List<string>();
                 if (!string.IsNullOrEmpty(o.TelemetryFN)) files.Add(o.TelemetryFN);
                 if (!string.IsNullOrEmpty(o.TelemetryFolder)) files.AddRange(Directory.GetFiles(o.TelemetryFolder, "*.csv"));
+
+                if (string.IsNullOrEmpty(o.CsvConfigFN)) throw new ArgumentException("CsvConfigFN");
+                if (string.IsNullOrEmpty(o.TourConfigFN)) throw new ArgumentException("TourConfigFN");
                 foreach (var csv in files)
                 {
                     Console.WriteLine($"Importing {csv}...");
@@ -51,7 +54,7 @@ internal class Program
                     new KmlBuilder()
                     .UseCsvConfig(o.CsvConfigFN)
                     .UseTourConfig(o.TourConfigFN)
-                    .Build(csv)
+                    .Build(csv, o.AltitudeOffset)
                     .Save(outFn);
                     Console.WriteLine($"Created {outFn}");
                 }

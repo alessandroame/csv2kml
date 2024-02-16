@@ -13,14 +13,14 @@ namespace csv2kml
     public class TourConfig
     {
         [JsonProperty("lookAtCamera")]
-        public LookAtCameraConfig[] LookAtCameraSettings { get; set; }
-        public AltitudeMode AltitudeMode { get; set; }
-        public int AltitudeOffset { get; set; }
+        public LookAtCameraConfig[]? LookAtCameraSettings { get; set; }
 
-        public static TourConfig? FromFile(string filename)
+        public static TourConfig FromFile(string filename)
         {
             var json = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<TourConfig>(json);
+            var res=JsonConvert.DeserializeObject<TourConfig>(json);
+            if (res == null) throw new Exception($"Failed to read TourConfig from {filename}");
+            return res;
         }
     }
 

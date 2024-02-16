@@ -3,60 +3,16 @@ using csv2kml;
 using MathNet.Numerics.Providers.LinearAlgebra;
 using SharpKml.Base;
 using SharpKml.Dom;
+using SharpKml.Dom.GX;
 using SharpKml.Engine;
 using System.Diagnostics;
 using System.Drawing;
+using static csv2kml.KmlBuilder;
+using System.Xml.Linq;
+using System.Runtime.CompilerServices;
 
 public static partial class DataExtensions
 {
-
-    private class AltGain
-    {
-        public DateTime Time { get; set; }
-        public double Gain { get; set; }
-
-        public AltGain(DateTime time, double gain)
-        {
-            Time = time;
-            Gain = gain;
-        }
-    }
-    public static void CalculateFlightPhase(this IEnumerable<Data> data)
-    {
-        var amountInSeconds = 10;
-        var buffer = new List<AltGain>();
-        var index = 0;
-        var lastAltitude = data.First().Altitude;
-        foreach (var d in data)
-        {
-            if (d.MotorActive)
-            {
-                buffer.Clear();
-                d.FlightPhase = FlightPhase.MotorClimb;
-                //Console.WriteLine($"#{i} phase:{d.FlightPhase}");
-            }
-            else
-            {
-                while (buffer.Count()>1 && d.Time.Subtract(buffer.First().Time).TotalSeconds > amountInSeconds) buffer.RemoveAt(0);
-                buffer.Add(new AltGain(d.Time,d.Altitude-lastAltitude));
-                var weigth = buffer.Last().Time.Subtract(buffer.First().Time).TotalSeconds / amountInSeconds;
-                var acc = 0D;
-                if (buffer.Count() > 1) {
-                    acc = buffer.Average(b => b.Gain) * weigth;
-                }
-
-                if (acc > 0)
-                    d.FlightPhase = FlightPhase.Climb;
-                else if (acc > -0.8)
-                    d.FlightPhase = FlightPhase.Glide;
-                else
-                    d.FlightPhase = FlightPhase.Sink;
-                //Console.WriteLine($"#{i} phase:{d.FlightPhase} acc:{acc} ");
-            }
-            lastAltitude = d.Altitude;
-            index++;
-        }
-    }
 
     public static double GetDurationInSeconds(this IEnumerable<Data> data, DateTime from, DateTime to)
     {
@@ -105,8 +61,8 @@ public static partial class DataExtensions
         return new Vector(d.Latitude,d.Longitude,d.Altitude);
     }
    
-    public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,  
-            TourConfig tourConfig, LookAtCameraConfig cameraConfig)
+    public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,
+            double altitudeOffset, LookAtCameraConfig cameraConfig)
     {
         var bb = new BoundingBox
         {
@@ -116,9 +72,9 @@ public static partial class DataExtensions
             South = data.Max(d => d.Latitude),
         };
 
-        SharpKml.Base.Vector GetReference(PointReference reference)
+        Vector GetReference(PointReference reference)
         {
-            SharpKml.Base.Vector res = null;
+            Vector? res = null;
             switch (reference)
             {
                 case PointReference.CurrentPoint:
@@ -132,35 +88,36 @@ public static partial class DataExtensions
                     res = data.First().ToVector();
                     break;
                 case PointReference.BoundingBoxCenter:
-                    res = new SharpKml.Base.Vector(
+                    res = new Vector(
                                     bb.Center.Latitude,
                                     bb.Center.Longitude,
                                     (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
                     break;
                 case PointReference.PilotPosition:
                     var pilotPosition = data.First();
-                    res = new SharpKml.Base.Vector(
+                    res = new Vector(
                                     pilotPosition.Latitude,
                                     pilotPosition.Longitude,
                                     (data.Min(d => d.Altitude) + data.Max(d => d.Altitude)) / 2);
                     break;
                 default:
                     throw new Exception($"unhandled lookAtReference: {cameraConfig.LookAt}");
-                    break;
             }
             return res;
         }
 
         Vector lookTo = GetReference(cameraConfig.LookAt);
+        if (!lookTo.Altitude.HasValue) throw new ArgumentNullException(nameof(lookTo.Altitude));
+
         Vector alignTo = GetReference(cameraConfig.AlignTo);
 
         var d = lookTo.Distance(alignTo);
 
         var res = new LookAt();
-        res.AltitudeMode = tourConfig.AltitudeMode;
+        res.AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute;
         res.Latitude = lookTo.Latitude;
         res.Longitude = lookTo.Longitude;
-        res.Altitude = Math.Max(tourConfig.AltitudeOffset, lookTo.Altitude.Value + tourConfig.AltitudeOffset);
+        res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
         res.Range = Math.Max(cameraConfig.MinimumRangeInMeters, d*1.6);
 
         lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);

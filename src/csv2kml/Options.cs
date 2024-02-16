@@ -14,16 +14,16 @@ public class Options
     public string TourConfigFN { get; set; }
 
     [Option('i', "inputFile", Required = false, HelpText = "telemetry file path")]
-    public string TelemetryFN { get; set; }
+    public string? TelemetryFN { get; set; }
 
     [Option('f', "inputFolder", Required = false, HelpText = "telemetry file folder")]
-    public string TelemetryFolder { get; set; }
+    public string? TelemetryFolder { get; set; }
 
     [Option('o', "output", Required = false, HelpText = "kml file folder")]
-    public string KMLFolder { get; set; }
+    public string? KMLFolder { get; set; }
     
     [Option('a', "altOffset", Required = true, HelpText = "Altitude offset")]
-    public int AltitudeOffset { get; set; }
+    public double AltitudeOffset { get; set; }
 
 
 }
