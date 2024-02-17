@@ -1,6 +1,7 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
+using System.Diagnostics;
 using static csv2kml.KmlExtensions;
 using static DataExtensions;
 
@@ -78,13 +79,18 @@ namespace csv2kml
             var tourplaylist = new Playlist();
             var data = _ctx.Data;
             var currentTime = data.First().Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
+            var lastTime = data.Last().Time;
             var oldHeading = 0D;
-
             while (true)
             {
-                var visibleData = data.GetDataByTime(currentTime.AddSeconds(-cameraConfig.VisibleHistorySeconds), currentTime);
-                if (visibleData.Count() == 0) break;
-
+                var visibleData = new Data[0];
+                while (visibleData.Length == 0)
+                {
+                    currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
+                    if (currentTime > lastTime) break;
+                    visibleData = data.GetDataByTime(currentTime.AddSeconds(-cameraConfig.VisibleHistorySeconds), currentTime);
+                }
+                if (currentTime > lastTime) break;
                 var currentData = visibleData.Last();
                 var duration = data.GetDurationInSeconds(currentData.Time, currentData.Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds));
 
@@ -111,6 +117,7 @@ namespace csv2kml
                     if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
                     var flyTo = new FlyTo
                     {
+                        Id = (tourIndex++).ToString(),
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
                         View = CameraHelper.CreateCamera(cameraPos, lookAt, visibleTimeFrom, currentData.Time, _ctx.AltitudeOffset, out heading)
@@ -137,13 +144,16 @@ namespace csv2kml
                     var lookAt = currentData.ToVector();
                     var flyTo = new FlyTo
                     {
+                        Id = (tourIndex++).ToString(),
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
                         View = CameraHelper.CreateLookAt(lookAt, Math.Max(140, visibleDataBB.DiagonalSize * 1.5), heading, 60,
                             visibleData.First().Time, currentData.Time, _ctx.AltitudeOffset)
                     };
                     tourplaylist.AddTourPrimitive(flyTo);
+
                     oldHeading = heading;
+                    
                 }
                 currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
             }
@@ -151,6 +161,9 @@ namespace csv2kml
             tour.Playlist = tourplaylist;
             return tour;
         }
+
+        static int tourIndex = 0;
+
         private Segment[] BuildSegments()
         {
             var res = new List<Segment>();

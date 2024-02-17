@@ -22,9 +22,9 @@ namespace csv2kml
                 Open = true
             };
             AddTrackStyles(trackFolder);
-            trackFolder.AddFeature(BuildColoredTrack("3D track", "Value"));
-            trackFolder.AddFeature(BuildColoredTrack( "Ground track", "groundValue"));
-            trackFolder.AddFeature(BuildLineString( "extruded track", "extrudedValue"));
+            trackFolder.AddFeature(BuildTrack("3D track", "Value", BuildPlacemarkWithTrack));
+            trackFolder.AddFeature(BuildTrack( "Extruded track", "extrudedValue", BuildPlacemarkWithLineString));
+            trackFolder.AddFeature(BuildTrack("Ground track", "groundValue", BuildPlacemarkWithGroundLineString));
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
                 trackFolder.AddFeature(BuildTour( cameraSettings, true));
@@ -61,7 +61,7 @@ namespace csv2kml
                 AddTrackStyle(container, $"extruded{styleId}", lineColor, polygonColor, trackWidth / 2);
 
                 lineColor = $"88{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor, trackWidth / 2);
+                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor, trackWidth);
 
                 lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 AddTrackStyle(container, styleId, lineColor, polygonColor, trackWidth);
@@ -88,15 +88,6 @@ namespace csv2kml
 
                 }
             });
-        }
-
-        private Folder BuildColoredTrack(string name, string styleRadix)
-        {
-            return BuildTrack(name, styleRadix, BuildPlacemarkWithTrack);
-        }
-        private Folder BuildLineString(string name, string styleRadix)
-        {
-            return BuildTrack( name, styleRadix, BuildPlacemarkWithLineString);
         }
         
         private Placemark BuildPlacemarkWithTrack(List<Data> data, string style)
@@ -141,19 +132,15 @@ namespace csv2kml
                 //Tessellate = true,
                 Coordinates = new CoordinateCollection(),
             };
-            var groundLineString = new LineString
+            //placemark.Viewpoint = data.First().CreateLookAt(data.Last(), true, altitudeMode, altitudeOffset);
+            foreach (var d in data)
             {
-                AltitudeMode = SharpKml.Dom.AltitudeMode.ClampToGround,
-                //Tessellate = true,
-                Coordinates = new CoordinateCollection(),
-            };
-            var multipleGeometry = new MultipleGeometry();
-            multipleGeometry.AddGeometry(lineString);
-            multipleGeometry.AddGeometry(groundLineString);
+                lineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude + _ctx.AltitudeOffset));
+            }
             var placemark = new Placemark
             {
                 Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
-                Geometry = multipleGeometry,
+                Geometry = lineString,
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
                 //Description = new Description { Text = $"#{trackIndex++} -> {style} motor:{data.Any(d=>d.MotorActive)}" }
             };
@@ -162,12 +149,35 @@ namespace csv2kml
                 Begin = data.First().Time,
                 End = data.Last().Time,
             };
+            return placemark;
+        }
+
+        private Placemark BuildPlacemarkWithGroundLineString(List<Data> data, string style)
+        {
+            var lineString = new LineString
+            {
+                AltitudeMode = SharpKml.Dom.AltitudeMode.ClampToGround,
+                Extrude = false,
+                //Tessellate = true,
+                Coordinates = new CoordinateCollection(),
+            };
             //placemark.Viewpoint = data.First().CreateLookAt(data.Last(), true, altitudeMode, altitudeOffset);
             foreach (var d in data)
             {
-                lineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude + _ctx.AltitudeOffset));
-                groundLineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude, d.Altitude + _ctx.AltitudeOffset));
+                lineString.Coordinates.Add(new Vector(d.Latitude, d.Longitude));
             }
+            var placemark = new Placemark
+            {
+                Name = "",// Math.Round(data.Average(d => d.VSpeed), 2).ToString(),
+                Geometry = lineString,
+                StyleUrl = new Uri($"#{style}", UriKind.Relative),
+                //Description = new Description { Text = $"#{trackIndex++} -> {style} motor:{data.Any(d=>d.MotorActive)}" }
+            };
+            placemark.Time = new SharpKml.Dom.TimeSpan
+            {
+                Begin = data.First().Time,
+                End = data.Last().Time,
+            };
             return placemark;
         }
 
@@ -183,6 +193,7 @@ namespace csv2kml
             var oldStyleIndex = 0;
             var oldMotorActive = _ctx.Data[0].MotorActive;
             var styleId = "";
+            var createPlacemark = false;
             for (var i = 0; i < _ctx.Data.Length; i++)
             {
                 var item = _ctx.Data[i];
@@ -196,22 +207,21 @@ namespace csv2kml
                     if (oldMotorActive && !item.MotorActive)
                     {
                         styleId = "Motor";
-                        var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
-                        res.AddFeature(p);
-                        coords = new List<Data> { coords.Last() };
-                        oldStyleIndex = styleIndex;
-                        oldMotorActive = _ctx.Data[i].MotorActive;
+                        createPlacemark = true;
                     }
                     else if (!oldMotorActive && oldStyleIndex != styleIndex)
                     {
                         styleId = oldStyleIndex.ToString();
-                        var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
-                        res.AddFeature(p);
-                        //if (coords.Count() > 3) Debugger.Break();
-                        coords = new List<Data> { coords.Last() };
-                        oldStyleIndex = styleIndex;
-                        oldMotorActive = _ctx.Data[i].MotorActive;
+                        createPlacemark = true;
                     }
+                }
+                if (createPlacemark) {
+                    var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
+                    res.AddFeature(p);
+                    coords = new List<Data> { coords.Last() };
+                    oldStyleIndex = styleIndex;
+                    oldMotorActive = _ctx.Data[i].MotorActive;
+                    createPlacemark = false;
                 }
                 coords.Add(item);
             }
