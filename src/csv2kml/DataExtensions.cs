@@ -37,7 +37,7 @@ public static partial class DataExtensions
 
     public static double Distance(this Data from, Data to)
     {
-        const double EarthRadius = 6371 * 1000; // Radius of the Earth in kilometers
+        const double EarthRadius = 6371 * 1000; 
 
         // Convert coordinates to Cartesian
         double x1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
