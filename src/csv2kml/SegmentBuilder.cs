@@ -49,6 +49,9 @@ namespace csv2kml
                 };
                 var from = _ctx.Data[segment.From];
                 var to = _ctx.Data[segment.To];
+                Console.WriteLine($"{from.Time}-{to.Time}");
+
+
                 var placemark = new Placemark
                 {
                     Name = $"#{index} {segment.Type} {to.Altitude - from.Altitude}mt",
@@ -81,6 +84,8 @@ namespace csv2kml
             var currentTime = data.First().Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
             var lastTime = data.Last().Time;
             var oldHeading = 0D;
+            var previousTime= data.First().Time;
+            var totSeconds = 0d;
             while (true)
             {
                 var visibleData = new Data[0];
@@ -92,16 +97,20 @@ namespace csv2kml
                 }
                 if (currentTime > lastTime) break;
                 var currentData = visibleData.Last();
-                var duration = data.GetDurationInSeconds(currentData.Time, currentData.Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds));
 
                 var i = data.ToList().FindIndex(d => d.Time == currentData.Time);
 
                 var segment = _ctx.Segments.FirstOrDefault(s => s.From <= i && s.To > i);
                 if (segment == null) { break; }
                 var segmentData = data.Skip(segment.From).Take(segment.To - segment.From);
+
+                var duration = currentTime.Subtract(previousTime).TotalMilliseconds/1000;
+                totSeconds += duration;
+                
+                previousTime = currentTime;
                 var segmentBB = new BoundingBoxEx(segmentData);
                 segmentData.First().ToVector().CalculateTiltPan(segmentData.Last().ToVector(),
-                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroungDistance);
+                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
 
                 if (segment.Type == FlightPhase.Climb || segment.Type == FlightPhase.MotorClimb)
                 {
@@ -110,8 +119,10 @@ namespace csv2kml
                     var segmentDurationInSeconds = data[segment.To].Time.Subtract(data[segment.From].Time).TotalSeconds;
                     var heading = 0d;
                     heading = 720 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
-                    var cameraPos = segmentBB.Center.MoveTo(Math.Max(180, segmentGroungDistance * 2), segmentHeading + heading);
-                    cameraPos.Altitude += 50;
+                    var distance = segmentGroundDistance * 2 * segmentPercentage;
+
+                    var cameraPos = currentData.ToVector().MoveTo(Math.Max(80, distance ), segmentHeading + heading);
+                    cameraPos.Altitude = (segmentData.Min(d=>d.Altitude)+currentData.Altitude)/2+50;
                     var lookAt = currentData.ToVector();
                     var visibleTimeFrom = visibleData.First().Time;
                     if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;

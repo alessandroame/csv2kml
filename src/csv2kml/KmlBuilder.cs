@@ -43,7 +43,7 @@ namespace csv2kml
             _rootFolder.Name = $"{Path.GetFileNameWithoutExtension(csvFilename)}";
             _rootFolder.AddFeature(new TrackBuilder().UseCtx(_ctx).Build());
             _rootFolder.AddFeature(new SegmentBuilder().UseCtx(_ctx).Build());
-            _rootFolder.AddFeature(new OverviewBuilder().UseCtx(_ctx).Build());
+            //_rootFolder.AddFeature(new OverviewBuilder().UseCtx(_ctx).Build());
 
             return this;
         }

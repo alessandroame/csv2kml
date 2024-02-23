@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>byFile</ActiveDebugProfile>
+    <ActiveDebugProfile>byFolder</ActiveDebugProfile>
   </PropertyGroup>
 </Project>
