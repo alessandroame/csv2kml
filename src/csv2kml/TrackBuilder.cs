@@ -8,10 +8,9 @@ namespace csv2kml
     {
         private Context _ctx;
 
-        public TrackBuilder UseCtx (Context ctx)
+        public TrackBuilder(Context ctx)
         {
             _ctx = ctx;
-            return this;
         }
         int trackIndex = 0;
         public Folder Build()
@@ -22,12 +21,13 @@ namespace csv2kml
                 Open = true
             };
             AddTrackStyles(trackFolder);
+            trackFolder.AddFeature(BuildTrack1("3D track energy compensated", "Value", BuildPlacemarkWithTrack));
             trackFolder.AddFeature(BuildTrack("3D track", "Value", BuildPlacemarkWithTrack));
             trackFolder.AddFeature(BuildTrack( "Extruded track", "extrudedValue", BuildPlacemarkWithLineString));
             trackFolder.AddFeature(BuildTrack("Ground track", "groundValue", BuildPlacemarkWithGroundLineString));
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
-                trackFolder.AddFeature(BuildTour( cameraSettings, true));
+                trackFolder.AddFeature(BuildTour(cameraSettings, true));
             }
             return trackFolder;
         }
@@ -65,6 +65,9 @@ namespace csv2kml
 
                 lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 AddTrackStyle(container, styleId, lineColor, polygonColor, trackWidth);
+
+                lineColor = $"88{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
+                AddTrackStyle(container, "comp"+styleId, lineColor, polygonColor, trackWidth*3);
                 //Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }
@@ -181,7 +184,58 @@ namespace csv2kml
             return placemark;
         }
 
-        private Folder BuildTrack( string name, string styleRadix,
+        private Folder BuildTrack1(string name, string styleRadix,
+            Func<List<Data>, string, Placemark> placemarkGenerator)
+        {
+            var res = new Folder
+            {
+                Name = name,
+                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
+            };
+            var coords = new List<Data>();
+            var oldStyleIndex = 0;
+            var oldMotorActive = _ctx.Data[0].MotorActive;
+            var styleId = "";
+            var createPlacemark = false;
+            for (var i = 0; i < _ctx.Data.Length; i++)
+            {
+                var item = _ctx.Data[i];
+
+                //TODO Normalize ( by config value )
+                var compensatedVspeed = item.VerticalSpeed - item.EnergyVerticalSpeed;
+                var nv = compensatedVspeed.Normalize(5);
+                var styleIndex = (int)Math.Round(nv * _ctx.Subdivision / 2);
+
+                if (coords.Count() > 2)
+                {
+                    if (oldMotorActive && !item.MotorActive)
+                    {
+                        styleId = "Motor";
+                        createPlacemark = true;
+                    }
+                    else if (!oldMotorActive && oldStyleIndex != styleIndex)
+                    {
+                        styleId = oldStyleIndex.ToString();
+                        createPlacemark = true;
+                    }
+                }
+                if (createPlacemark)
+                {
+                    var p = placemarkGenerator(coords, $"comp{styleRadix}{styleId}");
+                    res.AddFeature(p);
+                    coords = new List<Data> { coords.Last() };
+                    oldStyleIndex = styleIndex;
+                    oldMotorActive = _ctx.Data[i].MotorActive;
+                    createPlacemark = false;
+                }
+                coords.Add(item);
+            }
+            var lastPlacemark = placemarkGenerator(coords, $"{styleRadix}{oldStyleIndex}");
+
+            res.AddFeature(lastPlacemark);
+            return res;
+        }
+        private Folder BuildTrack(string name, string styleRadix,
             Func<List<Data>, string, Placemark> placemarkGenerator)
         {
             var res = new Folder
@@ -215,7 +269,8 @@ namespace csv2kml
                         createPlacemark = true;
                     }
                 }
-                if (createPlacemark) {
+                if (createPlacemark)
+                {
                     var p = placemarkGenerator(coords, $"{styleRadix}{styleId}");
                     res.AddFeature(p);
                     coords = new List<Data> { coords.Last() };

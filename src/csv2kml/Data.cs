@@ -36,4 +36,7 @@ public class Data
     public double Speed { get; set; }
     public bool MotorActive { get; set; }
     public FlightPhase FlightPhase { get; set; }
+    public double TotalEnergy { get; set; }
+    public double DeltaEnergy { get; set; }
+    public double EnergyVerticalSpeed { get; set; }
 }

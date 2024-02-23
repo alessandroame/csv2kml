@@ -2,6 +2,7 @@
 using Csv2KML;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,16 @@ namespace csv2kml
     public class DataBuilder
     {
         private Context _ctx;
-        public DataBuilder UseCtx(Context ctx)
+        public DataBuilder(Context ctx)
         {
             _ctx = ctx;
-            return this;
         }
 
         public Data[] Build(string csvFilename)
         {
             var res=LoadFromCsv(csvFilename);
             CalculateFlightPhase(res);
+            CalculateCompensatedVario(res);
             return res;
         }
 
@@ -128,6 +129,41 @@ namespace csv2kml
             }
         }
 
+        private void CalculateCompensatedVario(IEnumerable<Data> data)
+        {
+            //with gps speed instead of wind speed
+            //wind gusts and against the wind will increase vario error
+            //Wait to have a air speed sensor to continue
+            //Or.. average tot energy for last n seconds > than turn time
+            var oldAltitude = data.FirstOrDefault()?.Altitude ?? 0;
+            var mass = 1;
+            foreach (var d in data)
+            {
+                d.TotalEnergy=CalculateTotalEnergy(d,oldAltitude,mass);
+            }
+
+            Data oldD = null;
+            foreach (var d in data)
+            {
+                if (oldD != null)
+                {
+                    d.DeltaEnergy = oldD.TotalEnergy - d.TotalEnergy;
+                    var deltaAlt = d.DeltaEnergy / (mass * 9.81);
+                    var deltaVertSpeed = deltaAlt / (d.Time.Subtract(oldD.Time).TotalMilliseconds / 1000);
+                    d.EnergyVerticalSpeed = deltaVertSpeed;
+                }
+                oldD = d;
+            }
+
+        }
+
+        private double CalculateTotalEnergy(Data d,double prevAltitude,double mass)
+        {            
+            var ke = .5 * mass * Math.Pow(d.Speed*1000/3600, 2);
+            var ge = mass * 9.81 * (prevAltitude-d.Altitude);
+            var totEnergy=ke + ge;
+            return totEnergy;
+        }
         private class AltGain
         {
             public DateTime Time { get; set; }

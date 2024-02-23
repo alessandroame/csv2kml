@@ -11,11 +11,10 @@ namespace csv2kml
     {
         private Context _ctx;
 
-        public SegmentBuilder UseCtx(Context ctx)
+        public SegmentBuilder(Context ctx)
         {
             _ctx = ctx;
             _ctx.Segments = BuildSegments();
-            return this;
         }
         public Feature Build()
         {

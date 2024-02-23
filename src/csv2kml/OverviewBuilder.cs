@@ -19,10 +19,9 @@ namespace csv2kml
     {
         private Context _ctx;
 
-        public OverviewBuilder UseCtx(Context ctx)
+        public OverviewBuilder(Context ctx)
         {
             _ctx = ctx;
-            return this;
         }
         class TimelineKey
         {

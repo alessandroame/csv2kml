@@ -39,12 +39,11 @@ namespace csv2kml
         public KmlBuilder Build(string csvFilename, double altitudeOffset)
         {
             _ctx.AltitudeOffset = altitudeOffset;
-            _ctx.Data = new DataBuilder().UseCtx(_ctx).Build(csvFilename);
+            _ctx.Data = new DataBuilder(_ctx).Build(csvFilename);
             _rootFolder.Name = $"{Path.GetFileNameWithoutExtension(csvFilename)}";
-            _rootFolder.AddFeature(new TrackBuilder().UseCtx(_ctx).Build());
-            _rootFolder.AddFeature(new SegmentBuilder().UseCtx(_ctx).Build());
-            //_rootFolder.AddFeature(new OverviewBuilder().UseCtx(_ctx).Build());
-
+            _rootFolder.AddFeature(new TrackBuilder(_ctx).Build());
+            _rootFolder.AddFeature(new SegmentBuilder(_ctx).Build());
+            //_rootFolder.AddFeature(new OverviewBuilder(_ctx).Build());
             return this;
         }
 
@@ -114,8 +113,5 @@ namespace csv2kml
         //        }
         //    }
         //}
-
-
-
     }
 }
