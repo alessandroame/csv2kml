@@ -21,7 +21,7 @@ namespace csv2kml
         {
             var res=LoadFromCsv(csvFilename);
             CalculateFlightPhase(res);
-            CalculateCompensatedVario(res);
+            //CalculateCompensatedVario(res);
             return res;
         }
 
