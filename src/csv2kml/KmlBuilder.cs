@@ -41,8 +41,8 @@ namespace csv2kml
             _ctx.AltitudeOffset = altitudeOffset;
             _ctx.Data = new DataBuilder(_ctx).Build(csvFilename);
             _rootFolder.Name = $"{Path.GetFileNameWithoutExtension(csvFilename)}";
-            _rootFolder.AddFeature(new TrackBuilder(_ctx).Build());
             _rootFolder.AddFeature(new SegmentBuilder(_ctx).Build());
+            _rootFolder.AddFeature(new TrackBuilder(_ctx).Build());
             //_rootFolder.AddFeature(new OverviewBuilder(_ctx).Build());
             return this;
         }
@@ -71,47 +71,6 @@ namespace csv2kml
                 Console.WriteLine(ex);
             }
         }
-
-        //private void Interpolate(List<Data> data)
-        //{
-        //    InterpolatField(data, (d) => d.Time.Ticks,
-        //        (data, delta) => { data.Time = data.Time.AddTicks((long)delta); });
-        //    InterpolatField(data, (d) => d.Altitude,
-        //        (data, delta) => { data.Altitude = data.Altitude + delta; });
-        //    InterpolatField(data, (d) => d.Latitude,
-        //        (data, delta) => { data.Latitude = data.Latitude + delta; });
-        //    InterpolatField(data, (d) => d.Longitude,
-        //           (data, delta) => { data.Longitude = data.Longitude + delta; });
-        //}
-
-        //private void InterpolatField(List<Data> data, Func<Data, double> valueGetter, Action<Data, double> valueSetter) 
-        //{
-        //    var segment = new List<Data>();
-        //    var lastData = data[0];
-        //    foreach (var d in data)
-        //    {
-        //        if (valueGetter(lastData)==(valueGetter(d)))
-        //        {
-        //            segment.Add(d);
-        //        }
-        //        else
-        //        {
-        //            if (segment.Count() > 1)
-        //            {
-        //                var v = segment.Count() + 1;
-        //                var delta = (valueGetter(d)-valueGetter(lastData)) / v;
-        //                var zz0 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
-        //                for (var i = 1; i < segment.Count(); i++)
-        //                {
-        //                    var s = segment[i];
-        //                    valueSetter(s,delta * i);
-        //                }
-        //                var zz1 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
-        //            }
-        //            lastData = d;
-        //            segment = new List<Data>() { d };
-        //        }
-        //    }
-        //}
+     
     }
 }

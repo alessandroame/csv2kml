@@ -83,6 +83,7 @@ namespace csv2kml
                 },
                 Icon = new IconStyle
                 {
+                    //Icon= new IconStyle.IconLink(new Uri("http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png")),
                     Scale = 0
                 },
                 Polygon = new PolygonStyle
@@ -190,7 +191,8 @@ namespace csv2kml
             var res = new Folder
             {
                 Name = name,
-                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative)
+                StyleUrl = new Uri("#hiddenChildren", UriKind.Relative),
+                Visibility = false
             };
             var coords = new List<Data>();
             var oldStyleIndex = 0;
@@ -302,7 +304,7 @@ namespace csv2kml
                 }
 
                 var m = 1;
-                while (m < _ctx.Data.Length
+                while (m < _ctx.Data.Length-1
                     && _ctx.Data[m].Time.Subtract(_ctx.Data[i].Time).TotalSeconds < cameraConfig.UpdatePositionIntervalInSeconds)
                 {
                     m++;

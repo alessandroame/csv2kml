@@ -36,7 +36,8 @@ namespace csv2kml
             var res = new Folder
             {
                 Name = "Segments",
-                Open = false
+                Open = false,
+                Visibility=false
             };
             AddSegmentStyles(res);
             var index = 0;
@@ -48,8 +49,6 @@ namespace csv2kml
                 };
                 var from = _ctx.Data[segment.From];
                 var to = _ctx.Data[segment.To];
-                Console.WriteLine($"{from.Time}-{to.Time}");
-
 
                 var placemark = new Placemark
                 {
@@ -111,6 +110,9 @@ namespace csv2kml
                 segmentData.First().ToVector().CalculateTiltPan(segmentData.Last().ToVector(),
                     out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
 
+                var visibleTimeFrom = visibleData.First().Time;
+                if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
+
                 if (segment.Type == FlightPhase.Climb || segment.Type == FlightPhase.MotorClimb)
                 {
                     //var maxDegreePerSeconds = (double)180/ cameraConfig.UpdatePositionIntervalInSeconds;
@@ -123,8 +125,6 @@ namespace csv2kml
                     var cameraPos = currentData.ToVector().MoveTo(Math.Max(80, distance ), segmentHeading + heading);
                     cameraPos.Altitude = (segmentData.Min(d=>d.Altitude)+currentData.Altitude)/2+50;
                     var lookAt = currentData.ToVector();
-                    var visibleTimeFrom = visibleData.First().Time;
-                    if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
                     var flyTo = new FlyTo
                     {
                         Id = (tourIndex++).ToString(),
@@ -150,7 +150,6 @@ namespace csv2kml
                         if (heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees)
                             heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
                     }
-
                     var lookAt = currentData.ToVector();
                     var flyTo = new FlyTo
                     {
@@ -158,7 +157,7 @@ namespace csv2kml
                         Mode = FlyToMode.Smooth,
                         Duration = duration,
                         View = CameraHelper.CreateLookAt(lookAt, Math.Max(140, visibleDataBB.DiagonalSize * 1.5), heading, 60,
-                            visibleData.First().Time, currentData.Time, _ctx.AltitudeOffset)
+                            visibleTimeFrom, currentData.Time, _ctx.AltitudeOffset)
                     };
                     tourplaylist.AddTourPrimitive(flyTo);
 
@@ -167,7 +166,7 @@ namespace csv2kml
                 }
                 currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
             }
-            var tour = new Tour { Name = "Track Tour by flight phase" };
+            var tour = new Tour { Name = "Tour by flight phase" };
             tour.Playlist = tourplaylist;
             return tour;
         }

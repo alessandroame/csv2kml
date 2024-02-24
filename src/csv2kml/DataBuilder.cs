@@ -21,7 +21,7 @@ namespace csv2kml
         {
             var res=LoadFromCsv(csvFilename);
             CalculateFlightPhase(res);
-            //CalculateCompensatedVario(res);
+            CalculateCompensatedVario(res);
             return res;
         }
 
@@ -67,14 +67,16 @@ namespace csv2kml
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Speed).TryParseDouble(out var speed)) continue;
+
+                    /*var s=getLineValue(line, "Date")+" "+ getLineValue(line, "Time");
+                    var timestamp = DateTime.Parse(s);*/
+
                     var timestamp = DateTime.Parse(getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Timestamp));
-                    //if (timestamp.Subtract(lastTime).TotalSeconds<1) continue;
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
                     //Console.WriteLine($"{timestamp} {motor}");
-                    //import
-                    //var data = new Data(timestamp, lat, lon, alt, lastAlt, speed, motor == 1);
-                    var data = new Data(timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
 
+                    //import
+                    var data = new Data(timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
                     res.Add(data);
                     lastTime = timestamp;
                     lastLat = lat;
@@ -90,6 +92,81 @@ namespace csv2kml
             //Interpolate(res);
             return res.ToArray();
         }
+
+        private void Interpolate(List<Data> data)
+        {
+            for (int i = 0;i< data.Count(); i++) 
+            { 
+                var currentD = data[i];
+                var count = 1;
+                while (currentD.Latitude == data[i + (count)].Latitude 
+                    && currentD.Longitude == data[i + (count)].Longitude 
+                    && (i + count) < data.Count() - 1) { count++; }
+                if ((i + count) > data.Count() - 1) break;
+                var nextD = data[i + count];
+                var dt = nextD.Time.Subtract(currentD.Time).TotalMilliseconds;
+                var dLat = currentD.Latitude - nextD.Latitude;
+                var dLon = currentD.Longitude - nextD.Longitude;
+//                Console.WriteLine($"----------------------------");
+                for (var n=0;n<count;n++)
+                {
+                    var d = data[i+n];
+                    var k =d.Time.Subtract(currentD.Time).TotalMilliseconds / dt;
+  //                  Console.WriteLine(k);
+                    //Console.WriteLine($"{d.Time}.{d.Time.Millisecond}------ {d.Altitude} ----------------------------");
+                    //Console.WriteLine($"{d.Latitude}, {d.Longitude}");
+                    d.Latitude -= k * dLat;
+                    d.Longitude -= k * dLon;
+                    //Console.WriteLine($"{d.Latitude}, {d.Longitude}");
+                }
+                i += count;
+            }
+
+        }
+
+
+        //private void Interpolate(List<Data> data)
+        //{
+        //    InterpolatField(data, (d) => d.Time.Ticks,
+        //        (data, delta) => { data.Time = data.Time.AddTicks((long)delta); });
+        //    InterpolatField(data, (d) => d.Altitude,
+        //        (data, delta) => { data.Altitude = data.Altitude + delta; });
+        //    InterpolatField(data, (d) => d.Latitude,
+        //        (data, delta) => { data.Latitude = data.Latitude + delta; });
+        //    InterpolatField(data, (d) => d.Longitude,
+        //           (data, delta) => { data.Longitude = data.Longitude + delta; });
+        //}
+
+        //private void InterpolatField(List<Data> data, Func<Data, double> valueGetter, Action<Data, double> valueSetter) 
+        //{
+        //    var segment = new List<Data>();
+        //    var lastData = data[0];
+        //    foreach (var d in data)
+        //    {
+        //        if (valueGetter(lastData)==(valueGetter(d)))
+        //        {
+        //            segment.Add(d);
+        //        }
+        //        else
+        //        {
+        //            if (segment.Count() > 1)
+        //            {
+        //                var v = segment.Count() + 1;
+        //                var delta = (valueGetter(d)-valueGetter(lastData)) / v;
+        //                var zz0 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
+        //                for (var i = 1; i < segment.Count(); i++)
+        //                {
+        //                    var s = segment[i];
+        //                    valueSetter(s,delta * i);
+        //                }
+        //                var zz1 = segment.Select(s => $"{s.Time.Ticks}-{s.Altitude}").ToArray();
+        //            }
+        //            lastData = d;
+        //            segment = new List<Data>() { d };
+        //        }
+        //    }
+        //}
+
 
         private void CalculateFlightPhase(IEnumerable<Data> data)
         {
