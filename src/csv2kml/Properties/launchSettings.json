@@ -2,7 +2,7 @@
   "profiles": {
     "byFolder": {
       "commandName": "Project",
-      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -f ..\\..\\..\\..\\..\\samples -a 356"
+      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -f ..\\..\\..\\..\\..\\samples\\20240211 -a 356"
     },
     "byFile": {
       "commandName": "Project",

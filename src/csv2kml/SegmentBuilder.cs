@@ -25,6 +25,8 @@ namespace csv2kml
             };
             var segmentsFolder = BuildTrack();
             res.AddFeature(segmentsFolder);
+            var thermalsFolder = BuildThermalsTrack();
+            res.AddFeature(thermalsFolder);
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
                 res.AddFeature(BuildTour(cameraSettings));
@@ -39,7 +41,7 @@ namespace csv2kml
                 Open = false,
                 Visibility=false
             };
-            AddSegmentStyles(res);
+            AddStyles(res);
             var index = 0;
             foreach (var segment in _ctx.Segments)
             {
@@ -58,6 +60,50 @@ namespace csv2kml
                     Description = new Description
                     {
                         Text = $"#{segment.Type} from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
+                    }
+                };
+                placemark.Time = new SharpKml.Dom.TimeSpan
+                {
+                    Begin = from.Time,
+                    End = to.Time,
+                };
+                foreach (var d in new List<Data> { from, to })
+                {
+                    track.AddWhen(d.Time);
+                    track.AddCoordinate(new Vector(d.Latitude, d.Longitude, d.Altitude + _ctx.AltitudeOffset));
+                }
+                res.AddFeature(placemark);
+                index++;
+            }
+            return res;
+        }
+        private Feature BuildThermalsTrack()
+        {
+            var res = new Folder
+            {
+                Name = "Thermals",
+                Visibility =false,
+                Open = false
+            };
+            AddStyles(res);
+            var index = 0;
+            foreach (var segment in _ctx.Segments.Where(s=>s.Type==FlightPhase.Climb))
+            {
+                var track = new Track
+                {
+                    AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute,
+                };
+                var from = _ctx.Data[segment.From];
+                var to = _ctx.Data[segment.To];
+
+                var placemark = new Placemark
+                {
+                    Name = $"Thermal #{index} {to.Altitude - from.Altitude}mt",
+                    Geometry = track,
+                    StyleUrl = new Uri($"#thermal", UriKind.Relative),
+                    Description = new Description
+                    {
+                        Text = $"#Thermal from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
@@ -224,7 +270,7 @@ namespace csv2kml
             }
             return res.ToArray();
         }
-        private static void AddSegmentStyles(Folder container)
+        private static void AddStyles(Folder container)
         {
             var colors = new Dictionary<FlightPhase, string>() {
                 { FlightPhase.MotorClimb,"FF000000" },
@@ -246,6 +292,20 @@ namespace csv2kml
                         Width = 2
                     },
                 });
+            container.AddStyle(new Style
+            {
+                Id = $"thermal",
+                Icon = new IconStyle
+                {
+                    Scale = 0
+                },
+                Line = new LineStyle
+                {
+                    Color = Color32.Parse("990000FF"),
+                    Width = 6
+                },
+            });
+
         }
     }
 }

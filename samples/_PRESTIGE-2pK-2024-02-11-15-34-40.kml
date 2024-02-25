@@ -48,6 +48,15 @@
               <width>2</width>
             </LineStyle>
           </Style>
+          <Style id="thermal">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>990000ff</color>
+              <width>6</width>
+            </LineStyle>
+          </Style>
           <Placemark>
             <name>#0 MotorClimb 0mt</name>
             <description>#MotorClimb from 0mt to 0mt in 00:00:00</description>
@@ -398,6 +407,120 @@
               <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:50:16+01:00</when>
               <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406803 45.043528999999999 355</gx:coord>
               <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 355</gx:coord>
+            </Track>
+          </Placemark>
+        </Folder>
+        <Folder>
+          <name>Thermals</name>
+          <visibility>false</visibility>
+          <open>true</open>
+          <Style id="segmentMotorClimb">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff000000</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentClimb">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff0000ff</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentGlide">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff00ff00</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentSink">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ffffff00</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="thermal">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>990000ff</color>
+              <width>6</width>
+            </LineStyle>
+          </Style>
+          <Placemark>
+            <name>#0 Thermal 41mt</name>
+            <description>#Thermal from 14mt to 55mt in 00:02:12</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:37:29+01:00</begin>
+              <end>2024-02-11T15:39:41+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:37:29+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:39:41+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062609999999998 45.042946000000001 370</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057399999999998 45.043365999999999 411</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#1 Thermal 64mt</name>
+            <description>#Thermal from 38mt to 102mt in 00:02:40</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:42:02+01:00</begin>
+              <end>2024-02-11T15:44:42+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:42:02+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:44:42+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4064829999999997 45.044519000000001 394</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4057170000000001 45.044088000000002 458</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#2 Thermal 5mt</name>
+            <description>#Thermal from 13mt to 18mt in 00:00:21</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:46:23+01:00</begin>
+              <end>2024-02-11T15:46:44+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:46:23+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:46:44+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069289999999999 45.043863000000002 369</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4063670000000004 45.044035000000001 374</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#3 Thermal 6mt</name>
+            <description>#Thermal from 17mt to 23mt in 00:00:23</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:47:13+01:00</begin>
+              <end>2024-02-11T15:47:36+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:47:13+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:47:36+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4069409999999998 45.043939000000002 373</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4068800000000001 45.043858 379</gx:coord>
             </Track>
           </Placemark>
         </Folder>

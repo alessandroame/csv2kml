@@ -48,6 +48,15 @@
               <width>2</width>
             </LineStyle>
           </Style>
+          <Style id="thermal">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>990000ff</color>
+              <width>6</width>
+            </LineStyle>
+          </Style>
           <Placemark>
             <name>#0 MotorClimb 0mt</name>
             <description>#MotorClimb from 0mt to 0mt in 00:00:00</description>
@@ -638,6 +647,168 @@
               <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:32:48+01:00</when>
               <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407025 45.044069 380</gx:coord>
               <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4066999999999998 45.043599999999998 353</gx:coord>
+            </Track>
+          </Placemark>
+        </Folder>
+        <Folder>
+          <name>Thermals</name>
+          <visibility>false</visibility>
+          <open>true</open>
+          <Style id="segmentMotorClimb">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff000000</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentClimb">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff0000ff</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentGlide">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ff00ff00</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="segmentSink">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>ffffff00</color>
+              <width>2</width>
+            </LineStyle>
+          </Style>
+          <Style id="thermal">
+            <IconStyle>
+              <scale>0</scale>
+            </IconStyle>
+            <LineStyle>
+              <color>990000ff</color>
+              <width>6</width>
+            </LineStyle>
+          </Style>
+          <Placemark>
+            <name>#0 Thermal 10mt</name>
+            <description>#Thermal from 22mt to 32mt in 00:00:40</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:02:41+01:00</begin>
+              <end>2024-02-11T15:03:21+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:02:41+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:03:21+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062289999999997 45.043337999999999 378</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4062590000000004 45.043567000000003 388</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#1 Thermal 5mt</name>
+            <description>#Thermal from 21mt to 26mt in 00:00:41</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:07:15+01:00</begin>
+              <end>2024-02-11T15:07:56+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:07:15+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:07:56+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4073310000000001 45.043379999999999 377</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407489 45.043357 382</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#2 Thermal 74mt</name>
+            <description>#Thermal from 26mt to 100mt in 00:02:20</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:08:19+01:00</begin>
+              <end>2024-02-11T15:10:39+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:08:19+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:10:39+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4075660000000001 45.043410000000002 382</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4078670000000004 45.043371999999998 456</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#3 Thermal 23mt</name>
+            <description>#Thermal from 97mt to 120mt in 00:01:03</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:11:26+01:00</begin>
+              <end>2024-02-11T15:12:29+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:11:26+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:12:29+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.40768 45.043357 453</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4082319999999999 45.043388 476</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#4 Thermal 62mt</name>
+            <description>#Thermal from 72mt to 134mt in 00:02:03</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:14:46+01:00</begin>
+              <end>2024-02-11T15:16:49+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:14:46+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:16:49+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407508 45.045316999999997 428</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4065770000000004 45.045324000000001 490</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#5 Thermal -3mt</name>
+            <description>#Thermal from 43mt to 40mt in 00:00:20</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:21:46+01:00</begin>
+              <end>2024-02-11T15:22:06+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:21:46+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:22:06+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.406981 45.042740000000002 399</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4061769999999996 45.042650000000002 396</gx:coord>
+            </Track>
+          </Placemark>
+          <Placemark>
+            <name>#6 Thermal 7mt</name>
+            <description>#Thermal from 30mt to 37mt in 00:00:21</description>
+            <TimeSpan>
+              <begin>2024-02-11T15:23:31+01:00</begin>
+              <end>2024-02-11T15:23:52+01:00</end>
+            </TimeSpan>
+            <styleUrl>#thermal</styleUrl>
+            <Track xmlns="http://www.google.com/kml/ext/2.2">
+              <altitudeMode xmlns="http://www.opengis.net/kml/2.2">absolute</altitudeMode>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:23:31+01:00</when>
+              <when xmlns="http://www.opengis.net/kml/2.2">2024-02-11T15:23:52+01:00</when>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.4075519999999999 45.043335999999996 386</gx:coord>
+              <gx:coord xmlns:gx="http://www.google.com/kml/ext/2.2">7.407527 45.043418000000003 393</gx:coord>
             </Track>
           </Placemark>
         </Folder>
