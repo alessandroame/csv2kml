@@ -10,10 +10,20 @@ using System.Drawing;
 using static csv2kml.KmlBuilder;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
+using System;
 
 public static partial class DataExtensions
 {
 
+    public static double VerticalSpeed(this IEnumerable<Data> data)
+    {
+        var from = data.First();
+        var to = data.Last();
+        var dAlt = to.Altitude - from.Altitude;
+        var dTime = to.Time.Subtract(from.Time).TotalSeconds;
+        var dVspeed = dAlt / dTime;
+        return dVspeed;
+    }
     public static double GetDurationInSeconds(this IEnumerable<Data> data, DateTime from, DateTime to)
     {
         var res = 1000D;

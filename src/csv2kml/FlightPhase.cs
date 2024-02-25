@@ -4,7 +4,7 @@
     {
         MotorClimb,
         Climb,
+        Sink,
         Glide,
-        Sink
     }
 }

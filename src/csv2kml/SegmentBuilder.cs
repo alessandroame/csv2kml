@@ -1,6 +1,7 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
+using System.ComponentModel;
 using System.Diagnostics;
 using static csv2kml.KmlExtensions;
 using static DataExtensions;
@@ -21,12 +22,26 @@ namespace csv2kml
             var res = new Folder
             {
                 Name = "Analysis",
-                Open = true
+                Open = true,
             };
+            var dataFolder = new Folder
+            {
+                Name = "Data",
+                Open = true,
+            };
+            dataFolder.AddStyle(new Style
+            {
+                List = new ListStyle
+                {
+                    ItemType = ListItemType.RadioFolder
+                }
+            });
+            res.AddFeature(dataFolder);
             var segmentsFolder = BuildTrack();
-            res.AddFeature(segmentsFolder);
+            dataFolder.AddFeature(segmentsFolder);
             var thermalsFolder = BuildThermalsTrack();
-            res.AddFeature(thermalsFolder);
+            dataFolder.AddFeature(thermalsFolder);
+
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
                 res.AddFeature(BuildTour(cameraSettings));
@@ -39,7 +54,7 @@ namespace csv2kml
             {
                 Name = "Segments",
                 Open = false,
-                Visibility=false
+                Visibility = false
             };
             AddStyles(res);
             var index = 0;
@@ -87,23 +102,31 @@ namespace csv2kml
             };
             AddStyles(res);
             var index = 0;
-            foreach (var segment in _ctx.Segments.Where(s=>s.Type==FlightPhase.Climb))
+            foreach (var segment in _ctx.Segments.Where(s=> s.Type == FlightPhase.Climb ))
             {
+                var segmentData = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
+                //short duration not considered a thermal 
+                if (segmentData.Last().Time.Subtract(segmentData.First().Time).TotalSeconds < 15) continue;
+
+                var from = _ctx.Data[segment.From];
+                var to = _ctx.Data[segment.To];
+
+                var vSpeed = segmentData.VerticalSpeed();
+                var thermalType =     vSpeed.ToThermalType();
                 var track = new Track
                 {
                     AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute,
                 };
-                var from = _ctx.Data[segment.From];
-                var to = _ctx.Data[segment.To];
-
                 var placemark = new Placemark
                 {
-                    Name = $"Thermal #{index} {to.Altitude - from.Altitude}mt",
+                    Name = $"#{index} {thermalType} thermal gain {to.Altitude - from.Altitude}mt",
                     Geometry = track,
-                    StyleUrl = new Uri($"#thermal", UriKind.Relative),
+                    StyleUrl = new Uri($"#{thermalType}", UriKind.Relative),
                     Description = new Description
                     {
-                        Text = $"#Thermal from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
+                        Text = $"\r\nfrom {from.Altitude}mt to {to.Altitude}mt" +
+                                $"\r\nduration {to.Time.Subtract(from.Time)}" +
+                                $"\r\navg vert. speed={Math.Round(vSpeed,2)}m/s",
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
@@ -222,51 +245,63 @@ namespace csv2kml
         private Segment[] BuildSegments()
         {
             var res = new List<Segment>();
-            var index = 1;
-            var minimumSegmentLengthInSeconds = 20;
+            var index = 0;
+            var minimumSegmentLengthInSeconds = 12;
             var data = _ctx.Data;
-            var lastPhase = data[0].FlightPhase;
             while (index < data.Length)
             {
                 var segment = new Segment
                 {
-                    From = index - 1,
+                    From = index,
                     Type = data[index].FlightPhase
                 };
+                Console.WriteLine($"Start segment -> {segment.Type}");
 
-                while (index < data.Length)
+                while (data[index].FlightPhase == segment.Type)
                 {
-                    if (data[index].FlightPhase != lastPhase)
+                    index++;
+                    if (index >= data.Length) break;
+                    var nextData = data[index];
+
+                    if (nextData.FlightPhase != segment.Type)
                     {
-                        if (segment.Type != FlightPhase.MotorClimb
-                            && data[index].Time.Subtract(data[segment.From].Time).TotalSeconds < minimumSegmentLengthInSeconds)
+                        if (segment.Type == FlightPhase.MotorClimb) break;
+                        var dTime = nextData.Time.Subtract(data[segment.From].Time).TotalSeconds;
+                        if (dTime < minimumSegmentLengthInSeconds)
                         {
-                            //handling segment too short
-                            segment.Type = data[Math.Min(data.Length - 1, index)].FlightPhase;
-                            lastPhase = segment.Type;
+                            segment.Type = nextData.FlightPhase;
+                            //Console.WriteLine($"too short: dt {dTime}s");
                         }
-                        else
-                        {
+                        else{
+                            //Console.WriteLine($"BREAK (dt {dTime}s)");
                             break;
                         }
                     }
-                    index++;
                 }
-
-                segment.To = Math.Min(data.Length - 1, index - 1);
-                if (res.Count() > 1 && res.Last().Type == segment.Type)
-                {
-                    res.Last().To = segment.To;
-                    Console.WriteLine($"Joint to last segment {segment.To}");
-                }
-                else
+                if (index >= data.Length) break;
+                segment.To = index;
+                if (segment.Type == FlightPhase.MotorClimb)
                 {
                     res.Add(segment);
-                    Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
                 }
+                else 
+                { 
+                    segment.Type = data.Skip(segment.From).Take(index - segment.From).VerticalSpeed().ToFlightPhase();
+                    Console.WriteLine($"End segment -> {segment.Type}");
+                    if (res.Count() > 1 && res.Last().Type == segment.Type)
+                    {
+                        var lastSegment = res.Last();
+                        lastSegment.To = segment.To;
+                        segment.Type = data.Skip(lastSegment.From).Take(lastSegment.To - lastSegment.From).VerticalSpeed().ToFlightPhase();
+                        Console.WriteLine($"SEGMENT JOINT!!!!");
+                    }
+                    else
+                    {
+                        res.Add(segment);
+                    }
+                }
+                Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
                 //Console.WriteLine($"{_data[segment.From].Altitude}->{_data[segment.To].Altitude} {segment.Type}");
-                if (index >= data.Length) break;
-                lastPhase = data[index].FlightPhase;
             }
             return res.ToArray();
         }
@@ -276,7 +311,7 @@ namespace csv2kml
                 { FlightPhase.MotorClimb,"FF000000" },
                 { FlightPhase.Climb,"FF0000FF" },
                 { FlightPhase.Glide,"FF00FF00" },
-                { FlightPhase.Sink,"FFFFFF00" },
+                { FlightPhase.Sink,"FFFFFF00" }
                 };
             foreach (var kv in colors)
                 container.AddStyle(new Style
@@ -292,17 +327,44 @@ namespace csv2kml
                         Width = 2
                     },
                 });
+            
             container.AddStyle(new Style
             {
-                Id = $"thermal",
+                Id = $"{ThermalType.Weak}",
                 Icon = new IconStyle
                 {
                     Scale = 0
                 },
                 Line = new LineStyle
                 {
-                    Color = Color32.Parse("990000FF"),
+                    Color = Color32.Parse("FF00FF00"),
                     Width = 6
+                },
+            });
+            container.AddStyle(new Style
+            {
+                Id = $"{ThermalType.Normal}",
+                Icon = new IconStyle
+                {
+                    Scale = 0
+                },
+                Line = new LineStyle
+                {
+                    Color = Color32.Parse("FF00FFFF"),
+                    Width = 10
+                },
+            });
+            container.AddStyle(new Style
+            {
+                Id = $"{ThermalType.Strong}",
+                Icon = new IconStyle
+                {
+                    Scale = 0
+                },
+                Line = new LineStyle
+                {
+                    Color = Color32.Parse("FF0000FF"),
+                    Width = 14
                 },
             });
 

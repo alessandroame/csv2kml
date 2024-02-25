@@ -3,6 +3,7 @@ using Csv2KML;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -170,39 +171,17 @@ namespace csv2kml
 
         private void CalculateFlightPhase(IEnumerable<Data> data)
         {
-            var amountInSeconds = 10;
-            var buffer = new List<AltGain>();
-            var index = 0;
-            var lastAltitude = data.First().Altitude;
-            foreach (var d in data)
-            {
-                if (d.MotorActive)
+            var amountInSeconds = 5;
+            for (var i = 0;i< data.Count(); i++) {
+                var current = data.ElementAt(i);
+                if (current.MotorActive)
                 {
-                    buffer.Clear();
-                    d.FlightPhase = FlightPhase.MotorClimb;
-                    //Console.WriteLine($"#{i} phase:{d.FlightPhase}");
+                    current.FlightPhase = FlightPhase.MotorClimb;
                 }
-                else
-                {
-                    while (buffer.Count() > 1 && d.Time.Subtract(buffer.First().Time).TotalSeconds > amountInSeconds) buffer.RemoveAt(0);
-                    buffer.Add(new AltGain(d.Time, d.Altitude - lastAltitude));
-                    var weigth = buffer.Last().Time.Subtract(buffer.First().Time).TotalSeconds / amountInSeconds;
-                    var acc = 0D;
-                    if (buffer.Count() > 1)
-                    {
-                        acc = buffer.Average(b => b.Gain) * weigth;
-                    }
-
-                    if (acc > 0)
-                        d.FlightPhase = FlightPhase.Climb;
-                    else if (acc > -0.8)
-                        d.FlightPhase = FlightPhase.Glide;
-                    else
-                        d.FlightPhase = FlightPhase.Sink;
-                    //Console.WriteLine($"#{i} phase:{d.FlightPhase} acc:{acc} ");
+                else {
+                    var buffer = data.GetDataAroundTime(current.Time, amountInSeconds / 2);
+                    current.FlightPhase = buffer.VerticalSpeed().ToFlightPhase();
                 }
-                lastAltitude = d.Altitude;
-                index++;
             }
         }
 
@@ -212,11 +191,11 @@ namespace csv2kml
             //wind gusts and against the wind will increase vario error
             //Wait to have a air speed sensor to continue
             //Or.. average tot energy for last n seconds > than turn time
-            var oldAltitude = data.FirstOrDefault()?.Altitude ?? 0;
-            var mass = 1;
+            //var oldAltitude = data.FirstOrDefault()?.Altitude ?? 0;
+            var mass = 1200;
             foreach (var d in data)
             {
-                d.TotalEnergy=CalculateTotalEnergy(d,oldAltitude,mass);
+                d.TotalEnergy=CalculateTotalEnergy(d,mass);
             }
 
             Data oldD = null;
@@ -234,10 +213,10 @@ namespace csv2kml
 
         }
 
-        private double CalculateTotalEnergy(Data d,double prevAltitude,double mass)
+        private double CalculateTotalEnergy(Data d,double mass)
         {            
             var ke = .5 * mass * Math.Pow(d.Speed*1000/3600, 2);
-            var ge = mass * 9.81 * (prevAltitude-d.Altitude);
+            var ge = mass * 9.81 * d.Altitude;
             var totEnergy=ke + ge;
             return totEnergy;
         }

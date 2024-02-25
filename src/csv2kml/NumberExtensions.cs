@@ -10,7 +10,22 @@ namespace csv2kml
 {
     public static class NumberExtensions
     {
-
+        public static FlightPhase ToFlightPhase(this double verticalSpeed)
+        {
+            FlightPhase res;
+            if (verticalSpeed > 0) res = FlightPhase.Climb;
+            else if (verticalSpeed > -.7) res = FlightPhase.Glide;
+            else res = FlightPhase.Sink;
+            return res;
+        }
+        public static ThermalType ToThermalType(this double verticalSpeed)
+        {
+            ThermalType res;
+            if (verticalSpeed > .7) res = ThermalType.Strong;
+            else if (verticalSpeed > .3) res = ThermalType.Normal;
+            else res = ThermalType.Weak;
+            return res;
+        }
         public static Color ToColor(this double normalizedValue)
         {
             //var hue = normalizedValue * -1 * 120 + 120;
