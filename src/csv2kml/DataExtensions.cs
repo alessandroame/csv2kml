@@ -14,7 +14,10 @@ using System;
 
 public static partial class DataExtensions
 {
-
+    public static IEnumerable<Data> Clip(this IEnumerable<Data> data, int from, int to)
+    {
+        return data.Skip(from).Take(to-from);
+    }
     public static double VerticalSpeed(this IEnumerable<Data> data)
     {
         var from = data.First();
@@ -24,6 +27,11 @@ public static partial class DataExtensions
         var dVspeed = dAlt / dTime;
         return dVspeed;
     }
+    public static double GetDurationInSeconds(this IEnumerable<Data> data, int from, int to)
+    {
+        return data.ElementAt(to).Time.Subtract(data.ElementAt(from).Time).TotalMilliseconds/1000;
+    }
+
     public static double GetDurationInSeconds(this IEnumerable<Data> data, DateTime from, DateTime to)
     {
         var res = 1000D;
@@ -38,6 +46,21 @@ public static partial class DataExtensions
     {
         var res=data.Where(d => d.Time >= from && d.Time<to).ToList();
         return res.ToArray();
+    }
+    public static IEnumerable<Data> GetAroundBySeconds(this Data[] data, int index,int minIndex, int maxIndex,double beforeSeconds,int afterSeconds)
+    {
+        var res=new List<Data> { data[index] };
+        for (var i= index-1; i>0 && i>=minIndex;i--)
+        {
+            if (data[index].Time.Subtract(data[i].Time).TotalSeconds > beforeSeconds) break;
+            res.Insert(0, data[i]);
+        }
+        for (var i = index + 1; i < data.Length && i < maxIndex; i++)
+        {
+            if (data[i].Time.Subtract(data[index].Time).TotalSeconds > afterSeconds) break;
+            res.Add(data[i]);
+        }
+        return res;
     }
 
     public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data,DateTime when,int aroundInSecond)

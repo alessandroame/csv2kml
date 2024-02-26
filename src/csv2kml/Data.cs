@@ -7,8 +7,9 @@ using System.Diagnostics;
 
 public class Data
 {
-    public Data(DateTime time, double lat, double lon, double alt, double vspeed, double speed, bool motorActive)
+    public Data(int index,DateTime time, double lat, double lon, double alt, double vspeed, double speed, bool motorActive)
     {
+        Index = index;
         Time = time;
         Latitude = lat;
         Longitude = lon;
@@ -17,17 +18,13 @@ public class Data
         Speed = speed;
         MotorActive = motorActive;
     }
-    //public Data(DateTime time, double lat, double lon, double alt, double? lastAlt, double speed, bool motorActive)
-    //{
-    //    Time = time;
-    //    Latitude = lat;
-    //    Longitude = lon;
-    //    Altitude = alt;
-    //    VerticalSpeed = lastAlt.HasValue ? alt - lastAlt.Value : 0;
-    //    Speed = speed;
-    //    MotorActive = motorActive;
-    //}
 
+    public override string ToString()
+    {
+        return $"#{Index} alt {Altitude}m";
+    }
+
+    public int Index { get; private set; }
     public DateTime Time { get; set; }
     public double Latitude { get; set; }
     public double Longitude { get; set; }

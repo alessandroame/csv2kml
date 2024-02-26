@@ -1,8 +1,10 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using static csv2kml.KmlExtensions;
 using static DataExtensions;
 
@@ -15,7 +17,7 @@ namespace csv2kml
         public SegmentBuilder(Context ctx)
         {
             _ctx = ctx;
-            _ctx.Segments = BuildSegments();
+            _ctx.Segments = CalculateSegments();
         }
         public Feature Build()
         {
@@ -112,21 +114,23 @@ namespace csv2kml
                 var to = _ctx.Data[segment.To];
 
                 var vSpeed = segmentData.VerticalSpeed();
-                var thermalType =     vSpeed.ToThermalType();
+                var thermalType = vSpeed.ToThermalType();
+
+                var thermalDescription = thermalType == ThermalType.Normal ? "Thermal" : $"{thermalType.ToString()} thermal";
                 var track = new Track
                 {
                     AltitudeMode = SharpKml.Dom.AltitudeMode.Absolute,
                 };
                 var placemark = new Placemark
                 {
-                    Name = $"#{index} {thermalType} thermal gain {to.Altitude - from.Altitude}mt",
+                    Name = $"#{index} {thermalDescription} gain {to.Altitude - from.Altitude}mt",
                     Geometry = track,
                     StyleUrl = new Uri($"#{thermalType}", UriKind.Relative),
                     Description = new Description
                     {
                         Text = $"\r\nfrom {from.Altitude}mt to {to.Altitude}mt" +
                                 $"\r\nduration {to.Time.Subtract(from.Time)}" +
-                                $"\r\navg vert. speed={Math.Round(vSpeed,2)}m/s",
+                                $"\r\navg vert speed={Math.Round(vSpeed,2)}m/s",
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
@@ -242,68 +246,86 @@ namespace csv2kml
 
         static int tourIndex = 0;
 
-        private Segment[] BuildSegments()
+        private Segment[] CalculateSegments()
         {
             var res = new List<Segment>();
             var index = 0;
-            var minimumSegmentLengthInSeconds = 12;
             var data = _ctx.Data;
-            while (index < data.Length)
+            while (index < data.Length-1)
             {
-                var segment = new Segment
+                var segment=GetNextSegment(data, index);
+                if (segment == null) break;
+                index = segment.To;
+                if (segment.To >= data.Length) segment.To = data.Length - 1;
+                if (res.Count()>0 && res.Last().Type == segment.Type)
                 {
-                    From = index,
-                    Type = data[index].FlightPhase
-                };
-                Console.WriteLine($"Start segment -> {segment.Type}");
-
-                while (data[index].FlightPhase == segment.Type)
-                {
-                    index++;
-                    if (index >= data.Length) break;
-                    var nextData = data[index];
-
-                    if (nextData.FlightPhase != segment.Type)
-                    {
-                        if (segment.Type == FlightPhase.MotorClimb) break;
-                        var dTime = nextData.Time.Subtract(data[segment.From].Time).TotalSeconds;
-                        if (dTime < minimumSegmentLengthInSeconds)
-                        {
-                            segment.Type = nextData.FlightPhase;
-                            //Console.WriteLine($"too short: dt {dTime}s");
-                        }
-                        else{
-                            //Console.WriteLine($"BREAK (dt {dTime}s)");
-                            break;
-                        }
-                    }
+                    res.Last().To = segment.To;
+                    Console.WriteLine($"{new string('.',segment.Type.ToString().Length)}.{segment.From}->{segment.To} JOIN");
                 }
-                if (index >= data.Length) break;
-                segment.To = index;
-                if (segment.Type == FlightPhase.MotorClimb)
+                else
                 {
                     res.Add(segment);
+                    Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
                 }
-                else 
-                { 
-                    segment.Type = data.Skip(segment.From).Take(index - segment.From).VerticalSpeed().ToFlightPhase();
-                    Console.WriteLine($"End segment -> {segment.Type}");
-                    if (res.Count() > 1 && res.Last().Type == segment.Type)
-                    {
-                        var lastSegment = res.Last();
-                        lastSegment.To = segment.To;
-                        segment.Type = data.Skip(lastSegment.From).Take(lastSegment.To - lastSegment.From).VerticalSpeed().ToFlightPhase();
-                        Console.WriteLine($"SEGMENT JOINT!!!!");
-                    }
-                    else
-                    {
-                        res.Add(segment);
-                    }
-                }
-                Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
-                //Console.WriteLine($"{_data[segment.From].Altitude}->{_data[segment.To].Altitude} {segment.Type}");
             }
             return res.ToArray();
+        }
+
+
+        private Segment GetNextSegment(Data[] data, int from)
+        {
+            var res = new Segment
+            {
+                From = from
+            };
+            var maxIndex = res.From;
+
+            var index = from;
+            if (data[from].MotorActive)
+            {
+                res.Type = FlightPhase.MotorClimb;
+                var firstNonMotorData = data.Skip(from).FirstOrDefault(d => !d.MotorActive);
+                if (firstNonMotorData == null)
+                    res.To = data.Last().Index;
+                else
+                {
+                    res.To = firstNonMotorData.Index;
+                }
+            }
+            else
+            {
+                var minimumSegmentLengthInSeconds = 16;
+                var startTime = data[from].Time;
+                var firstMotorData = data.Skip(from).FirstOrDefault(d => d.MotorActive);
+                if (firstMotorData == null)
+                    maxIndex = data.Last().Index;
+                else
+                {
+                    maxIndex = firstMotorData.Index;
+                }
+                res.To = maxIndex;
+                //look ahead to calculate segment flight phase
+                var buffer = data.GetAroundBySeconds(from, res.From, maxIndex, 0, minimumSegmentLengthInSeconds);
+                res.Type= buffer.VerticalSpeed().ToFlightPhase();
+                for (int i = buffer.Last().Index; i <= maxIndex; i++)
+                {
+                    buffer=data.GetAroundBySeconds(i, res.From, maxIndex, minimumSegmentLengthInSeconds,0 );
+                    //check when phase changed
+                    var currentPhase= buffer.VerticalSpeed().ToFlightPhase();
+                    if (currentPhase != res.Type) 
+                    {
+                        //if(currentPhase==FlightPhase.Climb) Debugger.Break();
+                        break;
+                    }
+                    res.To = i+1;
+                }
+                var segmentData = data.Clip(res.From, res.To);
+                if (segmentData.Count()>1)
+                    res.Type = segmentData.VerticalSpeed().ToFlightPhase();
+                else
+                    res.Type = data.First().VerticalSpeed.ToFlightPhase();
+            }
+            return res;
         }
         private static void AddStyles(Folder container)
         {

@@ -109,9 +109,7 @@ namespace csv2kml
                 StyleUrl = new Uri($"#{style}", UriKind.Relative),
                 Description = new Description
                 {
-                    Text = $"#{trackIndex++} -> {style} " +
-                    //$"\r\nMotor: {string.Join(" -> ", data.Select(d => d.MotorActive))}" +
-                    $"\r\nPhase: {string.Join(" -> ", data.Select(d => d.FlightPhase))}" +
+                    Text = $"#{trackIndex++} -> {style} {data.First().Index}" +
                     $"\r\nAlt: {string.Join(" -> ", data.Select(d => Math.Round(d.Altitude, 2)))}" +
                     $"\r\nVSpeed: {string.Join(" -> ", data.Select(d => Math.Round(d.VerticalSpeed, 2)))}"
                 }

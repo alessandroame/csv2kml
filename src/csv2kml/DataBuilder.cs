@@ -21,8 +21,8 @@ namespace csv2kml
         public Data[] Build(string csvFilename)
         {
             var res=LoadFromCsv(csvFilename);
-            CalculateFlightPhase(res);
-            CalculateCompensatedVario(res);
+//            CalculateFlightPhase(res);
+            //CalculateCompensatedVario(res);
             return res;
         }
 
@@ -42,6 +42,7 @@ namespace csv2kml
             {
                 return line[fieldByName[fieldTitle.Trim()]];
             }
+            var index = 0;
             foreach (var line in CsvReader.ReadFromStream(fs, new CsvOptions { HeaderMode = HeaderMode.HeaderPresent }))
             {
                 if (fieldByName == null)
@@ -77,8 +78,9 @@ namespace csv2kml
                     //Console.WriteLine($"{timestamp} {motor}");
 
                     //import
-                    var data = new Data(timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
+                    var data = new Data(index,timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
                     res.Add(data);
+                    index++;
                     lastTime = timestamp;
                     lastLat = lat;
                     lastLon = lon;
@@ -171,7 +173,6 @@ namespace csv2kml
 
         private void CalculateFlightPhase(IEnumerable<Data> data)
         {
-            var amountInSeconds = 5;
             for (var i = 0;i< data.Count(); i++) {
                 var current = data.ElementAt(i);
                 if (current.MotorActive)
@@ -179,8 +180,7 @@ namespace csv2kml
                     current.FlightPhase = FlightPhase.MotorClimb;
                 }
                 else {
-                    var buffer = data.GetDataAroundTime(current.Time, amountInSeconds / 2);
-                    current.FlightPhase = buffer.VerticalSpeed().ToFlightPhase();
+                    current.FlightPhase = current.VerticalSpeed.ToFlightPhase();
                 }
             }
         }
