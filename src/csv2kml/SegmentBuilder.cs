@@ -47,6 +47,7 @@ namespace csv2kml
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
                 res.AddFeature(BuildTour(cameraSettings));
+                res.AddFeature(BuildOveriviewTour(cameraSettings));
             }
             return res;
         }
@@ -71,12 +72,12 @@ namespace csv2kml
 
                 var placemark = new Placemark
                 {
-                    Name = $"#{index} {segment.Type} {to.Altitude - from.Altitude}mt",
+                    Name = $"#{index} {segment.FlightPhase} {to.Altitude - from.Altitude}mt",
                     Geometry = track,
-                    StyleUrl = new Uri($"#segment{segment.Type}", UriKind.Relative),
+                    StyleUrl = new Uri($"#segment{segment.FlightPhase}", UriKind.Relative),
                     Description = new Description
                     {
-                        Text = $"#{segment.Type} from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
+                        Text = $"#{segment.FlightPhase} from {from.Altitude}mt to {to.Altitude}mt in {to.Time.Subtract(from.Time)}"
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
@@ -104,7 +105,7 @@ namespace csv2kml
             };
             AddStyles(res);
             var index = 0;
-            foreach (var segment in _ctx.Segments.Where(s=> s.Type == FlightPhase.Climb ))
+            foreach (var segment in _ctx.Segments.Where(s=> s.FlightPhase == FlightPhase.Climb ))
             {
                 var segmentData = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
                 //short duration not considered a thermal 
@@ -148,6 +149,70 @@ namespace csv2kml
             }
             return res;
         }
+        private Tour BuildOveriviewTour(LookAtCameraConfig cameraConfig)
+        {
+            var tourplaylist = new Playlist();
+            var heading = 0D;
+            foreach (var segment in _ctx.Segments)
+            {    
+                var data = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
+                var duration = segment.ThermalType == ThermalType.None 
+                    ? 2 
+                    : data.Last().Time.Subtract(data.First().Time).TotalSeconds/10;
+                
+                var bb = new BoundingBoxEx(data);
+                data.First().ToVector().CalculateTiltPan(data.Last().ToVector(),
+                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
+
+               
+                if (segment.ThermalType == ThermalType.None)
+                {
+                    var visibleTimeFrom = data.First().Time;
+                    var visibleTimeTo = data.Last().Time;
+                    var cameraPos = data.First().ToVector()
+                        .MoveTo(Math.Max(80, bb.DiagonalSize*2), segmentHeading +90);
+                    cameraPos.Altitude = data.Last().Altitude;
+                    var lookAt = data.Last().ToVector();
+
+                    var flyTo = new FlyTo
+                    {
+                        Mode = FlyToMode.Bounce,
+                        Duration = duration,
+                        View = CameraHelper.CreateCamera(cameraPos, lookAt, visibleTimeFrom,
+                        visibleTimeTo, _ctx.AltitudeOffset, out heading)
+                    };
+                    tourplaylist.AddTourPrimitive(flyTo);
+                }
+                else
+                {
+                    //thermal 
+                    var count=10;
+                    var visibleTimeFrom = data.First().Time;
+                    for (var i=0;i<count;i++)
+                    {
+                        heading += 360 / count;
+                        var lookAtIndex = data.Count() / count * i;
+                        var visibleTimeTo = data.ElementAt(lookAtIndex).Time;
+                        var cameraPos = data.ElementAt(lookAtIndex).ToVector()
+                            .MoveTo(Math.Max(80, bb.DiagonalSize*2), heading);
+                        cameraPos.Altitude = data.Last().Altitude;
+                        var lookAt = data.ElementAt(lookAtIndex).ToVector();
+
+                        var flyTo = new FlyTo
+                        {
+                            Mode = FlyToMode.Smooth,
+                            Duration = duration/count,
+                            View = CameraHelper.CreateCamera(cameraPos, lookAt, visibleTimeFrom,
+                            visibleTimeTo, _ctx.AltitudeOffset, out _)
+                        };
+                        tourplaylist.AddTourPrimitive(flyTo);
+                    }
+                }
+            }
+            var tour = new Tour { Name = "Overview tour" };
+            tour.Playlist = tourplaylist;
+            return tour;
+        }
         private Tour BuildTour(LookAtCameraConfig cameraConfig)
         {
             var tourplaylist = new Playlist();
@@ -186,7 +251,7 @@ namespace csv2kml
                 var visibleTimeFrom = visibleData.First().Time;
                 if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
 
-                if (segment.Type == FlightPhase.Climb || segment.Type == FlightPhase.MotorClimb)
+                if (segment.FlightPhase == FlightPhase.Climb || segment.FlightPhase == FlightPhase.MotorClimb)
                 {
                     //var maxDegreePerSeconds = (double)180/ cameraConfig.UpdatePositionIntervalInSeconds;
                     var segmentPercentage = (double)(i - segment.From) / (segment.To - segment.From);
@@ -257,20 +322,36 @@ namespace csv2kml
                 if (segment == null) break;
                 index = segment.To;
                 if (segment.To >= data.Length) segment.To = data.Length - 1;
-                if (res.Count()>0 && res.Last().Type == segment.Type)
+                if (res.Count()>0 && res.Last().FlightPhase == segment.FlightPhase)
                 {
                     res.Last().To = segment.To;
-                    Console.WriteLine($"{new string('.',segment.Type.ToString().Length)}.{segment.From}->{segment.To} JOIN");
+                    Console.WriteLine($"{new string('.',segment.FlightPhase.ToString().Length)}.{segment.From}->{segment.To} JOIN");
                 }
                 else
                 {
                     res.Add(segment);
-                    Console.WriteLine($"{segment.Type} {segment.From}->{segment.To}");
+                    Console.WriteLine($"{segment.FlightPhase} {segment.From}->{segment.To}");
                 }
+            }
+            var sIndex = 0;
+            var tIndex = 0;
+            foreach (var segment in res)
+            {
+                segment.SegmentIndex = sIndex++;
+
+                if (segment.FlightPhase != FlightPhase.Climb) continue;
+
+                //thermals recognition
+                var segmentData = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
+                //short duration not considered a thermal 
+                if (segmentData.Last().Time.Subtract(segmentData.First().Time).TotalSeconds < 15) continue;
+                //is a thermal
+                segment.ThermalIndex = tIndex++;
+                var vSpeed = segmentData.VerticalSpeed();
+                segment.ThermalType = vSpeed.ToThermalType();
             }
             return res.ToArray();
         }
-
 
         private Segment GetNextSegment(Data[] data, int from)
         {
@@ -283,7 +364,7 @@ namespace csv2kml
             var index = from;
             if (data[from].MotorActive)
             {
-                res.Type = FlightPhase.MotorClimb;
+                res.FlightPhase = FlightPhase.MotorClimb;
                 var firstNonMotorData = data.Skip(from).FirstOrDefault(d => !d.MotorActive);
                 if (firstNonMotorData == null)
                     res.To = data.Last().Index;
@@ -306,13 +387,13 @@ namespace csv2kml
                 res.To = maxIndex;
                 //look ahead to calculate segment flight phase
                 var buffer = data.GetAroundBySeconds(from, res.From, maxIndex, 0, minimumSegmentLengthInSeconds);
-                res.Type= buffer.VerticalSpeed().ToFlightPhase();
+                res.FlightPhase= buffer.VerticalSpeed().ToFlightPhase();
                 for (int i = buffer.Last().Index; i <= maxIndex; i++)
                 {
                     buffer=data.GetAroundBySeconds(i, res.From, maxIndex, minimumSegmentLengthInSeconds,0 );
                     //check when phase changed
                     var currentPhase= buffer.VerticalSpeed().ToFlightPhase();
-                    if (currentPhase != res.Type) 
+                    if (currentPhase != res.FlightPhase) 
                     {
                         //if(currentPhase==FlightPhase.Climb) Debugger.Break();
                         break;
@@ -321,9 +402,9 @@ namespace csv2kml
                 }
                 var segmentData = data.Clip(res.From, res.To);
                 if (segmentData.Count()>1)
-                    res.Type = segmentData.VerticalSpeed().ToFlightPhase();
+                    res.FlightPhase = segmentData.VerticalSpeed().ToFlightPhase();
                 else
-                    res.Type = data.First().VerticalSpeed.ToFlightPhase();
+                    res.FlightPhase = data.First().VerticalSpeed.ToFlightPhase();
             }
             return res;
         }

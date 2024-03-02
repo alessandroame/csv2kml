@@ -2,6 +2,7 @@
 {
     public enum ThermalType
     {
+        None,
         Weak,
         Normal,
         Strong

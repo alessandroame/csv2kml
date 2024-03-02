@@ -2,12 +2,20 @@
 {
     public class Segment
     {
-        public FlightPhase Type { get; set; }
+        public int SegmentIndex { get; set; }
+        public FlightPhase FlightPhase { get; set; }
+        public int ThermalIndex { get; set; }
+        public ThermalType ThermalType { get; set; } = ThermalType.None;
         public int From { get; set; }
         public int To { get; set; }
         public override string ToString()
         {
-            return $"{Type} {From}-{To}";
+            var res = $" {From}-{To}";
+            if (ThermalType==ThermalType.None)
+                res =$"{FlightPhase} {res}";
+            else
+                res = $"{ThermalType} {res}";
+            return res;
         }
     }
 }
