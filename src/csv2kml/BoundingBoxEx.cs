@@ -25,6 +25,7 @@ public static partial class DataExtensions
         }
 
         public double DiagonalSize { get; internal set; }
+        public double GroundDiagonalSize { get; }
 
         public BoundingBoxEx(IEnumerable<Data> data)
         {
@@ -35,10 +36,12 @@ public static partial class DataExtensions
             Bottom = data.Min(d => d.Altitude);
             Top = data.Max(d => d.Altitude);
 
-            var edge1=new Vector(North, West, Bottom);
+            var edge1 = new Vector(North, West, Bottom);
             var edge2 = new Vector(South, East, Top);
-
             DiagonalSize = edge1.Distance(edge2);
+            
+            edge1.Altitude = edge2.Altitude = 0;
+            GroundDiagonalSize = edge1.Distance(edge2);
         }
 
     }

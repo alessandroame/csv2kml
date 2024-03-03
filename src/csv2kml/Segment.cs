@@ -1,4 +1,5 @@
-﻿namespace csv2kml
+﻿
+namespace csv2kml
 {
     public class Segment
     {
@@ -14,8 +15,21 @@
             if (ThermalType==ThermalType.None)
                 res =$"{FlightPhase} {res}";
             else
-                res = $"{ThermalType} {res}";
+                res = $"{ThermalType} thermal {res}";
             return res;
+        }
+
+        internal Segment Clone()
+        {
+            return new Segment
+            {
+                SegmentIndex = SegmentIndex,
+                FlightPhase = FlightPhase,
+                ThermalIndex = ThermalIndex,
+                ThermalType = ThermalType,
+                From = From,
+                To = To
+            };
         }
     }
 }
