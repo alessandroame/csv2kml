@@ -11,6 +11,7 @@ using static csv2kml.KmlBuilder;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 using System;
+using csv2kml.CameraDirection;
 
 public static partial class DataExtensions
 {

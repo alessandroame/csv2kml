@@ -1,11 +1,12 @@
-﻿using SharpKml.Base;
+﻿using csv2kml.CameraDirection;
+using csv2kml.CameraDirection;
+using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using static csv2kml.KmlExtensions;
 using static DataExtensions;
 
 namespace csv2kml
@@ -46,9 +47,9 @@ namespace csv2kml
 
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
-                res.AddFeature(BuildTour(cameraSettings));
-                res.AddFeature(BuildOveriviewTour(cameraSettings));
+                res.AddFeature(new TourByFlightPhase(_ctx,cameraSettings).Build());
             }
+            res.AddFeature(new OverviewTourBuilder(_ctx).Build());
             return res;
         }
         private Feature BuildTrack()
@@ -148,189 +149,6 @@ namespace csv2kml
                 index++;
             }
             return res;
-        }
-        private Tour BuildOveriviewTour(LookAtCameraConfig cameraConfig)
-        {
-            var tourplaylist = new Playlist();
-            var heading = 0D;
-            var headingOffset = 90;
-            var reducedSegments=new List<Segment>();
-            var index = 0;
-            //decimate 
-            foreach (var segment in _ctx.Segments)
-            {
-                if (reducedSegments.Count>0 
-                    && reducedSegments.Last().ThermalType==ThermalType.None
-                    && segment.ThermalType == ThermalType.None)
-                {
-                    var lastSegment = reducedSegments.Last();
-                    lastSegment.To=segment.To;
-                    var segmentData = _ctx.Data.Skip(lastSegment.From).Take(lastSegment.To - lastSegment.From);
-                    lastSegment.FlightPhase = segmentData.VerticalSpeed().ToFlightPhase();
-                }
-                else
-                {
-                    var newSegment = segment.Clone();
-                    newSegment.SegmentIndex = index++;
-                    reducedSegments.Add(newSegment);
-                }
-            }
-            //build camera directions
-            foreach (var segment in reducedSegments)
-            {    
-                var data = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
-                var duration = data.Last().Time.Subtract(data.First().Time).TotalSeconds;
-                duration = duration / (segment.ThermalType == ThermalType.None ? 20 : 40);
-                duration = Math.Min(15,Math.Max(5, duration));
-                
-                var bb = new BoundingBoxEx(data);
-                data.First().ToVector().CalculateTiltPan(data.Last().ToVector(),
-                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
-
-                headingOffset *= -1;
-                if (segment.ThermalType == ThermalType.None)
-                {
-                    //Console.WriteLine($"heeading: {heading} phase #{segment.SegmentIndex} {segment.FlightPhase}");
-                    var visibleTimeFrom = data.First().Time;
-                    var visibleTimeTo = data.Last().Time;
-                    var lookAt = bb.Center;
-                    var range = Math.Max(250, bb.GroundDiagonalSize * 2);
-                    var flyTo = new FlyTo
-                    {
-                        Mode = FlyToMode.Bounce,
-                        Duration = duration,
-                        View = CameraHelper.CreateLookAt(lookAt,range,heading,70, 
-                        visibleTimeFrom, visibleTimeTo, _ctx.AltitudeOffset)
-                    };
-                    tourplaylist.AddTourPrimitive(flyTo);
-                }
-                else
-                {
-                    //thermal 
-                    var count=10;
-                    var visibleTimeFrom = data.First().Time;
-                    var totalRotation = duration*10;
-                    Console.WriteLine($"DURATION: {duration}  ROTATION:{totalRotation}");
-                    for (var i=0;i<count;i++)
-                    {
-                        heading += 120 / count * Math.Sign(headingOffset);
-                        while (heading < 0) heading += 360;
-                        while (heading > 360) heading -= 360;
-                        //Console.WriteLine($"heeading: {heading} phase #{segment.SegmentIndex} {segment.FlightPhase}  thermal #{segment.ThermalIndex}");
-                        var lookAtIndex = data.Count() / count * i;
-                        var visibleTimeTo = data.ElementAt(lookAtIndex).Time;
-                        var lookAt = data.ElementAt(lookAtIndex).ToVector();
-                        var range = Math.Max(400, bb.GroundDiagonalSize * 2);
-
-                        var flyTo = new FlyTo
-                        {
-                            Mode = FlyToMode.Smooth,
-                            Duration = duration/count,
-                            View = CameraHelper.CreateLookAt(lookAt, range, heading, 80,
-                                                            visibleTimeFrom, visibleTimeTo, _ctx.AltitudeOffset)
-                        };
-                        tourplaylist.AddTourPrimitive(flyTo);
-                    }
-                }
-            }
-            var tour = new Tour { Name = "Quick overview" };
-            tour.Playlist = tourplaylist;
-            return tour;
-        }
-        private Tour BuildTour(LookAtCameraConfig cameraConfig)
-        {
-            var tourplaylist = new Playlist();
-            var data = _ctx.Data;
-            var currentTime = data.First().Time.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
-            var lastTime = data.Last().Time;
-            var oldHeading = 0D;
-            var previousTime= data.First().Time;
-            var totSeconds = 0d;
-            while (true)
-            {
-                var visibleData = new Data[0];
-                while (visibleData.Length == 0)
-                {
-                    currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
-                    if (currentTime > lastTime) break;
-                    visibleData = data.GetDataByTime(currentTime.AddSeconds(-cameraConfig.VisibleHistorySeconds), currentTime);
-                }
-                if (currentTime > lastTime) break;
-                var currentData = visibleData.Last();
-
-                var i = data.ToList().FindIndex(d => d.Time == currentData.Time);
-
-                var segment = _ctx.Segments.FirstOrDefault(s => s.From <= i && s.To > i);
-                if (segment == null) { break; }
-                var segmentData = data.Skip(segment.From).Take(segment.To - segment.From);
-
-                var duration = currentTime.Subtract(previousTime).TotalMilliseconds/1000;
-                totSeconds += duration;
-                
-                previousTime = currentTime;
-                var segmentBB = new BoundingBoxEx(segmentData);
-                segmentData.First().ToVector().CalculateTiltPan(segmentData.Last().ToVector(),
-                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
-
-                var visibleTimeFrom = visibleData.First().Time;
-                if (segmentData.First().Time < visibleTimeFrom) visibleTimeFrom = segmentData.First().Time;
-
-                if (segment.FlightPhase == FlightPhase.Climb || segment.FlightPhase == FlightPhase.MotorClimb)
-                {
-                    //var maxDegreePerSeconds = (double)180/ cameraConfig.UpdatePositionIntervalInSeconds;
-                    var segmentPercentage = (double)(i - segment.From) / (segment.To - segment.From);
-                    var segmentDurationInSeconds = data[segment.To].Time.Subtract(data[segment.From].Time).TotalSeconds;
-                    var heading = 0d;
-                    heading = 720 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
-                    var distance = segmentGroundDistance * 2 * segmentPercentage;
-
-                    var cameraPos = currentData.ToVector().MoveTo(Math.Max(80, distance ), segmentHeading + heading);
-                    cameraPos.Altitude = (segmentData.Min(d=>d.Altitude)+currentData.Altitude)/2+50;
-                    var lookAt = currentData.ToVector();
-                    var flyTo = new FlyTo
-                    {
-                        Id = (tourIndex++).ToString(),
-                        Mode = FlyToMode.Smooth,
-                        Duration = duration,
-                        View = CameraHelper.CreateCamera(cameraPos, lookAt, visibleTimeFrom, currentData.Time, _ctx.AltitudeOffset, out heading)
-                    };
-                    tourplaylist.AddTourPrimitive(flyTo);
-                    oldHeading = heading;
-                }
-                else
-                {
-                    var visibleDataBB = new BoundingBoxEx(visibleData);
-                    currentData.ToVector().CalculateTiltPan(visibleDataBB.Center,
-                        out var visibleDataHeading, out var visibleDataTilt, out var visibleDataDistance, out var visibleDataGroungDistance);
-
-                    var heading = visibleDataHeading + 30;
-
-                    if (oldHeading != 0)
-                    {
-                        if (oldHeading - heading > cameraConfig.MaxDeltaHeadingDegrees)
-                            heading = oldHeading - cameraConfig.MaxDeltaHeadingDegrees;
-                        if (heading - oldHeading > cameraConfig.MaxDeltaHeadingDegrees)
-                            heading = oldHeading + cameraConfig.MaxDeltaHeadingDegrees;
-                    }
-                    var lookAt = currentData.ToVector();
-                    var flyTo = new FlyTo
-                    {
-                        Id = (tourIndex++).ToString(),
-                        Mode = FlyToMode.Smooth,
-                        Duration = duration,
-                        View = CameraHelper.CreateLookAt(lookAt, Math.Max(140, visibleDataBB.DiagonalSize * 1.5), heading, 60,
-                            visibleTimeFrom, currentData.Time, _ctx.AltitudeOffset)
-                    };
-                    tourplaylist.AddTourPrimitive(flyTo);
-
-                    oldHeading = heading;
-                    
-                }
-                currentTime = currentTime.AddSeconds(cameraConfig.UpdatePositionIntervalInSeconds);
-            }
-            var tour = new Tour { Name = "Tour by flight phase" };
-            tour.Playlist = tourplaylist;
-            return tour;
         }
 
         static int tourIndex = 0;

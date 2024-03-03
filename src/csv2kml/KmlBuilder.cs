@@ -1,4 +1,5 @@
 using Csv;
+using csv2kml.CameraDirection;
 using Csv2KML;
 using SharpKml.Base;
 using SharpKml.Dom;

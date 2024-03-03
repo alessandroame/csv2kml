@@ -1,0 +1,31 @@
+{
+  "Overview": {
+    "name": "Overview",
+    
+  },
+
+  "lookAtCamera": [
+    {
+      "name": "CurrentPoint to LastVisiblePoint",
+      //int How many seconds of track are visible
+      "visibleHistorySeconds": 60,
+      //tilt in degree
+      //
+      // null -> automatic
+      // 0    ->  vertical looking down,
+      // 90   -> horizontal,
+      // 180  -> vertical loocking up
+      "tilt": null,
+      //pan offset in degree
+      "panOffset": 0,
+      //1  -> every track point      -> more reactive
+      //10  -> every 10 track point  -> smoother
+      "UpdatePositionIntervalInSeconds": 4,
+      "minimumRangeInMeters": 180,
+      "MaxDeltaHeadingDegrees": 20,
+      // CurrentPoint | PreviousPoint | LastVisiblePoint | BoundingBoxCenter 
+      "LookAt": "CurrentPoint",
+      "AlignTo": "LastVisiblePoint"
+    }
+  ]
+}
