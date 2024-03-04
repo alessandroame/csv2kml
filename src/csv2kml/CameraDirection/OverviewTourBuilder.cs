@@ -53,13 +53,13 @@ namespace csv2kml.CameraDirection
                 headingOffset *= -1;
                 if (segment.ThermalType == ThermalType.None)
                 {
-                    var flyTo= CreateFixedShot(data, duration,heading);
+                    var flyTo= DirectionsManager.CreateFixedShot(data, duration,heading, _ctx.AltitudeOffset);
                     tourplaylist.AddTourPrimitive(flyTo);
                 }
                 else
                 {//thermal 
                     var count = 10;
-                    var flyTos = CreateCircularTracking(data, duration / count, headingOffset, ref heading, count);
+                    var flyTos = DirectionsManager.CreateCircularTracking(data, duration / count, headingOffset, ref heading,_ctx.AltitudeOffset, count);
                     foreach(var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
                 }
             }
@@ -68,52 +68,7 @@ namespace csv2kml.CameraDirection
             return tour;
         }
 
-        public FlyTo[] CreateCircularTracking(IEnumerable<Data> data, double duration, int rotationdirection,ref double heading, int stepCount = 10)
-        {
-            var res=new List<FlyTo>();
-            var bb = new BoundingBoxEx(data); 
-            var visibleTimeFrom = data.First().Time;
-            var totalRotation = duration * 10;
-            Console.WriteLine($"DURATION: {duration}  ROTATION:{totalRotation}");
-            for (var i = 0; i < stepCount; i++)
-            {
-                heading += 120 / stepCount * Math.Sign(rotationdirection);
-                /*while (heading < 0) heading += 360;
-                while (heading > 360) heading -= 360;*/
-                //Console.WriteLine($"heeading: {heading} phase #{segment.SegmentIndex} {segment.FlightPhase}  thermal #{segment.ThermalIndex}");
-                var lookAtIndex = data.Count() / stepCount * i;
-                var visibleTimeTo = data.ElementAt(lookAtIndex).Time;
-                var lookAt = data.ElementAt(lookAtIndex).ToVector();
-                var range = Math.Max(400, bb.GroundDiagonalSize * 2);
-
-                var flyTo = new FlyTo
-                {
-                    Mode = FlyToMode.Smooth,
-                    Duration = duration / stepCount,
-                    View = CameraHelper.CreateLookAt(lookAt, range, heading, 80,
-                                                    visibleTimeFrom, visibleTimeTo, _ctx.AltitudeOffset)
-                };
-                res.Add(flyTo);
-            }
-            return res.ToArray();
-        }
-
-        public FlyTo CreateFixedShot(IEnumerable<Data> data,double duration,double heading)
-        {
-            var bb = new BoundingBoxEx(data);
-            var visibleTimeFrom = data.First().Time;
-            var visibleTimeTo = data.Last().Time;
-            var lookAt = bb.Center;
-            var range = Math.Max(250, bb.GroundDiagonalSize * 2);
-            var res = new FlyTo
-            {
-                Mode = FlyToMode.Bounce,
-                Duration = duration,
-                View = CameraHelper.CreateLookAt(lookAt, range, heading, 70,
-                visibleTimeFrom, visibleTimeTo, _ctx.AltitudeOffset)
-            };
-            return res;
-        }
+    
     }
 
 
