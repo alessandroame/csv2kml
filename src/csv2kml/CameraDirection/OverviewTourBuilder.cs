@@ -14,9 +14,6 @@ namespace csv2kml.CameraDirection
 
         public override Tour Build()
         {
-            var tourplaylist = new Playlist();
-            var heading = 0D;
-            var headingOffset = 90;
             var reducedSegments = new List<Segment>();
             var index = 0;
             //Join non thermal segments
@@ -38,12 +35,19 @@ namespace csv2kml.CameraDirection
                     reducedSegments.Add(newSegment);
                 }
             }
+            var heading = 120D;
+            var headingOffset = 90;
+            var tourplaylist = new Playlist();
             //build camera directions
+            var flyTos = DirectionsManager.CreateCircularTracking(_ctx.Data, 2, -1, ref heading, _ctx.AltitudeOffset);
+            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            tourplaylist.AddTourPrimitive(DirectionsManager.CreateFixedShot(_ctx.Data, 4, heading, _ctx.AltitudeOffset));
+            tourplaylist.AddTourPrimitive(DirectionsManager.CreateFixedShot(_ctx.Data.Take(2), 0.1, heading, _ctx.AltitudeOffset));
             foreach (var segment in reducedSegments)
             {
                 var data = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
                 var duration = data.Last().Time.Subtract(data.First().Time).TotalSeconds;
-                duration = duration / (segment.ThermalType == ThermalType.None ? 20 : 40);
+                duration = duration / (segment.ThermalType == ThermalType.None ? 80 : 40);
                 duration = Math.Min(15, Math.Max(5, duration));
 
                 var bb = new BoundingBoxEx(data);
@@ -58,8 +62,9 @@ namespace csv2kml.CameraDirection
                 }
                 else
                 {//thermal 
+                    Console.WriteLine($"#{segment.ThermalIndex} {segment.ThermalType}");
                     var count = 10;
-                    var flyTos = DirectionsManager.CreateCircularTracking(data, duration / count, headingOffset, ref heading,_ctx.AltitudeOffset, count);
+                    flyTos = DirectionsManager.CreateCircularTracking(data, duration, headingOffset, ref heading,_ctx.AltitudeOffset, count);
                     foreach(var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
                 }
             }

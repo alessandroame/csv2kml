@@ -69,11 +69,10 @@ namespace csv2kml
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Speed).TryParseDouble(out var speed)) continue;
+                    if (!DateTime.TryParse(getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Timestamp),out var timestamp)) continue;
 
                     /*var s=getLineValue(line, "Date")+" "+ getLineValue(line, "Time");
                     var timestamp = DateTime.Parse(s);*/
-
-                    var timestamp = DateTime.Parse(getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Timestamp));
                     if (lastTime == timestamp || lastLat == lat && lastLon == lon) continue;
                     //Console.WriteLine($"{timestamp} {motor}");
 

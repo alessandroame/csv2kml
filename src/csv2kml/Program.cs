@@ -56,13 +56,20 @@ internal class Program
                     .UseTourConfig(o.TourConfigFN)
                     .Build(csv, o.AltitudeOffset)
                     .Save(outFn);
-                    Console.WriteLine($"Created {outFn}");
+                    var oldColor = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"Created {outFn}\r\n");
+                    Console.ForegroundColor = oldColor;
+
                 }
             });
         }
         catch (Exception ex)
         {
+            var oldColor = Console.ForegroundColor;
+            Console.ForegroundColor= ConsoleColor.Red;
             Console.WriteLine(ex);
+            Console.ForegroundColor = oldColor;
         }
     }
 

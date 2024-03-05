@@ -35,7 +35,7 @@ namespace csv2kml.CameraDirection
 
     public class LookAtCameraConfig
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "Tour";
         public int VisibleHistorySeconds { get; set; }
         public int? Tilt { get; set; }
         public int PanOffset { get; set; }
