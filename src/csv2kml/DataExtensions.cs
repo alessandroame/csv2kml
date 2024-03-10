@@ -43,9 +43,19 @@ public static partial class DataExtensions
         }
         return res / 1000;
     }
-    public static Data[] GetDataByTime(this IEnumerable<Data> data, DateTime from , DateTime to)
+    public static Data GetDataByTime(this IEnumerable<Data> data, DateTime time)
     {
-        var res=data.Where(d => d.Time >= from && d.Time<to).ToList();
+        var res = data.First(d => d.Time==time);
+        return res;
+    }
+
+    public static IEnumerable<Data> ExtractSegment(this IEnumerable<Data> data, Segment segment)
+    {
+        return data.Skip(segment.From).Take(segment.To-segment.From);
+    }
+    public static Data[] GetDataByTime(this IEnumerable<Data> data, DateTime from, DateTime to)
+    {
+        var res = data.Where(d => d.Time >= from && d.Time < to).ToList();
         return res.ToArray();
     }
     public static IEnumerable<Data> GetAroundBySeconds(this Data[] data, int index,int minIndex, int maxIndex,double beforeSeconds,int afterSeconds)

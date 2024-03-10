@@ -30,6 +30,7 @@ namespace csv2kml.CameraDirection
         PreviousPoint,
         LastVisiblePoint,
         BoundingBoxCenter,
+        CurrentBoundingBoxCenter,
         PilotPosition
     }
 

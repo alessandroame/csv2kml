@@ -27,7 +27,7 @@ namespace csv2kml
             return res;
         }
         public static LookAt CreateLookAt(Vector lookAtPosition, double range, double heading, double tilt,
-            DateTime fromTime, DateTime toTime, double altitudeOffset)
+            DateTime? fromTime, DateTime? toTime, double altitudeOffset)
         {
             if (!lookAtPosition.Altitude.HasValue) throw new ArgumentNullException(nameof(lookAtPosition.Altitude));
             var res = new LookAt
