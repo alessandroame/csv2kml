@@ -38,16 +38,46 @@ namespace csv2kml.CameraDirection
 
 
             var heading = 0D;
-            var headingOffset = 90;
+            var tilt = 0D;
             var tourplaylist = new Playlist();
             //build camera directions
-            var flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, 2, -1, heading, heading + 120, _ctx.AltitudeOffset, 80, 60);
+            var wholeSegment = new Segment
+            {
+                From=0,
+                To=_ctx.Data.Count()-1
+            };
+            var wholeBB = new BoundingBoxEx(_ctx.Data);
+            var timeFactor = 400;
+            //var flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data,wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 80, 60);
+            var flyTos = DirectionsGenerator.Build(
+                _ctx.Data,
+                wholeSegment,
+                timeFactor,
+                new LookAtFunction(_ctx.Data,wholeSegment,LookAtReference.SegmentBoundingBoxCenter),
+                new FromToFunction(_ctx.Data, wholeSegment, 120, 120+360),
+                new FromToFunction(_ctx.Data, wholeSegment, 0, 90),
+                new FromToFunction(_ctx.Data, wholeSegment, wholeBB.GroundDiagonalSize, wholeBB.GroundDiagonalSize*2),
+                new TimeSpanFunction(_ctx.Data, wholeSegment, TimeSpanRange.SegmentBeginToEnd),
+                _ctx.AltitudeOffset,
+                10); 
             foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-            heading += 120;
+            heading = ((LookAt)flyTos.Last().View).Heading.Value;
+            tilt = ((LookAt)flyTos.Last().View).Tilt.Value;
 
-            tourplaylist.AddTourPrimitive(DirectionsGenerator.CreateFixedShot(_ctx.Data, 4, heading, _ctx.AltitudeOffset));
-            tourplaylist.AddTourPrimitive(DirectionsGenerator.CreateFixedShot(_ctx.Data.Take(2), 0.1, heading, _ctx.AltitudeOffset));
-            foreach (var segment in reducedSegments)
+            flyTos = DirectionsGenerator.Build(
+                _ctx.Data,
+                wholeSegment,
+                timeFactor,
+                new LookAtFunction(_ctx.Data, wholeSegment, LookAtReference.PilotPosition),
+                new FromToFunction(_ctx.Data, wholeSegment, heading, heading+90),
+                new FromToFunction(_ctx.Data, wholeSegment, tilt, 80),
+                new FromToFunction(_ctx.Data, wholeSegment, wholeBB.GroundDiagonalSize*2, 300),
+                new TimeSpanFunction(_ctx.Data, wholeSegment, TimeSpanRange.SegmentReverseBeginToCurrent),
+                _ctx.AltitudeOffset,
+                10);
+            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+
+           /* foreach (var segment in reducedSegments)
             {
                 var segmentData = _ctx.Data.ExtractSegment(segment);
                 var duration = segmentData.Last().Time.Subtract(segmentData.First().Time).TotalSeconds;
@@ -61,8 +91,8 @@ namespace csv2kml.CameraDirection
                 headingOffset *= -1;
                 if (segment.ThermalType == ThermalType.None)
                 {
-                    var flyTo = DirectionsGenerator.CreateFixedShot(segmentData, duration, heading, _ctx.AltitudeOffset);
-                    tourplaylist.AddTourPrimitive(flyTo);
+                    flyTos = DirectionsGenerator.CreateFixedShot(_ctx.Data,segment, timeFactor, heading, _ctx.AltitudeOffset);
+                    foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
                 }
                 else
                 {//thermal 
@@ -76,13 +106,13 @@ namespace csv2kml.CameraDirection
                 }
             }
 
-            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, 2, -1, heading, heading + 120, _ctx.AltitudeOffset, 50, 80);
+            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 50, 80);
             foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
             heading += 120;
 
-            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data,  2, -1, heading, heading + 360, _ctx.AltitudeOffset, 80, 80, 40);
+            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 360, _ctx.AltitudeOffset, 80, 80, 40);
             foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-            heading += 120;
+            heading += 120;*/
 
             var tour = new Tour { Name = "Quick overview" };
             tour.Playlist = tourplaylist;
