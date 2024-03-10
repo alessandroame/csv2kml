@@ -15,7 +15,6 @@ namespace csv2kml.CameraDirection
     {
         public abstract T Calculate(DateTime time);
     }
-
     public abstract class DataFunction<T> : BaseFunction<T>
     {
         protected IEnumerable<Data> _data;
@@ -39,7 +38,6 @@ namespace csv2kml.CameraDirection
             return res;
         }
     }
-
     public class FromToFunction : DataFunction<double>
     {
         private double _from;
@@ -57,7 +55,6 @@ namespace csv2kml.CameraDirection
             return res;
         }
     }
-
     public class LookAtFunction : DataFunction<Vector>
     {
         private LookAtReference _reference;
@@ -166,33 +163,44 @@ namespace csv2kml.CameraDirection
 
 
 
-    public static class DirectionsGenerator
+    public class DirectionsGenerator
     {
-        public static FlyTo[] Build(
-            IEnumerable<Data> data, 
-            Segment segment,
-            double timeFactor, 
-            LookAtFunction lookAtFunc, 
-            DataFunction<double> headingFunc, 
-            DataFunction<double> tiltFunc, 
-            DataFunction<double> rangeFunc, 
-            TimeSpanFunction timeSpanFunc,
-            double altitudeOffset, 
-            int stepCount = 10)
+        private IEnumerable<Data> _data;
+        private double _altitudeOffset;
+
+        public DirectionsGenerator(Context ctx)
         {
-            var segmentData = data.ExtractSegment(segment);
+            _data = ctx.Data;
+            _altitudeOffset = ctx.AltitudeOffset;
+        }
+        public FlyTo[] Build(Segment segment,
+                                double timeFactor, 
+                                LookAtFunction lookAtFunc, 
+                                DataFunction<double> headingFunc, 
+                                DataFunction<double> tiltFunc, 
+                                DataFunction<double> rangeFunc, 
+                                TimeSpanFunction timeSpanFunc,
+                                double altitudeOffset, 
+                                int stepCount = 10)
+        {
+            var segmentData = _data.ExtractSegment(segment);
             var res = new List<FlyTo>();
-            for (var i = 1; i <= stepCount; i++)
+            for (var i = 0; i < stepCount; i++)
             {
-                var index = segmentData.Count()/ stepCount*i;
-                var lastData = segmentData.ElementAt(segmentData.Count() / stepCount * (i-1));
+                var index = segmentData.Count() / stepCount * i;
+                var lastData = i == 0 ? segmentData.First() : segmentData.ElementAt(segmentData.Count() / stepCount * (i - 1));
                 var currentData = segmentData.ElementAt(index);
                 var time = currentData.Time;
 
-                var duration=time.Subtract(lastData.Time).TotalMilliseconds/timeFactor/1000;
+                var duration = time.Subtract(lastData.Time).TotalMilliseconds / timeFactor / 1000;
+                if (duration == 0) duration = 2;
 
                 var lookAt = lookAtFunc.Calculate(time);
                 var heading = headingFunc.Calculate(time);
+                while (heading > 360) heading -= 360;
+                while (heading < 0) heading += 360;
+
+
                 var tilt = tiltFunc.Calculate(time);
                 var range = rangeFunc.Calculate(time);
                 SharpKml.Dom.TimeSpan timeSpan = timeSpanFunc.Calculate(time);
@@ -204,113 +212,44 @@ namespace csv2kml.CameraDirection
                     View = CameraHelper.CreateLookAt(lookAt, range, heading, tilt, timeSpan.Begin, timeSpan.End, altitudeOffset)
                 };
                 res.Add(flyTo);
-                Console.WriteLine($" #{index} d:{duration} h:{heading} t:{tilt} r:{range} {time}");
+                Console.WriteLine($"#{index}\td:{Math.Round(duration, 2)}\th:{Math.Round(heading, 0)}\tt:{Math.Round(tilt, 0)}\tr:{Math.Round(range, 0)}\t{time}");
             }
+            Console.WriteLine("---------------------------");
             return res.ToArray();
         }
 
-
-
-
-        public static FlyTo[] CreateCircularTracking(IEnumerable<Data> data, Segment segment, double timeFactor, int rotationdirection,
-                                              double fromHeading, double toHeading, double altitudeOffset, int stepCount = 10)
-        {
-            return CreateSpiralTracking(data, segment , timeFactor, rotationdirection, fromHeading, toHeading, altitudeOffset, 20, 80, stepCount);
-        }
-        public static FlyTo[] CreateSpiralTracking(IEnumerable<Data> data,Segment segment, double timeFactor, int rotationdirection,
+        public FlyTo[] CreateTrackingShot(Segment segment, double timeFactor, 
                                               double fromHeading, double toHeading,
-                                              double altitudeOffset, double fromTilt, int toTilt, int stepCount = 10)
+                                              double fromTilt, double toTilt,
+                                              double fromRange, double toRange,
+                                              TimeSpanRange timeSpanRange,
+                                              LookAtReference reference,
+                                              int stepCount = 10)
         {
             return Build(
-                data,
                 segment,
                 timeFactor,
-                new LookAtFunction(
-                    data,
-                    segment,
-                    LookAtReference.SegmentBoundingBoxCenter),
-                new FromToFunction(data, segment, fromHeading, toHeading),
-                new FromToFunction(data, segment, fromTilt, toTilt),
-                new FromToFunction(data, segment, 200, 400),
-                new TimeSpanFunction(data, segment, TimeSpanRange.SegmentBeginToEnd),
-                altitudeOffset,
+                new LookAtFunction(_data, segment, reference),
+                new FromToFunction(_data, segment, fromHeading, toHeading),
+                new FromToFunction(_data, segment, fromTilt, toTilt),
+                new FromToFunction(_data, segment, fromRange, toRange),
+                new TimeSpanFunction(_data, segment, timeSpanRange),
+                _altitudeOffset,
                 stepCount);
         }
 
-        //public static FlyTo[] CreateCircularTracking(IEnumerable<Data> data, double duration, int rotationdirection,
-        //                              double fromHeading, double toHeading, double altitudeOffset, int stepCount = 10)
-        //{
-        //    return CreateSpiralTracking(data, duration, rotationdirection, fromHeading, toHeading, altitudeOffset, 80, 80, stepCount);
-        //}
-        //public static FlyTo[] CreateSpiralTracking(IEnumerable<Data> data, double duration, int rotationdirection,
-        //                                      double fromHeading, double toHeading,
-        //                                      double altitudeOffset, double fromTilt, int toTilt, int stepCount = 10)
-        //{
-        //    var res = new List<FlyTo>();
-        //    var bb = new BoundingBoxEx(data);
-        //    var visibleTimeFrom = data.First().Time;
-        //    var dTilt = (toTilt - fromTilt) / stepCount;
-        //    var tilt = fromTilt;
-        //    var dHeading = (toHeading - fromHeading) / stepCount;
-        //    var heading = fromHeading;
-        //    for (var i = 0; i < stepCount; i++)
-        //    {
-        //        //heading += 120 / stepCount * Math.Sign(rotationdirection);
-        //        while (heading < 0) heading += 360;
-        //        while (heading > 360) heading -= 360;
-        //        //Console.WriteLine($"heeading: {heading} phase #{segment.SegmentIndex} {segment.FlightPhase}  thermal #{segment.ThermalIndex}");
-        //        var lookAtIndex = data.Count() / stepCount * i;
-        //        var visibleTimeTo = data.ElementAt(lookAtIndex).Time;
-        //        //var lookAt = data.ElementAt(lookAtIndex).ToVector();
-        //        var lookAt = bb.Center;
-        //        var range = Math.Max(400, bb.GroundDiagonalSize * 1.5);
-
-        //        var flyTo = new FlyTo
-        //        {
-        //            Mode = FlyToMode.Smooth,
-        //            Duration = duration / stepCount,
-        //            View = CameraHelper.CreateLookAt(lookAt, range, heading, tilt,
-        //                                            visibleTimeFrom, visibleTimeTo, altitudeOffset)
-        //        };
-        //        tilt += dTilt;
-        //        heading += dHeading;
-        //        res.Add(flyTo);
-        //        Console.WriteLine($" DURATION: {flyTo.Duration}  ROTATION:{heading}");
-        //    }
-        //    return res.ToArray();
-        //}
-
-        public static FlyTo[] CreateFixedShot(IEnumerable<Data> data, Segment segment, double timeFactor, double heading, double altitudeOffset, int stepCount = 10)
+        public FlyTo[] CreateFixedShot(Segment segment, double timeFactor, double heading, double altitudeOffset, LookAtReference reference, int stepCount = 10)
         {
             return Build(
-               data,
                segment,
                timeFactor,
-               new LookAtFunction(
-                   data,
-                   segment,
-                   LookAtReference.SegmentBoundingBoxCenter),
-               new FromToFunction(data, segment, heading, heading),
-               new FromToFunction(data, segment, 70, 70),
-               new FromToFunction(data, segment, 100, 500),
-               new TimeSpanFunction(data, segment, TimeSpanRange.SegmentBeginToCurrent),
+               new LookAtFunction(_data,segment, reference),
+               new FromToFunction(_data, segment, heading, heading),
+               new FromToFunction(_data, segment, 70, 70),
+               new FromToFunction(_data, segment, 100, 500),
+               new TimeSpanFunction(_data, segment, TimeSpanRange.SegmentBeginToCurrent),
                altitudeOffset,
                stepCount);
-
-
-            //var bb = new BoundingBoxEx(data);
-            //var visibleTimeFrom = data.First().Time;
-            //var visibleTimeTo = data.Last().Time;
-            //var lookAt = bb.Center;
-            //var range = Math.Max(250, bb.GroundDiagonalSize * 1.5);
-            //var res = new FlyTo
-            //{
-            //    Mode = FlyToMode.Bounce,
-            //    Duration = duration,
-            //    View = CameraHelper.CreateLookAt(lookAt, range, heading, 70,
-            //    visibleTimeFrom, visibleTimeTo, altitudeOffset)
-            //};
-            //return res;
         }
     }
 }

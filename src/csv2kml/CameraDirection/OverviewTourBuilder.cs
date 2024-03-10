@@ -36,9 +36,6 @@ namespace csv2kml.CameraDirection
                 }
             }
 
-
-            var heading = 0D;
-            var tilt = 0D;
             var tourplaylist = new Playlist();
             //build camera directions
             var wholeSegment = new Segment
@@ -48,71 +45,80 @@ namespace csv2kml.CameraDirection
             };
             var wholeBB = new BoundingBoxEx(_ctx.Data);
             var timeFactor = 400;
-            //var flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data,wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 80, 60);
-            var flyTos = DirectionsGenerator.Build(
-                _ctx.Data,
-                wholeSegment,
-                timeFactor,
-                new LookAtFunction(_ctx.Data,wholeSegment,LookAtReference.SegmentBoundingBoxCenter),
-                new FromToFunction(_ctx.Data, wholeSegment, 120, 120+360),
-                new FromToFunction(_ctx.Data, wholeSegment, 0, 90),
-                new FromToFunction(_ctx.Data, wholeSegment, wholeBB.GroundDiagonalSize, wholeBB.GroundDiagonalSize*2),
-                new TimeSpanFunction(_ctx.Data, wholeSegment, TimeSpanRange.SegmentBeginToEnd),
-                _ctx.AltitudeOffset,
-                10); 
-            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-            heading = ((LookAt)flyTos.Last().View).Heading.Value;
-            tilt = ((LookAt)flyTos.Last().View).Tilt.Value;
 
-            flyTos = DirectionsGenerator.Build(
-                _ctx.Data,
-                wholeSegment,
-                timeFactor,
-                new LookAtFunction(_ctx.Data, wholeSegment, LookAtReference.PilotPosition),
-                new FromToFunction(_ctx.Data, wholeSegment, heading, heading+90),
-                new FromToFunction(_ctx.Data, wholeSegment, tilt, 80),
-                new FromToFunction(_ctx.Data, wholeSegment, wholeBB.GroundDiagonalSize*2, 300),
-                new TimeSpanFunction(_ctx.Data, wholeSegment, TimeSpanRange.SegmentReverseBeginToCurrent),
-                _ctx.AltitudeOffset,
-                10);
-            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            var generator = new DirectionsGenerator(_ctx);
+            //Reveal all data
+            //var flyTos = generator.CreateTrackingShot(
+            //        wholeSegment, timeFactor / 2,
+            //        0, 360,
+            //        0, 80,
+            //        wholeBB.GroundDiagonalSize / 3 * 2, wholeBB.GroundDiagonalSize * 1.4,
+            //        TimeSpanRange.SegmentBeginToEnd,
+            //        LookAtReference.EntireBoundingBoxCenter
+            //    );
 
-           /* foreach (var segment in reducedSegments)
+            //var flyTos = generator.CreateTrackingShot(
+            //    wholeSegment, timeFactor / 2,
+            //    0, 360,
+            //    0, 80,
+            //    wholeBB.GroundDiagonalSize / 3 * 2, wholeBB.GroundDiagonalSize * 1.4,
+            //    TimeSpanRange.SegmentBeginToCurrent,
+            //    LookAtReference.SegmentCurrentBoundingBoxCenter
+            //);
+            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+
+            ////Rewind to pilot
+            //flyTos = generator.CreateTrackingShot(
+            //        wholeSegment, timeFactor,
+            //        360, 360+120,
+            //        80, 20,
+            //        wholeBB.GroundDiagonalSize * 1.4, 300,
+            //        TimeSpanRange.SegmentReverseBeginToCurrent,
+            //        LookAtReference.PilotPosition
+            //    );
+            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+
+            var heading = 360 + 120;
+            timeFactor = 40;
+            foreach (var segment in reducedSegments)
             {
-                var segmentData = _ctx.Data.ExtractSegment(segment);
-                var duration = segmentData.Last().Time.Subtract(segmentData.First().Time).TotalSeconds;
-                duration = duration / (segment.ThermalType == ThermalType.None ? 80 : 40);
-                duration = Math.Min(15, Math.Max(2, duration));
-
-                var bb = new BoundingBoxEx(segmentData);
-                segmentData.First().ToVector().CalculateTiltPan(segmentData.Last().ToVector(),
-                    out var segmentHeading, out var segmentTilt, out var segmentDistance, out var segmentGroundDistance);
-
-                headingOffset *= -1;
                 if (segment.ThermalType == ThermalType.None)
                 {
-                    flyTos = DirectionsGenerator.CreateFixedShot(_ctx.Data,segment, timeFactor, heading, _ctx.AltitudeOffset);
+                    var flyTos = generator.CreateTrackingShot(
+                                   segment, timeFactor,
+                                   heading, heading,
+                                   60, 60,
+                                   450, 450,
+                                   TimeSpanRange.SegmentBeginToCurrent,
+                                   LookAtReference.SegmentBoundingBoxCenter
+                               );
                     foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
                 }
                 else
-                {//thermal 
-                    var angle = 360 * 2;
-                    Console.WriteLine($"#{segment.ThermalIndex} {segment.ThermalType}");
-                    var count = 10;
-                    flyTos = DirectionsGenerator.CreateCircularTracking(_ctx.Data, segment, duration, headingOffset,
-                        heading, heading + angle, _ctx.AltitudeOffset, count);
+                {
+                    var flyTos = generator.CreateTrackingShot(
+                                   segment, timeFactor,
+                                   heading, heading + 180,
+                                   80,80,
+                                   450, 600,
+                                   TimeSpanRange.SegmentBeginToCurrent,
+                                   LookAtReference.CurrentPoint
+                               );
                     foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-                    heading += angle;
+                    heading += 180;
                 }
+                while (heading > 360) heading -= 360;
+                while (heading < 0) heading += 360;
+                Console.WriteLine($"°°°°°°°°°°°°°°°°°°°°° {heading}");
             }
 
-            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 50, 80);
-            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-            heading += 120;
+            //flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 50, 80);
+            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            //heading += 120;
 
-            flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 360, _ctx.AltitudeOffset, 80, 80, 40);
-            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
-            heading += 120;*/
+            //flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 360, _ctx.AltitudeOffset, 80, 80, 40);
+            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            //heading += 120;
 
             var tour = new Tour { Name = "Quick overview" };
             tour.Playlist = tourplaylist;
