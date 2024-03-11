@@ -9,7 +9,7 @@
             _timeRange = timeRange;
         }
 
-        public override SharpKml.Dom.TimeSpan Calculate(DateTime time)
+        public override SharpKml.Dom.TimeSpan Eval(DateTime time)
         {
             var res = new SharpKml.Dom.TimeSpan();
             switch (_timeRange)

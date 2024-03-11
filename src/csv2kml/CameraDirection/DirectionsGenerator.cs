@@ -45,15 +45,15 @@ namespace csv2kml.CameraDirection
                 var duration = time.Subtract(lastData.Time).TotalMilliseconds / timeFactor / 1000;
                 if (duration == 0) duration = 2;
 
-                var lookAt = lookAtInterpolator.Calculate(time);
-                var heading = headingInterpolator.Calculate(time);
+                var lookAt = lookAtInterpolator.Eval(time);
+                var heading = headingInterpolator.Eval(time);
                 while (heading > 360) heading -= 360;
                 while (heading < 0) heading += 360;
 
 
-                var tilt = tiltInterpolator.Calculate(time);
-                var range = rangeInterpolator.Calculate(time);
-                SharpKml.Dom.TimeSpan timeSpan = timeSpanInterpolator.Calculate(time);
+                var tilt = tiltInterpolator.Eval(time);
+                var range = rangeInterpolator.Eval(time);
+                SharpKml.Dom.TimeSpan timeSpan = timeSpanInterpolator.Eval(time);
 
                 var flyTo = new FlyTo
                 {

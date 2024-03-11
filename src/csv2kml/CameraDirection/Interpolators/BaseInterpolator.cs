@@ -17,7 +17,7 @@ namespace csv2kml.CameraDirection.Interpolators
             _segmentBB = new BoundingBoxEx(_segmentData);
         }
 
-        public abstract T Calculate(DateTime time);
+        public abstract T Eval(DateTime time);
 
         protected double SegmentPercentage(DateTime time)
         {

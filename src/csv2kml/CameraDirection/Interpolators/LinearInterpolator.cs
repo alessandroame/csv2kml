@@ -10,7 +10,7 @@
             _from = from;
             _to = to;
         }
-        public override double Calculate(DateTime time)
+        public override double Eval(DateTime time)
         {
             var percentage = SegmentPercentage(time);
             var res = _from + (_to - _from) * percentage;

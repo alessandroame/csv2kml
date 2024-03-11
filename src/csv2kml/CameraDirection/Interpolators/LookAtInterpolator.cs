@@ -12,7 +12,7 @@ namespace csv2kml.CameraDirection.Interpolators
             _reference = reference;
         }
 
-        public override Vector Calculate(DateTime time)
+        public override Vector Eval(DateTime time)
         {
             Vector res = _bb.Center;
             switch (_reference)
