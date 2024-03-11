@@ -25,12 +25,14 @@ namespace csv2kml
             {
                 Name = "Data",
                 Open = true,
+                Visibility = false
             };
             dataFolder.AddStyle(new Style
             {
                 List = new ListStyle
                 {
-                    ItemType = ListItemType.RadioFolder
+                    //Se abilito questa riga non riesco più a cambiare visibilità a al contenitore
+                    ItemType = ListItemType.RadioFolder 
                 }
             });
             res.AddFeature(dataFolder);
@@ -38,6 +40,13 @@ namespace csv2kml
             dataFolder.AddFeature(segmentsFolder);
             var thermalsFolder = BuildThermalsTrack();
             dataFolder.AddFeature(thermalsFolder);
+            var none= new Folder
+            {
+                Name = "None",
+                Open = false,
+                Visibility = true,
+            };
+            dataFolder.AddFeature(none);
 
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
@@ -52,7 +61,7 @@ namespace csv2kml
             {
                 Name = "Segments",
                 Open = false,
-                Visibility = false
+                Visibility = false,
             };
             AddStyles(res);
             var index = 0;

@@ -43,11 +43,11 @@ namespace csv2kml.CameraDirection
                 To = _ctx.Data.Count() - 1
             };
             var wholeBB = new BoundingBoxEx(_ctx.Data);
-            var timeFactor = 400;
+            var timeFactor = 300;
 
             var generator = new DirectionsGenerator(_ctx);
             //Reveal all data
-            //var flyTos = generator.CreateTrackingShot(
+            //var flyTos = generator.BuildTrackingShot(
             //        wholeSegment, timeFactor / 2,
             //        0, 360,
             //        0, 80,
@@ -56,38 +56,38 @@ namespace csv2kml.CameraDirection
             //        LookAtReference.EntireBoundingBoxCenter
             //    );
 
-            //var flyTos = generator.CreateTrackingShot(
-            //    wholeSegment, timeFactor / 2,
-            //    0, 360,
-            //    0, 80,
-            //    wholeBB.GroundDiagonalSize / 3 * 2, wholeBB.GroundDiagonalSize * 1.4,
-            //    TimeSpanRange.SegmentBeginToCurrent,
-            //    LookAtReference.SegmentCurrentBoundingBoxCenter
-            //);
-            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            var flyTos = generator.BuildTrackingShot(
+                wholeSegment, timeFactor / 2,
+                0, 360,//heading
+                0, 80,//tilt
+                3, 2,//range
+                TimeSpanRange.EntireBeginToEnd,
+                LookAtReference.EntireBoundingBoxCenter
+            );
+            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
 
-            ////Rewind to pilot
-            //flyTos = generator.CreateTrackingShot(
-            //        wholeSegment, timeFactor,
-            //        360, 360+120,
-            //        80, 20,
-            //        wholeBB.GroundDiagonalSize * 1.4, 300,
-            //        TimeSpanRange.SegmentReverseBeginToCurrent,
-            //        LookAtReference.PilotPosition
-            //    );
-            //foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
+            //Rewind to pilot
+            flyTos = generator.BuildTrackingShot(
+                    wholeSegment, timeFactor,
+                    360, 360 + 120,
+                    80, 20,
+                    2, 1,
+                    TimeSpanRange.SegmentReverseBeginToCurrent,
+                    LookAtReference.PilotPosition
+                );
+            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
 
-            var heading = 360 + 120;
-            timeFactor = 40;
+            var heading = 0;
+            timeFactor = 20;
             foreach (var segment in reducedSegments)
-            {
+            { 
                 if (segment.ThermalType == ThermalType.None)
                 {
-                    var flyTos = generator.CreateTrackingShot(
+                    flyTos = generator.BuildTrackingShot(
                                    segment, timeFactor,
-                                   heading, heading,
-                                   60, 60,
-                                   450, 450,
+                                   heading, heading-30,//heading
+                                   80, 60,//tilt
+                                   1, 3,//range
                                    TimeSpanRange.SegmentBeginToCurrent,
                                    LookAtReference.SegmentBoundingBoxCenter
                                );
@@ -95,11 +95,11 @@ namespace csv2kml.CameraDirection
                 }
                 else
                 {
-                    var flyTos = generator.CreateTrackingShot(
+                    flyTos = generator.BuildTrackingShot(
                                    segment, timeFactor,
-                                   heading, heading + 180,
-                                   80, 80,
-                                   450, 600,
+                                   heading, heading + 90, //heading
+                                   60, 80,//tilt
+                                   3, 5,//range
                                    TimeSpanRange.SegmentBeginToCurrent,
                                    LookAtReference.CurrentPoint
                                );
@@ -108,7 +108,7 @@ namespace csv2kml.CameraDirection
                 }
                 while (heading > 360) heading -= 360;
                 while (heading < 0) heading += 360;
-                Console.WriteLine($"°°°°°°°°°°°°°°°°°°°°° {heading}");
+                //Console.WriteLine($"Current Heading {heading}°");
             }
 
             //flyTos = DirectionsGenerator.CreateSpiralTracking(_ctx.Data, wholeSegment, timeFactor, -1, heading, heading + 120, _ctx.AltitudeOffset, 50, 80);
@@ -123,8 +123,6 @@ namespace csv2kml.CameraDirection
             tour.Playlist = tourplaylist;
             return tour;
         }
-
-
     }
 
 

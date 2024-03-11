@@ -1,6 +1,4 @@
-﻿using static DataExtensions;
-
-namespace csv2kml.CameraDirection.Interpolators
+﻿namespace csv2kml.CameraDirection.Interpolators
 {
     public abstract class BaseInterpolator<T> : IInterpolator<T>
     {

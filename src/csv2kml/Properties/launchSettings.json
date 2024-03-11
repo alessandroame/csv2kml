@@ -6,7 +6,7 @@
     },
     "byFile": {
       "commandName": "Project",
-      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -i ..\\..\\..\\..\\..\\samples\\20240211\\_PRESTIGE-2pK-2024-02-11-12-58-35.csv -a 356"
+      "commandLineArgs": "-v -c .\\settings\\csv\\frskyADV.json -t .\\settings\\tour\\thermaling.json -i ..\\..\\..\\..\\..\\samples\\20240211\\_PRESTIGE-2pK-2024-02-11-14-27-47.csv -a 356"
     }
 
   }

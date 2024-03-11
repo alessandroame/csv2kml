@@ -25,7 +25,7 @@ namespace csv2kml
             trackFolder.AddFeature(BuildTrack1("3D track energy compensated", "Value", BuildPlacemarkWithTrack));
             trackFolder.AddFeature(BuildTrack("3D track", "Value", BuildPlacemarkWithTrack));
             var extrudedFolder = BuildTrack("Extruded track", "extrudedValue", BuildPlacemarkWithLineString);
-            extrudedFolder.Visibility = false;
+            //extrudedFolder.Visibility = false;
             trackFolder.AddFeature(extrudedFolder);
             trackFolder.AddFeature(BuildTrack("Ground track", "groundValue", BuildPlacemarkWithGroundLineString));
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
