@@ -1,5 +1,4 @@
-﻿using SharpKml.Dom;
-using SharpKml.Dom.GX;
+﻿using SharpKml.Dom.GX;
 using static DataExtensions;
 
 namespace csv2kml.CameraDirection

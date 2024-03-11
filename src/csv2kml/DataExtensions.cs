@@ -1,17 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using csv2kml;
-using MathNet.Numerics.Providers.LinearAlgebra;
+using csv2kml.CameraDirection;
 using SharpKml.Base;
 using SharpKml.Dom;
-using SharpKml.Dom.GX;
 using SharpKml.Engine;
-using System.Diagnostics;
-using System.Drawing;
-using static csv2kml.KmlBuilder;
-using System.Xml.Linq;
-using System.Runtime.CompilerServices;
-using System;
-using csv2kml.CameraDirection;
 
 public static partial class DataExtensions
 {
