@@ -47,7 +47,7 @@ public static partial class DataExtensions
     }
     public static Data[] GetDataByTime(this IEnumerable<Data> data, DateTime from, DateTime to)
     {
-        var res = data.Where(d => d.Time >= from && d.Time <= to.AddSeconds(10)).ToList();
+        var res = data.Where(d => d.Time >= from && d.Time <= to).ToList();
         if (res.Count() <= 1) res.Add(res.First());
         return res.ToArray();
     }
