@@ -4,7 +4,7 @@
     {
         private TimeSpanRange _timeRange;
 
-        public TimeSpanInterpolator(TimeSpanRange timeRange) 
+        public TimeSpanInterpolator(TimeSpanRange timeRange)
         {
             _timeRange = timeRange;
         }

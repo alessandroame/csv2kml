@@ -11,7 +11,7 @@ namespace csv2kml.CameraDirection.Interpolators
 
         public void Init(Context context, Segment segment)
         {
-            _context=context;
+            _context = context;
             _bb = new BoundingBoxEx(_context.Data);
             _segmentData = _context.Data.ExtractSegment(segment);
             _segmentBB = new BoundingBoxEx(_segmentData);

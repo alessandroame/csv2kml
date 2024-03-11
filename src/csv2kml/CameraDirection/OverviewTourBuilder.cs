@@ -39,8 +39,8 @@ namespace csv2kml.CameraDirection
             //build camera directions
             var wholeSegment = new Segment
             {
-                From=0,
-                To=_ctx.Data.Count()-1
+                From = 0,
+                To = _ctx.Data.Count() - 1
             };
             var wholeBB = new BoundingBoxEx(_ctx.Data);
             var timeFactor = 400;
@@ -98,7 +98,7 @@ namespace csv2kml.CameraDirection
                     var flyTos = generator.CreateTrackingShot(
                                    segment, timeFactor,
                                    heading, heading + 180,
-                                   80,80,
+                                   80, 80,
                                    450, 600,
                                    TimeSpanRange.SegmentBeginToCurrent,
                                    LookAtReference.CurrentPoint

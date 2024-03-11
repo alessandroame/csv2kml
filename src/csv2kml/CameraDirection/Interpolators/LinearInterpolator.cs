@@ -5,7 +5,7 @@
         private double _from;
         private double _to;
 
-        public LinearInterpolator( double from, double to) 
+        public LinearInterpolator(double from, double to)
         {
             _from = from;
             _to = to;

@@ -4,7 +4,7 @@ using SharpKml.Base;
 
 public static partial class DataExtensions
 {
-    public class BoundingBoxEx 
+    public class BoundingBoxEx
     {
         public double West { get; }
         public double East { get; }
@@ -19,8 +19,8 @@ public static partial class DataExtensions
             {
                 double latitude = (North + South) / 2.0;
                 double longitude = (East + West) / 2.0;
-                double altitude= (Top + Bottom) / 2.0;
-                return new Vector(latitude, longitude,altitude);
+                double altitude = (Top + Bottom) / 2.0;
+                return new Vector(latitude, longitude, altitude);
             }
         }
 
@@ -39,7 +39,7 @@ public static partial class DataExtensions
             var edge1 = new Vector(North, West, Bottom);
             var edge2 = new Vector(South, East, Top);
             DiagonalSize = edge1.Distance(edge2);
-            
+
             edge1.Altitude = edge2.Altitude = 0;
             GroundDiagonalSize = edge1.Distance(edge2);
         }

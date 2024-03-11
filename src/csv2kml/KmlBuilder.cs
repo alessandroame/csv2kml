@@ -1,13 +1,6 @@
-using Csv;
 using csv2kml.CameraDirection;
-using Csv2KML;
 using SharpKml.Base;
 using SharpKml.Dom;
-using SharpKml.Dom.GX;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Security.Claims;
-using System.Xml.Linq;
 
 namespace csv2kml
 {
@@ -72,6 +65,6 @@ namespace csv2kml
                 Console.WriteLine(ex);
             }
         }
-     
+
     }
 }

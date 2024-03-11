@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace csv2kml
 {
@@ -47,7 +41,8 @@ namespace csv2kml
             var b = 255;
 
             var v = (int)(normalizedValue * 255);
-            if (normalizedValue > 0) {
+            if (normalizedValue > 0)
+            {
                 g -= v;
                 b -= v;
             }
@@ -123,13 +118,13 @@ namespace csv2kml
 
         public static double Normalize(this double value, double max)
         {
-            if (value==0) return 0;
+            if (value == 0) return 0;
             var res = value / max;
             if (res > 1) res = 1;
             else if (res < -1) res = -1;
             return res;
         }
-        public static double ApplyExpo(this double v,double k)
+        public static double ApplyExpo(this double v, double k)
         {
             double res = v;
             if (k >= 0)

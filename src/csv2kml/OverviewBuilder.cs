@@ -1,15 +1,8 @@
 ﻿
-using SharpKml.Dom;
-using static DataExtensions;
 using SharpKml.Base;
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.VisualBasic;
+using SharpKml.Dom;
 using SharpKml.Dom.GX;
-using System.Linq;
-using System.Diagnostics;
-using System.Security.Cryptography;
-using MathNet.Numerics;
-using System.Drawing.Text;
+using static DataExtensions;
 
 
 namespace csv2kml
@@ -24,7 +17,7 @@ namespace csv2kml
         }
         class TimelineKey
         {
-            public Vector Position{ get; set; }
+            public Vector Position { get; set; }
             public double Distance { get; set; }
             public double Duration { get; set; }
 
@@ -35,7 +28,8 @@ namespace csv2kml
                 Duration = duration;
             }
         }
-        public Feature Build(){
+        public Feature Build()
+        {
             var res = new Folder
             {
                 Name = "OverView",

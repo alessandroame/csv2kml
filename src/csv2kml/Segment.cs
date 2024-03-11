@@ -12,8 +12,8 @@ namespace csv2kml
         public override string ToString()
         {
             var res = $" {From}-{To}";
-            if (ThermalType==ThermalType.None)
-                res =$"{FlightPhase} {res}";
+            if (ThermalType == ThermalType.None)
+                res = $"{FlightPhase} {res}";
             else
                 res = $"{ThermalType} thermal {res}";
             return res;

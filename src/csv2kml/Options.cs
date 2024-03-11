@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using SharpKml.Dom.GX;
 using CommandLine;
+using SharpKml.Dom.GX;
 
 public class Options
 {
@@ -21,7 +21,7 @@ public class Options
 
     [Option('o', "output", Required = false, HelpText = "kml file folder")]
     public string? KMLFolder { get; set; }
-    
+
     [Option('a', "altOffset", Required = true, HelpText = "Altitude offset")]
     public double AltitudeOffset { get; set; }
 

@@ -1,11 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace csv2kml
 {
@@ -14,17 +7,17 @@ namespace csv2kml
     {
 
         [JsonProperty("indexes")]
-        public CSVFieldsByIndex FieldsByIndex {  get; set; }
+        public CSVFieldsByIndex FieldsByIndex { get; set; }
         [JsonProperty("titles")]
-        public CSVFieldsByTitle FieldsByTitle {  get; set; }
+        public CSVFieldsByTitle FieldsByTitle { get; set; }
         public double ValueMin { get; set; }
         public double ValueMax { get; set; }
-        public double ColorScaleExpo { get; set;}
+        public double ColorScaleExpo { get; set; }
 
         public static CsvConfig FromFile(string filename)
         {
             var json = File.ReadAllText(filename);
-            var res=JsonConvert.DeserializeObject<CsvConfig>(json);
+            var res = JsonConvert.DeserializeObject<CsvConfig>(json);
             if (res == null) throw new Exception($"Failed to read TourConfig from {filename}");
             return res;
 
@@ -32,7 +25,7 @@ namespace csv2kml
 
         public override string ToString()
         {
-            return JsonConvert.SerializeObject(this,Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
     }
 
@@ -55,7 +48,7 @@ namespace csv2kml
         public string VerticalSpeed { get; set; }
         public string Speed { get; set; }
         public string Motor { get; set; }
-        
+
     }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 

@@ -18,13 +18,13 @@ namespace csv2kml.CameraDirection
             _altitudeOffset = ctx.AltitudeOffset;
         }
         public FlyTo[] Build(Segment segment,
-                                double timeFactor, 
+                                double timeFactor,
                                 IInterpolator<Vector> lookAtInterpolator,
                                 IInterpolator<double> headingInterpolator,
                                 IInterpolator<double> tiltInterpolator,
                                 IInterpolator<double> rangeInterpolator,
                                 IInterpolator<SharpKml.Dom.TimeSpan> timeSpanInterpolator,
-                                double altitudeOffset, 
+                                double altitudeOffset,
                                 int stepCount = 10)
         {
             lookAtInterpolator.Init(_ctx, segment);
@@ -68,7 +68,7 @@ namespace csv2kml.CameraDirection
             return res.ToArray();
         }
 
-        public FlyTo[] CreateTrackingShot(Segment segment, double timeFactor, 
+        public FlyTo[] CreateTrackingShot(Segment segment, double timeFactor,
                                               double fromHeading, double toHeading,
                                               double fromTilt, double toTilt,
                                               double fromRange, double toRange,

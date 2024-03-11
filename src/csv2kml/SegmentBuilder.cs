@@ -1,13 +1,7 @@
 ﻿using csv2kml.CameraDirection;
-using csv2kml.CameraDirection;
 using SharpKml.Base;
 using SharpKml.Dom;
 using SharpKml.Dom.GX;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using static DataExtensions;
 
 namespace csv2kml
 {
@@ -47,7 +41,7 @@ namespace csv2kml
 
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
             {
-                res.AddFeature(new TourByFlightPhase(_ctx,cameraSettings).Build());
+                res.AddFeature(new TourByFlightPhase(_ctx, cameraSettings).Build());
             }
             res.AddFeature(new OverviewTourBuilder(_ctx).Build());
             return res;
@@ -101,12 +95,12 @@ namespace csv2kml
             var res = new Folder
             {
                 Name = "Thermals",
-                Visibility =false,
+                Visibility = false,
                 Open = false
             };
             AddStyles(res);
             var index = 0;
-            foreach (var segment in _ctx.Segments.Where(s=> s.FlightPhase == FlightPhase.Climb ))
+            foreach (var segment in _ctx.Segments.Where(s => s.FlightPhase == FlightPhase.Climb))
             {
                 var segmentData = _ctx.Data.Skip(segment.From).Take(segment.To - segment.From);
                 //short duration not considered a thermal 
@@ -132,7 +126,7 @@ namespace csv2kml
                     {
                         Text = $"\r\nfrom {from.Altitude}mt to {to.Altitude}mt" +
                                 $"\r\nduration {to.Time.Subtract(from.Time)}" +
-                                $"\r\navg vert speed={Math.Round(vSpeed,2)}m/s",
+                                $"\r\navg vert speed={Math.Round(vSpeed, 2)}m/s",
                     }
                 };
                 placemark.Time = new SharpKml.Dom.TimeSpan
@@ -158,16 +152,16 @@ namespace csv2kml
             var res = new List<Segment>();
             var index = 0;
             var data = _ctx.Data;
-            while (index < data.Length-1)
+            while (index < data.Length - 1)
             {
-                var segment=GetNextSegment(data, index);
+                var segment = GetNextSegment(data, index);
                 if (segment == null) break;
                 index = segment.To;
                 if (segment.To >= data.Length) segment.To = data.Length - 1;
-                if (res.Count()>0 && res.Last().FlightPhase == segment.FlightPhase)
+                if (res.Count() > 0 && res.Last().FlightPhase == segment.FlightPhase)
                 {
                     res.Last().To = segment.To;
-                    Console.WriteLine($"{new string('.',segment.FlightPhase.ToString().Length)}.{segment.From}->{segment.To} JOIN");
+                    Console.WriteLine($"{new string('.', segment.FlightPhase.ToString().Length)}.{segment.From}->{segment.To} JOIN");
                 }
                 else
                 {
@@ -229,21 +223,21 @@ namespace csv2kml
                 res.To = maxIndex;
                 //look ahead to calculate segment flight phase
                 var buffer = data.GetAroundBySeconds(from, res.From, maxIndex, 0, minimumSegmentLengthInSeconds);
-                res.FlightPhase= buffer.VerticalSpeed().ToFlightPhase();
+                res.FlightPhase = buffer.VerticalSpeed().ToFlightPhase();
                 for (int i = buffer.Last().Index; i <= maxIndex; i++)
                 {
-                    buffer=data.GetAroundBySeconds(i, res.From, maxIndex, minimumSegmentLengthInSeconds,0 );
+                    buffer = data.GetAroundBySeconds(i, res.From, maxIndex, minimumSegmentLengthInSeconds, 0);
                     //check when phase changed
-                    var currentPhase= buffer.VerticalSpeed().ToFlightPhase();
-                    if (currentPhase != res.FlightPhase) 
+                    var currentPhase = buffer.VerticalSpeed().ToFlightPhase();
+                    if (currentPhase != res.FlightPhase)
                     {
                         //if(currentPhase==FlightPhase.Climb) Debugger.Break();
                         break;
                     }
-                    res.To = i+1;
+                    res.To = i + 1;
                 }
                 var segmentData = data.Clip(res.From, res.To);
-                if (segmentData.Count()>1)
+                if (segmentData.Count() > 1)
                     res.FlightPhase = segmentData.VerticalSpeed().ToFlightPhase();
                 else
                     res.FlightPhase = data.First().VerticalSpeed.ToFlightPhase();
@@ -272,7 +266,7 @@ namespace csv2kml
                         Width = 2
                     },
                 });
-            
+
             container.AddStyle(new Style
             {
                 Id = $"{ThermalType.Weak}",

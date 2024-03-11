@@ -1,12 +1,5 @@
 ﻿using Csv;
 using Csv2KML;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace csv2kml
 {
@@ -20,8 +13,8 @@ namespace csv2kml
 
         public Data[] Build(string csvFilename)
         {
-            var res=LoadFromCsv(csvFilename);
-//            CalculateFlightPhase(res);
+            var res = LoadFromCsv(csvFilename);
+            //            CalculateFlightPhase(res);
             //CalculateCompensatedVario(res);
             return res;
         }
@@ -69,7 +62,7 @@ namespace csv2kml
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Speed).TryParseDouble(out var speed)) continue;
-                    if (!DateTime.TryParse(getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Timestamp),out var timestamp)) continue;
+                    if (!DateTime.TryParse(getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Timestamp), out var timestamp)) continue;
 
                     /*var s=getLineValue(line, "Date")+" "+ getLineValue(line, "Time");
                     var timestamp = DateTime.Parse(s);*/
@@ -77,7 +70,7 @@ namespace csv2kml
                     //Console.WriteLine($"{timestamp} {motor}");
 
                     //import
-                    var data = new Data(index,timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
+                    var data = new Data(index, timestamp, lat, lon, alt, verticalSpeed, speed, motor == 1);
                     res.Add(data);
                     index++;
                     lastTime = timestamp;
@@ -97,24 +90,24 @@ namespace csv2kml
 
         private void Interpolate(List<Data> data)
         {
-            for (int i = 0;i< data.Count(); i++) 
-            { 
+            for (int i = 0; i < data.Count(); i++)
+            {
                 var currentD = data[i];
                 var count = 1;
-                while (currentD.Latitude == data[i + (count)].Latitude 
-                    && currentD.Longitude == data[i + (count)].Longitude 
+                while (currentD.Latitude == data[i + (count)].Latitude
+                    && currentD.Longitude == data[i + (count)].Longitude
                     && (i + count) < data.Count() - 1) { count++; }
                 if ((i + count) > data.Count() - 1) break;
                 var nextD = data[i + count];
                 var dt = nextD.Time.Subtract(currentD.Time).TotalMilliseconds;
                 var dLat = currentD.Latitude - nextD.Latitude;
                 var dLon = currentD.Longitude - nextD.Longitude;
-//                Console.WriteLine($"----------------------------");
-                for (var n=0;n<count;n++)
+                //                Console.WriteLine($"----------------------------");
+                for (var n = 0; n < count; n++)
                 {
-                    var d = data[i+n];
-                    var k =d.Time.Subtract(currentD.Time).TotalMilliseconds / dt;
-  //                  Console.WriteLine(k);
+                    var d = data[i + n];
+                    var k = d.Time.Subtract(currentD.Time).TotalMilliseconds / dt;
+                    //                  Console.WriteLine(k);
                     //Console.WriteLine($"{d.Time}.{d.Time.Millisecond}------ {d.Altitude} ----------------------------");
                     //Console.WriteLine($"{d.Latitude}, {d.Longitude}");
                     d.Latitude -= k * dLat;
@@ -172,13 +165,15 @@ namespace csv2kml
 
         private void CalculateFlightPhase(IEnumerable<Data> data)
         {
-            for (var i = 0;i< data.Count(); i++) {
+            for (var i = 0; i < data.Count(); i++)
+            {
                 var current = data.ElementAt(i);
                 if (current.MotorActive)
                 {
                     current.FlightPhase = FlightPhase.MotorClimb;
                 }
-                else {
+                else
+                {
                     current.FlightPhase = current.VerticalSpeed.ToFlightPhase();
                 }
             }
@@ -194,7 +189,7 @@ namespace csv2kml
             var mass = 1200;
             foreach (var d in data)
             {
-                d.TotalEnergy=CalculateTotalEnergy(d,mass);
+                d.TotalEnergy = CalculateTotalEnergy(d, mass);
             }
 
             Data oldD = null;
@@ -212,11 +207,11 @@ namespace csv2kml
 
         }
 
-        private double CalculateTotalEnergy(Data d,double mass)
-        {            
-            var ke = .5 * mass * Math.Pow(d.Speed*1000/3600, 2);
+        private double CalculateTotalEnergy(Data d, double mass)
+        {
+            var ke = .5 * mass * Math.Pow(d.Speed * 1000 / 3600, 2);
             var ge = mass * 9.81 * d.Altitude;
-            var totEnergy=ke + ge;
+            var totEnergy = ke + ge;
             return totEnergy;
         }
         private class AltGain

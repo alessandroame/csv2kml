@@ -1,8 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CommandLine;
 using csv2kml;
-using SharpKml.Dom;
-using System.Drawing;
 
 internal class Program
 {
@@ -67,7 +65,7 @@ internal class Program
         catch (Exception ex)
         {
             var oldColor = Console.ForegroundColor;
-            Console.ForegroundColor= ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(ex);
             Console.ForegroundColor = oldColor;
         }

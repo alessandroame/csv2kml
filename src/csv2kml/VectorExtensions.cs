@@ -1,5 +1,4 @@
 ﻿using SharpKml.Base;
-using SharpKml.Dom;
 
 namespace csv2kml
 {
@@ -20,7 +19,8 @@ namespace csv2kml
             lon2 = (lon2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180°
 
             Vector res;
-            if (vector.Altitude.HasValue) {
+            if (vector.Altitude.HasValue)
+            {
                 res = new Vector(lat2.ToDegree(), lon2.ToDegree(), vector.Altitude.Value);
             }
             else
@@ -47,10 +47,10 @@ namespace csv2kml
             var dy = y2 - y1;
             var dz = z2 - z1;
 
-            pan = 180-Math.Atan2(dy, dx).ToDegree();
+            pan = 180 - Math.Atan2(dy, dx).ToDegree();
 
             distance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2) + Math.Pow(dz, 2));
-            tilt = 180-Math.Acos(dz / distance).ToDegree();
+            tilt = 180 - Math.Acos(dz / distance).ToDegree();
             groundDistance = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2));
         }
 
@@ -58,11 +58,11 @@ namespace csv2kml
         {
             if (!from.Altitude.HasValue) throw new ArgumentNullException(nameof(from.Altitude));
             if (!to.Altitude.HasValue) throw new ArgumentNullException(nameof(to.Altitude));
-            
+
             double x1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
             double y1 = EarthRadiusInMeters * Math.Cos(from.Latitude.ToRadian()) * Math.Sin(from.Longitude.ToRadian());
             double z1 = EarthRadiusInMeters + from.Altitude.Value;
-            
+
             double x2 = EarthRadiusInMeters * Math.Cos(to.Latitude.ToRadian()) * Math.Cos(to.Longitude.ToRadian());
             double y2 = EarthRadiusInMeters * Math.Cos(to.Latitude.ToRadian()) * Math.Sin(to.Longitude.ToRadian());
             double z2 = EarthRadiusInMeters + to.Altitude.Value;
