@@ -44,7 +44,6 @@ namespace csv2kml.CameraDirection
             };
             var wholeBB = new BoundingBoxEx(_ctx.Data);
             var timeFactor = 300;
-
             var generator = new DirectionsGenerator(_ctx);
             //Reveal all data
             //var flyTos = generator.BuildTrackingShot(
@@ -56,8 +55,11 @@ namespace csv2kml.CameraDirection
             //        LookAtReference.EntireBoundingBoxCenter
             //    );
 
+            var duration = _ctx.Data.Last().Time.Subtract(_ctx.Data.First().Time).TotalSeconds;
+
+            
             var flyTos = generator.BuildTrackingShot(
-                wholeSegment, timeFactor / 2,
+                wholeSegment, 5/duration,
                 0, 360,//heading
                 0, 80,//tilt
                 3, 2,//range

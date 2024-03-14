@@ -4742,7 +4742,7 @@ avg vert speed=0,46m/s</description>
           <name xmlns="http://www.opengis.net/kml/2.2">Quick overview</name>
           <Playlist>
             <FlyTo>
-              <duration>1.26</duration>
+              <duration>0.49973558963511366</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4759,7 +4759,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.2466666666666668</duration>
+              <duration>0.49444738233738766</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4776,7 +4776,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.2533333333333332</duration>
+              <duration>0.49709148598625069</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4793,7 +4793,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.2933333333333332</duration>
+              <duration>0.51295610787942891</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4810,7 +4810,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.3200000000000001</duration>
+              <duration>0.52353252247488102</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4827,7 +4827,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.2466666666666668</duration>
+              <duration>0.49444738233738766</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4844,7 +4844,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.28</duration>
+              <duration>0.50766790058170286</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4861,7 +4861,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.2533333333333332</duration>
+              <duration>0.49709148598625069</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4878,7 +4878,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.24</duration>
+              <duration>0.49180327868852458</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -4895,7 +4895,7 @@ avg vert speed=0,46m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>1.3</duration>
+              <duration>0.51560021152829183</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">

@@ -3746,7 +3746,7 @@ avg vert speed=0,62m/s</description>
           <name xmlns="http://www.opengis.net/kml/2.2">Quick overview</name>
           <Playlist>
             <FlyTo>
-              <duration>0.92000000000000004</duration>
+              <duration>0.5390625</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3763,7 +3763,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.83333333333333337</duration>
+              <duration>0.48828125</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3780,7 +3780,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.83999999999999997</duration>
+              <duration>0.4921875</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3797,7 +3797,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.84666666666666668</duration>
+              <duration>0.49609375</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3814,7 +3814,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.94666666666666666</duration>
+              <duration>0.5546875</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3831,7 +3831,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.85333333333333339</duration>
+              <duration>0.5</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3848,7 +3848,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.85999999999999999</duration>
+              <duration>0.50390625</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3865,7 +3865,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.85999999999999999</duration>
+              <duration>0.50390625</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3882,7 +3882,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.85999999999999999</duration>
+              <duration>0.50390625</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
@@ -3899,7 +3899,7 @@ avg vert speed=0,62m/s</description>
               </LookAt>
             </FlyTo>
             <FlyTo>
-              <duration>0.85999999999999999</duration>
+              <duration>0.50390625</duration>
               <flyToMode>smooth</flyToMode>
               <LookAt xmlns="http://www.opengis.net/kml/2.2">
                 <TimeSpan xmlns="http://www.google.com/kml/ext/2.2">
