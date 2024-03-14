@@ -1,4 +1,5 @@
 ﻿using SharpKml.Dom.GX;
+using System.Diagnostics;
 using static DataExtensions;
 
 namespace csv2kml.CameraDirection
@@ -29,7 +30,8 @@ namespace csv2kml.CameraDirection
                 {
                     currentTime = currentTime.AddSeconds(_cameraConfig.UpdatePositionIntervalInSeconds);
                     if (currentTime > lastTime) break;
-                    visibleData = data.GetDataByTime(currentTime.AddSeconds(-_cameraConfig.VisibleHistorySeconds), currentTime);
+                    var from = currentTime.AddSeconds(-_cameraConfig.VisibleHistorySeconds);
+                    visibleData = data.GetDataByTime(from, currentTime);
                 }
                 if (currentTime > lastTime) break;
                 var currentData = visibleData.Last();
