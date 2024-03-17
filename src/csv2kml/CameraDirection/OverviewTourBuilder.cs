@@ -55,21 +55,30 @@ namespace csv2kml.CameraDirection
             //        LookAtReference.EntireBoundingBoxCenter
             //    );
 
-            var duration = _ctx.Data.Last().Time.Subtract(_ctx.Data.First().Time).TotalSeconds;
+            //From space
+            var flyTos = generator.BuildTrackingShotByTimeFactor(
+                wholeSegment, 10d.ToTimeFactor(_ctx.Data, wholeSegment),
+                -90, 0,//heading
+                0, 0,//tilt
+                10000, 4,//range
+                TimeSpanRange.EntireBeginToEnd,
+                LookAtReference.EntireBoundingBoxCenter
+            ); 
+            foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
 
-            
-            var flyTos = generator.BuildTrackingShot(
-                wholeSegment, 5/duration,
+            //Reveal all data
+            flyTos = generator.BuildTrackingShotByTimeFactor(
+                wholeSegment, 5d.ToTimeFactor(_ctx.Data, wholeSegment),
                 0, 360,//heading
                 0, 80,//tilt
                 3, 2,//range
                 TimeSpanRange.EntireBeginToEnd,
                 LookAtReference.EntireBoundingBoxCenter
-            );
+            ); 
             foreach (var flyTo in flyTos) tourplaylist.AddTourPrimitive(flyTo);
 
             //Rewind to pilot
-            flyTos = generator.BuildTrackingShot(
+            flyTos = generator.BuildTrackingShotByTimeFactor(
                     wholeSegment, timeFactor,
                     360, 360 + 120,
                     80, 20,
@@ -85,7 +94,7 @@ namespace csv2kml.CameraDirection
             { 
                 if (segment.ThermalType == ThermalType.None)
                 {
-                    flyTos = generator.BuildTrackingShot(
+                    flyTos = generator.BuildTrackingShotByTimeFactor(
                                    segment, timeFactor,
                                    heading, heading-30,//heading
                                    80, 60,//tilt
@@ -97,7 +106,7 @@ namespace csv2kml.CameraDirection
                 }
                 else
                 {
-                    flyTos = generator.BuildTrackingShot(
+                    flyTos = generator.BuildTrackingShotByTimeFactor(
                                    segment, timeFactor,
                                    heading, heading + 90, //heading
                                    60, 80,//tilt

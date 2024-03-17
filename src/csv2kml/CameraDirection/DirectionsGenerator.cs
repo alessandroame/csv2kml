@@ -39,7 +39,7 @@ namespace csv2kml.CameraDirection
             var deltaSegment = segmentData.Count() / (double)stepCount;
             for (var i = 1; i <= stepCount; i++)
             {
-                var index = (int)Math.Min(deltaSegment * i, segmentData.Count()-1);
+                var index = (int)Math.Min(deltaSegment * i, segmentData.Count() - 1);
                 var lastIndex = segmentData.Count() / stepCount * (i - 1);
                 var lastData = segmentData.ElementAt(lastIndex);
                 var currentData = segmentData.ElementAt(index);
@@ -70,27 +70,28 @@ namespace csv2kml.CameraDirection
             return res.ToArray();
         }
 
-        public FlyTo[] BuildTrackingShot(Segment segment, double timeFactor,
-                                              double fromHeading, double toHeading,
-                                              double fromTilt, double toTilt,
-                                              double fromRange, double toRange,
-                                              TimeSpanRange timeSpanRange,
-                                              LookAtReference reference,
-                                              int stepCount = 10)
+        public FlyTo[] BuildTrackingShotByTimeFactor(Segment segment, double timeFactor,
+                                          double fromHeading, double toHeading,
+                                          double fromTilt, double toTilt,
+                                          double fromRange, double toRange,
+                                          TimeSpanRange timeSpanRange,
+                                          LookAtReference reference,
+                                          int stepCount = 10)
         {
             return Build(
-                segment,
-                timeFactor,
-                new LookAtInterpolator(reference),
-                new LinearInterpolator(fromHeading, toHeading),
-                new LinearInterpolator(fromTilt, toTilt),
-                new BoundingBoxInterpolator((dataBB,segmentBB,percentage)=> {
-                    var res= segmentBB.DiagonalSize*(fromRange + (toRange - fromRange)*percentage );
-                    return res;
-                    }),
-                new TimeSpanInterpolator(timeSpanRange),
-                _altitudeOffset,
-                stepCount);
+            segment,
+            timeFactor,
+            new LookAtInterpolator(reference),
+            new LinearInterpolator(fromHeading, toHeading),
+            new LinearInterpolator(fromTilt, toTilt),
+            new BoundingBoxInterpolator((dataBB, segmentBB, percentage) =>
+            {
+                var res = segmentBB.DiagonalSize * (fromRange + (toRange - fromRange) * percentage);
+                return res;
+            }),
+            new TimeSpanInterpolator(timeSpanRange),
+            _altitudeOffset,
+            stepCount);
         }
 
         public FlyTo[] CreateFixedShot(Segment segment, double timeFactor, double heading, double altitudeOffset, LookAtReference reference, int stepCount = 10)
@@ -101,7 +102,8 @@ namespace csv2kml.CameraDirection
                new LookAtInterpolator(reference),
                new LinearInterpolator(heading, heading),
                new LinearInterpolator(70, 70),
-                new BoundingBoxInterpolator((dataBB, segmentBB, percentage) => {
+                new BoundingBoxInterpolator((dataBB, segmentBB, percentage) =>
+                {
                     var res = segmentBB.DiagonalSize * 2 * percentage;
                     return res;
                 }),

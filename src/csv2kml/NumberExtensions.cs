@@ -1,9 +1,18 @@
-﻿using System.Drawing;
+﻿using csv2kml.CameraDirection;
+using System.Drawing;
 
 namespace csv2kml
 {
     public static class NumberExtensions
     {
+        public static double ToTimeFactor(this double durationInSeconds,IEnumerable<Data> data, Segment segment)
+        {
+            data.ExtractSegment(segment);
+            var duration = data.Last().Time.Subtract(data.First().Time).TotalMilliseconds / 1000;
+            var timeFactor = 1 / (durationInSeconds / duration);
+            return timeFactor;
+        }
+
         public static FlightPhase ToFlightPhase(this double verticalSpeed)
         {
             FlightPhase res;
