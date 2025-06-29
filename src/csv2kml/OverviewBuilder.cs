@@ -1,30 +1,20 @@
 ﻿
-using SharpKml.Dom;
-using static DataExtensions;
 using SharpKml.Base;
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.VisualBasic;
+using SharpKml.Dom;
 using SharpKml.Dom.GX;
-using System.Linq;
-using System.Diagnostics;
-using System.Security.Cryptography;
-using MathNet.Numerics;
-using System.Drawing.Text;
 
 
-namespace csv2kml
+namespace csv2kml.CameraDirection
 {
-    public class OverviewBuilder
+    public class OverviewBuilder:TourBuilder
     {
-        private Context _ctx;
 
-        public OverviewBuilder(Context ctx)
+        public OverviewBuilder(Context ctx): base(ctx)
         {
-            _ctx = ctx;
         }
         class TimelineKey
         {
-            public Vector Position{ get; set; }
+            public Vector Position { get; set; }
             public double Distance { get; set; }
             public double Duration { get; set; }
 
@@ -35,12 +25,8 @@ namespace csv2kml
                 Duration = duration;
             }
         }
-        public Feature Build(){
-            var res = new Folder
-            {
-                Name = "OverView",
-                Open = true
-            };
+        public override Tour Build()
+        {
             var fromTime = _ctx.Data.First().Time;
             var toTime = _ctx.Data.Last().Time;
             var bb = new BoundingBoxEx(_ctx.Data);
@@ -65,12 +51,9 @@ namespace csv2kml
                 };
                 tourplaylist.AddTourPrimitive(flyTo);
             }
-            var tour = new Tour { Name = "Track Tour by flight phase" };
-            tour.Playlist = tourplaylist;
-            res.AddFeature(tour);
+            var res = new Tour { Name = "Track Tour by flight phase" };
+            res.Playlist = tourplaylist;
             return res;
         }
-
-
     }
 }

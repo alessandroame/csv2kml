@@ -1,3 +1,7 @@
+- pilot pov (but I remember that the camera can't be pointed up to the sky)
+- after a thermal overview of the whole path
+- la termica comincia con una virata: impostare la partenza dopo aver ruota 180 gradi almeno
+
 Camera movement per FlighPhase:
 - climb or motor
 	pos: fixed 
@@ -11,3 +15,5 @@ Camera movement per FlighPhase:
 	pos: follow 
 	lookAt: current point
 	angle:bearing-120
+
+

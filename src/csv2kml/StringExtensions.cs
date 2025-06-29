@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Csv2KML
 {
@@ -16,6 +11,17 @@ namespace Csv2KML
                 //Console.WriteLine($"{value} is not a valid double");
                 return false;
             }
+            return true;
+        }
+
+        public static bool TryParseLatLon(this string stringValue, out double lat, out double lon)
+        {
+            var parts=stringValue.Split(" ");
+            lat = double.NaN;
+            lon = double.NaN;
+
+            if (!parts[0].TryParseDouble(out lat)) return false;
+            if (!parts[1].TryParseDouble(out lon)) return false;
             return true;
         }
     }

@@ -25,7 +25,7 @@ namespace csv2kml
             trackFolder.AddFeature(BuildTrack1("3D track energy compensated", "Value", BuildPlacemarkWithTrack));
             trackFolder.AddFeature(BuildTrack("3D track", "Value", BuildPlacemarkWithTrack));
             var extrudedFolder = BuildTrack("Extruded track", "extrudedValue", BuildPlacemarkWithLineString);
-            extrudedFolder.Visibility = false;
+            //extrudedFolder.Visibility = false;
             trackFolder.AddFeature(extrudedFolder);
             trackFolder.AddFeature(BuildTrack("Ground track", "groundValue", BuildPlacemarkWithGroundLineString));
             foreach (var cameraSettings in _ctx.TourConfig.LookAtCameraSettings)
@@ -45,7 +45,7 @@ namespace csv2kml
                     ItemType = ListItemType.CheckHideChildren
                 }
             });
-            var trackWidth = 3;
+            var trackWidth = 4;
             AddTrackStyle(container, $"ValueMotor", $"FF000000", $"55000000", trackWidth);
             AddTrackStyle(container, $"extrudedValueMotor", $"33000000", $"00000000", trackWidth);
             AddTrackStyle(container, $"groundValueMotor", $"88000000", $"55000000", trackWidth / 2);
@@ -64,13 +64,13 @@ namespace csv2kml
                 AddTrackStyle(container, $"extruded{styleId}", lineColor, polygonColor, trackWidth / 3);
 
                 lineColor = $"88{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor, trackWidth/2);
+                AddTrackStyle(container, $"ground{styleId}", lineColor, polygonColor, trackWidth / 2);
 
                 lineColor = $"FF{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
                 AddTrackStyle(container, styleId, lineColor, polygonColor, trackWidth);
 
                 lineColor = $"88{color.B.ToString("X2")}{color.G.ToString("X2")}{color.R.ToString("X2")}";
-                AddTrackStyle(container, "comp"+styleId, lineColor, polygonColor, trackWidth*3);
+                AddTrackStyle(container, "comp" + styleId, lineColor, polygonColor, trackWidth * 3);
                 //Console.WriteLine($"{styleId} -> {lineColor}");
             }
         }
@@ -96,7 +96,7 @@ namespace csv2kml
                 }
             });
         }
-        
+
         private Placemark BuildPlacemarkWithTrack(List<Data> data, string style)
         {
             var track = new Track
@@ -289,7 +289,7 @@ namespace csv2kml
             return res;
         }
 
-        private Tour BuildTour( LookAtCameraConfig cameraConfig, bool follow = false)
+        private Tour BuildTour(LookAtCameraConfig cameraConfig, bool follow = false)
         {
             var tourplaylist = new Playlist();
 
@@ -305,7 +305,7 @@ namespace csv2kml
                 }
 
                 var m = 1;
-                while (m < _ctx.Data.Length-1
+                while (m < _ctx.Data.Length - 1
                     && _ctx.Data[m].Time.Subtract(_ctx.Data[i].Time).TotalSeconds < cameraConfig.UpdatePositionIntervalInSeconds)
                 {
                     m++;

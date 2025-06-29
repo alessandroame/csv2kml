@@ -1,12 +1,4 @@
 using Newtonsoft.Json;
-using SharpKml.Dom;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace csv2kml.CameraDirection
 {
@@ -30,6 +22,7 @@ namespace csv2kml.CameraDirection
         PreviousPoint,
         LastVisiblePoint,
         BoundingBoxCenter,
+        CurrentBoundingBoxCenter,
         PilotPosition
     }
 

@@ -1,23 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using csv2kml;
-using MathNet.Numerics.Providers.LinearAlgebra;
+using csv2kml.CameraDirection;
 using SharpKml.Base;
 using SharpKml.Dom;
-using SharpKml.Dom.GX;
 using SharpKml.Engine;
-using System.Diagnostics;
-using System.Drawing;
-using static csv2kml.KmlBuilder;
-using System.Xml.Linq;
-using System.Runtime.CompilerServices;
-using System;
-using csv2kml.CameraDirection;
 
 public static partial class DataExtensions
 {
     public static IEnumerable<Data> Clip(this IEnumerable<Data> data, int from, int to)
     {
-        return data.Skip(from).Take(to-from);
+        return data.Skip(from).Take(to - from);
     }
     public static double VerticalSpeed(this IEnumerable<Data> data)
     {
@@ -30,7 +22,7 @@ public static partial class DataExtensions
     }
     public static double GetDurationInSeconds(this IEnumerable<Data> data, int from, int to)
     {
-        return data.ElementAt(to).Time.Subtract(data.ElementAt(from).Time).TotalMilliseconds/1000;
+        return data.ElementAt(to).Time.Subtract(data.ElementAt(from).Time).TotalMilliseconds / 1000;
     }
 
     public static double GetDurationInSeconds(this IEnumerable<Data> data, DateTime from, DateTime to)
@@ -43,15 +35,25 @@ public static partial class DataExtensions
         }
         return res / 1000;
     }
-    public static Data[] GetDataByTime(this IEnumerable<Data> data, DateTime from , DateTime to)
+    public static Data GetDataByTime(this IEnumerable<Data> data, DateTime time)
     {
-        var res=data.Where(d => d.Time >= from && d.Time<to).ToList();
+        var res = data.First(d => d.Time == time);
+        return res;
+    }
+
+    public static IEnumerable<Data> ExtractSegment(this IEnumerable<Data> data, Segment segment)
+    {
+        return data.Skip(segment.From).Take(segment.To - segment.From);
+    }
+    public static Data[] GetDataByTime(this IEnumerable<Data> data, DateTime from, DateTime to)
+    {
+        var res = data.Where(d => d.Time >= from && d.Time <= to).ToList();
         return res.ToArray();
     }
-    public static IEnumerable<Data> GetAroundBySeconds(this Data[] data, int index,int minIndex, int maxIndex,double beforeSeconds,int afterSeconds)
+    public static IEnumerable<Data> GetAroundBySeconds(this Data[] data, int index, int minIndex, int maxIndex, double beforeSeconds, int afterSeconds)
     {
-        var res=new List<Data> { data[index] };
-        for (var i= index-1; i>0 && i>=minIndex;i--)
+        var res = new List<Data> { data[index] };
+        for (var i = index - 1; i > 0 && i >= minIndex; i--)
         {
             if (data[index].Time.Subtract(data[i].Time).TotalSeconds > beforeSeconds) break;
             res.Insert(0, data[i]);
@@ -64,14 +66,14 @@ public static partial class DataExtensions
         return res;
     }
 
-    public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data,DateTime when,int aroundInSecond)
+    public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data, DateTime when, int aroundInSecond)
     {
-        return data.Where(d => d.MotorActive==false && Math.Abs(d.Time.Subtract(when).TotalSeconds) <= aroundInSecond);
+        return data.Where(d => d.MotorActive == false && Math.Abs(d.Time.Subtract(when).TotalSeconds) <= aroundInSecond);
     }
 
     public static double Distance(this Data from, Data to)
     {
-        const double EarthRadius = 6371 * 1000; 
+        const double EarthRadius = 6371 * 1000;
 
         // Convert coordinates to Cartesian
         double x1 = EarthRadius * Math.Cos(from.Latitude.ToRadian()) * Math.Cos(from.Longitude.ToRadian());
@@ -92,10 +94,10 @@ public static partial class DataExtensions
 
     public static Vector ToVector(this Data d)
     {
-        return new Vector(d.Latitude,d.Longitude,d.Altitude);
+        return new Vector(d.Latitude, d.Longitude, d.Altitude);
     }
-   
-    public static LookAt CreateLookAt(this IEnumerable<Data> data,bool follow,
+
+    public static LookAt CreateLookAt(this IEnumerable<Data> data, bool follow,
             double altitudeOffset, LookAtCameraConfig cameraConfig)
     {
         var bb = new BoundingBox
@@ -115,7 +117,7 @@ public static partial class DataExtensions
                     res = data.Last().ToVector();
                     break;
                 case PointReference.PreviousPoint:
-                    var index = Math.Max(0,data.Count() - 2);
+                    var index = Math.Max(0, data.Count() - 2);
                     res = data.ElementAt(index).ToVector();
                     break;
                 case PointReference.LastVisiblePoint:
@@ -152,16 +154,17 @@ public static partial class DataExtensions
         res.Latitude = lookTo.Latitude;
         res.Longitude = lookTo.Longitude;
         res.Altitude = Math.Max(altitudeOffset, lookTo.Altitude.Value + altitudeOffset);
-        res.Range = Math.Max(cameraConfig.MinimumRangeInMeters, d*1.6);
+        res.Range = Math.Max(cameraConfig.MinimumRangeInMeters, d * 1.6);
 
-        lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt,out var distance,out var groundDistance);
+        lookTo.CalculateTiltPan(alignTo, out var calculatedPan, out var calculatedTilt, out var distance, out var groundDistance);
         if (cameraConfig.AlignTo == PointReference.PilotPosition) calculatedPan += 180;
         if (cameraConfig.Tilt.HasValue)
         {
             res.Tilt = cameraConfig.Tilt;
         }
-        else{
-            var tiltValue =160-calculatedTilt;
+        else
+        {
+            var tiltValue = 160 - calculatedTilt;
             while (tiltValue > 360) tiltValue -= 360;
             res.Tilt = Math.Min(80, tiltValue);
             //Debug.WriteLine($"--------------------------------------------------");
@@ -173,7 +176,7 @@ public static partial class DataExtensions
         }
         if (follow)
         {
-            var panValue = 180-calculatedPan + cameraConfig.PanOffset;
+            var panValue = 180 - calculatedPan + cameraConfig.PanOffset;
             while (panValue > 360) panValue -= 360;
             res.Heading = panValue;
             //Debug.WriteLine($"--------------------------------------------------");

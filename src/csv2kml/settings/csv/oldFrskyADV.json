@@ -1,0 +1,26 @@
+﻿{
+  //"indexes": {
+  //  "timestamp": 22,
+  //  "latitude": 18,
+  //  "longitude": 19,
+  //  "altitude": 20,
+  //  "verticalSpeed": 8
+  //},
+  "titles": {
+    "timestamp": "GPS Clock()",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "altitude": "Altitude(m)",
+    "verticalSpeed": "VSpeed(m/s)",
+    "speed": "GPS Speed(km/h)",
+    "Motor": "SE"
+  },
+
+  "valueMin": -5,
+  "valueMax": 5,
+  //percentage of expo
+  // 0 = linear
+  // >0 flat near 0 value
+  // <0 vertical near 0
+  "colorScaleExpo": -0.2
+}

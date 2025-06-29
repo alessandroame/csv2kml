@@ -1,10 +1,4 @@
-﻿using SharpKml.Dom;
-using SharpKml.Dom.GX;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SharpKml.Dom.GX;
 
 namespace csv2kml.CameraDirection
 {

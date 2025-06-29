@@ -1,4 +1,5 @@
 ﻿using SharpKml.Dom.GX;
+using System.Diagnostics;
 using static DataExtensions;
 
 namespace csv2kml.CameraDirection
@@ -29,7 +30,8 @@ namespace csv2kml.CameraDirection
                 {
                     currentTime = currentTime.AddSeconds(_cameraConfig.UpdatePositionIntervalInSeconds);
                     if (currentTime > lastTime) break;
-                    visibleData = data.GetDataByTime(currentTime.AddSeconds(-_cameraConfig.VisibleHistorySeconds), currentTime);
+                    var from = currentTime.AddSeconds(-_cameraConfig.VisibleHistorySeconds);
+                    visibleData = data.GetDataByTime(from, currentTime);
                 }
                 if (currentTime > lastTime) break;
                 var currentData = visibleData.Last();
@@ -57,11 +59,11 @@ namespace csv2kml.CameraDirection
                     var segmentPercentage = (double)(i - segment.From) / (segment.To - segment.From);
                     var segmentDurationInSeconds = data[segment.To].Time.Subtract(data[segment.From].Time).TotalSeconds;
                     var heading = 0d;
-                    heading = 720 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
+                    heading = 360 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
                     var distance = segmentGroundDistance * 2 * segmentPercentage;
 
                     var cameraPos = currentData.ToVector().MoveTo(Math.Max(80, distance), segmentHeading + heading);
-                    cameraPos.Altitude = (segmentData.Min(d => d.Altitude) + currentData.Altitude) / 2 + 50;
+                    cameraPos.Altitude = currentData.Altitude+20 ;
                     var lookAt = currentData.ToVector();
                     var flyTo = new FlyTo
                     {

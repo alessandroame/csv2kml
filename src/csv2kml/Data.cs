@@ -1,13 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using csv2kml;
-using SharpKml.Dom.Atom;
-using SharpKml.Dom.GX;
-using System.ComponentModel.Design.Serialization;
-using System.Diagnostics;
 
 public class Data
 {
-    public Data(int index,DateTime time, double lat, double lon, double alt, double vspeed, double speed, bool motorActive)
+    public Data(int index, DateTime time, double lat, double lon, double alt, double vspeed, double speed, bool motorActive)
     {
         Index = index;
         Time = time;
