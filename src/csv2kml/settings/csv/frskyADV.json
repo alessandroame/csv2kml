@@ -8,8 +8,7 @@
   //},
   "titles": {
     "timestamp": "GPS Clock()",
-    "latitude": "Latitude",
-    "longitude": "Longitude",
+    "latlon": "GPS",
     "altitude": "Altitude(m)",
     "verticalSpeed": "VSpeed(m/s)",
     "speed": "GPS Speed(km/h)",

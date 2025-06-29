@@ -33,7 +33,8 @@ namespace csv2kml
             Dictionary<string, int>? fieldByName = null;
             string getLineValue(ICsvLine line, string fieldTitle)
             {
-                return line[fieldByName[fieldTitle.Trim()]];
+                var index = fieldByName[fieldTitle.Trim()];
+                return line[index];
             }
             var index = 0;
             foreach (var line in CsvReader.ReadFromStream(fs, new CsvOptions { HeaderMode = HeaderMode.HeaderPresent }))
@@ -56,8 +57,16 @@ namespace csv2kml
                 }
                 try
                 {
-                    if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Latitude).TryParseDouble(out var lat)) continue;
-                    if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Longitude).TryParseDouble(out var lon)) continue;
+                    double lat, lon;
+                    if (string.IsNullOrEmpty(_ctx.CsvConfig.FieldsByTitle.LatLon))
+                    {
+                        if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Latitude).TryParseDouble(out lat)) continue;
+                        if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Longitude).TryParseDouble(out lon)) continue;
+                    }
+                    else
+                    {
+                        if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.LatLon).TryParseLatLon(out lat,out lon)) continue;
+                    }
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Altitude).TryParseDouble(out var alt)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Motor).TryParseDouble(out var motor)) continue;

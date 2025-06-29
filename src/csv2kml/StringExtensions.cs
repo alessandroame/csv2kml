@@ -13,5 +13,16 @@ namespace Csv2KML
             }
             return true;
         }
+
+        public static bool TryParseLatLon(this string stringValue, out double lat, out double lon)
+        {
+            var parts=stringValue.Split(" ");
+            lat = double.NaN;
+            lon = double.NaN;
+
+            if (!parts[0].TryParseDouble(out lat)) return false;
+            if (!parts[1].TryParseDouble(out lon)) return false;
+            return true;
+        }
     }
 }

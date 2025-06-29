@@ -45,7 +45,7 @@ namespace csv2kml
                     ItemType = ListItemType.CheckHideChildren
                 }
             });
-            var trackWidth = 3;
+            var trackWidth = 4;
             AddTrackStyle(container, $"ValueMotor", $"FF000000", $"55000000", trackWidth);
             AddTrackStyle(container, $"extrudedValueMotor", $"33000000", $"00000000", trackWidth);
             AddTrackStyle(container, $"groundValueMotor", $"88000000", $"55000000", trackWidth / 2);

@@ -20,7 +20,6 @@ namespace csv2kml
             var res = JsonConvert.DeserializeObject<CsvConfig>(json);
             if (res == null) throw new Exception($"Failed to read TourConfig from {filename}");
             return res;
-
         }
 
         public override string ToString()
@@ -42,6 +41,7 @@ namespace csv2kml
     public class CSVFieldsByTitle
     {
         public string Timestamp { get; set; }
+        public string LatLon { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public string Altitude { get; set; }
