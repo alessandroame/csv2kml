@@ -60,11 +60,13 @@ namespace csv2kml.CameraDirection
                     var segmentDurationInSeconds = data[segment.To].Time.Subtract(data[segment.From].Time).TotalSeconds;
                     var heading = 0d;
                     heading = 360 * segmentPercentage * segmentDurationInSeconds.Normalize(180);
-                    var distance = segmentGroundDistance * 2 * segmentPercentage;
+                    var distance = segmentGroundDistance * (segmentPercentage*.5+.5);
 
                     var cameraPos = currentData.ToVector().MoveTo(Math.Max(80, distance), segmentHeading + heading);
                     cameraPos.Altitude = currentData.Altitude+20 ;
-                    var lookAt = currentData.ToVector();
+                    //var lookAt = currentData.ToVector();
+                    //var lookAt = currentData.Midpoint(segmentData.First());
+                    var lookAt = currentData.Midpoint(segmentData.First(),.8);
                     var flyTo = new FlyTo
                     {
                         Id = (tourIndex++).ToString(),

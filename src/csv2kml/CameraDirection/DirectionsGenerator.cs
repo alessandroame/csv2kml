@@ -2,6 +2,7 @@
 using SharpKml.Base;
 using SharpKml.Dom.GX;
 using System;
+using System.Diagnostics;
 
 namespace csv2kml.CameraDirection
 {
@@ -64,7 +65,8 @@ namespace csv2kml.CameraDirection
                     View = CameraHelper.CreateLookAt(lookAt, range, heading, tilt, timeSpan.Begin, timeSpan.End, altitudeOffset)
                 };
                 res.Add(flyTo);
-                Console.WriteLine($"#{index}\tduration:{Math.Round(duration, 2)}\theading:{Math.Round(heading, 0)}\ttilt:{Math.Round(tilt, 0)}\trange:{Math.Round(range, 0)}\t{time}\tdata #{currentData.Index}");
+                var phase = segment.FlightPhase + (segment.FlightPhase == FlightPhase.Climb ? " #"+ segment.ThermalIndex +" "+ segment.ThermalType : "\t");
+                Console.WriteLine($"#{index}\tphase:{phase}\tduration:{Math.Round(duration, 2)}\theading:{Math.Round(heading, 0)}\ttilt:{Math.Round(tilt, 0)}\trange:{Math.Round(range, 0)}\t{time}\tdata #{currentData.Index}");
             }
             Console.WriteLine(". . . . . . . . . . . . . . . . . ");
             return res.ToArray();

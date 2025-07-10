@@ -76,7 +76,7 @@ namespace csv2kml
 
                 var placemark = new Placemark
                 {
-                    Name = $"#{index} {segment.FlightPhase} {to.Altitude - from.Altitude}mt",
+                    Name = $"#{index+1} {segment.FlightPhase} {to.Altitude - from.Altitude}mt",
                     Geometry = track,
                     StyleUrl = new Uri($"#segment{segment.FlightPhase}", UriKind.Relative),
                     Description = new Description
@@ -128,7 +128,7 @@ namespace csv2kml
                 };
                 var placemark = new Placemark
                 {
-                    Name = $"#{index} {thermalDescription} gain {to.Altitude - from.Altitude}mt",
+                    Name = $"#{index+1} {thermalDescription} gain {to.Altitude - from.Altitude}mt",
                     Geometry = track,
                     StyleUrl = new Uri($"#{thermalType}", UriKind.Relative),
                     Description = new Description
@@ -285,8 +285,8 @@ namespace csv2kml
                 },
                 Line = new LineStyle
                 {
-                    Color = Color32.Parse("FF00FF00"),
-                    Width = 6
+                    Color = Color32.Parse("8800FF00"),
+                    Width = 10
                 },
             });
             container.AddStyle(new Style
@@ -298,7 +298,7 @@ namespace csv2kml
                 },
                 Line = new LineStyle
                 {
-                    Color = Color32.Parse("FF00FFFF"),
+                    Color = Color32.Parse("8800FFFF"),
                     Width = 10
                 },
             });
@@ -311,8 +311,8 @@ namespace csv2kml
                 },
                 Line = new LineStyle
                 {
-                    Color = Color32.Parse("FF0000FF"),
-                    Width = 14
+                    Color = Color32.Parse("880000FF"),
+                    Width = 10
                 },
             });
 

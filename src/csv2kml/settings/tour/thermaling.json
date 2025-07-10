@@ -3,7 +3,7 @@
     {
       "name": "CurrentPoint to LastVisiblePoint",
       //int How many seconds of track are visible
-      "visibleHistorySeconds": 60,
+      "visibleHistorySeconds": 120,
       //tilt in degree
       //
       // null -> automatic

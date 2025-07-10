@@ -65,12 +65,13 @@ public static partial class DataExtensions
         }
         return res;
     }
-
-    public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data, DateTime when, int aroundInSecond)
+    public static Vector Midpoint(this Data from, Data to,double weigth=0.5)
     {
-        return data.Where(d => d.MotorActive == false && Math.Abs(d.Time.Subtract(when).TotalSeconds) <= aroundInSecond);
+        return new Vector(
+            from.Latitude*weigth + to.Latitude*(1- weigth) ,
+            from.Longitude * weigth + to.Longitude * (1 - weigth),
+            from.Altitude * weigth + to.Altitude * (1 - weigth));
     }
-
     public static double Distance(this Data from, Data to)
     {
         const double EarthRadius = 6371 * 1000;
@@ -96,6 +97,12 @@ public static partial class DataExtensions
     {
         return new Vector(d.Latitude, d.Longitude, d.Altitude);
     }
+
+    public static IEnumerable<Data> GetDataAroundTime(this IEnumerable<Data> data, DateTime when, int aroundInSecond)
+    {
+        return data.Where(d => d.MotorActive == false && Math.Abs(d.Time.Subtract(when).TotalSeconds) <= aroundInSecond);
+    }
+
 
     public static LookAt CreateLookAt(this IEnumerable<Data> data, bool follow,
             double altitudeOffset, LookAtCameraConfig cameraConfig)

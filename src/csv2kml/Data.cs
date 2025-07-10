@@ -17,7 +17,7 @@ public class Data
 
     public override string ToString()
     {
-        return $"#{Index} alt {Altitude}m";
+        return $"#{Index} alt {Altitude}m lat:{Latitude} lon:{Longitude}";
     }
 
     public int Index { get; private set; }

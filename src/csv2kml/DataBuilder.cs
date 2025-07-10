@@ -1,5 +1,6 @@
 ﻿using Csv;
 using Csv2KML;
+using System.Diagnostics;
 
 namespace csv2kml
 {
@@ -66,6 +67,11 @@ namespace csv2kml
                     else
                     {
                         if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.LatLon).TryParseLatLon(out lat,out lon)) continue;
+                    }
+                    if (lat==0 || lon==0)
+                    {
+                        Console.WriteLine($"Error in gps coords: {lat},{lon}");
+                        continue;
                     }
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.Altitude).TryParseDouble(out var alt)) continue;
                     if (!getLineValue(line, _ctx.CsvConfig.FieldsByTitle.VerticalSpeed).TryParseDouble(out var verticalSpeed)) continue;
